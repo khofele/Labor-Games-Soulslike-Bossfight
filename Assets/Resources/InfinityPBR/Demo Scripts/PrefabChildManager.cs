@@ -48,8 +48,57 @@ namespace InfinityPBR
             int g = prefabGroups.Count - 1;
             prefabGroups[g].name = "Prefab Group " + g;
         }
-        
 
+        public void CreateNewPrefabGroupFromClipboard()
+        {
+            #if UNITY_EDITOR
+            CreateNewPrefabGroup();
+            PrefabGroup newGroup = prefabGroups[prefabGroups.Count - 1];
+            JsonUtility.FromJsonOverwrite(EditorGUIUtility.systemCopyBuffer, newGroup);
+            RelinkGroup(newGroup);
+            #endif
+        }
+
+        public void RelinkGroup(PrefabGroup newGroup)
+        {
+            Debug.Log("Relink " + newGroup.name);
+            foreach (PrefabObject prefabObject in newGroup.prefabObjects){
+                if (!prefabObject.isPrefab)
+                {
+                    prefabObject.inGameObject = FindGameObject(prefabObject.inGameObject.name);
+                }
+                prefabObject.parentTransform = FindGameObject(prefabObject.parentTransform.name).transform;
+            }
+        }
+        
+        private GameObject FindGameObject(string name)
+        {
+            Transform[] gameObjects = gameObject.GetComponentsInChildren<Transform>(true);
+        
+            foreach (Transform child in gameObjects)
+            {
+                if (child.name == name)
+                    return child.gameObject;
+            }
+
+            Debug.Log("Warning: Did not find a child named " + name + "! This re-link will be skipped.");
+            return null;
+        }
+
+        public void ActivateGroup(string v, string t)
+        {
+            for (int i = 0; i < prefabGroups.Count; i++)
+            {
+                if (prefabGroups[i].name == v && prefabGroups[i].groupType == t)
+                {
+                    ActivateGroup(i);
+                    return;
+                }
+            }
+
+            Debug.LogWarning("Warning: No prefab group found with the name " + v + " and type " + t);
+        }
+        
         public void ActivateGroup(string v)
         {
             for (int i = 0; i < prefabGroups.Count; i++)
@@ -86,6 +135,7 @@ namespace InfinityPBR
                 
                 PrefabObject prefabObject = prefabGroups[g].prefabObjects[i];
                 
+                /*
                 if (prefabObject.prefab.transform.IsChildOf(transform))
                 {
                     prefabObject.isPrefab = false;
@@ -94,23 +144,31 @@ namespace InfinityPBR
                 {
                     prefabObject.isPrefab = true;
                 }
+                */
 
                 if (prefabObject.isPrefab && prefabObject.inGameObject == prefabObject.prefab)
                 {
                     prefabObject.inGameObject = null;
                 }
+                prefabObject.inGameObject = null;
                 
                 if (prefabObject.isPrefab && prefabObject.prefab && !prefabObject.inGameObject)
                 {
                     prefabObject.inGameObject = Instantiate(prefabObject.prefab, prefabObject.parentTransform.position, prefabObject.parentTransform.rotation, prefabObject.parentTransform);
                     prefabObject.inGameObject.SetActive(true);
+                    /*if (prefabGroups[g].name.Contains("Hair"))
+                    {
+                        Debug.LogError("New inGameObject: " + prefabObject.inGameObject.name);
+                    }*/
+#if UNITY_EDITOR
                     if (unpackPrefabs && PrefabUtility.IsAnyPrefabInstanceRoot(prefabObject.inGameObject))
                         PrefabUtility.UnpackPrefabInstance(prefabObject.inGameObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
+#endif
                     
-                    #if UNITY_EDITOR
+#if UNITY_EDITOR
                     wardrobePrefabManager = GetComponent<WardrobePrefabManager>();
                     blendShapesManager = GetComponent<BlendShapesManager>();
-                    #endif
+#endif
                     
                     if (blendShapesManager)
                     {
@@ -133,7 +191,6 @@ namespace InfinityPBR
                     }
                 }
             }
-
             if (wardrobePrefabManager)
             {
                 wardrobePrefabManager.OnActivate(prefabGroups[g].name);
@@ -157,6 +214,21 @@ namespace InfinityPBR
             }
 
             Debug.LogWarning("Warning: No prefab group found with the name " + v);
+        }
+        
+        public void DeactivateGroup(string v, string t, bool checkForDefault = true)
+        {
+            for (int i = 0; i < prefabGroups.Count; i++)
+            {
+                if (prefabGroups[i].name == v & prefabGroups[i].groupType == t)
+                {
+                    Debug.Log("Deactivate ID " + i + " " + v + " " + t);
+                    DeactivateGroup(i, checkForDefault);
+                    return;
+                }
+            }
+
+            Debug.LogWarning("Warning: No prefab group found with the name " + v + " and type " + t);
         }
 
         public void DeactivateGroup(int g, bool checkForDefault = true)

@@ -53,11 +53,11 @@ public static class IPBR_CharacterEquip
                             subChildRenderer.rootBone = bone;               // Assign the root bone to this
                         }
                     }
-
+#if UNITY_EDITOR
                     if (PrefabUtility.IsAnyPrefabInstanceRoot(child.gameObject))
                         PrefabUtility.UnpackPrefabInstance(child.gameObject,PrefabUnpackMode.Completely,InteractionMode.AutomatedAction);
                     //DestroyImmediate(thisBoneRoot, true);                   // Destroy the bones of the subChildRenderer
-#if UNITY_EDITOR
+
                     UnityEngine.Object.DestroyImmediate(thisBoneRoot);
 #else
                     UnityEngine.Object.Destroy(child.thisBoneRoot);
@@ -71,10 +71,10 @@ public static class IPBR_CharacterEquip
             {
                 if (child.gameObject.name == "Dummy001")                    // If the name is Dummy001
                 {
+#if UNITY_EDITOR
                     if (PrefabUtility.IsAnyPrefabInstanceRoot(child.gameObject)) 
                         PrefabUtility.UnpackPrefabInstance(child.gameObject,PrefabUnpackMode.Completely,InteractionMode.AutomatedAction);
                     //DestroyImmediate(child.gameObject);                     // Destroy it
-                    #if UNITY_EDITOR
                     UnityEngine.Object.DestroyImmediate(child.gameObject);
                     #else
                     UnityEngine.Object.Destroy(child.gameObject);

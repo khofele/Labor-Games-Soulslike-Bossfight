@@ -62,6 +62,7 @@ public class PrefabChildManagerEditor : Editor
                 RemoveInGameObjectLinks(prefabManager);
             }
             
+            
             if (prefabManager.showHelpBoxes)
             {
                 EditorGUILayout.HelpBox("If you've copied another objects data or added the component from another object " +
@@ -73,6 +74,20 @@ public class PrefabChildManagerEditor : Editor
             {
                 RelinkObjects(prefabManager);
             }
+            
+            if (prefabManager.showHelpBoxes)
+            {
+                EditorGUILayout.HelpBox("Press \"C\" to copy a group to the clipboard. Then, at the bottom of the group list on " +
+                                        "another object with this script attached, you can click a button to paste the group into the other " +
+                                        "object. It will attempt to relink the transform to one of the same name in the new object.\n\nThis is " +
+                                        "useful when copying groups from one character to another, so long as they share the same transform names.", MessageType.None);
+            }
+            /*
+            if (GUILayout.Button("Copy all groups to clipboard"))
+            {
+                EditorGUIUtility.systemCopyBuffer = JsonUtility.ToJson(prefabManager);
+            }
+            */
             
             EditorGUI.indentLevel--;
             EditorUtility.SetDirty(this);
@@ -86,18 +101,6 @@ public class PrefabChildManagerEditor : Editor
          ------------------------------------------------------------------------------------------*/
         EditorGUILayout.Space();
 
-        EditorGUILayout.LabelField("Prefab Groups", EditorStyles.boldLabel);
-        if (prefabManager.showHelpBoxes)
-        {
-            EditorGUILayout.HelpBox("Each \"Prefab Group\" can be named, and then activated or deactivated by " +
-                                    "calling the following methods:\n\nTO DO ADD METHODS", MessageType.Info);
-        }
-
-        if (GUILayout.Button("Create New Group"))
-        {
-            prefabManager.CreateNewPrefabGroup();
-        }
-        
         prefabManager.showPrefabGroups = EditorGUILayout.Foldout(prefabManager.showPrefabGroups, prefabManager.prefabGroups.Count + " Prefab Groups");
         if (prefabManager.showPrefabGroups)
         {
@@ -113,22 +116,31 @@ public class PrefabChildManagerEditor : Editor
                 GUI.backgroundColor = redColor;
                 if (GUILayout.Button("X", GUILayout.Width(25)))
                 {
-                    EditorGUILayout.EndHorizontal();
-
-                    for (int i = 0; i < prefabManager.prefabGroups[g].prefabObjects.Count; i++)
+                    if (EditorUtility.DisplayDialog("Delete Prefab Group?",
+                        "Do you really want to delete " + prefabManager.prefabGroups[g].name +
+                        "?", "Yes", "Cancel"))
                     {
-                        RemoveObject(prefabManager, prefabManager.prefabGroups[g], prefabManager.prefabGroups[g].prefabObjects[i], i);
-                    }
-                    
-                    prefabManager.prefabGroups.RemoveAt(g);
+                        EditorGUILayout.EndHorizontal();
 
+                        for (int i = 0; i < prefabManager.prefabGroups[g].prefabObjects.Count; i++)
+                        {
+                            RemoveObject(prefabManager, prefabManager.prefabGroups[g], prefabManager.prefabGroups[g].prefabObjects[i], i);
+                        }
+                    
+                        prefabManager.prefabGroups.RemoveAt(g);
+                    }
                 }
                 else
                 {
                     GUI.backgroundColor = Color.white;
 
+                    if (GUILayout.Button(new GUIContent("C", "Copy to clipboard"), GUILayout.Width(25)))
+                    {
+                        EditorGUIUtility.systemCopyBuffer = JsonUtility.ToJson(prefabManager.prefabGroups[g]);
+                    }
+
                     Undo.RecordObject (prefabManager, "Change Prefab Group Name");
-                    prefabManager.prefabGroups[g].name = EditorGUILayout.TextField(prefabManager.prefabGroups[g].name, GUILayout.Width(180));
+                    prefabManager.prefabGroups[g].name = EditorGUILayout.TextField(prefabManager.prefabGroups[g].name, GUILayout.Width(150));
                     
                     EditorGUILayout.LabelField("Type", GUILayout.Width(50));
                     Undo.RecordObject (prefabManager, "Change Prefab Group Type");
@@ -208,17 +220,12 @@ public class PrefabChildManagerEditor : Editor
                             GUI.backgroundColor = redColor;
                             if (GUILayout.Button("X", GUILayout.Width(25)))
                             {
-                                EditorGUILayout.EndHorizontal();
-                                /*
-                                GameObject inGameObject = prefabObject.inGameObject;
-                                if (prefabObject.isPrefab && inGameObject)
-                                    prefabManager.DestroyObject(inGameObject);
-                                else
-                                    inGameObject.SetActive(false);
-                                prefabManager.prefabGroups[g].prefabObjects.RemoveAt(i);
-                                */
-                                RemoveObject(prefabManager, prefabManager.prefabGroups[g], prefabObject, i);
-
+                                if (EditorUtility.DisplayDialog("Delete Object?",
+                                    "Do you really want to delete this object?", "Yes", "Cancel"))
+                                {
+                                    EditorGUILayout.EndHorizontal();
+                                    RemoveObject(prefabManager, prefabManager.prefabGroups[g], prefabObject, i);
+                                }
                             }
                             else
                             {
@@ -344,6 +351,30 @@ public class PrefabChildManagerEditor : Editor
             
             GUI.backgroundColor =  Color.white;
         }
+        
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Prefab Groups", EditorStyles.boldLabel);
+        if (prefabManager.showHelpBoxes)
+        {
+            EditorGUILayout.HelpBox("Each \"Prefab Group\" can be named, and then activated or deactivated by " +
+                                    "calling the following methods:\n\nTO DO ADD METHODS", MessageType.Info);
+        }
+
+        if (GUILayout.Button("Create New Group"))
+        {
+            prefabManager.CreateNewPrefabGroup();
+        }
+
+        if (EditorGUIUtility.systemCopyBuffer.Contains("showPrefabs"))
+        {
+            if (GUILayout.Button(new  GUIContent("Paste group from clipboard", "Paste the copied group into this as a new Prefab Group.")))
+            {
+                prefabManager.CreateNewPrefabGroupFromClipboard();
+            }
+        }
+        
+
 
 
         /* ------------------------------------------------------------------------------------------

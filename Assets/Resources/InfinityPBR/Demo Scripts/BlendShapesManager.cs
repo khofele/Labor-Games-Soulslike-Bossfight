@@ -358,8 +358,10 @@ namespace InfinityPBR
             {
                 if (blendShapeGameObjects[i].gameObject)    // This will keep an object from being removed if it's gone missing, so it can be relinked later
                 {
+                    #if UNITY_EDITOR
                     if (!ArrayUtility.Contains(transforms, blendShapeGameObjects[i].gameObject.transform))
                         blendShapeGameObjects.RemoveAt(i);
+                    #endif
                 }
             }
         }
