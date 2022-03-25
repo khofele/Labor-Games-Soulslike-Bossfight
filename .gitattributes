@@ -3,3 +3,6 @@
 Assets/Ressources/* filter=lfs diff=lfs merge=lfs -text
 Assets/Ressources/ filter=lfs diff=lfs merge=lfs -text
 Assets/Ressources filter=lfs diff=lfs merge=lfs -text
+Assets/Resources filter=lfs diff=lfs merge=lfs -text
+Assets/Resources/* filter=lfs diff=lfs merge=lfs -text
+Assets/Resources/ filter=lfs diff=lfs merge=lfs -text
