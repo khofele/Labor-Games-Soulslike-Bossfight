@@ -7,3 +7,5 @@ Assets/Resources filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/* filter=lfs diff=lfs merge=lfs -text
 Assets/Resources/ filter=lfs diff=lfs merge=lfs -text
 Assets/Materials[[:space:]]and[[:space:]]Textures/* filter=lfs diff=lfs merge=lfs -text
+Assets/Materials[[:space:]]and[[:space:]]Textures/ filter=lfs diff=lfs merge=lfs -text
+Assets/Materials[[:space:]]and[[:space:]]Textures filter=lfs diff=lfs merge=lfs -text
