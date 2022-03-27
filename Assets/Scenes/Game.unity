@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 1511012304}
   - component: {fileID: 1511012306}
   - component: {fileID: 1511012305}
+  - component: {fileID: 1511012307}
   m_Layer: 0
   m_Name: Walls with entrance
   m_TagString: Untagged
@@ -518,6 +519,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511012303}
+  m_Mesh: {fileID: 4300000, guid: 1284ba9916e4f5a4d8c40f96653d08e6, type: 2}
+--- !u!64 &1511012307
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511012303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1284ba9916e4f5a4d8c40f96653d08e6, type: 2}
 --- !u!1 &1888307135
 GameObject:
