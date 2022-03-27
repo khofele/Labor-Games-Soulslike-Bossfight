@@ -10,3 +10,4 @@ Assets/Materials[[:space:]]and[[:space:]]Textures/* filter=lfs diff=lfs merge=lf
 Assets/Materials[[:space:]]and[[:space:]]Textures/ filter=lfs diff=lfs merge=lfs -text
 Assets/Materials[[:space:]]and[[:space:]]Textures filter=lfs diff=lfs merge=lfs -text
 *.tga filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
