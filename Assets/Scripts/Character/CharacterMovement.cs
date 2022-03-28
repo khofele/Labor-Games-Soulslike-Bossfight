@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     //general
-    [SerializeField] private Camera cam = null;
+    [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
+    private CharacterController controller = null;
     private Rigidbody rbody = null;
+    private Animator animator = null;
 
     //Stats
     [SerializeField] private int vitality = 5;
@@ -22,12 +24,18 @@ public class CharacterController : MonoBehaviour
     private float attackPower = 50f;
     private float staminaReg = 5f;
     //action speed
-    private float speed = 100f; //TODO: anpassen
+    private float speed = 6f; 
 
     //equipment
     [SerializeField] private int leftPotions = 5; //TODO: anpassen
     private float armorValue = 0f;
     private float weaponValue = 0f;
+
+    //basic movement
+    private float targetAngle = 0f; //camera target angle - where the camera shall be pointing at
+    private float angle = 0f; //using targetAngle to get a smoother transition to new angle
+    private float smoothTurnTime = 0.1f; //time so the character turns around smoothly
+    private float smoothTurnVelocity = 0f; //velocity so the character turns around smoothly
 
     //sounds
     [SerializeField] private AudioClip[] footstepSounds;    // an array of footstep sounds that will be randomly selected from.
@@ -40,8 +48,10 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        controller = GetComponent<CharacterController>();
         rbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
 
         //set values regarding equipment
         SetEquipmentValues();
@@ -54,7 +64,27 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // ----------- Movement ----------- 
+        // ----------- General Character and Camera Movement ----------- 
+
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        //check if button pressed
+        if(direction.magnitude >= 0.1f)
+        {
+            //camera and player rotation
+            targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //angle to point character at
+            angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothTurnVelocity, smoothTurnTime); //smoother transition to target angle
+            transform.rotation = Quaternion.Euler(0f, angle, 0f); //set character rotation
+
+            //move character in chosen direction
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * speed * Time.deltaTime); 
+        }
+
+        // ----------- Special Movement ----------- 
+
         Run();
 
         Roll();
