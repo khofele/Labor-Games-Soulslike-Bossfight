@@ -42,6 +42,7 @@ namespace BBUnity.Actions
                                              area.transform.position.y,
                                              UnityEngine.Random.Range(area.transform.position.z - area.transform.localScale.z * boxCollider.size.z * 0.5f,
                                                                       area.transform.position.z + area.transform.localScale.z * boxCollider.size.z * 0.5f));
+
             }
             else
             {
