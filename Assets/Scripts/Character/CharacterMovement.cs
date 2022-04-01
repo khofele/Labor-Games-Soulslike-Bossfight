@@ -6,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     //general
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
-    private CharacterController controller = null;
+    private CharacterController controller = null; 
     private Rigidbody rbody = null;
     private Animator animator = null;
 
@@ -24,18 +24,12 @@ public class CharacterMovement : MonoBehaviour
     private float attackPower = 50f;
     private float staminaReg = 5f;
     //action speed
-    private float speed = 6f; 
+    private float speed = 6f;
 
     //equipment
     [SerializeField] private int leftPotions = 5; //TODO: anpassen
     private float armorValue = 0f;
     private float weaponValue = 0f;
-
-    //basic movement
-    private float targetAngle = 0f; //camera target angle - where the camera shall be pointing at
-    private float angle = 0f; //using targetAngle to get a smoother transition to new angle
-    private float smoothTurnTime = 0.1f; //time so the character turns around smoothly
-    private float smoothTurnVelocity = 0f; //velocity so the character turns around smoothly
 
     //sounds
     [SerializeField] private AudioClip[] footstepSounds;    // an array of footstep sounds that will be randomly selected from.
@@ -64,36 +58,11 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // ----------- General Character and Camera Movement ----------- 
-
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-        //check if button pressed
-        if(direction.magnitude >= 0.1f)
-        {
-            //camera and player rotation
-            targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //angle to point character at
-            angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothTurnVelocity, smoothTurnTime); //smoother transition to target angle
-            transform.rotation = Quaternion.Euler(0f, angle, 0f); //set character rotation
-
-            //move character in chosen direction
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime); 
-        }
-
-        // ----------- Special Movement ----------- 
-
-        Run();
-
-        Roll();
-
-        Attack();
-
-        UsePotion();
 
     }
+
+
+    //--------------------------SETTER METHODS-----------------------
 
     //method to set the equipment values depending on the chosen equipment
     //these values are used to determine the speed of the player's actions
@@ -122,59 +91,24 @@ public class CharacterMovement : MonoBehaviour
     private void SetSpeed()
     {
         //TODO: Berechnung anpassen!
-        speed = speed - (armorValue + weaponValue) / 2;
+        speed = (armorValue + weaponValue) / 2;
     }
 
 
-    //--------------------------SKILLS-----------------------
+    //--------------------------GETTER METHODS-----------------------
 
-    private void Run()
+    public Transform GetCam()
     {
-        //run in chosen direction
+        return cam;
     }
 
-    private void Roll()
+    public CharacterController GetController()
     {
-        //deactivate skills etc
-        //roll animation in chosen direction
+        return controller;
     }
 
-    private void Attack()
+    public float GetSpeed()
     {
-        //determine weapon type
-        //deactivate other skills etc
-        //attack combo to the front (adjusted animation and attack speed)
-        //heavy attack
-    }
-
-    //method to let the player use a potion
-    private void UsePotion()
-    {
-        //check if he/she has a potion left
-        if (leftPotions >= 1)
-        {
-            //deactivate skills etc
-            //drink animation
-        }
-    }
-
-    //player got stunned
-    private void Stun()
-    {
-        //deactivate skills etc
-    }
-
-    //method to let the player take damage
-    private void TakeDamage()
-    {
-        //decrease health
-        //maybe die
-    }
-
-    //player died - game end
-    private void Die()
-    {
-        //player dead - game end
-        //UI defeat
+        return speed;
     }
 }

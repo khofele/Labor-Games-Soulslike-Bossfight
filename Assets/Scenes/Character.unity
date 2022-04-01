@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh87510
+  m_Name: pb_Mesh93596
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1061,7 +1061,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304344662}
-  m_LocalRotation: {x: 0.18563129, y: -0.000000008453663, z: 0.0000000015970214, w: 0.98261946}
+  m_LocalRotation: {x: 0.18563129, y: 0.000000008453663, z: -0.0000000015970214, w: 0.98261946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1188,7 +1188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348184438}
-  m_LocalRotation: {x: 0.18563128, y: -0.000000008453671, z: 0.0000000015970423, w: 0.98261946}
+  m_LocalRotation: {x: 0.18563128, y: 0.0000000084536556, z: -0.0000000015969632, w: 0.98261946}
   m_LocalPosition: {x: 9.58, y: 10.059999, z: 24.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1376,11 +1376,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1348184441}
+  controller: {fileID: 1394365332}
   vitality: 5
   endurance: 5
   strength: 5
   physStrength: 5
+  speed: 6
   leftPotions: 5
+  targetAngle: 0
+  angle: 0
+  smoothTurnTime: 0.1
+  smoothTurnVelocity: 0
   footstepSounds: []
   rollSound: {fileID: 0}
 --- !u!143 &1394365332
