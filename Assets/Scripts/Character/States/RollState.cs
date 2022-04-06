@@ -4,17 +4,21 @@ using UnityEngine;
 
 namespace stateMachine
 {
-    public class WalkState : BaseState
+    public class RollState : BaseState
     {
+        //value to roll faster than walking speed
+        private float valueFaster = 2f;
+
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            Debug.Log("Walk");
+            Debug.Log("Roll");
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            //determine roll direction
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -26,13 +30,14 @@ namespace stateMachine
 
             //move character in chosen direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * GetCharacterMovement(animator).GetSpeed() * Time.deltaTime);
+            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharacterMovement(animator).GetSpeed() * valueFaster) * Time.deltaTime);
+
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-           
+            animator.SetBool("Roll", false);
         }
     }
 
