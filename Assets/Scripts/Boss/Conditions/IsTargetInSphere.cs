@@ -19,8 +19,9 @@ public class IsTargetInSphere : GOCondition
     public override bool Check()
     {
         Collider[] objectsInRange = Physics.OverlapSphere(gameObject.transform.position, range, layerMask);
-        
-        for(int i = 0; i < objectsInRange.Length; i++)
+
+
+        for (int i = 0; i < objectsInRange.Length; i++)
         {
             if(objectsInRange[i].gameObject == target)
             {

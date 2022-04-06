@@ -1,18 +1,34 @@
+using BBUnity;
+using Pada1.BBCore.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int health = 1000;
+    [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
+
+    public int Health
     {
-        
+        get => health;
+        set
+        {
+            health = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(Collider collider, int damage) // TODO: vom Spieler aufrufen?
+        // TODO: anpassen --> je nach collider mehr oder weniger Health abziehen
     {
-        
+        health -= damage;
+    }
+
+    public void ChangeBehavior()
+    {
+        if(behaviorPhaseTwo != null)
+        {
+            gameObject.GetComponent<BehaviorExecutor>().behavior = behaviorPhaseTwo;
+        }
     }
 }

@@ -326,9 +326,13 @@ MonoBehaviour:
     objectParams:
     - {fileID: 881389983}
     - {fileID: 1360543225}
+    - {fileID: 222441605}
+    - {fileID: 2111707818}
     objectParamsNames:
     - area
     - player
+    - bossController
+    - gameManager
     objectParamsLostDefaultValue: 
     layerMaskParams:
     - serializedVersion: 2
@@ -362,6 +366,20 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
+--- !u!114 &222441605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222441601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3634f8b823a771840a1c5963fc6fc597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  behaviorPhaseTwo: {fileID: 11400000, guid: fe708b1e6e222ee43aba1e850b9e9f08, type: 2}
 --- !u!1 &407320952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,9 +1048,13 @@ MonoBehaviour:
     objectParams:
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     objectParamsNames:
     - area
     - player
+    - bossController
+    - gameManager
     objectParamsLostDefaultValue: 
     layerMaskParams:
     - serializedVersion: 2
@@ -1213,6 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ec3cfdf1847264483160291b45bd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  phaseTwo: 0
 --- !u!4 &2111707819
 Transform:
   m_ObjectHideFlags: 0

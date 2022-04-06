@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private BossController boss = null;
+    [SerializeField] private bool phaseTwo = false;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(boss.Health >= (boss.Health * 0.5f))
+        {
+            phaseTwo = true;
+            boss.ChangeBehavior();
+        }
     }
 }
