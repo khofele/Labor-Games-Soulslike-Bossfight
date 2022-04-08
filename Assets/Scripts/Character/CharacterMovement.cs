@@ -26,6 +26,8 @@ public class CharacterMovement : MonoBehaviour
     private float defense = 50f;
     private float attackPower = 50f;
     private float staminaReg = 5f;
+    //multiplicator for SetAttributes()
+    [SerializeField] private float multiplicator = 100f;
     //action speed
     private float speed = 6f;
     //fight
@@ -276,17 +278,20 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    //method to set the attributes depending on the chosen stats and equipment
+    //Method to set the attributes depending on the chosen stats and equipment.
+    //For the respective base value, the determined stat is multiplied by the multiplier and added to the base value.
+    //TODO: Balancing Berechnung
     private void SetAttributes()
     {
-        //TODO: Berechnung anpassen!
-        health += vitality * 1.5f;
-        stamina += endurance * 1.5f;
-        carryCapacity += physStrength * 1.5f;
-        resistance += armorValue * 1.5f;
-        defense += armorValue * 1.5f;
-        attackPower += strength * 1.5f;
-        staminaReg += endurance * 1.5f;
+        //stat affected
+        health += vitality * multiplicator;
+        stamina += endurance * multiplicator;
+        staminaReg += endurance * multiplicator;
+        attackPower += strength * multiplicator;
+        carryCapacity += physStrength * multiplicator;
+        //equipment affected
+        resistance += armorValue * multiplicator;
+        defense += armorValue * multiplicator;
     }
 
     //method to determine speed with which actions are performed (walk, run, attack, roll)
