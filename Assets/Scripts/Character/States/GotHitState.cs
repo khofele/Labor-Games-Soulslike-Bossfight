@@ -11,7 +11,11 @@ namespace stateMachine
         {
             Debug.Log("GotHit");
 
+            //player has currently been hit - animation shall not play twice at a time
+            animator.SetBool("alreadyHit", true);
+
             //set all bool parameters of aborted actions to false
+            //damage combo is aborted
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);
 
@@ -30,6 +34,7 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetBool("GotHit", false);
+            animator.SetBool("alreadyHit", false);
         }
     }
 

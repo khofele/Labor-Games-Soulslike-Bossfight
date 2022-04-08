@@ -204,9 +204,14 @@ public class CharacterMovement : MonoBehaviour
         if (!animator.GetBool("GotStunned")) //if not already stunned atm
         {
             animator.SetBool("GotStunned", true);
-            //animator.Play("GotStunned", 0, 0.5f);
-            //animator.SetBool("GotStunned", false);
+            Invoke("EndStun", 3);
         }
+    }
+
+    private void EndStun()
+    {
+        animator.SetBool("GotStunned", false);
+        animator.SetBool("alreadyStunned", false);
     }
 
 

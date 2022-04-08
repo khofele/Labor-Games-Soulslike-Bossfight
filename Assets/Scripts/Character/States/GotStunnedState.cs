@@ -11,21 +11,27 @@ namespace stateMachine
         {
             Debug.Log("GotStunned");
 
+            //currently stunned
+            animator.SetBool("alreadyStunned", true);
+
             //set all bool parameters of aborted actions to false
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Run", false);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-        //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
+        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
 
-        //}
+        }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetBool("GotStunned", false);
+            animator.SetBool("alreadyStunned", false);
         }
     }
 
