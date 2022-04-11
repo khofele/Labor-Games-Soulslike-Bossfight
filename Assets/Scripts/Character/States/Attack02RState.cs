@@ -11,7 +11,9 @@ namespace stateMachine
         {
             Debug.Log("Attack02");
 
-            //animator.SetBool("Attack01R", false);
+            //use neededStamina for action
+            neededStamina = 5f;
+            GetCharacterMovement(animator).UseStamina(neededStamina);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -522,6 +522,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &649570767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163252, guid: 6b31f8c3b51cd408094418df069e72d7, type: 3}
+  m_PrefabInstance: {fileID: 179658779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834747333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1066,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304344662}
-  m_LocalRotation: {x: 0.18563129, y: -0.0000000084536635, z: 0.0000000015970215, w: 0.98261946}
+  m_LocalRotation: {x: 0.18563129, y: 0.000000008453662, z: -0.0000000015970212, w: 0.98261946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1188,7 +1193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348184438}
-  m_LocalRotation: {x: 0.18563128, y: -0.0000000084536715, z: 0.0000000015970425, w: 0.98261946}
+  m_LocalRotation: {x: 0.18563128, y: 0.000000008453655, z: -0.0000000015969633, w: 0.98261946}
   m_LocalPosition: {x: 9.58, y: 10.059999, z: 24.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1381,8 +1386,11 @@ MonoBehaviour:
   endurance: 5
   strength: 5
   physStrength: 5
+  multiplicator: 100
+  dragon: {fileID: 649570767}
   potionCount: 5
   healValue: 500
+  weapon: {fileID: 0}
   footstepSounds: []
   weaponSounds: []
   rollSound: {fileID: 0}
@@ -1443,7 +1451,7 @@ Animator:
     animation clip 'Attack02R'\n\tFrom animation clip 'Death'\n\tFrom animation clip
     'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation clip 'Run'\n\tFrom
     animation clip 'Walk'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation
-    clip 'Idle_Combat'"
+    clip 'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0

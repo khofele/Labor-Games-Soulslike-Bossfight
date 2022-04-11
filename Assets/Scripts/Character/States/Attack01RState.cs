@@ -6,10 +6,14 @@ namespace stateMachine
 {
     public class Attack01RState : BaseState
     {
+
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             Debug.Log("Attack01");
+            //use neededStamina for action
+            neededStamina = 10f;
+            GetCharacterMovement(animator).UseStamina(neededStamina);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

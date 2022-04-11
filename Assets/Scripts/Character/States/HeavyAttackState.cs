@@ -11,8 +11,9 @@ namespace stateMachine
         {
             Debug.Log("Heavy Attack");
 
-            //player started attacking
-            animator.SetBool("attacking", true);
+            //use neededStamina for action
+            neededStamina = 20f;
+            GetCharacterMovement(animator).UseStamina(neededStamina);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

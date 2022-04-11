@@ -13,6 +13,10 @@ namespace stateMachine
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             Debug.Log("Roll");
+
+            //use neededStamina for action
+            neededStamina = 25f;
+            GetCharacterMovement(animator).UseStamina(neededStamina);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -15,17 +15,17 @@ public class CharacterMovement : MonoBehaviour
 
     //Stats
     [SerializeField] private int vitality = 5;
-    [SerializeField] private int endurance = 5;
-    [SerializeField] private int strength = 5;
-    [SerializeField] private int physStrength = 5;
+    [SerializeField] private int endurance = 2;
+    [SerializeField] private int strength = 4;
+    [SerializeField] private int physStrength = 3;
     //Attributes
     private float health = 1000f; //max HP
     private float stamina = 100f; //max Stamina
     private float carryCapacity = 50f;
     private float resistance = 15f;
     private float defense = 50f;
-    private float attackPower = 50f;
-    private float staminaReg = 5f;
+    private float attackPower = 50f; //is added to the weaponMinDmg value of the current weapon
+    private float staminaReg = 0.04f;
     //multiplicator for SetAttributes()
     [SerializeField] private float multiplicator = 100f;
     //action speed
@@ -34,6 +34,7 @@ public class CharacterMovement : MonoBehaviour
     private float currentHealth = 0f; 
     private float currentStamina = 0f;
     private int currentPotions = 0; //number of currently left potions
+    private bool regStamina = true; //if currently stamina shall be regenerated
     [SerializeField] private GameObject dragon = null; //the enemy - dragon
 
     //equipment
@@ -87,6 +88,11 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log(currentStamina);
+
+        //--------------------------REGENERATION-----------------------
+        RegenerateStamina();
+
         //--------------------------MOVEMENT-----------------------
         //direction calculation
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -199,6 +205,25 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    //method to call when skills need stamina
+    public void UseStamina(float usedStamina)
+    {
+        if(currentStamina - usedStamina >= 0f)
+        {
+            currentStamina = currentStamina - usedStamina;
+        }
+
+        Debug.Log(currentStamina);
+    }
+
+    //method called in Update() to regenerate the current stamina with time
+    private void RegenerateStamina()
+    {
+        if(regStamina && currentStamina + staminaReg <= stamina) //reg not more stamina than the max value
+        {
+            currentStamina += staminaReg;
+        }
+    }
 
 
     //--------------------------STUN-----------------------
@@ -232,6 +257,8 @@ public class CharacterMovement : MonoBehaviour
         {
             Death();
         }
+
+        Debug.Log(currentHealth);
     }
 
     //the received damage is calculated depending on the hitted collider(s) and the damage value
@@ -239,6 +266,7 @@ public class CharacterMovement : MonoBehaviour
     private float CalculateDamage(float damage)
     {
         //TODO: ersetzen durch finalen Code (Ticket genaue Hit Detection + erhaltener Dmg Berechnung)
+        damage = 5f; //for testing
         return damage;
     }
 
@@ -263,6 +291,8 @@ public class CharacterMovement : MonoBehaviour
             }
             currentPotions--;
         }
+
+        Debug.Log(currentHealth);
     }
 
 
@@ -285,18 +315,18 @@ public class CharacterMovement : MonoBehaviour
 
     //Method to set the attributes depending on the chosen stats and equipment.
     //For the respective base value, the determined stat is multiplied by the multiplier and added to the base value.
-    //TODO: Balancing Berechnung
+    //TODO: Balancing Berechnung + Basewerte
     private void SetAttributes()
     {
         //stat affected
-        health += vitality * multiplicator;
-        stamina += endurance * multiplicator;
-        staminaReg += endurance * multiplicator;
-        attackPower += strength * multiplicator;
-        carryCapacity += physStrength * multiplicator;
+        health = health + vitality * multiplicator;
+        stamina = stamina + endurance * multiplicator;
+        staminaReg = staminaReg + endurance / multiplicator;
+        attackPower = attackPower + strength;
+        carryCapacity = carryCapacity + physStrength * multiplicator;
         //equipment affected
-        resistance += armorValue * multiplicator;
-        defense += armorValue * multiplicator;
+        resistance = resistance + armorValue * multiplicator;
+        defense = defense + armorValue * multiplicator;
     }
 
     //method to determine speed with which actions are performed (walk, run, attack, roll)
@@ -304,6 +334,12 @@ public class CharacterMovement : MonoBehaviour
     {
         //TODO: Berechnung anpassen!
         speed = (armorValue + weaponValue) / 2;
+    }
+
+    //setter for the bool regStamina - whether stamina shall be regenerated or not
+    public void SetRegStamina(bool regStaminaValue)
+    {
+        regStamina = regStaminaValue;
     }
 
     //method to set animation methods suitable for the current weapon
@@ -348,5 +384,21 @@ public class CharacterMovement : MonoBehaviour
     public float GetSpeed()
     {
         return speed;
+    }
+
+    public float GetAttackPower()
+    {
+        return attackPower;
+    }
+
+    public float GetCurrentStamina()
+    {
+        return currentStamina;
+    }
+
+    //for menu to display character name
+    public string GetName()
+    {
+        return name;
     }
 }

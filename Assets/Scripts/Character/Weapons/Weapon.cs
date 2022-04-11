@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        charMovement = gameObject.GetComponentInParent<CharacterMovement>();
     }
 
     // Update is called once per frame
@@ -39,17 +39,8 @@ public class Weapon : MonoBehaviour
 
     public float GetWeaponMinDmg()
     {
+        //determine weaponMinDmg regarding the characters attack power
+        weaponMinDmg = weaponMinDmg + charMovement.GetAttackPower();
         return weaponMinDmg;
-    }
-
-    //Getter for CharacterMovement script
-    protected CharacterMovement GetCharacterMovement(Animator animator)
-    {
-        //if it has not yet been set
-        if (charMovement == null)
-        {
-            charMovement = animator.GetComponentInParent<CharacterMovement>();
-        }
-        return charMovement;
     }
 }

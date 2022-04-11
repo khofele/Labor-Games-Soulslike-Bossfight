@@ -10,6 +10,8 @@ namespace stateMachine
         //access to the CharacterMovement script
         protected CharacterMovement charMovement;
 
+        protected float neededStamina = 0f; //stamina needed to perform action
+
         //basic movement
         protected float targetAngle = 0f; //camera target angle - where the camera shall be pointing at
         protected float angle = 0f; //using targetAngle to get a smoother transition to new angle

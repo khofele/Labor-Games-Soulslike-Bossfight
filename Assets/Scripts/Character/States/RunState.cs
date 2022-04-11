@@ -12,7 +12,11 @@ namespace stateMachine
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //Debug.Log("Run");
+            Debug.Log("Run");
+
+            //needed stamina for action per frame
+            neededStamina = 1f;
+            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during running
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,6 +24,14 @@ namespace stateMachine
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
+                //use neededStamina for action
+                if (GetCharacterMovement(animator).GetCurrentStamina() < neededStamina) //not enough stamina
+                {
+                    animator.SetBool("Run", false); //can't run anymore at the moment
+                }
+                GetCharacterMovement(animator).UseStamina(neededStamina);
+
+
                 float horizontal = Input.GetAxisRaw("Horizontal");
                 float vertical = Input.GetAxisRaw("Vertical");
                 Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -37,13 +49,13 @@ namespace stateMachine
             {
                 animator.SetBool("Run", false);
             }
-            
+
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            
+            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 
