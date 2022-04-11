@@ -34,12 +34,14 @@ public class CharacterMovement : MonoBehaviour
     private float currentHealth = 0f; 
     private float currentStamina = 0f;
     private int currentPotions = 0; //number of currently left potions
+    [SerializeField] private GameObject dragon = null; //the enemy - dragon
 
     //equipment
     [SerializeField] private int potionCount = 5; //TODO: Anzahl anpassen //max potions
     [SerializeField] private float healValue = 500f; //TODO: Wert anpassen //value of health one potion heals
+    [SerializeField] private GameObject weapon = null; //TODO: set weapon in menu //current weapon
     private float armorValue = 0f;
-    private string weaponType = ""; //TODO: add all weapon types //sword, lance, ... 
+    private string weaponType = ""; 
     private float weaponValue = 0f;
 
     //sounds
@@ -270,11 +272,14 @@ public class CharacterMovement : MonoBehaviour
     //these values are used to determine the speed of the player's actions
     private void SetEquipmentValues()
     {
-        //TODO
-        //armorValue
-        //weaponType
-        weaponType = "sword"; //TODO weaponType setzen
-        //weaponValue
+        //TODO SetEquipmentValues() --> menü
+        //set armorValue
+        //TODO Set armorValue in Armor-Script
+        //armorValue = armor.GetComponent<Armor>().GetArmorType();
+        //set weaponType
+        weaponType = weapon.GetComponent<Weapon>().GetWeaponType();
+        //set weaponValue
+        weaponValue = weapon.GetComponent<Weapon>().GetWeaponMinDmg();
     }
 
 
