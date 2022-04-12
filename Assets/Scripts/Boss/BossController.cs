@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] private int health = 1000;
+    [SerializeField] private float health = 1000;
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
 
-    public int Health
+    public float Health
     {
         get => health;
         set
@@ -18,8 +18,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(Collider collider, int damage) // TODO: vom Spieler aufrufen?
-        // TODO: anpassen --> je nach collider mehr oder weniger Health abziehen
+    public void TakeDamage(float damage)
     {
         health -= damage;
     }
