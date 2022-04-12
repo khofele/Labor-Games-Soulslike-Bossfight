@@ -10,7 +10,7 @@ public class Damagable : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // TODO: GetSchaden von Spielerwaffe
-        // bossController.TakeDamage();
         
+        //bossController.TakeDamage(waffenSchaden + crit);
     }
 }
