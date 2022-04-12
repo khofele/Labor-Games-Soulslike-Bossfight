@@ -11,10 +11,13 @@ public class AttackRight : GOAction
     [InParam("target")]
     [SerializeField] private GameObject target = null;
 
+    [InParam("attack manager")]
+    [SerializeField] private AttackManager attackManager = null;
+
     public override TaskStatus OnUpdate()
     {
         // play attack animation
-        // player take damage check
+        attackManager.CurrentAttack = attackManager.AttackRight;
         Debug.Log("Attack Right");
         return TaskStatus.COMPLETED;
     }
