@@ -11,10 +11,13 @@ public class FireHeadAttack : GOAction
     [InParam("target")]
     [SerializeField] private GameObject target = null;
 
+    [InParam("attack manager")]
+    [SerializeField] private AttackManager attackManager = null;
+
     public override TaskStatus OnUpdate()
     {
         // play attack animation
-        // player take damage check
+        attackManager.CurrentAttack = attackManager.AttackFireHead;
         Debug.Log("Attack Fire Head");
         return TaskStatus.COMPLETED;
     }
