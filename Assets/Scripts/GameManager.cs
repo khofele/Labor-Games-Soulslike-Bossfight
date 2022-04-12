@@ -15,4 +15,9 @@ public class GameManager : MonoBehaviour
             boss.ChangeBehavior();
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(gameObject.transform.position, new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z+10));
+    }
 }

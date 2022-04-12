@@ -18,7 +18,7 @@ public class IsTargetInBoxFrontLongRange : GOCondition
 
     public override bool Check()
     {
-        Collider[] objectsInRange = Physics.OverlapBox(gameObject.transform.position, new Vector3(gameObject.transform.localScale.x + 10, gameObject.transform.localScale.y + 5, gameObject.transform.localScale.z + boxRange));
+        Collider[] objectsInRange = Physics.OverlapBox(gameObject.transform.position, new Vector3(gameObject.transform.localScale.x + 10, gameObject.transform.localScale.y + 5, gameObject.transform.localScale.z + boxRange), gameObject.transform.rotation);
 
         for (int i = 0; i < objectsInRange.Length; i++)
         {
