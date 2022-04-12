@@ -14,9 +14,10 @@ public class AttackFront : GOAction
     [InParam("attack manager")]
     [SerializeField] private AttackManager attackManager = null;
 
+
     public override TaskStatus OnUpdate()
     {
-        // play attack animation
+        attackManager.Animator.SetTrigger(attackManager.AttackFront.Animation.name);
         attackManager.CurrentAttack = attackManager.AttackFront;
         Debug.Log("Attack Front");
         return TaskStatus.COMPLETED;

@@ -16,7 +16,7 @@ public class FireHeadAttack : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        // play attack animation
+        attackManager.Animator.SetTrigger(attackManager.AttackFireHead.Animation.name);
         attackManager.CurrentAttack = attackManager.AttackFireHead;
         Debug.Log("Attack Fire Head");
         return TaskStatus.COMPLETED;

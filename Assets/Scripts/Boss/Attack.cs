@@ -8,6 +8,8 @@ public class Attack
     private float damageMax = 0;
     private float damage = 0;
 
+    private Animation animation = null;
+
     public float Damage
     {
         get => damage = Random.Range(damageMin, damageMax);
@@ -17,5 +19,7 @@ public class Attack
     {
         this.damageMin = damageMin;
         this.damageMax = damageMax;
-    }
+    }    
+    
+    public Animation Animation { get => animation; set => animation = value; }
 }

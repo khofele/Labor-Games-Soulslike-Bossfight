@@ -16,7 +16,7 @@ public class AttackLeft : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        // play attack animation
+        attackManager.Animator.SetTrigger(attackManager.AttackLeft.Animation.name);
         attackManager.CurrentAttack = attackManager.AttackLeft;
         Debug.Log("Attack Left");
         return TaskStatus.COMPLETED;
