@@ -217,8 +217,6 @@ public class CharacterMovement : MonoBehaviour
         {
             currentStamina = currentStamina - usedStamina;
         }
-
-        Debug.Log(currentStamina);
     }
 
     //method called in Update() to regenerate the current stamina with time
@@ -232,7 +230,7 @@ public class CharacterMovement : MonoBehaviour
                 currentStamina += staminaReg;
             }
 
-            Debug.Log(currentStamina);
+            //Debug.Log(currentStamina);
         }
     }
 
