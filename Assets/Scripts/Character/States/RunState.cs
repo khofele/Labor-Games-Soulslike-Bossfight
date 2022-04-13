@@ -15,7 +15,7 @@ namespace stateMachine
             Debug.Log("Run");
 
             //needed stamina for action per frame
-            neededStamina = 1f;
+            neededStamina = 0.1f;
             GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during running
         }
 
@@ -24,11 +24,6 @@ namespace stateMachine
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                //use neededStamina for action
-                if (GetCharacterMovement(animator).GetCurrentStamina() < neededStamina) //not enough stamina
-                {
-                    animator.SetBool("Run", false); //can't run anymore at the moment
-                }
                 GetCharacterMovement(animator).UseStamina(neededStamina);
 
 
@@ -55,6 +50,11 @@ namespace stateMachine
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            if (animator.GetBool("Run"))
+            {
+                animator.SetBool("Run", false);
+            }
+
             GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
         }
     }

@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
 
     //general
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
+    [SerializeField] private Transform hand = null; //right hand of the character (holds weapon)
     private CharacterController controller = null; 
     private Rigidbody rbody = null;
     private Animator animator = null;
@@ -20,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private int physStrength = 3;
     //Attributes
     private float health = 1000f; //max HP
-    private float stamina = 100f; //max Stamina
+    private float stamina = 0f; //max Stamina
     private float carryCapacity = 50f;
     private float resistance = 15f;
     private float defense = 50f;
@@ -40,9 +41,9 @@ public class CharacterMovement : MonoBehaviour
     //equipment
     [SerializeField] private int potionCount = 5; //TODO: Anzahl anpassen //max potions
     [SerializeField] private float healValue = 500f; //TODO: Wert anpassen //value of health one potion heals
-    [SerializeField] private GameObject weapon = null; //TODO: set weapon in menu //current weapon
+    [SerializeField] private GameObject weaponPrefab = null; //TODO: set weapon in menu //current weapon prefab
+    private GameObject currentWeapon = null; //TODO: set weapon in menu //current weapon object (instantiated)
     private float armorValue = 0f;
-    private string weaponType = ""; 
     private float weaponValue = 0f;
 
     //sounds
@@ -71,16 +72,14 @@ public class CharacterMovement : MonoBehaviour
 
         name = "Godwin the Brave";
 
+        //place weapon in character's hand
+        currentWeapon = Instantiate<GameObject>(weaponPrefab);
+        currentWeapon.transform.parent = hand.transform;
+        currentWeapon.transform.position = hand.position;
         //set values regarding equipment
-        SetEquipmentValues();
-        //set attributes with chosen stats
+        //SetEquipmentValues();
+        //set attributes with chosen stats and current values
         SetAttributes();
-        //set current health and stamina values and potion count
-        currentHealth = health;
-        currentStamina = stamina;
-        currentPotions = potionCount;
-        //set attack animations for current weapon
-        //SetAttackAnimations();
         //determine the speed actions are performed
         //SetSpeed();
     }
@@ -88,10 +87,12 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(currentStamina);
-
-        //--------------------------REGENERATION-----------------------
+        //--------------------------STAMINA-----------------------
+        //regeneration
         RegenerateStamina();
+        //set value in animator - check whether enough stamina to use a skill
+        animator.SetFloat("currentStamina", currentStamina);
+
 
         //--------------------------MOVEMENT-----------------------
         //direction calculation
@@ -137,10 +138,12 @@ public class CharacterMovement : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
             animator.SetBool("Attack01R", false);
+            SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
             animator.SetBool("Attack02R", false);
+            SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
         {
@@ -184,6 +187,8 @@ public class CharacterMovement : MonoBehaviour
     {
         lastClickedTime = Time.time;
         noOfClicks++;
+
+        SetRegStamina(false); //no stamina reg during the combo
         //start Attack01
         if(noOfClicks == 1)
         {
@@ -221,7 +226,13 @@ public class CharacterMovement : MonoBehaviour
     {
         if(regStamina && currentStamina + staminaReg <= stamina) //reg not more stamina than the max value
         {
-            currentStamina += staminaReg;
+            //no reg during whole attack combo
+            if(!animator.GetBool("Attack01R") && !animator.GetBool("Attack02R") && !animator.GetBool("Attack03R"))
+            {
+                currentStamina += staminaReg;
+            }
+
+            Debug.Log(currentStamina);
         }
     }
 
@@ -306,10 +317,10 @@ public class CharacterMovement : MonoBehaviour
         //set armorValue
         //TODO Set armorValue in Armor-Script
         //armorValue = armor.GetComponent<Armor>().GetArmorType();
-        //set weaponType
-        weaponType = weapon.GetComponent<Weapon>().GetWeaponType();
         //set weaponValue
-        weaponValue = weapon.GetComponent<Weapon>().GetWeaponMinDmg();
+        weaponValue = weaponPrefab.GetComponent<WeaponManager>().GetWeaponMinDmg();
+
+        Debug.Log(weaponValue);
     }
 
 
@@ -327,6 +338,12 @@ public class CharacterMovement : MonoBehaviour
         //equipment affected
         resistance = resistance + armorValue * multiplicator;
         defense = defense + armorValue * multiplicator;
+
+        //TODO: momentan 0 warum auch immer - wird nicht überschrieben
+        //set start current health, stamina values and potion count
+        currentHealth = health;
+        currentStamina = stamina;
+        currentPotions = potionCount;
     }
 
     //method to determine speed with which actions are performed (walk, run, attack, roll)
@@ -340,27 +357,6 @@ public class CharacterMovement : MonoBehaviour
     public void SetRegStamina(bool regStaminaValue)
     {
         regStamina = regStaminaValue;
-    }
-
-    //method to set animation methods suitable for the current weapon
-    private void SetAttackAnimations()
-    {
-
-        //TODO: set animation motions for current weapon
-        switch (weaponType)
-        {
-            case "sword":
-                //Attack01R
-                //Attack02R
-                //Attack03R
-                //HeavyAttack
-                break;
-            case "lance":
-                break;
-            default:
-                Debug.Log("weaponType could not be set!");
-                break;
-        } 
     }
 
 

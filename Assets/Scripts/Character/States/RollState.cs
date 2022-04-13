@@ -15,8 +15,9 @@ namespace stateMachine
             Debug.Log("Roll");
 
             //use neededStamina for action
-            neededStamina = 25f;
+            neededStamina = 60f;
             GetCharacterMovement(animator).UseStamina(neededStamina);
+            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -42,6 +43,7 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetBool("Roll", false);
+            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 

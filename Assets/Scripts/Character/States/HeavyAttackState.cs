@@ -12,8 +12,9 @@ namespace stateMachine
             Debug.Log("Heavy Attack");
 
             //use neededStamina for action
-            neededStamina = 20f;
+            neededStamina = 60f;
             GetCharacterMovement(animator).UseStamina(neededStamina);
+            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,8 +27,8 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //player finished attack
-            animator.SetBool("attacking", false);
             animator.SetBool("HeavyAttack", false);
+            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 
