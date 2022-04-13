@@ -16,6 +16,9 @@ namespace BBUnity.Actions
         [Help("Target position where the game object will be moved")]
         public Vector3 target;
 
+        [InParam("attack manager")]
+        [SerializeField] private AttackManager attackManager = null;
+
         private UnityEngine.AI.NavMeshAgent navAgent;
 
         /// <summary>Initialization Method of MoveToPosition.</summary>
@@ -43,7 +46,8 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
-                return TaskStatus.COMPLETED;
+                attackManager.Animator.SetTrigger("Walk");
+            return TaskStatus.COMPLETED;
 
             return TaskStatus.RUNNING;
         }
