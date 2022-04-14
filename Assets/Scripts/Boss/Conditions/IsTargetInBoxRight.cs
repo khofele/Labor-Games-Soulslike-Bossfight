@@ -15,7 +15,7 @@ public class IsTargetInBoxRight : GOCondition
 
     public override bool Check()
     {
-        Collider[] objectsInRange = Physics.OverlapBox(new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y + 5, gameObject.transform.position.z - 2), new Vector3(gameObject.transform.localScale.x + 6, gameObject.transform.localScale.y, gameObject.transform.localScale.z + 45));
+        Collider[] objectsInRange = Physics.OverlapBox(new Vector3(gameObject.transform.position.x + 5, gameObject.transform.position.y + 5, gameObject.transform.position.z + 1.5f), new Vector3(gameObject.transform.localScale.x + 6, gameObject.transform.localScale.y, gameObject.transform.localScale.z + 13), gameObject.transform.rotation);
 
         for (int i = 0; i < objectsInRange.Length; i++)
         {
