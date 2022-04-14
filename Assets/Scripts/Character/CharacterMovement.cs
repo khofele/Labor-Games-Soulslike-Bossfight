@@ -36,6 +36,7 @@ public class CharacterMovement : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        animator.fireEvents = false; //no sounds directly from the animations (read-only)
     }
 
     // Update is called once per frame
