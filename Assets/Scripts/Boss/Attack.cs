@@ -21,5 +21,6 @@ public class Attack
         this.damageMax = damageMax;
     }    
     
+    // TODO: RAUS
     public Animation Animation { get => animation; set => animation = value; }
 }
