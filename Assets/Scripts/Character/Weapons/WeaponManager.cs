@@ -9,7 +9,9 @@ public class WeaponManager : MonoBehaviour
     protected Animator animator;
     //weapon stats
     protected string weaponType = ""; //type of weapon
+    protected float weaponWeight = 0f; //weight of the weapon
     protected float weaponMinDmg = 0f; //minimum damage the weapon makes
+    protected float weaponMaxDmg = 0f; //maximum damage the weapon makes
 
     // Start is called before the first frame update
     void Start()
@@ -51,16 +53,14 @@ public class WeaponManager : MonoBehaviour
 
     //--------------------------GETTER FOR DRAGON & CHAR-----------------------
 
-    //Setter for the weapon values
-    //TODO SetValues() - Call von Menü zum Setzen der Werte? (Call des jew. Waffenskripts zum Setzen der Werte)
-    //public void SetValues(string weaponTypeValue, float weaponMinDmgValue)
-    //{
-    //weaponType = weaponTypeValue;
-    //weaponMinDmg = weaponMinDmgValue;
-    //}
     public string GetWeaponType()
     {
         return weaponType;
+    }
+
+    public float GetWeaponWeight()
+    {
+        return weaponWeight;
     }
 
     public float GetWeaponMinDmg()
@@ -68,5 +68,12 @@ public class WeaponManager : MonoBehaviour
         //determine weaponMinDmg regarding the characters attack power
         weaponMinDmg = weaponMinDmg + charMovement.GetAttackPower();
         return weaponMinDmg;
+    }
+
+    public float GetWeaponMaxDmg()
+    {
+        //determine weaponMaxDmg regarding the characters attack power
+        weaponMaxDmg = weaponMaxDmg + charMovement.GetAttackPower();
+        return weaponMaxDmg;
     }
 }

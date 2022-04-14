@@ -14,6 +14,8 @@ public class ShortSword : WeaponManager
     public void Reset()
     {
         weaponType = "shortsword";
+        weaponWeight = 10f;
         weaponMinDmg = 50f;
+        weaponMaxDmg = 80f;
     }
 }
