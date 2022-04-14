@@ -18,10 +18,6 @@ namespace stateMachine
             //damage combo is aborted
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);
-
-            //TODO: ersetzen durch finalen Code (Ticket genaue Hit Detection + erhaltener Dmg Berechnung)
-            float damage = 0f;
-            GetCharController(animator).GotHit(damage);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

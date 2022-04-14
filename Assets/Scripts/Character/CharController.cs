@@ -30,15 +30,16 @@ public class CharController : MonoBehaviour
     //action speed
     private float speed = 6f;
     //fight
+    [SerializeField] private GameObject dragon = null; //the enemy - dragon
+    [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
     private float currentHealth = 0f;
     private float currentStamina = 0f;
     private int currentPotions = 0; //number of currently left potions
     private bool regStamina = true; //if currently stamina shall be regenerated
-    [SerializeField] private GameObject dragon = null; //the enemy - dragon
 
     //equipment
-    [SerializeField] private int potionCount = 5; //TODO: Anzahl anpassen //max potions
-    [SerializeField] private float healValue = 500f; //TODO: Wert anpassen //value of health one potion heals
+    [SerializeField] private int potionCount = 5; //max potions
+    [SerializeField] private float healValue = 400f; //value of health one potion heals
     [SerializeField] private GameObject weaponPrefab = null; //TODO: set weapon in menu //current weapon prefab
     private GameObject currentWeapon = null; //TODO: set weapon in menu //current weapon object (instantiated)
     private float armorWeight = 0f;  //weight of the armor
@@ -111,11 +112,27 @@ public class CharController : MonoBehaviour
 
     //--------------------------DAMAGE-----------------------
 
-    //method that is called when the character receives damage from the boss
-    public void GotHit(float damage)
+    //the received damage is calculated depending on the hitted collider(s) and the damage value
+    //submitted by the boss attack.
+   
+    public void CalculateDamage(float damageMin, float damageMax, float crit)
     {
-        //TODO: ersetzen durch finalen Code (Ticket genaue Hit Detection + erhaltener Dmg Berechnung)
-        currentHealth -= CalculateDamage(damage);
+        //calculate random attackDmg value between damageMin and damageMax
+        float calculatedDamage = Random.Range(damageMin, damageMax);
+        //add crit to calculatedDamage
+        calculatedDamage += crit;
+
+        //subtract damage from current health
+        currentHealth -= calculatedDamage;
+
+        //call animation
+        charMovement.GotHit();
+
+        //stun value reached --> player gets stunned
+        if (calculatedDamage >= stunValue)
+        {
+            charMovement.GotStunned();
+        }
 
         //health is <= 0 --> player dies
         if (currentHealth <= 0f)
@@ -124,15 +141,6 @@ public class CharController : MonoBehaviour
         }
 
         Debug.Log(currentHealth);
-    }
-
-    //the received damage is calculated depending on the hitted collider(s) and the damage value
-    //submitted by the boss attack.
-    private float CalculateDamage(float damage)
-    {
-        //TODO: ersetzen durch finalen Code (Ticket genaue Hit Detection + erhaltener Dmg Berechnung)
-        damage = 5f; //for testing
-        return damage;
     }
 
 
@@ -168,7 +176,6 @@ public class CharController : MonoBehaviour
         resistance = resistance + armorWeight * multiplicator;
         defense = defense + armorWeight * multiplicator;
 
-        //TODO: momentan 0 warum auch immer - wird nicht überschrieben
         //set start current health, stamina values and potion count
         currentHealth = health;
         currentStamina = stamina;
@@ -179,7 +186,7 @@ public class CharController : MonoBehaviour
     private void SetSpeed()
     {
         //TODO: Berechnung anpassen!
-        speed = (armorWeight + weaponWeight) / 2;
+        speed = (armorWeight + weaponWeight) / 10;
     }
 
     //setter for the bool regStamina - whether stamina shall be regenerated or not
@@ -189,6 +196,7 @@ public class CharController : MonoBehaviour
     }
 
 
+    //--------------------------GETTER METHODS-----------------------
     public float GetSpeed()
     {
         return speed;
@@ -212,6 +220,12 @@ public class CharController : MonoBehaviour
     public int GetCurrentPotions()
     {
         return currentPotions;
+    }
+
+    //Getter for the CharDamagable-scripts to get the values of the current attack of the dragon
+    public GameObject GetDragon()
+    {
+        return dragon;
     }
 
     //for menu to display character name

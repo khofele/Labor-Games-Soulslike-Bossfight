@@ -168,6 +168,9 @@ public class CharacterMovement : MonoBehaviour
         if (!animator.GetBool("GotStunned")) //if not already stunned atm
         {
             animator.SetBool("GotStunned", true);
+
+            //TODO show stunned UI bar?
+
             Invoke("EndStun", 3);
         }
     }
@@ -176,6 +179,15 @@ public class CharacterMovement : MonoBehaviour
     {
         animator.SetBool("GotStunned", false);
         animator.SetBool("alreadyStunned", false);
+    }
+
+
+    //method that is called when the character receives damage from the boss - called in CharDamagable (script of every collider)
+    public void GotHit()
+    {
+        //calculate random attackDmg value between damageMin and damageMax
+
+        //call GotHit and add crit to attackDmg
     }
 
 
