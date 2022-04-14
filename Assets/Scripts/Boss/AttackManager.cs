@@ -5,10 +5,10 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     // all attacks
-    private Attack attackFront = new Attack(10, 20);
-    private Attack attackLeft = new Attack(10, 20);
-    private Attack attackRight = new Attack(10, 20);
-    private Attack attackFireHead = new Attack(10, 20);
+    private Attack attackFront = new Attack(150, 200);
+    private Attack attackLeft = new Attack(100, 150);
+    private Attack attackRight = new Attack(100, 150);
+    private Attack attackFireHead = new Attack(150, 250);
 
     private Attack currentAttack = null;
     [SerializeField] private Animator animator = null;
