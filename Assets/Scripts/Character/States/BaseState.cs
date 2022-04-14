@@ -7,8 +7,9 @@ namespace stateMachine
     //basic state class to enter and exit a state
     public class BaseState : StateMachineBehaviour
     {
-        //access to the CharacterMovement script
+        //access to the character scripts
         protected CharacterMovement charMovement;
+        protected CharController charController;
 
         protected float neededStamina = 0f; //stamina needed to perform action
 
@@ -27,6 +28,16 @@ namespace stateMachine
             }
             return charMovement;
         }    
+
+        protected CharController GetCharController(Animator animator)
+        {
+            //if it has not yet been set
+            if(charController == null)
+            {
+                charController = animator.GetComponentInParent<CharController>();
+            }
+            return charController;
+        }
     }
 
 }

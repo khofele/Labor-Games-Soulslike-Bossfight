@@ -13,8 +13,8 @@ namespace stateMachine
 
             //use neededStamina for action
             neededStamina = 25f;
-            GetCharacterMovement(animator).UseStamina(neededStamina);
-            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during skill
+            GetCharController(animator).UseStamina(neededStamina);
+            GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +28,7 @@ namespace stateMachine
         {
             //character finished combo attack
             animator.SetBool("Attack03R", false);
-            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
+            GetCharController(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 

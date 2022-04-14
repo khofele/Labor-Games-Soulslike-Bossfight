@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    //access to the CharacterMovement script and animator
+    //access to character scripts and animator
     protected CharacterMovement charMovement;
+    protected CharController charController;
     protected Animator animator;
     //weapon stats
     protected string weaponType = ""; //type of weapon
@@ -17,7 +18,7 @@ public class WeaponManager : MonoBehaviour
     void Start()
     {
         charMovement = gameObject.GetComponentInParent<CharacterMovement>();
-        //TODO: passt Aufruf?
+        charController = gameObject.GetComponentInParent<CharController>();
         animator = charMovement.GetComponentInParent<Animator>();
 
         //set attack animations for current weapon
@@ -66,14 +67,14 @@ public class WeaponManager : MonoBehaviour
     public float GetWeaponMinDmg()
     {
         //determine weaponMinDmg regarding the characters attack power
-        weaponMinDmg = weaponMinDmg + charMovement.GetAttackPower();
+        weaponMinDmg = weaponMinDmg + charController.GetAttackPower();
         return weaponMinDmg;
     }
 
     public float GetWeaponMaxDmg()
     {
         //determine weaponMaxDmg regarding the characters attack power
-        weaponMaxDmg = weaponMaxDmg + charMovement.GetAttackPower();
+        weaponMaxDmg = weaponMaxDmg + charController.GetAttackPower();
         return weaponMaxDmg;
     }
 }

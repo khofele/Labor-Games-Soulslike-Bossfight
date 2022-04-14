@@ -16,7 +16,7 @@ namespace stateMachine
 
             //needed stamina for action per frame
             neededStamina = 0.1f;
-            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during running
+            GetCharController(animator).SetRegStamina(false); //no stamina reg during running
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -24,7 +24,7 @@ namespace stateMachine
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                GetCharacterMovement(animator).UseStamina(neededStamina);
+                GetCharController(animator).UseStamina(neededStamina);
 
 
                 float horizontal = Input.GetAxisRaw("Horizontal");
@@ -38,7 +38,7 @@ namespace stateMachine
 
                 //move character in chosen direction
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharacterMovement(animator).GetSpeed() * valueFaster) * Time.deltaTime);
+                GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharController(animator).GetSpeed() * valueFaster) * Time.deltaTime);
             }
             else
             {
@@ -55,7 +55,7 @@ namespace stateMachine
                 animator.SetBool("Run", false);
             }
 
-            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
+            GetCharController(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 

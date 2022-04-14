@@ -16,8 +16,8 @@ namespace stateMachine
 
             //use neededStamina for action
             neededStamina = 60f;
-            GetCharacterMovement(animator).UseStamina(neededStamina);
-            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during skill
+            GetCharController(animator).UseStamina(neededStamina);
+            GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -35,7 +35,7 @@ namespace stateMachine
 
             //move character in chosen direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharacterMovement(animator).GetSpeed() * valueFaster) * Time.deltaTime);
+            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharController(animator).GetSpeed() * valueFaster) * Time.deltaTime);
 
         }
 
@@ -43,7 +43,7 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetBool("Roll", false);
-            GetCharacterMovement(animator).SetRegStamina(true); //regenerate stamina again
+            GetCharController(animator).SetRegStamina(true); //regenerate stamina again
         }
     }
 

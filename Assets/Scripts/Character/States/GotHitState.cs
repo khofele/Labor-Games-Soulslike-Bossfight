@@ -21,7 +21,7 @@ namespace stateMachine
 
             //TODO: ersetzen durch finalen Code (Ticket genaue Hit Detection + erhaltener Dmg Berechnung)
             float damage = 0f;
-            GetCharacterMovement(animator).GotHit(damage);
+            GetCharController(animator).GotHit(damage);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

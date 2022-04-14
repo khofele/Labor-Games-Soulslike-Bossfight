@@ -1245,10 +1245,10 @@ GameObject:
   - component: {fileID: 1394365329}
   - component: {fileID: 1394365332}
   - component: {fileID: 1394365331}
+  - component: {fileID: 1394365336}
   - component: {fileID: 1394365330}
   - component: {fileID: 1394365333}
   - component: {fileID: 1394365334}
-  - component: {fileID: 1394365335}
   m_Layer: 0
   m_Name: ThirdPersonCharacter
   m_TagString: Player
@@ -1382,16 +1382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1348184441}
-  hand: {fileID: 1873058719}
-  vitality: 5
-  endurance: 2
-  strength: 4
-  physStrength: 3
-  multiplicator: 100
-  dragon: {fileID: 649570767}
-  potionCount: 5
-  healValue: 500
-  weaponPrefab: {fileID: 5988206779531258053, guid: 037786c5f010fca4d873c184f407aafd, type: 3}
   footstepSounds: []
   weaponSounds: []
   rollSound: {fileID: 0}
@@ -1456,23 +1446,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!320 &1394365335
-PlayableDirector:
+--- !u!114 &1394365336
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394365328}
   m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: cfb7560bdc6f51c4eb0cec4142192e47, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c5e56d47dbd0a46bb6192ed91d0b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 1873058719}
+  vitality: 5
+  endurance: 2
+  strength: 4
+  physStrength: 3
+  multiplicator: 100
+  dragon: {fileID: 649570767}
+  potionCount: 5
+  healValue: 500
+  weaponPrefab: {fileID: 5988206779531258053, guid: 037786c5f010fca4d873c184f407aafd, type: 3}
 --- !u!1 &1431872136
 GameObject:
   m_ObjectHideFlags: 3

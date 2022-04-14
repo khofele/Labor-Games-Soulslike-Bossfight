@@ -13,8 +13,8 @@ namespace stateMachine
             Debug.Log("Attack01");
             //use neededStamina for action
             neededStamina = 25f;
-            GetCharacterMovement(animator).UseStamina(neededStamina);
-            GetCharacterMovement(animator).SetRegStamina(false); //no stamina reg during skill
+            GetCharController(animator).UseStamina(neededStamina);
+            GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
