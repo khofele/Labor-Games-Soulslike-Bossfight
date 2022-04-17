@@ -980,5 +980,9 @@ PrefabInstance:
       propertyPath: blackboard.objectParams.Array.data[4]
       value: 
       objectReference: {fileID: 1325868939}
+    - target: {fileID: 2610895428458449711, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 222441606}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}

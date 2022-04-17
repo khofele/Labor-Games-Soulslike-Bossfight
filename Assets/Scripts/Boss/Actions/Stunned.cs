@@ -8,15 +8,19 @@ using UnityEngine;
 [Action("Stunned")]
 public class Stunned : GOAction
 {
-    [InParam("controller")]
-    [SerializeField] private BossController bossController = null;
-
     [InParam("attack manager")]
     [SerializeField] private AttackManager attackManager = null;
 
+    private BossController bossController = null;
+
+    public override void OnStart()
+    {
+        bossController = gameObject.GetComponent<BossController>();
+    }
+
     public override TaskStatus OnUpdate()
     {
-        attackManager.Animator.SetTrigger("StunnedStanding");
+        bossController.Animator.SetTrigger("StunnedStanding");
         // TODO: Stun
         Debug.Log("boss stunned");
         return TaskStatus.COMPLETED;

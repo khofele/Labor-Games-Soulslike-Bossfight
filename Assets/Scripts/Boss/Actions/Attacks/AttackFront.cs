@@ -5,8 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Action("FireHeadAttack")]
-public class FireHeadAttack : GOAction
+[Action("AttackFront")]
+public class AttackFront : GOAction
 {
     [InParam("target")]
     [SerializeField] private GameObject target = null;
@@ -14,11 +14,19 @@ public class FireHeadAttack : GOAction
     [InParam("attack manager")]
     [SerializeField] private AttackManager attackManager = null;
 
+    private BossController bossController = null;
+
+    public override void OnStart()
+    {
+        bossController = gameObject.GetComponent<BossController>();
+    }
+
+
     public override TaskStatus OnUpdate()
     {
-        attackManager.Animator.SetTrigger("Fire Head 1");
-        attackManager.CurrentAttack = attackManager.AttackFireHead;
-        Debug.Log("Attack Fire Head");
+        bossController.Animator.SetTrigger("Attack 1");
+        attackManager.CurrentAttack = attackManager.AttackFront;
+        Debug.Log("Attack Front");
         return TaskStatus.COMPLETED;
     }
 }
