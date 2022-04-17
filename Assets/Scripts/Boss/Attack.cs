@@ -20,7 +20,4 @@ public class Attack
         this.damageMin = damageMin;
         this.damageMax = damageMax;
     }    
-    
-    // TODO: RAUS
-    public Animation Animation { get => animation; set => animation = value; }
 }
