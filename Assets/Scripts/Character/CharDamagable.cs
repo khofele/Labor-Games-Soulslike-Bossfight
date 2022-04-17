@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharDamagable : MonoBehaviour
 {
+    [SerializeField] private GameObject attackManager; //the attack manager of the dragon
     [SerializeField] private float crit = 0; //crit is set for every collider on itself
     private CharController charController = null;
 
@@ -19,8 +20,8 @@ public class CharDamagable : MonoBehaviour
         if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
         {
             //TODO: Check ob Dmg richtig gesetzt
-            //float damageMin = charController.GetDragon().GetComponent<AttackManager>.CurrentAttack.damageMin;
-            //float damageMax = charController.GetDragon().GetComponent<AttackManager>.CurrentAttack.damageMax;
+            //float damageMin = attackManager.CurrentAttack.damageMin;
+            //float damageMax = attackManager.CurrentAttack.damageMax;
             //test
             float damageMin = 5f;
             float damageMax = 10f;
