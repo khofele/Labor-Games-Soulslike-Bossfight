@@ -8,15 +8,10 @@ public class BossController : MonoBehaviour
 {
     [SerializeField] private float health = 1000;
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
+    [SerializeField] private Animator animator = null;
 
-    public float Health
-    {
-        get => health;
-        set
-        {
-            health = value;
-        }
-    }
+    public float Health { get => health; set => health = value; }
+    public Animator Animator { get => animator; }
 
     public void TakeDamage(float damage)
     {
