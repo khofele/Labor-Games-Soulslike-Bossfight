@@ -5,7 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WideFireHeadAttack : GOAction
+[Action("WideFireHeadFlyAttack")]
+public class WideFireHeadFlyAttack : GOAction
 {
     [InParam("attack manager")]
     [SerializeField] private AttackManager attackManager = null;
@@ -20,7 +21,7 @@ public class WideFireHeadAttack : GOAction
     public override TaskStatus OnUpdate()
     {
         bossController.Animator.SetTrigger(""); // TODO Animations Task
-        attackManager.CurrentAttack = attackManager.AttackWideFireHead;
+        attackManager.CurrentAttack = attackManager.AttackFlyWideFireHead;
         Debug.Log("Wide Fire Head Attack");
         return TaskStatus.COMPLETED;
     }
