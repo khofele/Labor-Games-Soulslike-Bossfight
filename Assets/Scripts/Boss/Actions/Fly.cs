@@ -1,9 +1,11 @@
 using BBUnity.Actions;
+using Pada1.BBCore;
 using Pada1.BBCore.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Action("Fly")]
 public class Fly : GOAction
 {
     private BossController bossController = null;

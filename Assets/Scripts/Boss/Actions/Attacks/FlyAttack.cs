@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Action("FlyAttack")]
 public class FlyAttack : GOAction
 {
     [InParam("attack manager")]
