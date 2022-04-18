@@ -23,7 +23,15 @@ public class Death : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("Death");
+        if(bossController.IsFlying == true)
+        {
+            bossController.Animator.SetTrigger(""); // TODO Animations Task
+        }
+        else
+        {
+            bossController.Animator.SetTrigger("Death");
+        }
+
         // TODO: End Game/back to menu --> GameManager
         Debug.Log("Boss died!");
         return TaskStatus.COMPLETED;
