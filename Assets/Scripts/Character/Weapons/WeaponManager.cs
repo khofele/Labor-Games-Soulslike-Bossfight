@@ -54,6 +54,14 @@ public class WeaponManager : MonoBehaviour
 
     //--------------------------GETTER FOR DRAGON & CHAR-----------------------
 
+    public float GetDamage()
+    {
+       //determine weapon damage regarding the characters attack power and a random value in the attack damage range
+       //(between min dmg and max dmg)
+       float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + charController.GetAttackPower();
+       return damage;
+    }
+
     public string GetWeaponType()
     {
         return weaponType;
@@ -62,19 +70,5 @@ public class WeaponManager : MonoBehaviour
     public float GetWeaponWeight()
     {
         return weaponWeight;
-    }
-
-    public float GetWeaponMinDmg()
-    {
-        //determine weaponMinDmg regarding the characters attack power
-        weaponMinDmg = weaponMinDmg + charController.GetAttackPower();
-        return weaponMinDmg;
-    }
-
-    public float GetWeaponMaxDmg()
-    {
-        //determine weaponMaxDmg regarding the characters attack power
-        weaponMaxDmg = weaponMaxDmg + charController.GetAttackPower();
-        return weaponMaxDmg;
     }
 }

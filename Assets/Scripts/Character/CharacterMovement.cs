@@ -182,12 +182,10 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    //method that is called when the character receives damage from the boss - called in CharDamagable (script of every collider)
+    //method to trigger animation when hit - called in CharController
     public void GotHit()
     {
-        //calculate random attackDmg value between damageMin and damageMax
-
-        //call GotHit and add crit to attackDmg
+        animator.SetBool("GotHit", true);
     }
 
 

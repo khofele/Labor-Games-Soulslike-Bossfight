@@ -20,14 +20,12 @@ public class CharDamagable : MonoBehaviour
         if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
         {
             //TODO: Check ob Dmg richtig gesetzt
-            //float damageMin = attackManager.CurrentAttack.damageMin;
-            //float damageMax = attackManager.CurrentAttack.damageMax;
+            //float damage = attackManager.CurrentAttack.Damage;
             //test
-            float damageMin = 5f;
-            float damageMax = 10f;
+            float damage = 5f;
 
             //call method to calculate damage
-            charController.CalculateDamage(damageMin, damageMax, crit);
+            charController.TakeDamage(damage + crit);
         }
     }
 }

@@ -1375,7 +1375,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040172734}
-  m_LocalRotation: {x: 0.31286946, y: -0.07640022, z: 0.025257573, w: 0.94638145}
+  m_LocalRotation: {x: 0.08883055, y: -0.36183873, z: 0.03466036, w: 0.92735136}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1817,7 +1817,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304344662}
-  m_LocalRotation: {x: 0.29560354, y: -0.07684698, z: 0.023863707, w: 0.9519158}
+  m_LocalRotation: {x: 0.07194783, y: -0.36240935, z: 0.028072972, w: 0.92881376}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2059,8 +2059,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348184438}
-  m_LocalRotation: {x: 0.29560354, y: -0.076846994, z: 0.023863705, w: 0.9519158}
-  m_LocalPosition: {x: 9.593009, y: 5.1202006, z: 36.149952}
+  m_LocalRotation: {x: 0.07194782, y: -0.36240935, z: 0.028072966, w: 0.9288137}
+  m_LocalPosition: {x: 9.696009, y: 5.0931196, z: 36.103973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2284,7 +2284,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!95 &1394365334
 Animator:
   serializedVersion: 3
@@ -2334,6 +2334,7 @@ MonoBehaviour:
   potionCount: 5
   healValue: 500
   weaponPrefab: {fileID: 5988206779531258053, guid: 037786c5f010fca4d873c184f407aafd, type: 3}
+  armorPrefab: {fileID: 0}
 --- !u!4 &1427173787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7463450304767697472, guid: 85a0f8133d99e4850a4e89e16b2b5786, type: 3}
@@ -2363,7 +2364,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431872136}
-  m_LocalRotation: {x: 0.27828574, y: -0.07726726, z: 0.022465669, w: 0.9571218}
+  m_LocalRotation: {x: 0.05508595, y: -0.36285898, z: 0.021493722, w: 0.9299661}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

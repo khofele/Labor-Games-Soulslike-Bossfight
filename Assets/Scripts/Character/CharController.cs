@@ -41,9 +41,12 @@ public class CharController : MonoBehaviour
     [SerializeField] private int potionCount = 5; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
     [SerializeField] private GameObject weaponPrefab = null; //TODO: set weapon in menu //current weapon prefab
-    private GameObject currentWeapon = null; //TODO: set weapon in menu //current weapon object (instantiated)
-    private float armorWeight = 0f;  //weight of the armor
-    private float weaponWeight = 0f; //weight of the weapon
+    [SerializeField] private GameObject armorPrefab = null; //TODO: set armor in menu //current armor prefab
+    private GameObject currentWeapon = null; //current weapon object (instantiated)
+    private GameObject currentArmor = null; //current armor object (instantiated)
+    private float weaponWeight = 0f; //weight of current weapon
+    private float armorWeight = 0f;  //weight of current armor
+    private float armorDef = 0f; //defense of current armor
 
 
 
@@ -58,8 +61,11 @@ public class CharController : MonoBehaviour
         currentWeapon = Instantiate<GameObject>(weaponPrefab);
         currentWeapon.transform.parent = hand.transform;
         currentWeapon.transform.position = hand.position;
+        //set armor and place it on character model
+        //currentArmor = Instantiate<GameObject>(armorPrefab);
+        //AttachArmor(currentArmor); 
         //set values regarding equipment
-        //SetEquipmentValues();
+        SetEquipmentValues();
         //set attributes with chosen stats and current values
         SetAttributes();
         //determine the speed actions are performed
@@ -115,21 +121,16 @@ public class CharController : MonoBehaviour
     //the received damage is calculated depending on the hitted collider(s) and the damage value
     //submitted by the boss attack.
    
-    public void CalculateDamage(float damageMin, float damageMax, float crit)
+    public void TakeDamage(float damage)
     {
-        //calculate random attackDmg value between damageMin and damageMax
-        float calculatedDamage = Random.Range(damageMin, damageMax);
-        //add crit to calculatedDamage
-        calculatedDamage += crit;
-
         //subtract damage from current health
-        currentHealth -= calculatedDamage;
+        currentHealth -= damage;
 
         //call animation
         charMovement.GotHit();
 
         //stun value reached --> player gets stunned
-        if (calculatedDamage >= stunValue)
+        if (damage >= stunValue)
         {
             charMovement.GotStunned();
         }
@@ -150,13 +151,13 @@ public class CharController : MonoBehaviour
     //these values are used to determine the speed of the player's actions
     private void SetEquipmentValues()
     {
-        //TODO SetEquipmentValues() --> menü
-        //set armorWeight
-        //TODO Set armorValue in Armor-Script
-        //armorWeight = armor.GetComponent<Armor>().GetArmorWeight();
+        //set armor values
+        //armorWeight = currentArmor.GetComponent<ArmorManager>().GetArmorWeight();
+        //armorDef = currentArmor.GetComponent<ArmorManager>().GetArmorDef();
         //set weaponWeight
-        weaponWeight = weaponPrefab.GetComponent<WeaponManager>().GetWeaponWeight();
+        weaponWeight = currentWeapon.GetComponent<WeaponManager>().GetWeaponWeight();
 
+        Debug.Log(armorWeight);
         Debug.Log(weaponWeight);
     }
 
@@ -173,13 +174,38 @@ public class CharController : MonoBehaviour
         attackPower = attackPower + strength;
         carryCapacity = carryCapacity + physStrength * multiplicator;
         //equipment affected
-        resistance = resistance + armorWeight * multiplicator;
-        defense = defense + armorWeight * multiplicator;
+        resistance = resistance + armorDef * multiplicator;
+        defense = defense + armorDef * multiplicator;
 
         //set start current health, stamina values and potion count
         currentHealth = health;
         currentStamina = stamina;
         currentPotions = potionCount;
+    }
+
+    //method to attach the chosen armor on the character model, called in Start()
+    private void AttachArmor(GameObject currentArmor)
+    {
+        string type = currentArmor.GetComponent<ArmorManager>().GetArmorType();
+
+        switch (type)
+        {
+            case "clotharmor":
+                //TODO
+                break;
+            case "leatherarmor":
+                //TODO
+                break;
+            case "ironarmor":
+                //TODO
+                break;
+            case "platearmor":
+                //TODO
+                break;
+            default:
+                Debug.Log("no armor set!!");
+                break;
+        }
     }
 
     //method to determine speed with which actions are performed (walk, run, attack, roll)
