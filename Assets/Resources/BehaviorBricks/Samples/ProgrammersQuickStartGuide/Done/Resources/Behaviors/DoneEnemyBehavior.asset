@@ -15,7 +15,7 @@ MonoBehaviour:
   brickName: Assets/Resources/BehaviorBricks/Samples/ProgrammersQuickStartGuide/Done/Resources/Behaviors/DoneEnemyBehavior.asset
   xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
     version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
-    id=\"0\" guid=\"cefec543fe1d8774aa0b18d5ab374a84\" nextId=\"11\">\r\n      <root>\r\n       
+    id=\"0\" guid=\"cefec543fe1d8774aa0b18d5ab374a84\" nextId=\"12\">\r\n      <root>\r\n       
     <RepeatDecorator id=\"1\" />\r\n      </root>\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"player\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"False\" />\r\n          <entry name=\"shootPoint\" type=\"UnityEngine.Transform\"

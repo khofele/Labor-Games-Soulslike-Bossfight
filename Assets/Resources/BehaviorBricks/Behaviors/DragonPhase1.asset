@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a7c8ca992f915438a96c2077353778, type: 3}
   m_Name: DragonPhase1
   m_EditorClassIdentifier: 
-  brickName: Assets/Resources/BehaviorBricks/Behaviors/Dragon.asset
+  brickName: Assets/Resources/BehaviorBricks/Behaviors/DragonPhase1.asset
   xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
     version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
     id=\"0\" guid=\"fffe54bda3a34154ea9cd3014cfd1f60\" nextId=\"75\">\r\n      <root>\r\n       
@@ -212,7 +212,7 @@ MonoBehaviour:
     positions around a NavMesh area.\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"41\" />\r\n       
     </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.5
+  zoom: 0.7
   subslist:
   - {fileID: 11400000, guid: 8adfddffa70852a45ba1b64354494e3c, type: 2}
   - {fileID: 11400000, guid: b71f915e36b2bfc47a4c1a5e66da4ca5, type: 2}
