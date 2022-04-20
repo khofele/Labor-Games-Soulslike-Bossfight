@@ -9,7 +9,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
     private CharController charController = null; //CharController script
     private CharacterController controller = null; 
-    private Rigidbody rbody = null;
     private Animator animator = null;
 
     //sounds
@@ -27,13 +26,14 @@ public class CharacterMovement : MonoBehaviour
     private float lastClickedTime = 0; //last clicked time in combo
     private float maxComboDelay = 1; //max time to click to stay in combo
 
+    [SerializeField] private float stunDuration = 3; //duration of stun
+
 
     // Start is called before the first frame update
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
-        rbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         animator.fireEvents = false; //no sounds directly from the animations (read-only)
@@ -171,7 +171,7 @@ public class CharacterMovement : MonoBehaviour
 
             //TODO show stunned UI bar?
 
-            Invoke("EndStun", 3);
+            Invoke("EndStun", stunDuration);
         }
     }
 

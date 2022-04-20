@@ -41,12 +41,18 @@ public class CharController : MonoBehaviour
     [SerializeField] private int potionCount = 5; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
     [SerializeField] private GameObject weaponPrefab = null; //TODO: set weapon in menu //current weapon prefab
-    [SerializeField] private GameObject armorPrefab = null; //TODO: set armor in menu //current armor prefab
     private GameObject currentWeapon = null; //current weapon object (instantiated)
-    private GameObject currentArmor = null; //current armor object (instantiated)
     private float weaponWeight = 0f; //weight of current weapon
     private float armorWeight = 0f;  //weight of current armor
     private float armorDef = 0f; //defense of current armor
+    //armor attach positions
+    [SerializeField] private Transform head = null;
+    [SerializeField] private Transform torso = null;
+    //armor prefabs and objects (instantiated)
+    [SerializeField] private GameObject armorHelmetPrefab = null; //TODO: set armor in menu //current armor prefab
+    [SerializeField] private GameObject armorTorsoPrefab = null; //TODO: set armor in menu //current armor prefab
+    private GameObject currentArmorHelmet = null;
+    private GameObject currentArmorTorso = null;
 
 
 
@@ -57,13 +63,12 @@ public class CharController : MonoBehaviour
 
         charMovement = GetComponent<CharacterMovement>();
 
-        //place weapon in character's hand
+        //set current weapon and place it in character's hand
         currentWeapon = Instantiate<GameObject>(weaponPrefab);
         currentWeapon.transform.parent = hand.transform;
         currentWeapon.transform.position = hand.position;
-        //set armor and place it on character model
-        //currentArmor = Instantiate<GameObject>(armorPrefab);
-        //AttachArmor(currentArmor); 
+        //set current armor and place it on character model
+        SetAndAttachArmor(); 
         //set values regarding equipment
         SetEquipmentValues();
         //set attributes with chosen stats and current values
@@ -183,35 +188,25 @@ public class CharController : MonoBehaviour
         currentPotions = potionCount;
     }
 
-    //method to attach the chosen armor on the character model, called in Start()
-    private void AttachArmor(GameObject currentArmor)
-    {
-        string type = currentArmor.GetComponent<ArmorManager>().GetArmorType();
 
-        switch (type)
-        {
-            case "clotharmor":
-                //TODO
-                break;
-            case "leatherarmor":
-                //TODO
-                break;
-            case "ironarmor":
-                //TODO
-                break;
-            case "platearmor":
-                //TODO
-                break;
-            default:
-                Debug.Log("no armor set!!");
-                break;
-        }
+    //method to set the current armor pieces and attach them on the character model, called in Start()
+    private void SetAndAttachArmor()
+    {
+        //instantiate the chosen prefab
+        currentArmorHelmet = Instantiate<GameObject>(armorHelmetPrefab);
+        currentArmorTorso = Instantiate<GameObject>(armorTorsoPrefab);
+
+        //attach armor pieces als children to body pieces
+        currentArmorHelmet.transform.parent = head.transform;
+        currentArmorHelmet.transform.position = head.position;
+        currentArmorTorso.transform.parent = torso.transform;
+        currentArmorTorso.transform.position = torso.position;
     }
 
     //method to determine speed with which actions are performed (walk, run, attack, roll)
     private void SetSpeed()
     {
-        //TODO: Berechnung anpassen!
+        //TODO: Berechnung anpassen! + Magic Number weg
         speed = (armorWeight + weaponWeight) / 10;
     }
 
