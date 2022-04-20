@@ -4,12 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Condition("IsTimerOver")]
-public class IsTimerOver : GOCondition
+[Condition("IsTimerRunning")]
+public class IsTimerRunning : GOCondition
 {
     public override bool Check()
     {
-        // TODO: bossController.Timer < 0
+        // TODO: bossController.Timer > 0
         return false;
     }
 }
