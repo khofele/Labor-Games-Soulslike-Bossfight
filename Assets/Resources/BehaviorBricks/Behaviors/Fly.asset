@@ -62,6 +62,6 @@ MonoBehaviour:
     position=\"344.4448 632.2218\" name=\"FireHeadFlyAttack\" description=\"\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"5\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.9
+  zoom: 0.8
   subslist: []
   _guid: 783be4fb119ab6a41961c9b0fca7c288
