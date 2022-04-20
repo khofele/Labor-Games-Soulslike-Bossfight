@@ -12,6 +12,7 @@ public class AttackManager : MonoBehaviour
     private Attack attackFlyFireHead = new Attack(200, 250);
     private Attack attackFly = new Attack(100, 150);
     private Attack attackFlyWideFireHead = new Attack(200, 300);
+    private Attack attackFlyBreatheFire = new Attack(300, 450);
 
     private Attack currentAttack = null;
 
@@ -23,4 +24,6 @@ public class AttackManager : MonoBehaviour
     public Attack AttackFlyFireHead { get => attackFlyFireHead; }
     public Attack AttackFlyWideFireHead { get => attackFlyWideFireHead; }
     public Attack AttackFly { get => attackFly; }
+
+    public Attack AttackFlyBreatheFire { get => attackFlyBreatheFire; }
 }
