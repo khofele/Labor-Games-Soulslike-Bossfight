@@ -13,6 +13,8 @@ public class WeaponManager : MonoBehaviour
     protected float weaponWeight = 0f; //weight of the weapon
     protected float weaponMinDmg = 0f; //minimum damage the weapon makes
     protected float weaponMaxDmg = 0f; //maximum damage the weapon makes
+    //weapon prefab
+    protected GameObject weaponPrefab = null;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,14 @@ public class WeaponManager : MonoBehaviour
         animator = charMovement.GetComponentInParent<Animator>();
 
         //set attack animations for current weapon
-        //SetAttackAnimations();
+        //SetAttackAnimations(); --> woanders aufrufen??? 
     }
 
-    // Update is called once per frame
-    void Update()
+    //method called by menu to set the char controller prefab of the chosen weapon
+    //TODO Aufruf Menü (SetCharacterPrefab()) nach Reset()-Methode des Weapon-Skripts
+    public void SetCharacterPrefab()
     {
-        
+        charController.SetWeaponPrefab(weaponPrefab);
     }
 
     //method to set animation methods suitable for the current weapon

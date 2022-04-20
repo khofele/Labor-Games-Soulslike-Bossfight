@@ -40,7 +40,7 @@ public class CharController : MonoBehaviour
     //equipment
     [SerializeField] private int potionCount = 5; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
-    [SerializeField] private GameObject weaponPrefab = null; //TODO: set weapon in menu //current weapon prefab
+    private GameObject weaponPrefab = null; //current weapon prefab
     private GameObject currentWeapon = null; //current weapon object (instantiated)
     private float weaponWeight = 0f; //weight of current weapon
     private float armorWeight = 0f;  //weight of current armor
@@ -64,7 +64,7 @@ public class CharController : MonoBehaviour
         charMovement = GetComponent<CharacterMovement>();
 
         //set current weapon and place it in character's hand
-        SetWeapon();
+        SetAndAttachWeapon();
         //set current armor and place it on character model
         SetAndAttachArmor(); 
         //set values regarding equipment
@@ -186,15 +186,24 @@ public class CharController : MonoBehaviour
         currentPotions = potionCount;
     }
 
-    //method to set the current weapon and attach it on the hand - called in Start()
-    private void SetWeapon()
+    //method to set the prefab of the chosen weapon - called in WeaponManager script
+    public void SetWeaponPrefab(GameObject weaponPref)
     {
+        weaponPrefab = weaponPref;
+    }
+
+    //method to set the current weapon and attach it on the hand - called in Start()
+    private void SetAndAttachWeapon()
+    {
+        //TODO WENN MENÜ DA LÖSCHEN!!
+        weaponPrefab = Resources.Load("Character/Weapons/ShortSword", typeof(GameObject)) as GameObject;
+
         currentWeapon = Instantiate<GameObject>(weaponPrefab);
         currentWeapon.transform.parent = hand.transform;
         currentWeapon.transform.position = hand.position;
     }
 
-    //method to set the prefabs of the chosen armor - called in armor script
+    //method to set the prefabs of the chosen armor - called in ArmorManager script
     public void SetArmorPrefabs(GameObject helmetPrefab, GameObject torsoPrefab)
     {
         armorHelmetPrefab = helmetPrefab;
@@ -204,6 +213,10 @@ public class CharController : MonoBehaviour
     //method to set the current armor pieces and attach them on the character model - called in Start()
     private void SetAndAttachArmor()
     {
+        //TODO WENN MENÜ DA LÖSCHEN!
+        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(GameObject)) as GameObject;
+        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(GameObject)) as GameObject;
+
         //instantiate the chosen prefab
         currentArmorHelmet = Instantiate<GameObject>(armorHelmetPrefab);
         currentArmorTorso = Instantiate<GameObject>(armorTorsoPrefab);

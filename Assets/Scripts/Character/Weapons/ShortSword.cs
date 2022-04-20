@@ -17,5 +17,6 @@ public class ShortSword : WeaponManager
         weaponWeight = 10f;
         weaponMinDmg = 50f;
         weaponMaxDmg = 80f;
+        weaponPrefab = Resources.Load("Character/Weapons/ShortSword", typeof(GameObject)) as GameObject;
     }
 }
