@@ -10,8 +10,11 @@ public class BossController : MonoBehaviour
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
     [SerializeField] private Animator animator = null;
 
+    private bool isFlying = false;
+
     public float Health { get => health; set => health = value; }
     public Animator Animator { get => animator; }
+    public bool IsFlying { get => isFlying; set => isFlying = value; }
 
     public void TakeDamage(float damage)
     {
@@ -25,4 +28,6 @@ public class BossController : MonoBehaviour
             gameObject.GetComponent<BehaviorExecutor>().behavior = behaviorPhaseTwo;
         }
     }
+
+    // TODO: Timer
 }
