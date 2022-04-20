@@ -18,5 +18,7 @@ public class PlateArmor : ArmorManager
         armorType = "platearmor";
         armorWeight = 35f;
         armorDef = 58f;
+        helmetPrefab = Resources.Load("Armors/PlateArmor/PlateArmorHelmet", typeof(GameObject)) as GameObject;
+        torsoPrefab = Resources.Load("Armors/PlateArmor/PlateArmorTorso", typeof(GameObject)) as GameObject;
     }
 }

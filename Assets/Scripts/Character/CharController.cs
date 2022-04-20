@@ -49,10 +49,10 @@ public class CharController : MonoBehaviour
     [SerializeField] private Transform head = null;
     [SerializeField] private Transform torso = null;
     //armor prefabs and objects (instantiated)
-    [SerializeField] private GameObject armorHelmetPrefab = null; //TODO: set armor in menu //current armor prefab
-    [SerializeField] private GameObject armorTorsoPrefab = null; //TODO: set armor in menu //current armor prefab
-    private GameObject currentArmorHelmet = null;
-    private GameObject currentArmorTorso = null;
+    private GameObject armorHelmetPrefab = null; //current armor prefabs
+    private GameObject armorTorsoPrefab = null;
+    private GameObject currentArmorHelmet = null; //instantiated objects
+    private GameObject currentArmorTorso = null; 
 
 
 
@@ -64,9 +64,7 @@ public class CharController : MonoBehaviour
         charMovement = GetComponent<CharacterMovement>();
 
         //set current weapon and place it in character's hand
-        currentWeapon = Instantiate<GameObject>(weaponPrefab);
-        currentWeapon.transform.parent = hand.transform;
-        currentWeapon.transform.position = hand.position;
+        SetWeapon();
         //set current armor and place it on character model
         SetAndAttachArmor(); 
         //set values regarding equipment
@@ -157,8 +155,8 @@ public class CharController : MonoBehaviour
     private void SetEquipmentValues()
     {
         //set armor values
-        //armorWeight = currentArmor.GetComponent<ArmorManager>().GetArmorWeight();
-        //armorDef = currentArmor.GetComponent<ArmorManager>().GetArmorDef();
+        armorWeight = currentArmorHelmet.GetComponent<ArmorManager>().GetArmorWeight();
+        armorDef = currentArmorHelmet.GetComponent<ArmorManager>().GetArmorDef();
         //set weaponWeight
         weaponWeight = currentWeapon.GetComponent<WeaponManager>().GetWeaponWeight();
 
@@ -188,8 +186,22 @@ public class CharController : MonoBehaviour
         currentPotions = potionCount;
     }
 
+    //method to set the current weapon and attach it on the hand - called in Start()
+    private void SetWeapon()
+    {
+        currentWeapon = Instantiate<GameObject>(weaponPrefab);
+        currentWeapon.transform.parent = hand.transform;
+        currentWeapon.transform.position = hand.position;
+    }
 
-    //method to set the current armor pieces and attach them on the character model, called in Start()
+    //method to set the prefabs of the chosen armor - called in armor script
+    public void SetArmorPrefabs(GameObject helmetPrefab, GameObject torsoPrefab)
+    {
+        armorHelmetPrefab = helmetPrefab;
+        armorTorsoPrefab = torsoPrefab;
+    }
+
+    //method to set the current armor pieces and attach them on the character model - called in Start()
     private void SetAndAttachArmor()
     {
         //instantiate the chosen prefab

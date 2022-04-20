@@ -18,5 +18,7 @@ public class ClothArmor : ArmorManager
         armorType = "clotharmor";
         armorWeight = 10f;
         armorDef = 25f;
+        helmetPrefab = Resources.Load("Armors/ClothArmor/ClothArmorHelmet", typeof(GameObject)) as GameObject;
+        torsoPrefab = Resources.Load("Armors/ClothArmor/ClothArmorTorso", typeof(GameObject)) as GameObject;
     }
 }

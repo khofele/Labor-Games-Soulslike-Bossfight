@@ -18,5 +18,7 @@ public class IronArmor : ArmorManager
         armorType = "ironarmor";
         armorWeight = 40f;
         armorDef = 65f;
+        helmetPrefab = Resources.Load("Armors/IronArmor/IronArmorHelmet", typeof(GameObject)) as GameObject;
+        torsoPrefab = Resources.Load("Armors/IronArmor/IronArmorTorso", typeof(GameObject)) as GameObject;
     }
 }
