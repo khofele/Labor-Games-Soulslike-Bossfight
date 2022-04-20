@@ -19,6 +19,7 @@ public class TakeOff : GOAction
     {
         bossController.Animator.SetTrigger(""); // TODO Animations Task
         // TODO: Flugmechanik siehe Ticket
+        // TODO: Start Timer in Bosscontroller
         return TaskStatus.COMPLETED;
     }
 }
