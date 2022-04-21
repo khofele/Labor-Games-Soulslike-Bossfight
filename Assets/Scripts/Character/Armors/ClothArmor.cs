@@ -16,7 +16,7 @@ public class ClothArmor : ArmorManager
     {
         armorName = "Elven Armor";
         armorType = "clotharmor";
-        armorWeight = 10f;
+        armorWeight = 15f;
         armorDef = 25f;
         helmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(GameObject)) as GameObject;
         torsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(GameObject)) as GameObject;

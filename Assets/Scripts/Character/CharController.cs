@@ -28,7 +28,9 @@ public class CharController : MonoBehaviour
     //multiplicator for SetAttributes()
     [SerializeField] private float multiplicator = 100f;
     //action speed
-    private float speed = 6f;
+    private float animationSpeed = 1.25f; //speed of animations and animator
+    private float movementSpeed = 6f; //speed for movement like walking, running and rolling
+
     //fight
     [SerializeField] private GameObject dragon = null; //the enemy - dragon
     [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
@@ -72,7 +74,7 @@ public class CharController : MonoBehaviour
         //set attributes with chosen stats and current values
         SetAttributes();
         //determine the speed actions are performed
-        //SetSpeed();
+        SetSpeed();
     }
 
     // Update is called once per frame
@@ -228,11 +230,15 @@ public class CharController : MonoBehaviour
         currentArmorTorso.transform.position = torso.position;
     }
 
-    //method to determine speed with which actions are performed (walk, run, attack, roll)
+    //method to determine speed with which actions are performed in the animator
     private void SetSpeed()
     {
-        //TODO: Berechnung anpassen! + Magic Number weg
-        speed = (armorWeight + weaponWeight) / 10;
+        //set speed depending on equipment weight (small weight - faster speed, big weight - lower speed)
+        animationSpeed = animationSpeed + multiplicator * (armorWeight + weaponWeight);
+        //set speed of animator (animations)
+        charMovement.GetAnimator().speed = animationSpeed;
+        //set movement speed
+        movementSpeed = movementSpeed * animationSpeed;
     }
 
     //setter for the bool regStamina - whether stamina shall be regenerated or not
@@ -243,9 +249,9 @@ public class CharController : MonoBehaviour
 
 
     //--------------------------GETTER METHODS-----------------------
-    public float GetSpeed()
+    public float GetMovementSpeed()
     {
-        return speed;
+        return movementSpeed;
     }
 
     public float GetAttackPower()

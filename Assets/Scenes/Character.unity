@@ -1423,7 +1423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040172734}
-  m_LocalRotation: {x: 0.08883055, y: -0.36183873, z: 0.03466036, w: 0.92735136}
+  m_LocalRotation: {x: 0.08883057, y: -0.36183873, z: 0.03466037, w: 0.92735136}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2427,11 +2427,8 @@ MonoBehaviour:
   stunValue: 500
   potionCount: 5
   healValue: 500
-  weaponPrefab: {fileID: 5988206779531258053, guid: 037786c5f010fca4d873c184f407aafd, type: 3}
   head: {fileID: 1221941540}
   torso: {fileID: 2008186170}
-  armorHelmetPrefab: {fileID: 4530460708975800296, guid: 3ddcc9a1740b0cc4bb238f83886773a5, type: 3}
-  armorTorsoPrefab: {fileID: 4258783674861602036, guid: b65904b547f534741a0d038c71581744, type: 3}
 --- !u!4 &1427173787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7463450304767697472, guid: 85a0f8133d99e4850a4e89e16b2b5786, type: 3}
@@ -3562,6 +3559,10 @@ PrefabInstance:
     - target: {fileID: 7463450304767475434, guid: 85a0f8133d99e4850a4e89e16b2b5786, type: 3}
       propertyPath: m_Name
       value: Human Male (v4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463450304767475434, guid: 85a0f8133d99e4850a4e89e16b2b5786, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7463450304767697510, guid: 85a0f8133d99e4850a4e89e16b2b5786, type: 3}
       propertyPath: m_LocalRotation.w

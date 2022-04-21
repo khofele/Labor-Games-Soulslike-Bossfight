@@ -35,7 +35,7 @@ namespace stateMachine
 
             //move character in chosen direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharController(animator).GetSpeed() * valueFaster) * Time.deltaTime);
+            GetCharacterMovement(animator).GetController().Move(moveDir.normalized * (GetCharController(animator).GetMovementSpeed() * valueFaster) * Time.deltaTime);
 
         }
 
