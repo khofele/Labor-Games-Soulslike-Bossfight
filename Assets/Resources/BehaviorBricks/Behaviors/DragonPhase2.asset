@@ -130,13 +130,13 @@ MonoBehaviour:
     </_data>\r\n    </RepeatUntilSuccess>\r\n    <ActionNode id=\"20\">\r\n     
     <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"747.0775
     859.4877\" name=\"Land\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"15\" />\r\n       
-    </data>\r\n      </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"23\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"True\" position=\"270 836.6666\"
-    name=\"FlyBreatheFireAttack\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
-    <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"23\" />\r\n         
-    <RepeatUntilSuccess id=\"24\" />\r\n        </data>\r\n      </_data>\r\n   
-    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
+    <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"15\" />\r\n         
+    <SequenceNode id=\"15\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
+    <ActionNode id=\"23\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
+    position=\"270 836.6666\" name=\"FlyBreatheFireAttack\" description=\"\" cardinality=\"0\"
+    hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
+    id=\"23\" />\r\n          <RepeatUntilSuccess id=\"24\" />\r\n        </data>\r\n     
+    </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
   zoom: 0.6
   subslist:
   - {fileID: 11400000}
