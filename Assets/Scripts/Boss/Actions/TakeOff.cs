@@ -17,7 +17,7 @@ public class TakeOff : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("TakeOff"); // TODO Animations Task
+        bossController.Animator.SetTrigger("TakeOff");
         bossController.FlyTimer.StartTimer();
         return TaskStatus.COMPLETED;
     }
