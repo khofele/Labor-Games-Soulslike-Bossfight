@@ -1187,19 +1187,19 @@ MonoBehaviour:
     objectParams:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 2610895428458449711}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     objectParamsNames:
+    - attack manager
     - area
     - player
     - bossController
     - gameManager
-    - attack manager
     objectParamsLostDefaultValue: 
     layerMaskParams:
     - serializedVersion: 2
-      m_Bits: 8
+      m_Bits: 0
     layerMaskParamsNames:
     - Layermask
     layerMaskParamsLostDefaultValue: 
@@ -1244,6 +1244,7 @@ MonoBehaviour:
   health: 1000
   behaviorPhaseTwo: {fileID: 11400000, guid: fe708b1e6e222ee43aba1e850b9e9f08, type: 2}
   animator: {fileID: 0}
+  flyTimer: {fileID: 0}
 --- !u!54 &7468764097203948175
 Rigidbody:
   m_ObjectHideFlags: 0
