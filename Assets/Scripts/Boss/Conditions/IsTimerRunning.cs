@@ -7,9 +7,18 @@ using UnityEngine;
 [Condition("IsTimerRunning")]
 public class IsTimerRunning : GOCondition
 {
+    [InParam("timer")]
+    private Timer timer = null;
+
     public override bool Check()
     {
-        // TODO: bossController.Timer > 0
-        return false;
+        if(timer.TimerOver == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
