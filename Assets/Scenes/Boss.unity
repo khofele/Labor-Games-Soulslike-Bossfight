@@ -202,6 +202,7 @@ Transform:
   - {fileID: 2111707819}
   - {fileID: 971117174}
   - {fileID: 1325868938}
+  - {fileID: 978327829}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -545,6 +546,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 407297565}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &978327827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978327829}
+  - component: {fileID: 978327828}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &978327828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978327827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4331da9388364d4c976a86db2f1d570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerLength: 60
+--- !u!4 &978327829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978327827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407297565}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1199140769
 GameObject:
@@ -1987,6 +2032,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 222441606}
+    - target: {fileID: 2610895428458449711, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
+      propertyPath: flyTimer
+      value: 
+      objectReference: {fileID: 978327828}
     - target: {fileID: 2610895428478362734, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000002
@@ -4753,7 +4802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8630748161359459336, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
