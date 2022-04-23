@@ -17,8 +17,10 @@ public class Land : GOAction
 
     public override TaskStatus OnUpdate()
     {
+        // TODO: with Animations Task: Drache entsprechend weit runter bewegen damit Landing Animation passt
+        //gameObject.transform.position = new Vector3();
         bossController.Animator.SetTrigger(""); // TODO Animations Task
-        // TODO: Flugmechanik siehe Ticket
+        bossController.FlyTimer.StartTimer();
         return TaskStatus.COMPLETED;
     }
 }
