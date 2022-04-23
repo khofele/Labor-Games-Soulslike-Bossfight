@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeatherArmor : ArmorManager
+public class LeatherArmor : Armors
 {
     // Start is called before the first frame update
     void Start()
