@@ -635,6 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 0
+  position: 2
 --- !u!1 &2610895428227516719
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 0
+  position: 2
 --- !u!1 &2610895428261378218
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 1
 --- !u!1 &2610895428338751441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1248,7 @@ MonoBehaviour:
   behaviorPhaseTwo: {fileID: 11400000, guid: fe708b1e6e222ee43aba1e850b9e9f08, type: 2}
   animator: {fileID: 0}
   flyTimer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!54 &7468764097203948175
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1629,6 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 15
+  position: 3
 --- !u!1 &2610895428667439272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 15
+  position: 3
 --- !u!1 &2610895428907934381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,6 +2433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 1
 --- !u!1 &2610895429025816374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 2
 --- !u!1 &2610895429040985989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,6 +2898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 2
 --- !u!1 &2610895429324247747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 1
 --- !u!1 &2610895429540533948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,6 +3416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 50
+  position: 0
 --- !u!1 &2610895429613948578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,6 +3861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 10
+  position: 2
 --- !u!1 &2610895429758944107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,6 +4074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 0
+  position: 1
 --- !u!1 &2610895429860798840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,6 +4269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 0
+  position: 1
 --- !u!1 &2610895429879634164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,6 +4549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crit: 20
+  position: 0
 --- !u!1 &3995659613166111440
 GameObject:
   m_ObjectHideFlags: 0
