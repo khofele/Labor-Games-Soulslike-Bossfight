@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Armors : MonoBehaviour
+public abstract class Armor : MonoBehaviour
 {
     //access to the CharController script
     protected CharController charController;

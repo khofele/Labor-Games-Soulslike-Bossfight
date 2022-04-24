@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateArmor : Armors
+public class PlateArmor : Armor
 {
     // Start is called before the first frame update
     void Start()

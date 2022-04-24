@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShortSword : Weapons
+public class ShortSword : Weapon
 {
     public void Start()
     {

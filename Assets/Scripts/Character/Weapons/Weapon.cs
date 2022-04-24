@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapons : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     //access to character scripts and animator
     protected CharacterMovement charMovement;

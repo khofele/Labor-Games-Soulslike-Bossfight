@@ -157,10 +157,10 @@ public class CharController : MonoBehaviour
     private void SetEquipmentValues()
     {
         //set armor values
-        armorWeight = currentArmorHelmet.GetComponent<Armors>().GetArmorWeight();
-        armorDef = currentArmorHelmet.GetComponent<Armors>().GetArmorDef();
+        armorWeight = currentArmorHelmet.GetComponent<Armor>().GetArmorWeight();
+        armorDef = currentArmorHelmet.GetComponent<Armor>().GetArmorDef();
         //set weaponWeight
-        weaponWeight = currentWeapon.GetComponent<Weapons>().GetWeaponWeight();
+        weaponWeight = currentWeapon.GetComponent<Weapon>().GetWeaponWeight();
 
         Debug.Log("CC armorWeight: " + armorWeight);
         Debug.Log("CC weaponWeight: " + weaponWeight);
@@ -188,7 +188,7 @@ public class CharController : MonoBehaviour
         currentPotions = potionCount;
     }
 
-    //method to set the prefab of the chosen weapon - called in Weapons script
+    //method to set the prefab of the chosen weapon - called in Weapon script
     public void SetWeaponPrefab(GameObject weaponPref)
     {
         weaponPrefab = weaponPref;
@@ -205,7 +205,7 @@ public class CharController : MonoBehaviour
         currentWeapon.transform.position = hand.position;
     }
 
-    //method to set the prefabs of the chosen armor - called in Armors script
+    //method to set the prefabs of the chosen armor - called in Armor script
     public void SetArmorPrefabs(GameObject helmetPrefab, GameObject torsoPrefab)
     {
         armorHelmetPrefab = helmetPrefab;
