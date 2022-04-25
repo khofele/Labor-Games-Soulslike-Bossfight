@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
         audioSource = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>(); //TODO Animator von Menü setzen lassen je nach Waffentyp
         animator.fireEvents = false; //no sounds directly from the animations (read-only)
     }
 
@@ -85,7 +85,18 @@ public class CharacterMovement : MonoBehaviour
         //!is aborted if player is hit/stunned/dies
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            AttackCombo(); //start combo
+            //if weapon is no lance - attack combo possible
+            if (!(charController.GetCurrentWeapon().Contains("Lance")))
+            {
+                AttackCombo(); //start combo
+            }
+            else
+            {
+                Debug.Log("Lanze");
+
+                animator.SetBool("Attack01R", true);
+            }
+            
         }
         //reset animation after time
         if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
@@ -107,7 +118,7 @@ public class CharacterMovement : MonoBehaviour
         {
             noOfClicks = 0;
         }
-        if(Time.time > nextAttackStartTime) //enough time went by to start new combo
+        if(!(charController.GetCurrentWeapon().Contains("Lance")) && Time.time > nextAttackStartTime) //enough time went by to start new combo
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
@@ -119,12 +130,16 @@ public class CharacterMovement : MonoBehaviour
         //heavy attack
         if (Input.GetKey(KeyCode.Mouse1))
         {
+            Debug.Log("Heavy");
+
             animator.SetBool("HeavyAttack", true);
+
+            Debug.Log(animator.GetBool("HeavyAttack"));
         }
 
 
         //use potion (if enough potions left, pressing E and not currently using a potion)
-        if (charController.GetCurrentPotions() >= 1 && Input.GetKey(KeyCode.E) && !animator.GetBool("UsePotion"))
+        if (Input.GetKey(KeyCode.E) && charController.GetCurrentPotions() >= 1 && !animator.GetBool("UsePotion"))
         {
             animator.SetBool("UsePotion", true);
         }
@@ -208,7 +223,6 @@ public class CharacterMovement : MonoBehaviour
            
         }
     }
-
 
     //--------------------------GETTER METHODS-----------------------
     public Transform GetCam()

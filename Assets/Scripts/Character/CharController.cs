@@ -241,7 +241,7 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/ShortSword", typeof(GameObject)) as GameObject;
+        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(GameObject)) as GameObject; //test
 
         currentWeapon = Instantiate<GameObject>(weaponPrefab);
         currentWeapon.transform.parent = hand.transform;
@@ -315,6 +315,12 @@ public class CharController : MonoBehaviour
     public int GetCurrentPotions()
     {
         return currentPotions;
+    }
+
+    //get current weapon name as string
+    public string GetCurrentWeapon()
+    {
+        return currentWeapon.ToString();
     }
 
     //Getter for the CharDamagable-scripts to get the values of the current attack of the dragon

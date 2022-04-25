@@ -23,8 +23,7 @@ public abstract class Weapon : MonoBehaviour
         charController = gameObject.GetComponentInParent<CharController>();
         animator = charMovement.GetComponentInParent<Animator>();
 
-        //set attack animations for current weapon
-        //SetAttackAnimations(); --> woanders aufrufen??? 
+        
     }
 
     //method called by menu to set the char controller prefab of the chosen weapon
@@ -34,30 +33,62 @@ public abstract class Weapon : MonoBehaviour
         charController.SetWeaponPrefab(weaponPrefab);
     }
 
-    //method to set animation methods suitable for the current weapon
-    private void SetAttackAnimations()
+    //method called by menu to set the animation controller for the chosen weapon
+    //TODO Aufruf Menü (SetAnimationController() nach Reset()-Methode des Weapon-Skripts)
+    public void SetAnimationController()
     {
-
-        //TODO: set animation motions for current weapon
         switch (weaponType)
         {
             case "shortsword":
-                //Attack01R
-                //Attack02R
-                //Attack03R
-                //HeavyAttack
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACSword") as RuntimeAnimatorController;
                 break;
             case "lance":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
+                break;
+            case "longsword":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
+                break;
+            case "hammer":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
+                break;
+            case "daggers":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
                 break;
             default:
-                Debug.Log("weaponType could not be set!");
+                Debug.Log("SetAnimator fehlgeschlagen.");
                 break;
         }
     }
 
-    //--------------------------GETTER FOR DRAGON & CHAR-----------------------
+    public void SetAnimationController(string weaponType)
+    {
+        switch (weaponType)
+        {
+            case "shortsword":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACSword") as RuntimeAnimatorController;
+                break;
+            case "lance":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
+                break;
+            case "longsword":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
+                break;
+            case "hammer":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
+                break;
+            case "daggers":
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
+                break;
+            default:
+                Debug.Log("SetAnimator fehlgeschlagen.");
+                break;
+        }
+    }
 
-    public float GetDamage()
+
+        //--------------------------GETTER FOR DRAGON & CHAR-----------------------
+
+        public float GetDamage()
     {
        //determine weapon damage regarding the characters attack power and a random value in the attack damage range
        //(between min dmg and max dmg)

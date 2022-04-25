@@ -1681,11 +1681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612660426987860166, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001730993
+      value: 0.00000001730993
       objectReference: {fileID: 0}
     - target: {fileID: 612660426987860166, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000010255248
+      value: -0.0000000010255248
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664824, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_Follow
@@ -1757,11 +1757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612660428246944781, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000021492002
+      value: -0.0000000021492
       objectReference: {fileID: 0}
     - target: {fileID: 612660428246944781, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.2887475e-11
+      value: 8.288747e-11
       objectReference: {fileID: 0}
     - target: {fileID: 612660428304259103, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2493,7 +2493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348184438}
-  m_LocalRotation: {x: 0.05872933, y: -0.000000016927478, z: 0.0000000010107678, w: 0.99827397}
+  m_LocalRotation: {x: 0.05872933, y: 0.000000016927478, z: -0.0000000010107678, w: 0.99827397}
   m_LocalPosition: {x: 9.58, y: 7.0276794, z: 29.231087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2826,7 +2826,7 @@ Animator:
   m_GameObject: {fileID: 1394365328}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 04a905f024e5dc54087fe538dbe25688, type: 3}
-  m_Controller: {fileID: 9100000, guid: cc00a06422658bd4da9fc8ec521e07f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 26ec263b54e603a47b226f36baae2c3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

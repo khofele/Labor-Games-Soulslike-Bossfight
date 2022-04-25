@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-9113934904515217661
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Transition01
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400018, guid: a88ac01a842d8a54787edc4be59160b9, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &-9040254835216953252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,32 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28aacd91a4a6e419d0d908e33cb52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1102 &-5697756251139180501
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Transition02
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400018, guid: a88ac01a842d8a54787edc4be59160b9, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &-5531367704524438067
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,14 +544,8 @@ AnimatorStateMachine:
     m_State: {fileID: -8131099821151720604}
     m_Position: {x: 170, y: 60, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -9113934904515217661}
-    m_Position: {x: 1300, y: 160, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 6206170022570163111}
     m_Position: {x: 170, y: 610, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5697756251139180501}
-    m_Position: {x: 1310, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7703764747619903797}
     m_Position: {x: 830, y: 230, z: 0}
@@ -757,7 +699,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CharacterAC
+  m_Name: ACDaggers
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Walk
