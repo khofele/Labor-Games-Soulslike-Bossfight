@@ -124,7 +124,7 @@ public class CharController : MonoBehaviour
     //--------------------------DAMAGE-----------------------
 
     //the received damage is calculated depending on the hitted collider(s) and the damage value
-    //submitted by the boss attack.
+    //submitted by the boss attack - called by CharDamagable.
    
     public void TakeDamage(float damage)
     {
@@ -139,6 +139,49 @@ public class CharController : MonoBehaviour
         {
             charMovement.GotStunned();
         }
+
+        //health is <= 0 --> player dies
+        if (currentHealth <= 0f)
+        {
+            charMovement.Death();
+        }
+
+        Debug.Log(currentHealth);
+    }
+
+    //If the boss attacks with fire, poison or magic, the player gets damage over time on top of the normal
+    //damage value submitted by the boss attack - called by CharDamagable.
+    //dot - the damage that is dealt over time
+    //dotDelay - the delay between damage dealing
+    //valueEveryTime - the percentage of the dot that is dealt each time (at once)
+    public IEnumerator DamageOverTime(float dot, float dotDelay, float valueEveryTime)
+    {
+        float dealtDamage = 0f; //already dealt damage
+        float damage = valueEveryTime; //the damage value that shall be dealt at once
+
+        while(dealtDamage < dot)
+        {
+            dealtDamage += damage; //add damage to dealt damage
+            //deal only as much damage as dot, not more
+            if (dealtDamage > dot)
+            {
+                damage -= dot - dealtDamage;
+            }
+
+            Debug.Log("DamageOverTime");
+
+            //call coroutine which deals damage after time
+            yield return StartCoroutine(TakeDot(damage, dotDelay));
+        }
+    }
+
+    //coroutine called by DamageOverTime() to deal the dot
+    private IEnumerator TakeDot(float damage, float dotDelay)
+    {
+        yield return new WaitForSeconds(dotDelay);
+
+        //subtract damage from current health
+        currentHealth -= damage;
 
         //health is <= 0 --> player dies
         if (currentHealth <= 0f)
