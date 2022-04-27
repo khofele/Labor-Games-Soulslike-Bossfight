@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
         audioSource = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>(); //TODO Animator von Menü setzen lassen je nach Waffentyp
+        animator = GetComponent<Animator>(); 
         animator.fireEvents = false; //no sounds directly from the animations (read-only)
     }
 

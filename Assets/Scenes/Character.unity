@@ -1681,11 +1681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612660426987860166, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001730993
+      value: -0.00000001730993
       objectReference: {fileID: 0}
     - target: {fileID: 612660426987860166, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000010255248
+      value: 0.0000000010255248
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664824, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_Follow
@@ -1705,15 +1705,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664826, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9.58
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664826, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9676795
+      value: -5.06
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664826, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.998913
+      value: -36.23
       objectReference: {fileID: 0}
     - target: {fileID: 612660427223664826, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1757,11 +1757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612660428246944781, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000021492
+      value: 0.0000000021492002
       objectReference: {fileID: 0}
     - target: {fileID: 612660428246944781, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.288747e-11
+      value: -8.2887475e-11
       objectReference: {fileID: 0}
     - target: {fileID: 612660428304259103, guid: 7be74dc37f1cd1b4085392b4a7e38281, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1938,7 +1938,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89126
+  m_Name: pb_Mesh89142
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2468,7 +2468,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 45
+  field of view: 42
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2493,8 +2493,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348184438}
-  m_LocalRotation: {x: 0.05872933, y: 0.000000016927478, z: -0.0000000010107678, w: 0.99827397}
-  m_LocalPosition: {x: 9.58, y: 7.0276794, z: 29.231087}
+  m_LocalRotation: {x: 0.04922011, y: 0, z: 0, w: 0.998788}
+  m_LocalPosition: {x: 9.58, y: 6.97, z: 25.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2834,11 +2834,9 @@ Animator:
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
     are already bound by a Humanoid avatar. These transforms can only be changed
     by Humanoid clips.\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tTransform 'EyeR'\n\tTransform
-    'EyeL'\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tFrom animation clip 'Attack01R'\n\tFrom
-    animation clip 'Attack02R'\n\tFrom animation clip 'Death'\n\tFrom animation clip
-    'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation clip 'Run'\n\tFrom
-    animation clip 'Walk'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation
-    clip 'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tand more ..."
+    'EyeL'\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tFrom animation clip 'Death'\n\tFrom
+    animation clip 'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation
+    clip 'Run'\n\tFrom animation clip 'Walk'\n\tFrom animation clip 'GotHit'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -4152,7 +4150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008186169}
   m_LocalRotation: {x: -0.00000022587216, y: -0.70710695, z: -0.7071067, w: 0.0000000045329074}
-  m_LocalPosition: {x: 0, y: -0.151, z: -0.682}
+  m_LocalPosition: {x: 0, y: -0.151, z: -0.669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1427173787}

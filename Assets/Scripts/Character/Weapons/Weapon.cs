@@ -60,6 +60,8 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    //test method - CAN BE DELETED AFTER MENU IS IMPLEMENTED
+    //TODO WENN MENÜ DA LÖSCHEN
     public void SetAnimationController(string weaponType)
     {
         switch (weaponType)
