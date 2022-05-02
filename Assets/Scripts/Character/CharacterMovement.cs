@@ -90,10 +90,8 @@ public class CharacterMovement : MonoBehaviour
             {
                 AttackCombo(); //start combo
             }
-            else
+            else //lance: only stab attack
             {
-                Debug.Log("Lanze");
-
                 animator.SetBool("Attack01R", true);
             }
             

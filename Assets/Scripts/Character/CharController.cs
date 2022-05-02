@@ -6,7 +6,8 @@ using UnityEngine;
 public class CharController : MonoBehaviour
 {
     //General
-    [SerializeField] private Transform hand = null; //right hand of the character (holds weapon)
+    [SerializeField] private Transform handR = null; //right hand of the character (holds weapon)
+    [SerializeField] private Transform handL = null; //left hand of the character (sometimes holds weapon)
     private CharacterMovement charMovement = null; //CharacterMovement script
 
     //Name
@@ -44,6 +45,7 @@ public class CharController : MonoBehaviour
     [SerializeField] private float healValue = 400f; //value of health one potion heals
     private GameObject weaponPrefab = null; //current weapon prefab
     private GameObject currentWeapon = null; //current weapon object (instantiated)
+    private GameObject currentSecondWeapon = null; //current second weapon (instantiated if equipped)
     private float weaponWeight = 0f; //weight of current weapon
     private float armorWeight = 0f;  //weight of current armor
     private float armorDef = 0f; //defense of current armor
@@ -68,7 +70,7 @@ public class CharController : MonoBehaviour
         //set current weapon and place it in character's hand
         SetAndAttachWeapon();
         //set current armor and place it on character model
-        SetAndAttachArmor(); 
+        SetAndAttachArmor();
         //set values regarding equipment
         SetEquipmentValues();
         //set attributes with chosen stats and current values
@@ -241,11 +243,20 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(GameObject)) as GameObject; //test
+        weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(GameObject)) as GameObject; //test
 
+        //equip main weapon
         currentWeapon = Instantiate<GameObject>(weaponPrefab);
-        currentWeapon.transform.parent = hand.transform;
-        currentWeapon.transform.position = hand.position;
+        currentWeapon.transform.parent = handR.transform;
+        currentWeapon.transform.position = handR.position;
+
+        //if daggers chosen - equip second weapon
+        if(currentWeapon.GetComponent<Weapon>().GetWeaponType() == "daggers") //Notiz: funzt erst mit Menü, das Werte resettet
+        {
+            currentSecondWeapon = Instantiate<GameObject>(weaponPrefab);
+            currentSecondWeapon.transform.parent = handL.transform;
+            currentSecondWeapon.transform.position = handL.position;
+        }
     }
 
     //method to set the prefabs of the chosen armor - called in Armor script

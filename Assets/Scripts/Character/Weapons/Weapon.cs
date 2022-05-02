@@ -60,34 +60,6 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    //test method - CAN BE DELETED AFTER MENU IS IMPLEMENTED
-    //TODO WENN MENÜ DA LÖSCHEN
-    public void SetAnimationController(string weaponType)
-    {
-        switch (weaponType)
-        {
-            case "shortsword":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACSword") as RuntimeAnimatorController;
-                break;
-            case "lance":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
-                break;
-            case "longsword":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
-                break;
-            case "hammer":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
-                break;
-            case "daggers":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
-                break;
-            default:
-                Debug.Log("SetAnimator fehlgeschlagen.");
-                break;
-        }
-    }
-
-
         //--------------------------GETTER FOR DRAGON & CHAR-----------------------
 
         public float GetDamage()
