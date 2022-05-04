@@ -18,6 +18,7 @@ public class CharDamagable : MonoBehaviour
         charController = GetComponentInParent<CharController>();
     }
 
+
     //called when hit
     private void OnCollisionEnter(Collision collision)
     {
@@ -36,11 +37,12 @@ public class CharDamagable : MonoBehaviour
             //{
             //float dot = attackManager.CurrentAttack.Damage * dotPercentage;
             float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
-            //charController.DamageOverTime(dot, dotDelay, valueEveryTime);
+            //charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime);
             //}
 
             //test
             charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime));
         }
     }
+
 }
