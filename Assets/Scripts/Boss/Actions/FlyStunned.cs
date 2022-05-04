@@ -21,7 +21,6 @@ public class FlyStunned : GOAction
     public override TaskStatus OnUpdate()
     {
         bossController.Animator.SetTrigger(""); // TODO Animations Task
-        // TODO: Stun Fly
         Debug.Log("boss fly stunned");
         return TaskStatus.COMPLETED;
     }

@@ -10,13 +10,25 @@ public class BossController : MonoBehaviour
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
     [SerializeField] private Animator animator = null;
     [SerializeField] private Timer flyTimer = null;
+    [SerializeField] private Timer stunTimer = null;
+    [SerializeField] private Timer isStunnedTimer = null;
+    [SerializeField] private int hitCounter = 0;
+
+    // TODO DEBUG
+    [SerializeField] private int stunCount = 10;
 
     private bool isFlying = false;
+    private bool isStunned = false;
 
     public float Health { get => health; set => health = value; }
     public Animator Animator { get => animator; }
     public bool IsFlying { get => isFlying; set => isFlying = value; }
     public Timer FlyTimer { get => flyTimer; }
+    public Timer StunTimer { get => stunTimer; }
+    public Timer IsStunnedTimer { get => isStunnedTimer; }
+    public int HitCounter { get => hitCounter; set => hitCounter = value; }
+    public int StunCount { get => stunCount; }
+    public bool IsStunned { get => isStunned; set => isStunned = value; }
 
     public void TakeDamage(float damage)
     {

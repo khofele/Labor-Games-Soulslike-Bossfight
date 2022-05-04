@@ -21,7 +21,6 @@ public class Stunned : GOAction
     public override TaskStatus OnUpdate()
     {
         bossController.Animator.SetTrigger("StunnedStanding");
-        // TODO: Stun
         Debug.Log("boss stunned");
         return TaskStatus.COMPLETED;
     }

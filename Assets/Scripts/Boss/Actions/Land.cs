@@ -21,6 +21,7 @@ public class Land : GOAction
         //gameObject.transform.position = new Vector3();
         bossController.Animator.SetTrigger(""); // TODO Animations Task
         bossController.FlyTimer.StartTimer();
+        bossController.IsFlying = false;
         return TaskStatus.COMPLETED;
     }
 }

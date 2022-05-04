@@ -15,32 +15,52 @@ public class Damagable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // TODO: GetSchaden von Spielerwaffe
-        
-        if(bossController.IsFlying == true)
+        if(bossController.StunTimer.TimerOver == true)
         {
-            bossController.Animator.SetTrigger(""); // TODO: Animations Task FlyHit
-        }
-        else if(position == PositionEnum.LEFT)
-        {
-            bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit2
-        }
-        else if (position == PositionEnum.RIGHT)
-        {
-            bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit1
+            bossController.HitCounter = 0;
+            bossController.StunTimer.StartTimer(10);    // TODO: Balancing
         }
         else
         {
-            int random = Random.Range(0, 100);
-            if(random%2 == 0)
+            bossController.HitCounter++;
+        }
+
+        if(bossController.HitCounter >= bossController.StunCount)
+        {
+            bossController.IsStunned = true;
+            bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
+        }
+
+        // TODO: GetSchaden von Spielerwaffe
+        
+        if(bossController.IsStunned == false)
+        {
+            if(bossController.IsFlying == true)
             {
-                bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                bossController.Animator.SetTrigger(""); // TODO: Animations Task FlyHit
+            }
+            else if(position == PositionEnum.LEFT)
+            {
+                bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit2
+            }
+            else if (position == PositionEnum.RIGHT)
+            {
+                bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit1
             }
             else
             {
-                bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                int random = Random.Range(0, 100);
+                if(random%2 == 0)
+                {
+                    bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                }
+                else
+                {
+                    bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                }
             }
         }
+
 
         //bossController.TakeDamage(waffenSchaden + crit);
 
