@@ -688,6 +688,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.64
       objectReference: {fileID: 0}
+    - target: {fileID: 4969187059825226828, guid: 1cfb0e19fc273a24180ed87cf989ea2f, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 740794490}
     - target: {fileID: 5251706651798733609, guid: 1cfb0e19fc273a24180ed87cf989ea2f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.19496286
@@ -820,6 +824,10 @@ PrefabInstance:
       propertyPath: attackManager
       value: 
       objectReference: {fileID: 468920696}
+    - target: {fileID: 6430098459666232201, guid: 1cfb0e19fc273a24180ed87cf989ea2f, type: 3}
+      propertyPath: attackManager
+      value: 
+      objectReference: {fileID: 468920698}
     - target: {fileID: 7788697384458166933, guid: 1cfb0e19fc273a24180ed87cf989ea2f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
