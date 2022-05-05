@@ -12,6 +12,6 @@ public class Longsword : Weapon
         weaponWeight = 15f;
         weaponMinDmg = 75f;
         weaponMaxDmg = 105f;
-        weaponPrefab = Resources.Load("Character/Weapons/Longword", typeof(GameObject)) as GameObject;
+        weaponPrefab = Resources.Load("Character/Weapons/Longword", typeof(Weapon)) as Weapon;
     }
 }

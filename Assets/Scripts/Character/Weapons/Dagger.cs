@@ -12,6 +12,6 @@ public class Dagger : Weapon
         weaponWeight = 10f;
         weaponMinDmg = 40f;
         weaponMaxDmg = 70f;
-        weaponPrefab = Resources.Load("Character/Weapons/Dagger", typeof(GameObject)) as GameObject;
+        weaponPrefab = Resources.Load("Character/Weapons/Dagger", typeof(Weapon)) as Weapon;
     }
 }

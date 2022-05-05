@@ -43,9 +43,9 @@ public class CharController : MonoBehaviour
     //equipment
     [SerializeField] private int potionCount = 5; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
-    private GameObject weaponPrefab = null; //current weapon prefab
-    private GameObject currentWeapon = null; //current weapon object (instantiated)
-    private GameObject currentSecondWeapon = null; //current second weapon (instantiated if equipped)
+    private Weapon weaponPrefab = null; //current weapon prefab
+    private Weapon currentWeapon = null; //current weapon object (instantiated)
+    private Weapon currentSecondWeapon = null; //current second weapon (instantiated if equipped)
     private float weaponWeight = 0f; //weight of current weapon
     private float armorWeight = 0f;  //weight of current armor
     private float armorDef = 0f; //defense of current armor
@@ -205,7 +205,7 @@ public class CharController : MonoBehaviour
         armorWeight = currentArmorHelmet.GetComponent<Armor>().GetArmorWeight();
         armorDef = currentArmorHelmet.GetComponent<Armor>().GetArmorDef();
         //set weaponWeight
-        weaponWeight = currentWeapon.GetComponent<Weapon>().GetWeaponWeight();
+        weaponWeight = currentWeapon.GetWeaponWeight();
 
         Debug.Log("CC armorWeight: " + armorWeight);
         Debug.Log("CC weaponWeight: " + weaponWeight);
@@ -234,7 +234,7 @@ public class CharController : MonoBehaviour
     }
 
     //method to set the prefab of the chosen weapon - called in Weapon script
-    public void SetWeaponPrefab(GameObject weaponPref)
+    public void SetWeaponPrefab(Weapon weaponPref)
     {
         weaponPrefab = weaponPref;
     }
@@ -243,17 +243,17 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/ShortSword", typeof(GameObject)) as GameObject; //test
+        weaponPrefab = Resources.Load("Character/Weapons/ShortSword", typeof(Weapon)) as Weapon; //test
 
         //equip main weapon
-        currentWeapon = Instantiate<GameObject>(weaponPrefab);
+        currentWeapon = Instantiate<Weapon>(weaponPrefab);
         currentWeapon.transform.parent = handR.transform;
         currentWeapon.transform.position = handR.position;
 
         //if daggers chosen - equip second weapon
-        if(currentWeapon.GetComponent<Weapon>().GetWeaponType() == "daggers") //Notiz: funzt erst mit Menü, das Werte resettet
+        if(currentWeapon.GetWeaponType() == "daggers") //Notiz: funzt erst mit Menü, das Werte resettet
         {
-            currentSecondWeapon = Instantiate<GameObject>(weaponPrefab);
+            currentSecondWeapon = Instantiate<Weapon>(weaponPrefab);
             currentSecondWeapon.transform.parent = handL.transform;
             currentSecondWeapon.transform.position = handL.position;
         }
@@ -332,6 +332,12 @@ public class CharController : MonoBehaviour
     public string GetCurrentWeapon()
     {
         return currentWeapon.ToString();
+    }
+
+    //getter for dragon - returns current weapon object
+    public Weapon GetCurrentWeaponObject()
+    {
+        return currentWeapon;
     }
 
     //Getter for the CharDamagable-scripts to get the values of the current attack of the dragon

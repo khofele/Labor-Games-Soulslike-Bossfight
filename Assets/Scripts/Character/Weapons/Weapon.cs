@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
     protected float weaponMinDmg = 0f; //minimum damage the weapon makes
     protected float weaponMaxDmg = 0f; //maximum damage the weapon makes
     //weapon prefab
-    protected GameObject weaponPrefab = null;
+    protected Weapon weaponPrefab = null;
 
     // Start is called before the first frame update
     void Start()

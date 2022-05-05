@@ -12,6 +12,6 @@ public class Lance : Weapon
         weaponWeight = 12f;
         weaponMinDmg = 65f;
         weaponMaxDmg = 95f;
-        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(GameObject)) as GameObject;
+        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(Weapon)) as Weapon;
     }
 }

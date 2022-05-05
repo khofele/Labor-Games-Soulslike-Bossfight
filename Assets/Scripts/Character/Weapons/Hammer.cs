@@ -12,6 +12,6 @@ public class Hammer : Weapon
         weaponWeight = 15f;
         weaponMinDmg = 70f;
         weaponMaxDmg = 100f;
-        weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(GameObject)) as GameObject;
+        weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(Weapon)) as Weapon;
     }
 }
