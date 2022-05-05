@@ -53,10 +53,10 @@ public class CharController : MonoBehaviour
     [SerializeField] private Transform head = null;
     [SerializeField] private Transform torso = null;
     //armor prefabs and objects (instantiated)
-    private GameObject armorHelmetPrefab = null; //current armor prefabs
-    private GameObject armorTorsoPrefab = null;
-    private GameObject currentArmorHelmet = null; //instantiated objects
-    private GameObject currentArmorTorso = null; 
+    private Armor armorHelmetPrefab = null; //current armor prefabs
+    private Armor armorTorsoPrefab = null;
+    private Armor currentArmorHelmet = null; //instantiated objects
+    private Armor currentArmorTorso = null; 
 
 
 
@@ -202,8 +202,8 @@ public class CharController : MonoBehaviour
     private void SetEquipmentValues()
     {
         //set armor values
-        armorWeight = currentArmorHelmet.GetComponent<Armor>().GetArmorWeight();
-        armorDef = currentArmorHelmet.GetComponent<Armor>().GetArmorDef();
+        armorWeight = currentArmorHelmet.GetArmorWeight();
+        armorDef = currentArmorHelmet.GetArmorDef();
         //set weaponWeight
         weaponWeight = currentWeapon.GetWeaponWeight();
 
@@ -260,7 +260,7 @@ public class CharController : MonoBehaviour
     }
 
     //method to set the prefabs of the chosen armor - called in Armor script
-    public void SetArmorPrefabs(GameObject helmetPrefab, GameObject torsoPrefab)
+    public void SetArmorPrefabs(Armor helmetPrefab, Armor torsoPrefab)
     {
         armorHelmetPrefab = helmetPrefab;
         armorTorsoPrefab = torsoPrefab;
@@ -270,12 +270,12 @@ public class CharController : MonoBehaviour
     private void SetAndAttachArmor()
     {
         //TODO WENN MENÜ DA LÖSCHEN!
-        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(GameObject)) as GameObject;
-        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(GameObject)) as GameObject;
+        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
+        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
 
         //instantiate the chosen prefab
-        currentArmorHelmet = Instantiate<GameObject>(armorHelmetPrefab);
-        currentArmorTorso = Instantiate<GameObject>(armorTorsoPrefab);
+        currentArmorHelmet = Instantiate<Armor>(armorHelmetPrefab);
+        currentArmorTorso = Instantiate<Armor>(armorTorsoPrefab);
 
         //attach armor pieces als children to body pieces
         currentArmorHelmet.transform.parent = head.transform;
