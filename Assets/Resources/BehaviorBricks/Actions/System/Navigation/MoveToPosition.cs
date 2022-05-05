@@ -16,7 +16,11 @@ namespace BBUnity.Actions
         [Help("Target position where the game object will be moved")]
         public Vector3 target;
 
+        [InParam("attack manager")]
+        [SerializeField] private AttackManager attackManager = null;
+
         private UnityEngine.AI.NavMeshAgent navAgent;
+        private BossController bossController = null;
 
         /// <summary>Initialization Method of MoveToPosition.</summary>
         /// <remarks>Check if there is a NavMeshAgent to assign a default one and assign the destination to the NavMeshAgent the given position.</remarks>
@@ -32,9 +36,11 @@ namespace BBUnity.Actions
 
             #if UNITY_5_6_OR_NEWER
                 navAgent.isStopped = false;
-            #else
+#else
                 navAgent.Resume();
-            #endif
+#endif
+
+            bossController = gameObject.GetComponent<BossController>();
         }
 
         /// <summary>Method of Update of MoveToPosition </summary>
@@ -43,7 +49,8 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
-                return TaskStatus.COMPLETED;
+                bossController.Animator.SetTrigger("Walk");
+            return TaskStatus.COMPLETED;
 
             return TaskStatus.RUNNING;
         }
