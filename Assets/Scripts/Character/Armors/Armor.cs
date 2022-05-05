@@ -12,8 +12,8 @@ public abstract class Armor : MonoBehaviour
     protected float armorWeight = 0f; //weight of the armor
     protected float armorDef = 0f; //defense value of the armor
     //armor prefabs
-    protected GameObject helmetPrefab = null;
-    protected GameObject torsoPrefab = null;
+    protected Armor helmetPrefab = null;
+    protected Armor torsoPrefab = null;
 
     // Start is called before the first frame update
     void Start()
