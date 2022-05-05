@@ -52,11 +52,11 @@ public class Damagable : MonoBehaviour
                 int random = Random.Range(0, 100);
                 if(random%2 == 0)
                 {
-                    bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                    bossController.Animator.SetTrigger("Hit 1");
                 }
                 else
                 {
-                    bossController.Animator.SetTrigger(""); // TODO: Animations Task
+                    bossController.Animator.SetTrigger("Hit 2");
                 }
             }
         }
