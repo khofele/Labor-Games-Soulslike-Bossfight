@@ -25,7 +25,7 @@ public class Death : GOAction
     {
         if(bossController.IsFlying == true)
         {
-            bossController.Animator.SetTrigger(""); // TODO Animations Task
+            bossController.Animator.SetTrigger("FlyDeath");
         }
         else
         {

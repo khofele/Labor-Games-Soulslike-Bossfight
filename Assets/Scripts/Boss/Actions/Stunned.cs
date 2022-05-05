@@ -22,6 +22,10 @@ public class Stunned : GOAction
     {
         bossController.Animator.SetTrigger("StunnedStanding");
         Debug.Log("boss stunned");
+        while(bossController.IsStunnedTimer.TimerOver == false)
+        {
+            continue;
+        }
         return TaskStatus.COMPLETED;
     }
 }

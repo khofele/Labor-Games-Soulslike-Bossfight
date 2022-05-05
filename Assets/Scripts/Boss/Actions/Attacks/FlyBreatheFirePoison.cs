@@ -54,7 +54,7 @@ public class FlyBreatheFirePoison : GOAction
         // if Timer running
         if (bossController.FlyTimer.TimerOver == false)
         {
-            bossController.Animator.SetTrigger(""); // TODO Animations Task
+            bossController.Animator.SetTrigger("BreathePoisonFire");
             attackManager.CurrentAttack = attackManager.AttackFlyBreatheFirePoison;
             Debug.Log("Fly Breathe Poison Fire Attack");
 

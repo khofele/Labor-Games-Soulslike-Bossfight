@@ -53,7 +53,7 @@ public class FlyBreatheFireMagic : GOAction
         // if Timer running
         if (bossController.FlyTimer.TimerOver == false)
         {
-            bossController.Animator.SetTrigger(""); // TODO Animations Task
+            bossController.Animator.SetTrigger("BreatheMagicFire");
             attackManager.CurrentAttack = attackManager.AttackFlyBreatheFireMagic ;
             Debug.Log("Fly Breathe Magic Fire Attack");
 

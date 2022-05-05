@@ -17,6 +17,10 @@ public class TakeOff : GOAction
 
     public override TaskStatus OnUpdate()
     {
+        for (int i = 0; i < 500; i++)
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.1f, gameObject.transform.position.z);
+        }
         bossController.IsFlying = true;
         bossController.Animator.SetTrigger("TakeOff");
         bossController.FlyTimer.StartTimer();

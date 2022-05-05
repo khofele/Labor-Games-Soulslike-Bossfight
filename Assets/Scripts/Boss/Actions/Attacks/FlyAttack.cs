@@ -20,7 +20,7 @@ public class FlyAttack : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger(""); // TODO Animations Task
+        bossController.Animator.SetTrigger("AttackFly");
         attackManager.CurrentAttack = attackManager.AttackFly;
         Debug.Log("Fly Attack");
         return TaskStatus.COMPLETED;
