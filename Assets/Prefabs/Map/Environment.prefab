@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 4540972881037140915}
   - component: {fileID: 4540972881037140914}
   - component: {fileID: 4540972881037140913}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: NavPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
