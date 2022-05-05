@@ -33,7 +33,8 @@ public class CharController : MonoBehaviour
     private float movementSpeed = 6f; //speed for movement like walking, running and rolling
 
     //fight
-    [SerializeField] private GameObject dragon = null; //the enemy - dragon
+    [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon
+
     [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
     private float currentHealth = 0f;
     private float currentStamina = 0f;
@@ -341,9 +342,9 @@ public class CharController : MonoBehaviour
     }
 
     //Getter for the CharDamagable-scripts to get the values of the current attack of the dragon
-    public GameObject GetDragon()
+    public AttackManager GetAttackManager()
     {
-        return dragon;
+        return attackManager;
     }
 
     //for menu to display character name

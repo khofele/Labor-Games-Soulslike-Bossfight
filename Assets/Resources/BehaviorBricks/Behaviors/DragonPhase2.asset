@@ -202,9 +202,10 @@ MonoBehaviour:
     <SequenceNode id=\"5\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ConditionEvalNode id=\"45\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
     selected=\"False\" position=\"1912 1196\" name=\"IsTimerRunning\" description=\"Eval\"
-    cardinality=\"1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
-    <ConditionEvalNode id=\"45\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"44\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
+    <ConditionEvalNode id=\"45\" />\r\n          <PrioritySelectorNode id=\"43\"
+    />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode
+    id=\"44\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
     position=\"504 618\" name=\"FlyStunned\" description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"44\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <RepeatUntilSuccess id=\"25\">\r\n     
