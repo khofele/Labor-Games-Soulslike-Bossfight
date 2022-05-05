@@ -25,7 +25,7 @@ public class Damagable : MonoBehaviour
             bossController.HitCounter++;
         }
 
-        if(bossController.HitCounter >= bossController.StunCount)
+        if(bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
         {
             bossController.IsStunned = true;
             bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
@@ -37,15 +37,15 @@ public class Damagable : MonoBehaviour
         {
             if(bossController.IsFlying == true)
             {
-                bossController.Animator.SetTrigger(""); // TODO: Animations Task FlyHit
+                bossController.Animator.SetTrigger("Hit 3");
             }
             else if(position == PositionEnum.LEFT)
             {
-                bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit2
+                bossController.Animator.SetTrigger("Hit 2");
             }
             else if (position == PositionEnum.RIGHT)
             {
-                bossController.Animator.SetTrigger(""); // TODO: Animations Task Hit1
+                bossController.Animator.SetTrigger("Hit 1");
             }
             else
             {
