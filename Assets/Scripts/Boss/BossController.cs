@@ -13,6 +13,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private Timer stunTimer = null;
     [SerializeField] private Timer isStunnedTimer = null;
     [SerializeField] private int hitCounter = 0;
+    [SerializeField] private CharController player = null;
 
     // TODO DEBUG
     [SerializeField] private int stunCount = 10;
@@ -29,6 +30,7 @@ public class BossController : MonoBehaviour
     public int HitCounter { get => hitCounter; set => hitCounter = value; }
     public int StunCount { get => stunCount; }
     public bool IsStunned { get => isStunned; set => isStunned = value; }
+    public CharController Player { get => player; }
 
     public void TakeDamage(float damage)
     {

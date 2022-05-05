@@ -31,7 +31,7 @@ public class Damagable : MonoBehaviour
             bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
         }
 
-        // TODO: GetSchaden von Spielerwaffe
+        float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();
         
         if(bossController.IsStunned == false)
         {
@@ -61,8 +61,7 @@ public class Damagable : MonoBehaviour
             }
         }
 
-
-        //bossController.TakeDamage(waffenSchaden + crit);
+        bossController.TakeDamage(damage + crit);
 
     }
 }
