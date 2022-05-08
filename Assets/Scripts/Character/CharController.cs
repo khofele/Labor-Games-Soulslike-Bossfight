@@ -324,12 +324,13 @@ public class CharController : MonoBehaviour
         return currentStamina;
     }
 
+    //control current potion number
     public int GetCurrentPotions()
     {
         return currentPotions;
     }
 
-    //get current weapon name as string
+    //get current weapon name as string - to get current prefab(s)
     public string GetCurrentWeapon()
     {
         return currentWeapon.ToString();
