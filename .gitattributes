@@ -12,3 +12,5 @@ Assets/Materials[[:space:]]and[[:space:]]Textures filter=lfs diff=lfs merge=lfs 
 *.tga filter=lfs diff=lfs merge=lfs -text
 *.hdr filter=lfs diff=lfs merge=lfs -text
 *.anim filter=lfs diff=lfs merge=lfs -text
+lfs/* filter=lfs diff=lfs merge=lfs -text
+lfs/objects/* filter=lfs diff=lfs merge=lfs -text
