@@ -14,3 +14,5 @@ Assets/Materials[[:space:]]and[[:space:]]Textures filter=lfs diff=lfs merge=lfs 
 *.anim filter=lfs diff=lfs merge=lfs -text
 lfs/* filter=lfs diff=lfs merge=lfs -text
 lfs/objects/* filter=lfs diff=lfs merge=lfs -text
+C:/Users/karen/Desktop/Bossfight/Labor-Games-Bossfight/lfs/objects/15/29/15291b00d232ee0b984d8eab8667a489768a87d34f30be5ecc7e2a4848e5c237 filter=lfs diff=lfs merge=lfs -text
+C:/Users/karen/Desktop/Bossfight/Labor-Games-Bossfight/lfs/objects/5c/38/5c38657ecf20dbfc7f528efbadc76245ea4e561bea44f8ec549ff706963a4aea filter=lfs diff=lfs merge=lfs -text
