@@ -13,7 +13,7 @@ public class CharDamagable : MonoBehaviour
     private float dotValuePercentage = 0.1f; //percentage of dot that is dealt at once
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         charController = GetComponentInParent<CharController>();
         attackManager = charController.GetAttackManager();

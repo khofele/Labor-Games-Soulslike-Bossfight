@@ -13,17 +13,16 @@ public abstract class Weapon : MonoBehaviour
     protected float weaponWeight = 0f; //weight of the weapon
     protected float weaponMinDmg = 0f; //minimum damage the weapon makes
     protected float weaponMaxDmg = 0f; //maximum damage the weapon makes
+    protected float heavyAttackAddDamage = 50f; //additional damage for heavy attacks
     //weapon prefab
     protected Weapon weaponPrefab = null;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         charMovement = gameObject.GetComponentInParent<CharacterMovement>();
         charController = gameObject.GetComponentInParent<CharController>();
-        animator = charMovement.GetComponentInParent<Animator>();
-
-        
+        animator = charMovement.GetComponentInParent<Animator>();  
     }
 
     //method called by menu to set the char controller prefab of the chosen weapon
@@ -40,7 +39,7 @@ public abstract class Weapon : MonoBehaviour
         switch (weaponType)
         {
             case "shortsword":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACSword") as RuntimeAnimatorController;
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
                 break;
             case "lance":
                 animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
@@ -62,11 +61,26 @@ public abstract class Weapon : MonoBehaviour
 
         //--------------------------GETTER FOR DRAGON & CHAR-----------------------
 
-        public float GetDamage()
+    //Getter of the current animator state type to determine damage with
+    private string GetCurrentAttackType()
     {
-       //determine weapon damage regarding the characters attack power and a random value in the attack damage range
-       //(between min dmg and max dmg)
-       float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + charController.GetAttackPower();
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
+            return "heavy";
+        else return "normal";
+    }
+
+    public float GetDamage()
+    {
+        //determine weapon damage regarding the characters attack power and a random value in the attack damage range
+        //(between min dmg and max dmg) as well as the attack type done (normal / heavy)
+        float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + charController.GetAttackPower();
+
+        //if heavy attack: additional damage
+        if(GetCurrentAttackType() == "heavy")
+        {
+            damage += heavyAttackAddDamage;
+        }
+
        return damage;
     }
 

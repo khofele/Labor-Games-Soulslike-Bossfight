@@ -62,7 +62,7 @@ public class CharController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         charName = "Godwin the Brave";
 
@@ -81,7 +81,7 @@ public class CharController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //regeneration
         RegenerateStamina();
@@ -244,7 +244,7 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(Weapon)) as Weapon; //test
+        weaponPrefab = Resources.Load("Character/Weapons/Shortsword", typeof(Weapon)) as Weapon; //test
 
         //equip main weapon
         currentWeapon = Instantiate<Weapon>(weaponPrefab);
@@ -271,8 +271,10 @@ public class CharController : MonoBehaviour
     private void SetAndAttachArmor()
     {
         //TODO WENN MENÜ DA LÖSCHEN!
-        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
-        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
+        //armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
+        //armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
+        armorHelmetPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorHelmet", typeof(Armor)) as Armor;
+        armorTorsoPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorTorso", typeof(Armor)) as Armor;
 
         //instantiate the chosen prefab
         currentArmorHelmet = Instantiate<Armor>(armorHelmetPrefab);
@@ -324,12 +326,13 @@ public class CharController : MonoBehaviour
         return currentStamina;
     }
 
+    //control current potion number
     public int GetCurrentPotions()
     {
         return currentPotions;
     }
 
-    //get current weapon name as string
+    //get current weapon name as string - to get current prefab(s)
     public string GetCurrentWeapon()
     {
         return currentWeapon.ToString();
