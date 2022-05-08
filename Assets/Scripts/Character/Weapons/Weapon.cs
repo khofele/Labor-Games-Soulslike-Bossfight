@@ -39,7 +39,7 @@ public abstract class Weapon : MonoBehaviour
         switch (weaponType)
         {
             case "shortsword":
-                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACSword") as RuntimeAnimatorController;
+                animator.runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
                 break;
             case "lance":
                 animator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;

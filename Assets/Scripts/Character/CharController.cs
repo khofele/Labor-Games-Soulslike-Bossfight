@@ -244,7 +244,7 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(Weapon)) as Weapon; //test
+        weaponPrefab = Resources.Load("Character/Weapons/Shortsword", typeof(Weapon)) as Weapon; //test
 
         //equip main weapon
         currentWeapon = Instantiate<Weapon>(weaponPrefab);
@@ -271,8 +271,10 @@ public class CharController : MonoBehaviour
     private void SetAndAttachArmor()
     {
         //TODO WENN MENÜ DA LÖSCHEN!
-        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
-        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
+        //armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
+        //armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
+        armorHelmetPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorHelmet", typeof(Armor)) as Armor;
+        armorTorsoPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorTorso", typeof(Armor)) as Armor;
 
         //instantiate the chosen prefab
         currentArmorHelmet = Instantiate<Armor>(armorHelmetPrefab);
