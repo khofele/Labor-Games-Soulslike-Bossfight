@@ -20,12 +20,15 @@ namespace BBUnity.Actions
         [SerializeField] private AttackManager attackManager = null;
 
         private UnityEngine.AI.NavMeshAgent navAgent;
+
+        [InParam("controller")]
         private BossController bossController = null;
 
         /// <summary>Initialization Method of MoveToPosition.</summary>
         /// <remarks>Check if there is a NavMeshAgent to assign a default one and assign the destination to the NavMeshAgent the given position.</remarks>
         public override void OnStart()
         {
+            bossController = gameObject.GetComponent<BossController>();
             navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
             if (navAgent == null)
             {
@@ -33,9 +36,10 @@ namespace BBUnity.Actions
                 navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
             }
             navAgent.SetDestination(target);
+            bossController.Animator.SetTrigger("Walk");
 
-            #if UNITY_5_6_OR_NEWER
-                navAgent.isStopped = false;
+#if UNITY_5_6_OR_NEWER
+            navAgent.isStopped = false;
 #else
                 navAgent.Resume();
 #endif
@@ -49,9 +53,13 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            {
                 bossController.Animator.SetTrigger("Walk");
-            return TaskStatus.COMPLETED;
+                return TaskStatus.COMPLETED;
+            }
 
+
+            bossController.Animator.SetTrigger("Walk");
             return TaskStatus.RUNNING;
         }
 

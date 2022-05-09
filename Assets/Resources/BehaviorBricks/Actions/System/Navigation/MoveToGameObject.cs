@@ -14,7 +14,11 @@ namespace BBUnity.Actions
         ///<value>Input target game object towards this game object will be moved Parameter.</value>
         [InParam("target")]
         [Help("Target game object towards this game object will be moved")]
+
         public GameObject target;
+
+        [InParam("controller")]
+        public BossController bossController = null;
 
         private UnityEngine.AI.NavMeshAgent navAgent;
 
@@ -24,6 +28,7 @@ namespace BBUnity.Actions
         /// <remarks>Check if GameObject object exists and NavMeshAgent, if there is no NavMeshAgent, the default one is added.</remarks>
         public override void OnStart()
         {
+            bossController = gameObject.GetComponent<BossController>();
             if (target == null)
             {
                 Debug.LogError("The movement target of this game object is null", gameObject);
@@ -38,9 +43,12 @@ namespace BBUnity.Actions
                 navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
             }
 			navAgent.SetDestination(targetTransform.position);
-            
-            #if UNITY_5_6_OR_NEWER
-                navAgent.isStopped = false;
+            bossController.Animator.SetTrigger("Walk");
+
+
+
+#if UNITY_5_6_OR_NEWER
+            navAgent.isStopped = false;
             #else
                 navAgent.Resume();
             #endif
@@ -54,9 +62,17 @@ namespace BBUnity.Actions
             if (target == null)
                 return TaskStatus.FAILED;
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            {
+                bossController.Animator.SetTrigger("Walk");
                 return TaskStatus.COMPLETED;
+            }
+
             else if (navAgent.destination != targetTransform.position)
+            {
                 navAgent.SetDestination(targetTransform.position);
+                bossController.Animator.SetTrigger("Walk");
+            }
+
             return TaskStatus.RUNNING;
         }
         /// <summary>Abort method of MoveToGameObject </summary>
