@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     //general
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
     private CharController charController = null; //CharController script
-    private CharacterController controller = null; 
+    private CharacterController controller = null; //CharacterControllerComponent
     private Animator animator = null;
 
     //sounds
@@ -32,10 +32,10 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
-        audioSource = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>(); 
         animator.fireEvents = false; //no sounds directly from the animations (read-only)
     }
 
@@ -131,8 +131,6 @@ public class CharacterMovement : MonoBehaviour
             Debug.Log("Heavy");
 
             animator.SetBool("HeavyAttack", true);
-
-            Debug.Log(animator.GetBool("HeavyAttack"));
         }
 
 

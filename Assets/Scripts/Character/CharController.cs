@@ -293,9 +293,12 @@ public class CharController : MonoBehaviour
         //set speed depending on equipment weight (small weight - faster speed, big weight - lower speed)
         animationSpeed = animationSpeed + multiplicator * (armorWeight + weaponWeight);
         //set speed of animator (animations)
-        charMovement.GetAnimator().speed = animationSpeed;
+        GetComponent<Animator>().speed = animationSpeed;
         //set movement speed
         movementSpeed = movementSpeed * animationSpeed;
+
+        //Debug.Log("movementSpeed: " + movementSpeed + ", animationSpeed: " + animationSpeed);
+        //Debug.Log(GetComponent<Animator>().speed);
     }
 
     //setter for the bool regStamina - whether stamina shall be regenerated or not
