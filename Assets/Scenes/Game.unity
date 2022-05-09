@@ -4483,6 +4483,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5874727519773250772, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6955183229273343392, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5539,12 +5543,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
 --- !u!1 &1215570621 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6955183231339615881, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5874727519773250783, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
   m_PrefabInstance: {fileID: 1215570620}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1215570622 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6955183231339615877, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5874727519773250771, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
   m_PrefabInstance: {fileID: 1215570620}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215570621}
