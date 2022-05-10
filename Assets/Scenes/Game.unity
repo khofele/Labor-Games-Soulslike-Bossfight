@@ -1656,11 +1656,11 @@ PrefabInstance:
     - target: {fileID: 2610895428458449710, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: blackboard.objectParams.Array.data[5]
       value: 
-      objectReference: {fileID: 1411205427}
+      objectReference: {fileID: 0}
     - target: {fileID: 2610895428458449710, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: blackboard.objectParams.Array.data[6]
       value: 
-      objectReference: {fileID: 880196125}
+      objectReference: {fileID: 0}
     - target: {fileID: 2610895428458449710, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.size
       value: 6
@@ -1700,7 +1700,7 @@ PrefabInstance:
     - target: {fileID: 2610895428458449711, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1377475872}
     - target: {fileID: 2610895428458449711, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: animator
       value: 
@@ -4713,6 +4713,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLength: 10
+--- !u!114 &1377475872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874727519773250771, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+  m_PrefabInstance: {fileID: 169356505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c5e56d47dbd0a46bb6192ed91d0b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411205427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,6 +4906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 919922036}
+  player: {fileID: 0}
   phaseTwo: 0
 --- !u!1001 &1868110996
 PrefabInstance:

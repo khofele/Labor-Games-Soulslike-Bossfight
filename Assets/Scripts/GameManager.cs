@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private BossController boss = null;
+    [SerializeField] private CharController player = null;
     [SerializeField] private bool phaseTwo = false;
 
     private void Update()
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
         {
             phaseTwo = true;
             boss.ChangeBehavior();
+            boss.GetComponent<BehaviorExecutor>().SetBehaviorParam("target", player);
+            boss.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", boss.FlyTimer);
+
         }
     }
 }
