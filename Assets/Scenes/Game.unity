@@ -1565,6 +1565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragon
       objectReference: {fileID: 0}
+    - target: {fileID: 2610895428458449707, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2610895428458449708, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: m_Enabled
       value: 1
