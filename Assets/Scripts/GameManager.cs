@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
             boss.ChangeBehavior();
             boss.GetComponent<BehaviorExecutor>().SetBehaviorParam("target", player);
             boss.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", boss.FlyTimer);
-
+                // TODO: ChangeBehavior()
         }
     }
 }
