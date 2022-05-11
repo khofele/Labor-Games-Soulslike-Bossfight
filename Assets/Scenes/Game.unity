@@ -190,6 +190,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5874727519773250782, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 28ae2ed82eda0f44aafda9d59315ce85, type: 2}
+    - target: {fileID: 5874727519773250782, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tTransform 'EyeR'\n\tTransform
+        'EyeL'\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tFrom animation clip 'Death'\n\tFrom
+        animation clip 'GotHit'\n\tFrom animation clip 'Idle_Combat'\n\tFrom animation
+        clip 'Run'\n\tFrom animation clip 'Walk'\n\tFrom animation clip 'GotHit'"
+      objectReference: {fileID: 0}
     - target: {fileID: 5874727519773250783, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: m_Name
       value: ThirdPersonCharacter
@@ -1571,7 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610895428458449707, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: m_IsActive
+<<<<<<< HEAD
+      value: 0
+=======
       value: 1
+>>>>>>> f3cbdff07cd89e58574bb2bf241dc63db46f3121
       objectReference: {fileID: 0}
     - target: {fileID: 2610895428458449708, guid: d349911ffdd1bee478ec136ed9f5252d, type: 3}
       propertyPath: m_Enabled
@@ -4937,15 +4954,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880440284285, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972880440284285, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880453353600, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972880453353600, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880496964634, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972880496964634, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880523917840, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
@@ -4957,11 +4986,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880534001574, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972880534001574, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972880725825292, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972880725825292, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881037140915, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Enabled
@@ -4973,19 +5010,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881163151432, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972881163151432, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881209841563, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972881209841563, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881234571399, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972881234571399, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881900897291, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972881900897291, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972881977818152, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Name
@@ -5041,15 +5094,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540972882006151755, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972882006151755, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972882102716905, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972882102716905, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 4540972882146508372, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540972882146508372, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
+      propertyPath: m_TagString
+      value: Map
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
