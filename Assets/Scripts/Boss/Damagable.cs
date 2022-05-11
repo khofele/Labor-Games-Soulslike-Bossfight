@@ -29,6 +29,7 @@ public class Damagable : MonoBehaviour
         {
             bossController.IsStunned = true;
             bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
+                                                            // TODO: Animation
         }
 
         float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();

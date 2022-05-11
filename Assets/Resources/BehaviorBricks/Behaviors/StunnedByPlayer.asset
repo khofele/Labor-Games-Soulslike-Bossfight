@@ -57,7 +57,7 @@ MonoBehaviour:
     314.5\" name=\"Hit\" description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"2\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"5\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"362.6103 349.275\" name=\"IsHitMultipleTimes\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"362.6103 349.275\" name=\"IsHitMultipleTimes\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"5\" />\r\n          <PrioritySelectorNode
     id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
