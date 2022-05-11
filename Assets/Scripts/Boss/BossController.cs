@@ -42,6 +42,8 @@ public class BossController : MonoBehaviour
         if(behaviorPhaseTwo != null)
         {
             gameObject.GetComponent<BehaviorExecutor>().behavior = behaviorPhaseTwo;
+            gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("target", player);
+            gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", flyTimer);
         }
     }
 }
