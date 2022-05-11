@@ -22,7 +22,14 @@ public class Damagable : MonoBehaviour
         }
         else
         {
-            bossController.HitCounter++;
+            if(bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == "heavy")
+            {
+                bossController.HitCounter += Random.Range(2, 5);
+            }
+            else
+            {
+                bossController.HitCounter++;
+            }
         }
 
         if(bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)

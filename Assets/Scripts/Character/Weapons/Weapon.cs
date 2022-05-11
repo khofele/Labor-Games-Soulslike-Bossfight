@@ -62,7 +62,7 @@ public abstract class Weapon : MonoBehaviour
         //--------------------------GETTER FOR DRAGON & CHAR-----------------------
 
     //Getter of the current animator state type to determine damage with
-    private string GetCurrentAttackType()
+    public string GetCurrentAttackType()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
             return "heavy";
