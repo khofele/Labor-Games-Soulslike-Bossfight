@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private Timer flyTimer = null;
     [SerializeField] private Timer stunTimer = null;
     [SerializeField] private Timer isStunnedTimer = null;
+    [SerializeField] private Timer isFlyingTimer = null;
     [SerializeField] private int hitCounter = 0;
     [SerializeField] private CharController player = null;
 
@@ -27,6 +28,7 @@ public class BossController : MonoBehaviour
     public Timer FlyTimer { get => flyTimer; }
     public Timer StunTimer { get => stunTimer; }
     public Timer IsStunnedTimer { get => isStunnedTimer; }
+    public Timer IsFlyingTimer { get => isFlyingTimer; }
     public int HitCounter { get => hitCounter; set => hitCounter = value; }
     public int StunCount { get => stunCount; }
     public bool IsStunned { get => isStunned; set => isStunned = value; }

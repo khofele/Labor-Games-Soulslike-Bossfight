@@ -51,7 +51,7 @@ public class FlyBreatheFireMagic : GOAction
     {
 
         // if Timer running
-        if (bossController.FlyTimer.TimerOver == false)
+        if (bossController.IsFlyingTimer.TimerOver == false)
         {
             bossController.Animator.SetTrigger("BreatheMagicFire");
             attackManager.CurrentAttack = attackManager.AttackFlyBreatheFireMagic ;
@@ -69,7 +69,7 @@ public class FlyBreatheFireMagic : GOAction
         }
 
         //if Timer over
-        if (bossController.FlyTimer.TimerOver == true)
+        if (bossController.IsFlyingTimer.TimerOver == true)
         {
             return TaskStatus.COMPLETED;
         }

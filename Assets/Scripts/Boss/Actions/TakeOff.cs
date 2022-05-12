@@ -23,7 +23,7 @@ public class TakeOff : GOAction
         }
         bossController.IsFlying = true;
         bossController.Animator.SetTrigger("TakeOff");
-        bossController.FlyTimer.StartTimer();
+        bossController.IsFlyingTimer.StartTimer();
         return TaskStatus.COMPLETED;
     }
 }
