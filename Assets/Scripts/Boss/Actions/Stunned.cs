@@ -20,8 +20,16 @@ public class Stunned : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("StunnedStanding");
         Debug.Log("boss stunned");
+        if(bossController.IsFlying == true)
+        {
+            bossController.Animator.SetTrigger("StunnedFlying");
+        }
+        else
+        {
+            bossController.Animator.SetTrigger("StunnedStanding");
+        }
+
         while(bossController.IsStunnedTimer.TimerOver == false)
         {
             continue;
