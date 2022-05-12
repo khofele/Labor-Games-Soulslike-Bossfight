@@ -32,7 +32,7 @@ MonoBehaviour:
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
     <ActionNode id=\"3\" action=\"Basic/WaitForSeconds\">\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"seconds\" type=\"System.Single\" isBlackboard=\"False\"
-    value=\"5\" />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams
+    value=\"0\" />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams
     />\r\n      <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n  <editorInfo>\r\n   
     <BehaviorTree id=\"0\" _name=\"AttackFront\" _description=\"\" _removeIfClosed=\"False\">\r\n     
     <_rootList>\r\n        <elem>\r\n          <SequenceNode id=\"1\" />\r\n       
@@ -46,11 +46,11 @@ MonoBehaviour:
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
     <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"183 413\" name=\"AttackFront\" description=\"\" cardinality=\"0\"
+    position=\"170.7777 436.3334\" name=\"AttackFront\" description=\"\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"2\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"3\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"389 422\" name=\"Basic/WaitForSeconds\"
+    <data breakpoint=\"0\" selected=\"True\" position=\"380.1111 437.5556\" name=\"Basic/WaitForSeconds\"
     description=\"Action that success after a period of time.\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"3\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
