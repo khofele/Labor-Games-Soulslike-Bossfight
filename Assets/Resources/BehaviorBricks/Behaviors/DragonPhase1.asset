@@ -92,7 +92,7 @@ MonoBehaviour:
     manager\" type=\"AttackManager\" isBlackboard=\"True\" blackboard=\"attackManager\"
     />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
     <localParams />\r\n    </SubbehaviorNode>\r\n    <ConditionEvalNode id=\"68\"
-    policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"IsDead\">\r\n      <inputParams>\r\n       
+    policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"IsDead\">\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"controller\" type=\"BossController\"
     isBlackboard=\"True\" blackboard=\"bossController\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
@@ -101,7 +101,7 @@ MonoBehaviour:
     />\r\n          <entry name=\"attack manager\" type=\"AttackManager\" isBlackboard=\"True\"
     blackboard=\"attackManager\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
     <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n    <ConditionEvalNode
-    id=\"56\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"IsTargetInBoxFrontLongRange\">\r\n     
+    id=\"56\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"IsTargetInBoxFrontLongRange\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"player\" />\r\n          <entry name=\"layermask\"
     type=\"UnityEngine.LayerMask\" isBlackboard=\"True\" blackboard=\"layermask\"
@@ -182,13 +182,13 @@ MonoBehaviour:
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
     id=\"30\" />\r\n          <RepeatDecorator id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"60\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"954.7948
-    817.3494\" name=\"IsTargetInBoxFront\" description=\"Eval\" cardinality=\"1\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"918.1279
+    844.0164\" name=\"IsTargetInBoxFront\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"60\" />\r\n          <PrioritySelectorNode id=\"30\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode id=\"59\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"806.6317
-    592.6561\" name=\"AttackFront\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"769.9648
+    619.3231\" name=\"AttackFront\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"59\" />\r\n       
     </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n    <ConditionEvalNode
     id=\"64\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
@@ -200,16 +200,16 @@ MonoBehaviour:
     description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"63\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"62\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1343.296 858.4968\" name=\"IsTargetInBoxLeft\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"1319.963 871.8303\" name=\"IsTargetInBoxLeft\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"62\" />\r\n          <PrioritySelectorNode
     id=\"30\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <SubbehaviorNode id=\"61\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1077.581 608.7048\" name=\"AttackLeft\" description=\"\"
+    selected=\"False\" position=\"1054.248 622.0383\" name=\"AttackLeft\" description=\"\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SubbehaviorNode id=\"61\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"68\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"True\" position=\"1537.069 1389.865\" name=\"IsDead\" description=\"Eval\"
+    selected=\"False\" position=\"1537.069 1389.865\" name=\"IsDead\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"68\" />\r\n          <PrioritySelectorNode id=\"30\"
     />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode
@@ -227,12 +227,12 @@ MonoBehaviour:
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SubbehaviorNode id=\"55\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"71\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1951.329 1253.958\" name=\"IsTargetInBoxRight\"
+    selected=\"False\" position=\"1917.996 1265.625\" name=\"IsTargetInBoxRight\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"71\" />\r\n          <PrioritySelectorNode
     id=\"30\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <SubbehaviorNode id=\"70\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1334.664 611.7388\" name=\"AttackRight\" description=\"\"
+    selected=\"False\" position=\"1301.331 623.4053\" name=\"AttackRight\" description=\"\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SubbehaviorNode id=\"70\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"66\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
