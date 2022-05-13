@@ -90,6 +90,8 @@ public class CharController : MonoBehaviour
     //method called in Update() to regenerate the current stamina with time (if not using a skill at the moment)
     private void RegenerateStamina()
     {
+        Debug.Log(currentStamina);
+
         if (regStamina && currentStamina + staminaReg <= stamina) //reg not more stamina than the max value
         {
             //no reg during whole attack combo
@@ -357,5 +359,16 @@ public class CharController : MonoBehaviour
     public string GetCharName()
     {
         return charName;
+    }
+
+    //for dragon - returns true if successfull combo from player --> higher stagger damage to dragon
+    public bool comboSuccess()
+    {
+        //if Attack03 reached at method call - combo success
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
+        {
+            return true;
+        }
+        else return false; //Attack03 not reached - combo not finished 
     }
 }
