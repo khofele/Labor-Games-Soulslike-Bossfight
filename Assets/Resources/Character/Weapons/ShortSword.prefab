@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5988206779534316665}
   - component: {fileID: 5988206779533433859}
   - component: {fileID: 5988206779531076232}
+  - component: {fileID: 2888395555415457350}
   m_Layer: 0
   m_Name: Shortsword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4b8ac94f2a023498b94178e504dfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2888395555415457350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988206779531258053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11970452, y: 0.22047926, z: 1.178183}
+  m_Center: {x: 0.0012469292, y: 0.015669031, z: 0.7963646}

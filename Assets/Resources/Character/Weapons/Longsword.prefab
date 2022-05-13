@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8062090613342159308}
   - component: {fileID: 3614137282710859279}
   - component: {fileID: 3748028768826015779}
+  - component: {fileID: 3196383465620570459}
   m_Layer: 0
   m_Name: Longsword
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9764eb6e58205b42839869dc9ecbf94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3196383465620570459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131038572248605545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13626793, y: 0.39999938, z: 1.4033526}
+  m_Center: {x: -0.00815063, y: 0.011468067, z: 0.9266337}
