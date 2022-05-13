@@ -52,7 +52,7 @@ public class FlyBreatheFirePoison : GOAction
     {
 
         // if Timer running
-        if (bossController.FlyTimer.TimerOver == false)
+        if (bossController.IsFlyingTimer.TimerOver == false)
         {
             bossController.Animator.SetTrigger("BreathePoisonFire");
             attackManager.CurrentAttack = attackManager.AttackFlyBreatheFirePoison;
@@ -70,7 +70,7 @@ public class FlyBreatheFirePoison : GOAction
         }
 
         //if Timer over
-        if (bossController.FlyTimer.TimerOver == true)
+        if (bossController.IsFlyingTimer.TimerOver == true)
         {
             return TaskStatus.COMPLETED;
         }
