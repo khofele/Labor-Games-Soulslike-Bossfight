@@ -15,60 +15,68 @@ public class Damagable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(bossController.StunTimer.TimerOver == true)
+        if(collision.collider.gameObject.tag == "Weapon")
         {
-            bossController.HitCounter = 0;
-            bossController.StunTimer.StartTimer(10);    // TODO: Balancing
-        }
-        else
-        {
-            if(bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == "heavy")
+            if (bossController.StunTimer.TimerOver == true)
             {
-                bossController.HitCounter += Random.Range(2, 5);
+                bossController.HitCounter = 0;
+                bossController.StunTimer.StartTimer(10);    // TODO: Balancing
             }
             else
             {
-                bossController.HitCounter++;
+                if (bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == "heavy" || bossController.Player.ComboSuccess() == true || bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 15)
+                {
+                    bossController.HitCounter += Random.Range(2, 5);
+                }
+                else if(bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 12)
+                {
+                    bossController.HitCounter += 2;
+                }
+                else
+                {
+                    bossController.HitCounter++;
+                }
             }
-        }
 
-        if(bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
-        {
-            bossController.IsStunned = true;
-            bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
-        }
+            if (bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
+            {
+                bossController.IsStunned = true;
+                bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
+            }
 
-        float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();
-        
-        if(bossController.IsStunned == false)
-        {
-            if(bossController.IsFlying == true)
+            float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();
+
+            if (bossController.IsStunned == false)
             {
-                bossController.Animator.SetTrigger("Hit 3");
-            }
-            else if(position == PositionEnum.LEFT)
-            {
-                bossController.Animator.SetTrigger("Hit 2");
-            }
-            else if (position == PositionEnum.RIGHT)
-            {
-                bossController.Animator.SetTrigger("Hit 1");
-            }
-            else
-            {
-                int random = Random.Range(0, 100);
-                if(random%2 == 0)
+                if (bossController.IsFlying == true)
+                {
+                    bossController.Animator.SetTrigger("Hit 3");
+                }
+                else if (position == PositionEnum.LEFT)
+                {
+                    bossController.Animator.SetTrigger("Hit 2");
+                }
+                else if (position == PositionEnum.RIGHT)
                 {
                     bossController.Animator.SetTrigger("Hit 1");
                 }
                 else
                 {
-                    bossController.Animator.SetTrigger("Hit 2");
+                    int random = Random.Range(0, 100);
+                    if (random % 2 == 0)
+                    {
+                        bossController.Animator.SetTrigger("Hit 1");
+                    }
+                    else
+                    {
+                        bossController.Animator.SetTrigger("Hit 2");
+                    }
                 }
             }
+
+            bossController.TakeDamage(damage + crit);
+
         }
-
-        bossController.TakeDamage(damage + crit);
-
     }
+        
 }

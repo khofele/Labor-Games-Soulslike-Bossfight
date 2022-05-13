@@ -17,7 +17,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private CharController player = null;
 
     // TODO DEBUG
-    [SerializeField] private int stunCount = 10;
+    [SerializeField] private int stunCount = 15;
 
     private bool isFlying = false;
     private bool isStunned = false;
