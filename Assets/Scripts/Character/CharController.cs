@@ -362,7 +362,7 @@ public class CharController : MonoBehaviour
     }
 
     //for dragon - returns true if successfull combo from player --> higher stagger damage to dragon
-    public bool comboSuccess()
+    public bool ComboSuccess()
     {
         //if Attack03 reached at method call - combo success
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
