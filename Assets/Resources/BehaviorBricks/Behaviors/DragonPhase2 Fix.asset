@@ -232,134 +232,134 @@ MonoBehaviour:
     />\r\n          <PrioritySelectorNode id=\"87\" />\r\n          <ActionNode id=\"88\"
     />\r\n          <ConditionEvalNode id=\"89\" />\r\n        </nodes>\r\n     
     </_nodes>\r\n    </BehaviorTree>\r\n    <RepeatDecorator id=\"1\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1085.166 140.7225\" name=\"Repeat\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"1095.166 -25.2775\" name=\"Repeat\"
     description=\"Repeats the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"1\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
     id=\"30\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1031.473 289.0161\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
+    position=\"1041.473 123.0161\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
     id=\"30\" />\r\n          <RepeatDecorator id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"60\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"600.0076
-    781.7664\" name=\"IsTargetInBoxFront\" description=\"Eval\" cardinality=\"1\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"610.0076
+    615.7664\" name=\"IsTargetInBoxFront\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"60\" />\r\n          <PrioritySelectorNode id=\"30\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode id=\"59\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"451.8444
-    557.0731\" name=\"AttackFront\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"461.8444
+    391.0731\" name=\"AttackFront\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"59\" />\r\n       
     </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n    <ConditionEvalNode
     id=\"64\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"845.3777 948.4969\" name=\"IsTimerRunning\" description=\"Eval\" cardinality=\"1\"
+    position=\"855.3777 782.4969\" name=\"IsTimerRunning\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"64\" />\r\n          <PrioritySelectorNode id=\"30\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"63\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"202.0308 531.8344\" name=\"Stunned\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"212.0308 365.8344\" name=\"Stunned\"
     description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"63\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"68\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"1194.949 1309.615\" name=\"IsDead\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"1204.949 1143.615\" name=\"IsDead\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"68\" />\r\n          <PrioritySelectorNode
     id=\"30\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"67\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"78.93594 537.621\" name=\"Death\" description=\"\" cardinality=\"0\"
+    position=\"88.93594 371.621\" name=\"Death\" description=\"\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"67\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"81\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1380 1484\" name=\"IsTimerOver\" description=\"Eval\"
+    selected=\"False\" position=\"1390 1318\" name=\"IsTimerOver\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"81\" />\r\n          <PrioritySelectorNode id=\"30\"
     />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SequenceNode
     id=\"76\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"718 580\" name=\"Sequence\" description=\"Executes all its children
+    position=\"728 414\" name=\"Sequence\" description=\"Executes all its children
     in sequence until all of them are successful\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SequenceNode id=\"76\" />\r\n       
     </data>\r\n      </_data>\r\n    </SequenceNode>\r\n    <ConditionEvalNode id=\"56\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1390.955
-    749.3804\" name=\"IsTargetInBoxFrontLongRange\" description=\"Eval\" cardinality=\"1\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1400.955
+    583.3804\" name=\"IsTargetInBoxFrontLongRange\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"56\" />\r\n          <PrioritySelectorNode id=\"30\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode id=\"55\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1269.727
-    552.2385\" name=\"FireHead1\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1279.727
+    386.2385\" name=\"FireHead1\" description=\"\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"55\" />\r\n       
     </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n    <ConditionEvalNode
     id=\"78\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1910 1498\" name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\"
+    position=\"1920 1332\" name=\"AlwaysTrue\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"78\" />\r\n          <PrioritySelectorNode id=\"30\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <PrioritySelectorNode id=\"77\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1026
-    554\" name=\"Priority Selector\" description=\"\" cardinality=\"1\" hasParent=\"False\">\r\n         
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"1036
+    388\" name=\"Priority Selector\" description=\"\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode id=\"77\" />\r\n       
     </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode
     id=\"66\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"2853.611 1163.95\" name=\"Perception/IsTargetClose\" description=\"Eval\"
+    position=\"2863.611 997.95\" name=\"Perception/IsTargetClose\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"66\" />\r\n          <PrioritySelectorNode id=\"30\"
     />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode
     id=\"65\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1767.604 561.9539\" name=\"MoveToPlayer\" description=\"\" cardinality=\"-1\"
+    position=\"1777.604 395.9539\" name=\"MoveToPlayer\" description=\"\" cardinality=\"-1\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode
     id=\"65\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"74\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"3148.667 1312.834\" name=\"AlwaysTrue\" description=\"Eval\"
+    selected=\"False\" position=\"3158.667 1146.834\" name=\"AlwaysTrue\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"74\" />\r\n          <PrioritySelectorNode id=\"30\"
     />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <SubbehaviorNode
     id=\"41\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"1981.202 563.9545\" name=\"Wander\" description=\"Wanders to random
+    position=\"1991.202 397.9545\" name=\"Wander\" description=\"Wanders to random
     positions around a NavMesh area.\" cardinality=\"-1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <SubbehaviorNode id=\"41\" />\r\n       
     </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n    <ActionNode id=\"82\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"554 842\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"564 676\"
     name=\"TakeOff\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"82\" />\r\n         
     <SequenceNode id=\"76\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ParallelNode id=\"83\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"696 848\" name=\"Parallel\" description=\"Executes all its children
+    position=\"706 682\" name=\"Parallel\" description=\"Executes all its children
     in parallel until all of them are successful\" cardinality=\"-1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ParallelNode id=\"83\" />\r\n         
     <SequenceNode id=\"76\" />\r\n        </data>\r\n      </_data>\r\n    </ParallelNode>\r\n   
     <ActionNode id=\"84\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"830 854\" name=\"Land\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
+    position=\"840 688\" name=\"Land\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"84\" />\r\n         
     <SequenceNode id=\"76\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"79\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1596.255 2023.577\" name=\"IsTargetInBoxLeft\"
+    selected=\"False\" position=\"1606.255 1857.577\" name=\"IsTargetInBoxLeft\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"79\" />\r\n          <PrioritySelectorNode
     id=\"77\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <SubbehaviorNode id=\"61\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"944.1277 807.788\" name=\"AttackLeft\" description=\"\"
+    selected=\"False\" position=\"954.1277 641.788\" name=\"AttackLeft\" description=\"\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SubbehaviorNode id=\"61\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ConditionEvalNode id=\"80\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"2070.421 2022.311\" name=\"IsTargetInBoxRight\"
+    selected=\"False\" position=\"2080.421 1856.311\" name=\"IsTargetInBoxRight\"
     description=\"Eval\" cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ConditionEvalNode id=\"80\" />\r\n          <PrioritySelectorNode
     id=\"77\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <SubbehaviorNode id=\"70\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1195.211 809.155\" name=\"AttackRight\" description=\"\"
+    selected=\"False\" position=\"1205.211 643.155\" name=\"AttackRight\" description=\"\"
     cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <SubbehaviorNode id=\"70\" />\r\n        </data>\r\n      </_data>\r\n    </SubbehaviorNode>\r\n   
     <ActionNode id=\"85\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"520 1094\" name=\"FlyBreatheFireAttack\" description=\"\" cardinality=\"0\"
+    position=\"530 928\" name=\"FlyBreatheFireAttack\" description=\"\" cardinality=\"0\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"85\" />\r\n          <ParallelNode id=\"83\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <PrioritySelectorNode id=\"87\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"784 1098\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"794 932\"
     name=\"Priority Selector\" description=\"\" cardinality=\"1\" hasParent=\"True\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode id=\"87\" />\r\n         
     <ParallelNode id=\"83\" />\r\n        </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n   
     <ConditionEvalNode id=\"89\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1648 2436\" name=\"IsTargetInBoxLowFront\" description=\"Eval\"
+    selected=\"False\" position=\"1598 2256\" name=\"IsTargetInBoxLowFront\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"89\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"88\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"824 1218\" name=\"FlyAttack\" description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n         
+    position=\"774 1038\" name=\"FlyAttack\" description=\"\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"88\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
   zoom: 0.5
