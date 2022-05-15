@@ -13,9 +13,6 @@ public class IsTargetInBoxFrontLongRange : GOCondition
     [InParam("layermask")]
     [SerializeField] private LayerMask layerMask;
 
-    [InParam("box range")]
-    [SerializeField] private int boxRange = 35;
-
     public override bool Check()
     {
         Collider[] objectsInRange = Physics.OverlapBox(new Vector3(gameObject.transform.position.x, (gameObject.transform.position.y + 2.5f), gameObject.transform.position.z + 16.5f), new Vector3(gameObject.transform.localScale.x + 3, gameObject.transform.localScale.y + 5, gameObject.transform.localScale.z + 15), gameObject.transform.rotation);
