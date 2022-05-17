@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //invoke boss phase two
-        if(boss.Health >= (boss.Health * 0.5f))
+        if(boss.Health <= (boss.Health * 0.5f))
         {
             phaseTwo = true;
             boss.ChangeBehavior();
