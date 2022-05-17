@@ -1,330 +1,962 @@
 fileFormatVersion: 2
 guid: 43023233128c64744bdf7fd4b2c8e846
-timeCreated: 1441197432
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: Body001
-    100002: Bridle01
-    100004: Bridle_Head_B
-    100006: Bridle_Head_C
-    100008: Carapace
-    100010: Carapace_Saddled
-    100012: //RootNode
-    100014: DragonRoot
-    100016: English DragonHead
-    100018: English DragonJaw
-    100020: English DragonLArm1
-    100022: English DragonLArm2
-    100024: English DragonLArm3
-    100026: English DragonLArmCollarbone
-    100028: English DragonLArmPalm
-    100030: English DragonLLeg1
-    100032: English DragonLLeg2
-    100034: English DragonLLeg3
-    100036: English DragonLLegPalm
-    100038: English DragonLW11
-    100040: English DragonLW12
-    100042: English DragonLW13
-    100044: English DragonLW21
-    100046: English DragonLW22
-    100048: English DragonLW23
-    100050: English DragonLW31
-    100052: English DragonLW32
-    100054: English DragonLW33
-    100056: English DragonLW41
-    100058: English DragonLW42
-    100060: English DragonLW43
-    100062: English DragonLWing1
-    100064: English DragonLWing2
-    100066: English DragonLWingCollarbone
-    100068: English DragonNeck1
-    100070: English DragonNeck2
-    100072: English DragonNeck3
-    100074: English DragonNeck4
-    100076: English DragonNeck5
-    100078: English DragonPelvis
-    100080: English DragonRArm1
-    100082: English DragonRArm2
-    100084: English DragonRArm3
-    100086: English DragonRArmCollarbone
-    100088: English DragonRArmPalm
-    100090: English DragonRibcage
-    100092: English DragonRLeg1
-    100094: English DragonRLeg2
-    100096: English DragonRLeg3
-    100098: English DragonRLegPalm
-    100100: English DragonRW11
-    100102: English DragonRW12
-    100104: English DragonRW13
-    100106: English DragonRW21
-    100108: English DragonRW22
-    100110: English DragonRW23
-    100112: English DragonRW31
-    100114: English DragonRW32
-    100116: English DragonRW33
-    100118: English DragonRW41
-    100120: English DragonRW42
-    100122: English DragonRW43
-    100124: English DragonRWing1
-    100126: English DragonRWing2
-    100128: English DragonRWingCollarbone
-    100130: English DragonSpine1
-    100132: English DragonSpine2
-    100134: English DragonSpine3
-    100136: English DragonTail1
-    100138: English DragonTail2
-    100140: English DragonTail3
-    100142: English DragonTail4
-    100144: English DragonTail5
-    100146: English DragonTail6
-    100148: English DragonTail7
-    100150: English DragonTail8
-    100152: English DragonTail9
-    100154: English DragonWthumbL
-    100156: English DragonWthumbR
-    100158: Fins
-    100160: Fins_Saddled
-    100162: Head_A001
-    100164: Head_B
-    100166: Head_C
-    100168: LArmPoint
-    100170: LHandToe1
-    100172: LHandToe12
-    100174: LHandToe2
-    100176: LHandToe21
-    100178: LHandToe3
-    100180: LHandToe31
-    100182: LLegPoint
-    100184: LLegToe1
-    100186: LLegToe12
-    100188: LLegToe2
-    100190: LLegToe21
-    100192: LLegToe3
-    100194: LLegToe31
-    100196: RArmPoint
-    100198: Reins
-    100200: Reins_Head_B001
-    100202: RHandToe1
-    100204: RHandToe12
-    100206: RHandToe2
-    100208: RHandToe21
-    100210: RHandToe3
-    100212: RHandToe31
-    100214: RLegPoint
-    100216: RLegToe1
-    100218: RLegToe12
-    100220: RLegToe2
-    100222: RLegToe21
-    100224: RLegToe3
-    100226: RLegToe31
-    100228: Saddle
-    100230: Saddle_B
-    100232: Spikes001
-    100234: Spikes_Saddled
-    100236: Tail_A001
-    100238: Tail_B
-    400000: Body001
-    400002: Bridle01
-    400004: Bridle_Head_B
-    400006: Bridle_Head_C
-    400008: Carapace
-    400010: Carapace_Saddled
-    400012: //RootNode
-    400014: DragonRoot
-    400016: English DragonHead
-    400018: English DragonJaw
-    400020: English DragonLArm1
-    400022: English DragonLArm2
-    400024: English DragonLArm3
-    400026: English DragonLArmCollarbone
-    400028: English DragonLArmPalm
-    400030: English DragonLLeg1
-    400032: English DragonLLeg2
-    400034: English DragonLLeg3
-    400036: English DragonLLegPalm
-    400038: English DragonLW11
-    400040: English DragonLW12
-    400042: English DragonLW13
-    400044: English DragonLW21
-    400046: English DragonLW22
-    400048: English DragonLW23
-    400050: English DragonLW31
-    400052: English DragonLW32
-    400054: English DragonLW33
-    400056: English DragonLW41
-    400058: English DragonLW42
-    400060: English DragonLW43
-    400062: English DragonLWing1
-    400064: English DragonLWing2
-    400066: English DragonLWingCollarbone
-    400068: English DragonNeck1
-    400070: English DragonNeck2
-    400072: English DragonNeck3
-    400074: English DragonNeck4
-    400076: English DragonNeck5
-    400078: English DragonPelvis
-    400080: English DragonRArm1
-    400082: English DragonRArm2
-    400084: English DragonRArm3
-    400086: English DragonRArmCollarbone
-    400088: English DragonRArmPalm
-    400090: English DragonRibcage
-    400092: English DragonRLeg1
-    400094: English DragonRLeg2
-    400096: English DragonRLeg3
-    400098: English DragonRLegPalm
-    400100: English DragonRW11
-    400102: English DragonRW12
-    400104: English DragonRW13
-    400106: English DragonRW21
-    400108: English DragonRW22
-    400110: English DragonRW23
-    400112: English DragonRW31
-    400114: English DragonRW32
-    400116: English DragonRW33
-    400118: English DragonRW41
-    400120: English DragonRW42
-    400122: English DragonRW43
-    400124: English DragonRWing1
-    400126: English DragonRWing2
-    400128: English DragonRWingCollarbone
-    400130: English DragonSpine1
-    400132: English DragonSpine2
-    400134: English DragonSpine3
-    400136: English DragonTail1
-    400138: English DragonTail2
-    400140: English DragonTail3
-    400142: English DragonTail4
-    400144: English DragonTail5
-    400146: English DragonTail6
-    400148: English DragonTail7
-    400150: English DragonTail8
-    400152: English DragonTail9
-    400154: English DragonWthumbL
-    400156: English DragonWthumbR
-    400158: Fins
-    400160: Fins_Saddled
-    400162: Head_A001
-    400164: Head_B
-    400166: Head_C
-    400168: LArmPoint
-    400170: LHandToe1
-    400172: LHandToe12
-    400174: LHandToe2
-    400176: LHandToe21
-    400178: LHandToe3
-    400180: LHandToe31
-    400182: LLegPoint
-    400184: LLegToe1
-    400186: LLegToe12
-    400188: LLegToe2
-    400190: LLegToe21
-    400192: LLegToe3
-    400194: LLegToe31
-    400196: RArmPoint
-    400198: Reins
-    400200: Reins_Head_B001
-    400202: RHandToe1
-    400204: RHandToe12
-    400206: RHandToe2
-    400208: RHandToe21
-    400210: RHandToe3
-    400212: RHandToe31
-    400214: RLegPoint
-    400216: RLegToe1
-    400218: RLegToe12
-    400220: RLegToe2
-    400222: RLegToe21
-    400224: RLegToe3
-    400226: RLegToe31
-    400228: Saddle
-    400230: Saddle_B
-    400232: Spikes001
-    400234: Spikes_Saddled
-    400236: Tail_A001
-    400238: Tail_B
-    4300000: Spikes001
-    4300002: Head_A001
-    4300004: Tail_B
-    4300006: Body001
-    4300008: Reins
-    4300010: Bridle01
-    4300012: Tail_A001
-    4300014: Carapace
-    4300016: Fins
-    4300018: Head_B
-    4300020: Head_C
-    4300022: Saddle
-    4300024: Spikes_Saddled
-    4300026: Carapace_Saddled
-    4300028: Bridle_Head_B
-    4300030: Fins_Saddled
-    4300032: Reins_Head_B001
-    4300034: Bridle_Head_C
-    4300036: Saddle_B
-    7400000: Attack 2
-    7400002: Breathe Fire
-    7400004: Tail Whip L
-    7400006: Tail Whip R
-    7400008: Got Hit 1
-    7400010: Got Hit 2
-    7400012: Death
-    7400014: Attack02
-    7400016: TailWhipL
-    7400018: Walk
-    7400020: Run
-    7400022: Fly
-    7400024: Fly Static Saddle
-    7400026: Fly Attack
-    7400028: Fly Breathe Fire
-    7400030: Fly Fast
-    7400032: Fly Got Hit
-    7400034: Fly Death 1
-    7400036: Fly Death 2
-    7400038: Fly Death 3
-    7400040: Fire Head 1
-    7400042: Fire Head 2
-    7400044: Walk Backward
-    7400046: Fly Idle
-    7400048: Fly Backward
-    7400050: Fly Dive
-    7400052: Fly Glide
-    7400054: Idle
-    7400056: Idle Break
-    7400058: Attack 1
-    7400060: Look Back Right 1
-    7400062: Look Back Right 2
-    7400064: Look Back Right 3
-    7400066: Look Back Left 1
-    7400068: Look Back Left 2
-    7400070: Look Back Left 3
-    7400072: FlyDeath04
-    9500000: //RootNode
-    13700000: Body001
-    13700002: Bridle01
-    13700004: Bridle_Head_B
-    13700006: Bridle_Head_C
-    13700008: Carapace
-    13700010: Carapace_Saddled
-    13700012: Fins
-    13700014: Fins_Saddled
-    13700016: Head_A001
-    13700018: Head_B
-    13700020: Head_C
-    13700022: Reins
-    13700024: Reins_Head_B001
-    13700026: Saddle
-    13700028: Saddle_B
-    13700030: Spikes001
-    13700032: Spikes_Saddled
-    13700034: Tail_A001
-    13700036: Tail_B
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Body001
+  - first:
+      1: 100002
+    second: Bridle01
+  - first:
+      1: 100004
+    second: Bridle_Head_B
+  - first:
+      1: 100006
+    second: Bridle_Head_C
+  - first:
+      1: 100008
+    second: Carapace
+  - first:
+      1: 100010
+    second: Carapace_Saddled
+  - first:
+      1: 100012
+    second: //RootNode
+  - first:
+      1: 100014
+    second: DragonRoot
+  - first:
+      1: 100016
+    second: English DragonHead
+  - first:
+      1: 100018
+    second: English DragonJaw
+  - first:
+      1: 100020
+    second: English DragonLArm1
+  - first:
+      1: 100022
+    second: English DragonLArm2
+  - first:
+      1: 100024
+    second: English DragonLArm3
+  - first:
+      1: 100026
+    second: English DragonLArmCollarbone
+  - first:
+      1: 100028
+    second: English DragonLArmPalm
+  - first:
+      1: 100030
+    second: English DragonLLeg1
+  - first:
+      1: 100032
+    second: English DragonLLeg2
+  - first:
+      1: 100034
+    second: English DragonLLeg3
+  - first:
+      1: 100036
+    second: English DragonLLegPalm
+  - first:
+      1: 100038
+    second: English DragonLW11
+  - first:
+      1: 100040
+    second: English DragonLW12
+  - first:
+      1: 100042
+    second: English DragonLW13
+  - first:
+      1: 100044
+    second: English DragonLW21
+  - first:
+      1: 100046
+    second: English DragonLW22
+  - first:
+      1: 100048
+    second: English DragonLW23
+  - first:
+      1: 100050
+    second: English DragonLW31
+  - first:
+      1: 100052
+    second: English DragonLW32
+  - first:
+      1: 100054
+    second: English DragonLW33
+  - first:
+      1: 100056
+    second: English DragonLW41
+  - first:
+      1: 100058
+    second: English DragonLW42
+  - first:
+      1: 100060
+    second: English DragonLW43
+  - first:
+      1: 100062
+    second: English DragonLWing1
+  - first:
+      1: 100064
+    second: English DragonLWing2
+  - first:
+      1: 100066
+    second: English DragonLWingCollarbone
+  - first:
+      1: 100068
+    second: English DragonNeck1
+  - first:
+      1: 100070
+    second: English DragonNeck2
+  - first:
+      1: 100072
+    second: English DragonNeck3
+  - first:
+      1: 100074
+    second: English DragonNeck4
+  - first:
+      1: 100076
+    second: English DragonNeck5
+  - first:
+      1: 100078
+    second: English DragonPelvis
+  - first:
+      1: 100080
+    second: English DragonRArm1
+  - first:
+      1: 100082
+    second: English DragonRArm2
+  - first:
+      1: 100084
+    second: English DragonRArm3
+  - first:
+      1: 100086
+    second: English DragonRArmCollarbone
+  - first:
+      1: 100088
+    second: English DragonRArmPalm
+  - first:
+      1: 100090
+    second: English DragonRibcage
+  - first:
+      1: 100092
+    second: English DragonRLeg1
+  - first:
+      1: 100094
+    second: English DragonRLeg2
+  - first:
+      1: 100096
+    second: English DragonRLeg3
+  - first:
+      1: 100098
+    second: English DragonRLegPalm
+  - first:
+      1: 100100
+    second: English DragonRW11
+  - first:
+      1: 100102
+    second: English DragonRW12
+  - first:
+      1: 100104
+    second: English DragonRW13
+  - first:
+      1: 100106
+    second: English DragonRW21
+  - first:
+      1: 100108
+    second: English DragonRW22
+  - first:
+      1: 100110
+    second: English DragonRW23
+  - first:
+      1: 100112
+    second: English DragonRW31
+  - first:
+      1: 100114
+    second: English DragonRW32
+  - first:
+      1: 100116
+    second: English DragonRW33
+  - first:
+      1: 100118
+    second: English DragonRW41
+  - first:
+      1: 100120
+    second: English DragonRW42
+  - first:
+      1: 100122
+    second: English DragonRW43
+  - first:
+      1: 100124
+    second: English DragonRWing1
+  - first:
+      1: 100126
+    second: English DragonRWing2
+  - first:
+      1: 100128
+    second: English DragonRWingCollarbone
+  - first:
+      1: 100130
+    second: English DragonSpine1
+  - first:
+      1: 100132
+    second: English DragonSpine2
+  - first:
+      1: 100134
+    second: English DragonSpine3
+  - first:
+      1: 100136
+    second: English DragonTail1
+  - first:
+      1: 100138
+    second: English DragonTail2
+  - first:
+      1: 100140
+    second: English DragonTail3
+  - first:
+      1: 100142
+    second: English DragonTail4
+  - first:
+      1: 100144
+    second: English DragonTail5
+  - first:
+      1: 100146
+    second: English DragonTail6
+  - first:
+      1: 100148
+    second: English DragonTail7
+  - first:
+      1: 100150
+    second: English DragonTail8
+  - first:
+      1: 100152
+    second: English DragonTail9
+  - first:
+      1: 100154
+    second: English DragonWthumbL
+  - first:
+      1: 100156
+    second: English DragonWthumbR
+  - first:
+      1: 100158
+    second: Fins
+  - first:
+      1: 100160
+    second: Fins_Saddled
+  - first:
+      1: 100162
+    second: Head_A001
+  - first:
+      1: 100164
+    second: Head_B
+  - first:
+      1: 100166
+    second: Head_C
+  - first:
+      1: 100168
+    second: LArmPoint
+  - first:
+      1: 100170
+    second: LHandToe1
+  - first:
+      1: 100172
+    second: LHandToe12
+  - first:
+      1: 100174
+    second: LHandToe2
+  - first:
+      1: 100176
+    second: LHandToe21
+  - first:
+      1: 100178
+    second: LHandToe3
+  - first:
+      1: 100180
+    second: LHandToe31
+  - first:
+      1: 100182
+    second: LLegPoint
+  - first:
+      1: 100184
+    second: LLegToe1
+  - first:
+      1: 100186
+    second: LLegToe12
+  - first:
+      1: 100188
+    second: LLegToe2
+  - first:
+      1: 100190
+    second: LLegToe21
+  - first:
+      1: 100192
+    second: LLegToe3
+  - first:
+      1: 100194
+    second: LLegToe31
+  - first:
+      1: 100196
+    second: RArmPoint
+  - first:
+      1: 100198
+    second: Reins
+  - first:
+      1: 100200
+    second: Reins_Head_B001
+  - first:
+      1: 100202
+    second: RHandToe1
+  - first:
+      1: 100204
+    second: RHandToe12
+  - first:
+      1: 100206
+    second: RHandToe2
+  - first:
+      1: 100208
+    second: RHandToe21
+  - first:
+      1: 100210
+    second: RHandToe3
+  - first:
+      1: 100212
+    second: RHandToe31
+  - first:
+      1: 100214
+    second: RLegPoint
+  - first:
+      1: 100216
+    second: RLegToe1
+  - first:
+      1: 100218
+    second: RLegToe12
+  - first:
+      1: 100220
+    second: RLegToe2
+  - first:
+      1: 100222
+    second: RLegToe21
+  - first:
+      1: 100224
+    second: RLegToe3
+  - first:
+      1: 100226
+    second: RLegToe31
+  - first:
+      1: 100228
+    second: Saddle
+  - first:
+      1: 100230
+    second: Saddle_B
+  - first:
+      1: 100232
+    second: Spikes001
+  - first:
+      1: 100234
+    second: Spikes_Saddled
+  - first:
+      1: 100236
+    second: Tail_A001
+  - first:
+      1: 100238
+    second: Tail_B
+  - first:
+      4: 400000
+    second: Body001
+  - first:
+      4: 400002
+    second: Bridle01
+  - first:
+      4: 400004
+    second: Bridle_Head_B
+  - first:
+      4: 400006
+    second: Bridle_Head_C
+  - first:
+      4: 400008
+    second: Carapace
+  - first:
+      4: 400010
+    second: Carapace_Saddled
+  - first:
+      4: 400012
+    second: //RootNode
+  - first:
+      4: 400014
+    second: DragonRoot
+  - first:
+      4: 400016
+    second: English DragonHead
+  - first:
+      4: 400018
+    second: English DragonJaw
+  - first:
+      4: 400020
+    second: English DragonLArm1
+  - first:
+      4: 400022
+    second: English DragonLArm2
+  - first:
+      4: 400024
+    second: English DragonLArm3
+  - first:
+      4: 400026
+    second: English DragonLArmCollarbone
+  - first:
+      4: 400028
+    second: English DragonLArmPalm
+  - first:
+      4: 400030
+    second: English DragonLLeg1
+  - first:
+      4: 400032
+    second: English DragonLLeg2
+  - first:
+      4: 400034
+    second: English DragonLLeg3
+  - first:
+      4: 400036
+    second: English DragonLLegPalm
+  - first:
+      4: 400038
+    second: English DragonLW11
+  - first:
+      4: 400040
+    second: English DragonLW12
+  - first:
+      4: 400042
+    second: English DragonLW13
+  - first:
+      4: 400044
+    second: English DragonLW21
+  - first:
+      4: 400046
+    second: English DragonLW22
+  - first:
+      4: 400048
+    second: English DragonLW23
+  - first:
+      4: 400050
+    second: English DragonLW31
+  - first:
+      4: 400052
+    second: English DragonLW32
+  - first:
+      4: 400054
+    second: English DragonLW33
+  - first:
+      4: 400056
+    second: English DragonLW41
+  - first:
+      4: 400058
+    second: English DragonLW42
+  - first:
+      4: 400060
+    second: English DragonLW43
+  - first:
+      4: 400062
+    second: English DragonLWing1
+  - first:
+      4: 400064
+    second: English DragonLWing2
+  - first:
+      4: 400066
+    second: English DragonLWingCollarbone
+  - first:
+      4: 400068
+    second: English DragonNeck1
+  - first:
+      4: 400070
+    second: English DragonNeck2
+  - first:
+      4: 400072
+    second: English DragonNeck3
+  - first:
+      4: 400074
+    second: English DragonNeck4
+  - first:
+      4: 400076
+    second: English DragonNeck5
+  - first:
+      4: 400078
+    second: English DragonPelvis
+  - first:
+      4: 400080
+    second: English DragonRArm1
+  - first:
+      4: 400082
+    second: English DragonRArm2
+  - first:
+      4: 400084
+    second: English DragonRArm3
+  - first:
+      4: 400086
+    second: English DragonRArmCollarbone
+  - first:
+      4: 400088
+    second: English DragonRArmPalm
+  - first:
+      4: 400090
+    second: English DragonRibcage
+  - first:
+      4: 400092
+    second: English DragonRLeg1
+  - first:
+      4: 400094
+    second: English DragonRLeg2
+  - first:
+      4: 400096
+    second: English DragonRLeg3
+  - first:
+      4: 400098
+    second: English DragonRLegPalm
+  - first:
+      4: 400100
+    second: English DragonRW11
+  - first:
+      4: 400102
+    second: English DragonRW12
+  - first:
+      4: 400104
+    second: English DragonRW13
+  - first:
+      4: 400106
+    second: English DragonRW21
+  - first:
+      4: 400108
+    second: English DragonRW22
+  - first:
+      4: 400110
+    second: English DragonRW23
+  - first:
+      4: 400112
+    second: English DragonRW31
+  - first:
+      4: 400114
+    second: English DragonRW32
+  - first:
+      4: 400116
+    second: English DragonRW33
+  - first:
+      4: 400118
+    second: English DragonRW41
+  - first:
+      4: 400120
+    second: English DragonRW42
+  - first:
+      4: 400122
+    second: English DragonRW43
+  - first:
+      4: 400124
+    second: English DragonRWing1
+  - first:
+      4: 400126
+    second: English DragonRWing2
+  - first:
+      4: 400128
+    second: English DragonRWingCollarbone
+  - first:
+      4: 400130
+    second: English DragonSpine1
+  - first:
+      4: 400132
+    second: English DragonSpine2
+  - first:
+      4: 400134
+    second: English DragonSpine3
+  - first:
+      4: 400136
+    second: English DragonTail1
+  - first:
+      4: 400138
+    second: English DragonTail2
+  - first:
+      4: 400140
+    second: English DragonTail3
+  - first:
+      4: 400142
+    second: English DragonTail4
+  - first:
+      4: 400144
+    second: English DragonTail5
+  - first:
+      4: 400146
+    second: English DragonTail6
+  - first:
+      4: 400148
+    second: English DragonTail7
+  - first:
+      4: 400150
+    second: English DragonTail8
+  - first:
+      4: 400152
+    second: English DragonTail9
+  - first:
+      4: 400154
+    second: English DragonWthumbL
+  - first:
+      4: 400156
+    second: English DragonWthumbR
+  - first:
+      4: 400158
+    second: Fins
+  - first:
+      4: 400160
+    second: Fins_Saddled
+  - first:
+      4: 400162
+    second: Head_A001
+  - first:
+      4: 400164
+    second: Head_B
+  - first:
+      4: 400166
+    second: Head_C
+  - first:
+      4: 400168
+    second: LArmPoint
+  - first:
+      4: 400170
+    second: LHandToe1
+  - first:
+      4: 400172
+    second: LHandToe12
+  - first:
+      4: 400174
+    second: LHandToe2
+  - first:
+      4: 400176
+    second: LHandToe21
+  - first:
+      4: 400178
+    second: LHandToe3
+  - first:
+      4: 400180
+    second: LHandToe31
+  - first:
+      4: 400182
+    second: LLegPoint
+  - first:
+      4: 400184
+    second: LLegToe1
+  - first:
+      4: 400186
+    second: LLegToe12
+  - first:
+      4: 400188
+    second: LLegToe2
+  - first:
+      4: 400190
+    second: LLegToe21
+  - first:
+      4: 400192
+    second: LLegToe3
+  - first:
+      4: 400194
+    second: LLegToe31
+  - first:
+      4: 400196
+    second: RArmPoint
+  - first:
+      4: 400198
+    second: Reins
+  - first:
+      4: 400200
+    second: Reins_Head_B001
+  - first:
+      4: 400202
+    second: RHandToe1
+  - first:
+      4: 400204
+    second: RHandToe12
+  - first:
+      4: 400206
+    second: RHandToe2
+  - first:
+      4: 400208
+    second: RHandToe21
+  - first:
+      4: 400210
+    second: RHandToe3
+  - first:
+      4: 400212
+    second: RHandToe31
+  - first:
+      4: 400214
+    second: RLegPoint
+  - first:
+      4: 400216
+    second: RLegToe1
+  - first:
+      4: 400218
+    second: RLegToe12
+  - first:
+      4: 400220
+    second: RLegToe2
+  - first:
+      4: 400222
+    second: RLegToe21
+  - first:
+      4: 400224
+    second: RLegToe3
+  - first:
+      4: 400226
+    second: RLegToe31
+  - first:
+      4: 400228
+    second: Saddle
+  - first:
+      4: 400230
+    second: Saddle_B
+  - first:
+      4: 400232
+    second: Spikes001
+  - first:
+      4: 400234
+    second: Spikes_Saddled
+  - first:
+      4: 400236
+    second: Tail_A001
+  - first:
+      4: 400238
+    second: Tail_B
+  - first:
+      43: 4300000
+    second: Spikes001
+  - first:
+      43: 4300002
+    second: Head_A001
+  - first:
+      43: 4300004
+    second: Tail_B
+  - first:
+      43: 4300006
+    second: Body001
+  - first:
+      43: 4300008
+    second: Reins
+  - first:
+      43: 4300010
+    second: Bridle01
+  - first:
+      43: 4300012
+    second: Tail_A001
+  - first:
+      43: 4300014
+    second: Carapace
+  - first:
+      43: 4300016
+    second: Fins
+  - first:
+      43: 4300018
+    second: Head_B
+  - first:
+      43: 4300020
+    second: Head_C
+  - first:
+      43: 4300022
+    second: Saddle
+  - first:
+      43: 4300024
+    second: Spikes_Saddled
+  - first:
+      43: 4300026
+    second: Carapace_Saddled
+  - first:
+      43: 4300028
+    second: Bridle_Head_B
+  - first:
+      43: 4300030
+    second: Fins_Saddled
+  - first:
+      43: 4300032
+    second: Reins_Head_B001
+  - first:
+      43: 4300034
+    second: Bridle_Head_C
+  - first:
+      43: 4300036
+    second: Saddle_B
+  - first:
+      74: 7400000
+    second: Attack 2
+  - first:
+      74: 7400002
+    second: Breathe Fire
+  - first:
+      74: 7400004
+    second: Tail Whip L
+  - first:
+      74: 7400006
+    second: Tail Whip R
+  - first:
+      74: 7400008
+    second: Got Hit 1
+  - first:
+      74: 7400010
+    second: Got Hit 2
+  - first:
+      74: 7400012
+    second: Death
+  - first:
+      74: 7400014
+    second: Attack02
+  - first:
+      74: 7400016
+    second: TailWhipL
+  - first:
+      74: 7400018
+    second: Walk
+  - first:
+      74: 7400020
+    second: Run
+  - first:
+      74: 7400022
+    second: Fly
+  - first:
+      74: 7400024
+    second: Fly Static Saddle
+  - first:
+      74: 7400026
+    second: Fly Attack
+  - first:
+      74: 7400028
+    second: Fly Breathe Fire
+  - first:
+      74: 7400030
+    second: Fly Fast
+  - first:
+      74: 7400032
+    second: Fly Got Hit
+  - first:
+      74: 7400034
+    second: Fly Death 1
+  - first:
+      74: 7400036
+    second: Fly Death 2
+  - first:
+      74: 7400038
+    second: Fly Death 3
+  - first:
+      74: 7400040
+    second: Fire Head 1
+  - first:
+      74: 7400042
+    second: Fire Head 2
+  - first:
+      74: 7400044
+    second: Walk Backward
+  - first:
+      74: 7400046
+    second: Fly Idle
+  - first:
+      74: 7400048
+    second: Fly Backward
+  - first:
+      74: 7400050
+    second: Fly Dive
+  - first:
+      74: 7400052
+    second: Fly Glide
+  - first:
+      74: 7400054
+    second: Idle
+  - first:
+      74: 7400056
+    second: Idle Break
+  - first:
+      74: 7400058
+    second: Attack 1
+  - first:
+      74: 7400060
+    second: Look Back Right 1
+  - first:
+      74: 7400062
+    second: Look Back Right 2
+  - first:
+      74: 7400064
+    second: Look Back Right 3
+  - first:
+      74: 7400066
+    second: Look Back Left 1
+  - first:
+      74: 7400068
+    second: Look Back Left 2
+  - first:
+      74: 7400070
+    second: Look Back Left 3
+  - first:
+      74: 7400072
+    second: FlyDeath04
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Body001
+  - first:
+      137: 13700002
+    second: Bridle01
+  - first:
+      137: 13700004
+    second: Bridle_Head_B
+  - first:
+      137: 13700006
+    second: Bridle_Head_C
+  - first:
+      137: 13700008
+    second: Carapace
+  - first:
+      137: 13700010
+    second: Carapace_Saddled
+  - first:
+      137: 13700012
+    second: Fins
+  - first:
+      137: 13700014
+    second: Fins_Saddled
+  - first:
+      137: 13700016
+    second: Head_A001
+  - first:
+      137: 13700018
+    second: Head_B
+  - first:
+      137: 13700020
+    second: Head_C
+  - first:
+      137: 13700022
+    second: Reins
+  - first:
+      137: 13700024
+    second: Reins_Head_B001
+  - first:
+      137: 13700026
+    second: Saddle
+  - first:
+      137: 13700028
+    second: Saddle_B
+  - first:
+      137: 13700030
+    second: Spikes001
+  - first:
+      137: 13700032
+    second: Spikes_Saddled
+  - first:
+      137: 13700034
+    second: Tail_A001
+  - first:
+      137: 13700036
+    second: Tail_B
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -337,6 +969,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -348,6 +982,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Attack 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 75
       wrapMode: 0
@@ -782,6 +1417,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Breathe Fire
       takeName: Take 001
+      internalID: 0
       firstFrame: 80
       lastFrame: 160
       wrapMode: 0
@@ -1279,6 +1915,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Tail Whip L
       takeName: Take 001
+      internalID: 0
       firstFrame: 180
       lastFrame: 245
       wrapMode: 0
@@ -1720,6 +2357,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Tail Whip R
       takeName: Take 001
+      internalID: 0
       firstFrame: 250
       lastFrame: 315
       wrapMode: 0
@@ -2161,6 +2799,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Got Hit 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 320
       lastFrame: 345
       wrapMode: 0
@@ -2595,6 +3234,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Got Hit 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 350
       lastFrame: 375
       wrapMode: 0
@@ -3029,6 +3669,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death
       takeName: Take 001
+      internalID: 0
       firstFrame: 390
       lastFrame: 470
       wrapMode: 0
@@ -3477,6 +4118,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk
       takeName: Take 001
+      internalID: 0
       firstFrame: 500
       lastFrame: 540
       wrapMode: 0
@@ -3939,6 +4581,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Run
       takeName: Take 001
+      internalID: 0
       firstFrame: 560
       lastFrame: 575
       wrapMode: 0
@@ -4401,6 +5044,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly
       takeName: Take 001
+      internalID: 0
       firstFrame: 600
       lastFrame: 645
       wrapMode: 0
@@ -4842,6 +5486,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Static Saddle
       takeName: Take 001
+      internalID: 0
       firstFrame: 650
       lastFrame: 695
       wrapMode: 0
@@ -5269,6 +5914,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Attack
       takeName: Take 001
+      internalID: 0
       firstFrame: 700
       lastFrame: 768
       wrapMode: 0
@@ -5731,6 +6377,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Breathe Fire
       takeName: Take 001
+      internalID: 0
       firstFrame: 770
       lastFrame: 860
       wrapMode: 0
@@ -6221,6 +6868,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Fast
       takeName: Take 001
+      internalID: 0
       firstFrame: 870
       lastFrame: 905
       wrapMode: 0
@@ -6662,6 +7310,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Got Hit
       takeName: Take 001
+      internalID: 0
       firstFrame: 930
       lastFrame: 965
       wrapMode: 0
@@ -7110,6 +7759,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Death 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 1000
       lastFrame: 1015
       wrapMode: 0
@@ -7537,6 +8187,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Death 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 1018
       lastFrame: 1048
       wrapMode: 0
@@ -7964,6 +8615,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Death 3
       takeName: Take 001
+      internalID: 0
       firstFrame: 1055
       lastFrame: 1095
       wrapMode: 0
@@ -8398,6 +9050,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fire Head 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 1100
       lastFrame: 1190
       wrapMode: 0
@@ -8839,6 +9492,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fire Head 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 1200
       lastFrame: 1310
       wrapMode: 0
@@ -9280,6 +9934,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk Backward
       takeName: Take 001
+      internalID: 0
       firstFrame: 1330
       lastFrame: 1370
       wrapMode: 0
@@ -9735,6 +10390,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Idle
       takeName: Take 001
+      internalID: 0
       firstFrame: 1400
       lastFrame: 1435
       wrapMode: 0
@@ -10176,6 +10832,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Backward
       takeName: Take 001
+      internalID: 0
       firstFrame: 1450
       lastFrame: 1485
       wrapMode: 0
@@ -10617,6 +11274,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Dive
       takeName: Take 001
+      internalID: 0
       firstFrame: 1500
       lastFrame: 1530
       wrapMode: 0
@@ -11044,6 +11702,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Fly Glide
       takeName: Take 001
+      internalID: 0
       firstFrame: 1550
       lastFrame: 1580
       wrapMode: 0
@@ -11471,6 +12130,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
+      internalID: 0
       firstFrame: 1600
       lastFrame: 1680
       wrapMode: 0
@@ -11912,6 +12572,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle Break
       takeName: Take 001
+      internalID: 0
       firstFrame: 1700
       lastFrame: 1870
       wrapMode: 0
@@ -12353,6 +13014,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Attack 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 1900
       lastFrame: 1945.0001
       wrapMode: 0
@@ -12787,6 +13449,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Right 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 1950
       lastFrame: 1980
       wrapMode: 0
@@ -13214,6 +13877,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Right 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 1980
       lastFrame: 2010
       wrapMode: 0
@@ -13641,6 +14305,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Right 3
       takeName: Take 001
+      internalID: 0
       firstFrame: 2010
       lastFrame: 2040
       wrapMode: 0
@@ -14068,6 +14733,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Left 1
       takeName: Take 001
+      internalID: 0
       firstFrame: 2050
       lastFrame: 2080
       wrapMode: 0
@@ -14495,6 +15161,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Left 2
       takeName: Take 001
+      internalID: 0
       firstFrame: 2080
       lastFrame: 2110
       wrapMode: 0
@@ -14922,6 +15589,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Look Back Left 3
       takeName: Take 001
+      internalID: 0
       firstFrame: 2110
       lastFrame: 2140
       wrapMode: 0
@@ -15352,19 +16020,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -15372,10 +16052,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 4
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -15385,14 +16068,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: DragonRoot
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
