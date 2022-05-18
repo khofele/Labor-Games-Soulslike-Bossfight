@@ -1,21 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1252790098, guid: 448d62fcada76fd4ab5702190add98fd, type: 3}
-  m_Name: EditorStates
-  m_EditorClassIdentifier: 
-  GeneralStates:
-    LoadedProjectGUID:
-      valueInternal: 024449dd42a18f240ad523e48b021057
-    RecentlyOpenedProjectPath:
-      valueInternal: Assets\Animations\Character
-    RecentlyOpenedProjectGUIDsList:
-    - valueInternal: 024449dd42a18f240ad523e48b021057
+version https://git-lfs.github.com/spec/v1
+oid sha256:021c3b277104a36e69baa4c441b813323bfdcea20ee84191b29e9856aa9a1d91
+size 717
