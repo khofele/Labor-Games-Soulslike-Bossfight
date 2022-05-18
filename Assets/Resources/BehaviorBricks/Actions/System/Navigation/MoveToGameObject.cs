@@ -29,6 +29,8 @@ namespace BBUnity.Actions
         public override void OnStart()
         {
             bossController = gameObject.GetComponent<BossController>();
+            bossController.GetComponent<Animator>().applyRootMotion = true;
+
             if (target == null)
             {
                 Debug.LogError("The movement target of this game object is null", gameObject);
@@ -37,6 +39,7 @@ namespace BBUnity.Actions
             targetTransform = target.transform;
 
             navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            navAgent.isStopped = false;
             if (navAgent == null)
             {
                 Debug.LogWarning("The " + gameObject.name + " game object does not have a Nav Mesh Agent component to navigate. One with default values has been added", gameObject);
@@ -64,6 +67,8 @@ namespace BBUnity.Actions
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
                 bossController.Animator.SetTrigger("Walk");
+                bossController.GetComponent<Animator>().applyRootMotion = false;
+
                 return TaskStatus.COMPLETED;
             }
 
@@ -83,10 +88,12 @@ namespace BBUnity.Actions
         #if UNITY_5_6_OR_NEWER
             if(navAgent!=null)
                 navAgent.isStopped = true;
-        #else
+            bossController.GetComponent<Animator>().applyRootMotion = false;
+
+#else
             if (navAgent!=null)
                 navAgent.Stop();
-        #endif
+#endif
 
         }
     }
