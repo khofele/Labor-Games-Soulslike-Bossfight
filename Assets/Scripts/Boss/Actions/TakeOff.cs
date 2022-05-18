@@ -13,17 +13,23 @@ public class TakeOff : GOAction
     public override void OnStart()
     {
         bossController = gameObject.GetComponent<BossController>();
+        bossController.GetComponent<Animator>().applyRootMotion = false;
     }
 
     public override TaskStatus OnUpdate()
     {
-        //for (int i = 0; i < 500; i++)
-        //{
-        //    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.1f, gameObject.transform.position.z);
-        //}
         bossController.IsFlying = true;
         bossController.Animator.SetTrigger("TakeOff");
         bossController.IsFlyingTimer.StartTimer();
-        return TaskStatus.COMPLETED;
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Takeoff"))
+        {
+            bossController.GetComponent<Animator>().applyRootMotion = true;
+            return TaskStatus.COMPLETED;
+        }
+        else
+        {
+            return TaskStatus.RUNNING;
+        }
+
     }
 }

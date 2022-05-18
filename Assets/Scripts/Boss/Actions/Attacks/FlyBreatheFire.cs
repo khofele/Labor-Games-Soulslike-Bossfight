@@ -4,6 +4,7 @@ using Pada1.BBCore.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [Action("FlyBreatheFireAttack")]
 public class FlyBreatheFire : GOAction
@@ -21,9 +22,29 @@ public class FlyBreatheFire : GOAction
 
     private BossController bossController = null;
 
+    private string basicFire = "BreatheBasicFire";
+    private string poisonFire = "BreathePoisonFire";
+    private string magicFire = "BreatheMagicFire";
+    private string currentFire = "";
+
     public override void OnStart()
     {
         bossController = gameObject.GetComponent<BossController>();
+        bossController.GetComponent<Animator>().applyRootMotion = true;
+
+        int random = Random.Range(1, 100);
+        if (random >= 1 && random <= 33)
+        {
+            currentFire = basicFire;
+        }
+        else if(random >= 33 && random <= 66)
+        {
+            currentFire = poisonFire;
+        }
+        else
+        {
+            currentFire = magicFire;
+        }
 
         if (target == null)
         {
@@ -31,51 +52,93 @@ public class FlyBreatheFire : GOAction
             return;
         }
         targetTransform = target.transform;
-
         navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navAgent.isStopped = false;
+
         if (navAgent == null)
         {
             Debug.LogWarning("The " + gameObject.name + " game object does not have a Nav Mesh Agent component to navigate. One with default values has been added", gameObject);
             navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
         }
-        navAgent.SetDestination(targetTransform.position);
+        Vector3 destination = new Vector3(targetTransform.position.x, 12, targetTransform.position.z);
+
+        navAgent.SetDestination(destination);
+
 
 #if UNITY_5_6_OR_NEWER
-        navAgent.isStopped = false;
+            navAgent.isStopped = false;
 #else
                 navAgent.Resume();
 #endif
+
+
     }
 
 
     public override TaskStatus OnUpdate()
     {
-
-        // if Timer running
-        if (bossController.IsFlyingTimer.TimerOver == false)
+        if(bossController.IsStunned == false)
         {
-            bossController.Animator.SetTrigger("BreatheBasicFire");
-            attackManager.CurrentAttack = attackManager.AttackFlyBreatheFire;
-            Debug.Log("Fly Breathe Fire Attack");
-            
-            if (target == null)
+            // if Timer running
+            if (bossController.IsFlyingTimer.TimerOver == false)
             {
-                return TaskStatus.FAILED;
+                bossController.Animator.SetTrigger(currentFire);
+                switch(currentFire)
+                {
+                    case "BreatheBasicFire":
+                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFire;
+                        break;
+
+                    case "BreathePoisonFire":
+                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFirePoison;
+                        break;
+
+                    case "BreatheMagicFire":
+                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFireMagic;
+                        break;
+                }
+
+                Debug.Log("Fly Breathe Fire Attack");
+
+                if (target == null)
+                {
+                    return TaskStatus.FAILED;
+                }
+                else if(bossController.IsStunned == true)
+                {
+                    navAgent.SetDestination(new Vector3(0, 12, 0));
+                    return TaskStatus.COMPLETED;
+                }
+                else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
+                {
+                    Vector3 destination = new Vector3(targetTransform.position.x, 12, targetTransform.position.z);
+                    navAgent.SetDestination(destination);
+                    return TaskStatus.RUNNING;
+                }
             }
-            else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
+
+            //if Timer over
+            if (bossController.IsFlyingTimer.TimerOver == true)
             {
-                navAgent.SetDestination(targetTransform.position);
+                if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Fire") ||
+                    bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Poison Fire") ||
+                    bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Magic Fire"))
+                {
+                    navAgent.SetDestination(new Vector3(0, 12, 0));
+
+                    return TaskStatus.COMPLETED;
+                }
+
+            }
+            else
+            {
                 return TaskStatus.RUNNING;
             }
-        }
 
-        //if Timer over
-        if (bossController.IsFlyingTimer.TimerOver == true)
-        {
-            return TaskStatus.COMPLETED;
+            return TaskStatus.FAILED;
         }
-
-        return TaskStatus.FAILED;
+        return TaskStatus.COMPLETED;
+        
     }
 
     public override void OnAbort()

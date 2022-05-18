@@ -17,10 +17,10 @@ public class Damagable : MonoBehaviour
     {
         if(collision.collider.gameObject.tag == "Weapon")
         {
-            if (bossController.StunTimer.TimerOver == true)
+            if (bossController.IsStunnedTimer.TimerOver == true)
             {
                 bossController.HitCounter = 0;
-                bossController.StunTimer.StartTimer(10);    // TODO: Balancing
+                bossController.IsStunnedTimer.StartTimer(10);    // TODO: Balancing
             }
             else
             {

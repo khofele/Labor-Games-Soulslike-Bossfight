@@ -31,8 +31,7 @@ public class Death : GOAction
         {
             bossController.Animator.SetTrigger("Death");
         }
-
-        // TODO: End Game/back to menu --> GameManager
+        gameManager.GameOver = true;
         Debug.Log("Boss died!");
         return TaskStatus.COMPLETED;
     }

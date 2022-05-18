@@ -23,6 +23,7 @@ public class Reset : BaseState
         animator.ResetTrigger("AttackFront");
         animator.ResetTrigger("Attack 2");
         animator.ResetTrigger("Land");
+        animator.applyRootMotion = true;
 
 
     }

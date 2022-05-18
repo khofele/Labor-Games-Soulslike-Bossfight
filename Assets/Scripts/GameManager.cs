@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BossController boss = null;
     [SerializeField] private CharController player = null;
     [SerializeField] private bool phaseTwo = false;
+    [SerializeField] private bool gameOver = false;
+
+    public bool GameOver { get => gameOver; set => gameOver = value; }
 
     private void Start()
     {
