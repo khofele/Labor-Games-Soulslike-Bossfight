@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] private float health = 1000;
+    [SerializeField] private float health = 5000;
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
     [SerializeField] private Animator animator = null;
     [SerializeField] private Timer flyTimer = null;
@@ -42,6 +42,7 @@ public class BossController : MonoBehaviour
         if(behaviorPhaseTwo != null)
         {
             gameObject.GetComponent<BehaviorExecutor>().behavior = behaviorPhaseTwo;
+
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("isFlyingTimer", isFlyingTimer);
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", flyTimer);
             flyTimer.StartTimer();

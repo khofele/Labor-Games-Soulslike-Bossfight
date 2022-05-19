@@ -50,15 +50,24 @@ public class Damagable : MonoBehaviour
             {
                 if (bossController.IsFlying == true)
                 {
-                    bossController.Animator.SetTrigger("Hit 3");
+                    if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Got Hit"))
+                    {
+                        bossController.Animator.SetTrigger("Hit 3");
+                    }
                 }
                 else if (position == PositionEnum.LEFT)
                 {
-                    bossController.Animator.SetTrigger("Hit 2");
+                    if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Got Hit 2"))
+                    {
+                        bossController.Animator.SetTrigger("Hit 2");
+                    }
                 }
                 else if (position == PositionEnum.RIGHT)
                 {
-                    bossController.Animator.SetTrigger("Hit 1");
+                    if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Got Hit 1"))
+                    {
+                        bossController.Animator.SetTrigger("Hit 1");
+                    }
                 }
                 else
                 {
