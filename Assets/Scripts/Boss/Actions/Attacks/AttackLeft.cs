@@ -23,7 +23,7 @@ public class AttackLeft : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("Attack 1");
+        bossController.Animator.SetTrigger("Attack 2");
         attackManager.CurrentAttack = attackManager.AttackLeft;
         Debug.Log("Attack Left");
         return TaskStatus.COMPLETED;
