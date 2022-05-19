@@ -67,8 +67,6 @@ namespace BBUnity.Actions
             if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
                 bossController.Animator.SetTrigger("Walk");
-                bossController.GetComponent<Animator>().applyRootMotion = false;
-
                 return TaskStatus.COMPLETED;
             }
 
@@ -88,8 +86,6 @@ namespace BBUnity.Actions
         #if UNITY_5_6_OR_NEWER
             if(navAgent!=null)
                 navAgent.isStopped = true;
-            bossController.GetComponent<Animator>().applyRootMotion = false;
-
 #else
             if (navAgent!=null)
                 navAgent.Stop();

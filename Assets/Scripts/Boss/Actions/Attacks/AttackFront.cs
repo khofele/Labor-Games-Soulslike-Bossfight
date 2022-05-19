@@ -24,7 +24,10 @@ public class AttackFront : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("AttackFront");
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack Front"))
+        {
+            bossController.Animator.SetTrigger("AttackFront");
+        }
         attackManager.CurrentAttack = attackManager.AttackFront;
         Debug.Log("Attack Front");
         return TaskStatus.COMPLETED;

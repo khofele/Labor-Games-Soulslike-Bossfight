@@ -23,7 +23,10 @@ public class FireHeadAttack : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        bossController.Animator.SetTrigger("Fire Head 1");
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Breathe Fire"))
+        {
+            bossController.Animator.SetTrigger("Fire Head 1");
+        }
         attackManager.CurrentAttack = attackManager.AttackFireHead;
         Debug.Log("Attack Fire Head");
         return TaskStatus.COMPLETED;

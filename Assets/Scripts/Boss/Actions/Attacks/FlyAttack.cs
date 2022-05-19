@@ -17,11 +17,11 @@ public class FlyAttack : GOAction
     {
         bossController = gameObject.GetComponent<BossController>();
     }
-
+    // TODO on hold
     public override TaskStatus OnUpdate()
     {
         bossController.Animator.SetTrigger("AttackFly");
-        attackManager.CurrentAttack = attackManager.AttackFly;
+        //attackManager.CurrentAttack = attackManager.AttackFly; 
         Debug.Log("Fly Attack");
         return TaskStatus.COMPLETED;
     }
