@@ -11,17 +11,6 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController controller = null; //CharacterControllerComponent
     private Animator animator = null;
 
-    //sounds
-    [SerializeField] private AudioClip[] weaponSounds = null;   //an array of weapon slash sounds that will be randomly selected from - from Weapon.GetWeaponSounds()
-    [SerializeField] private AudioClip[] footstepSounds; // an array of footstep sounds that will be randomly selected from.
-    [SerializeField] private AudioClip rollSound; // the sound played when character dodges (rolls).
-    [SerializeField] private AudioClip healSound; //the sound played when character uses potion
-    [SerializeField] private AudioClip hitSound; //the sound played when character is hit
-    [SerializeField] private AudioClip deathSound; //the sound played when character dies
-    private AudioSource audioSource; //current audio source
-    private float elapsedTime = 0; //time since last step sound
-    private float soundDelay = 0.5f; //delay for sound to play
-
     //attack combo values
     [SerializeField] private float cooldownTime = 0.8f; //attack cooldown
     private float nextAttackStartTime = 0f; //time the next attack can start
@@ -36,11 +25,10 @@ public class CharacterMovement : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
-        animator.fireEvents = false; //no sounds directly from the animations (read-only)
-        weaponSounds = GetComponent<Weapon>().GetWeaponSounds();
+        //TODO auskommentieren wenn Menü da & SerializedField-Werte löschen
+        //weaponSounds = GetComponent<Weapon>().GetWeaponSounds();
     }
 
     // Update is called once per frame
@@ -169,6 +157,7 @@ public class CharacterMovement : MonoBehaviour
             animator.SetBool("Attack01R", false);
             //Debug.Log("Attack01R false");
             animator.SetBool("Attack02R", true);
+
             Debug.Log("Attack02R true");
         }
         //start Attack03 if clicked fast enough
@@ -228,6 +217,7 @@ public class CharacterMovement : MonoBehaviour
            
         }
     }
+
 
     //--------------------------GETTER METHODS-----------------------
     public Transform GetCam()

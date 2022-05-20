@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hammer : Weapon
 {
-    [SerializeField] private AudioClip[] hammerSounds;
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
@@ -15,6 +14,5 @@ public class Hammer : Weapon
         weaponMinDmg = 70f;
         weaponMaxDmg = 100f;
         weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(Weapon)) as Weapon;
-        weaponSounds = hammerSounds;
     }
 }

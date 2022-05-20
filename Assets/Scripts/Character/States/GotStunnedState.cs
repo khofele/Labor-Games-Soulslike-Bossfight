@@ -14,6 +14,9 @@ namespace stateMachine
             //currently stunned
             animator.SetBool("alreadyStunned", true);
 
+            //sound
+            GetAudioPlayer(animator).PlayHit();
+
             //set all bool parameters of aborted actions to false
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);

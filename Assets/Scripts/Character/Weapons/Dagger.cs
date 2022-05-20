@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dagger : Weapon 
 {
-    [SerializeField] private AudioClip[] daggerSounds;
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
@@ -15,6 +14,5 @@ public class Dagger : Weapon
         weaponMinDmg = 40f;
         weaponMaxDmg = 70f;
         weaponPrefab = Resources.Load("Character/Weapons/Dagger", typeof(Weapon)) as Weapon;
-        weaponSounds = daggerSounds;
     }
 }

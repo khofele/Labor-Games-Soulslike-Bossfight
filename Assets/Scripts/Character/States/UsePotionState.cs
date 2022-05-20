@@ -11,6 +11,9 @@ namespace stateMachine
         {
             Debug.Log("UsePotion");
 
+            //sound
+            GetAudioPlayer(animator).PlayHeal();
+
             //call CharacterMovement method to use potion
             GetCharacterMovement(animator).UsePotion();
         }

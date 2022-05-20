@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hammerSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5208ca9b1ae744345b73b125684d7105, type: 3}
+  - {fileID: 8300000, guid: b130ee49dcdf2224fae649258e8ec3d9, type: 3}
+  - {fileID: 8300000, guid: 1b7810d092d29eb419fe43017c6a3ec1, type: 3}
 --- !u!65 &6029391367696447217
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -16,8 +16,6 @@ public abstract class Weapon : MonoBehaviour
     protected float heavyAttackAddDamage = 50f; //additional damage for heavy attacks
     //weapon prefab
     protected Weapon weaponPrefab = null;
-    //weapon sounds
-    protected AudioClip[] weaponSounds = null;
 
 
     // Start is called before the first frame update
@@ -95,11 +93,5 @@ public abstract class Weapon : MonoBehaviour
     public float GetWeaponWeight()
     {
         return weaponWeight;
-    }
-
-    //get the current weapon's audio sources for the character movement
-    public AudioClip[] GetWeaponSounds()
-    {
-        return weaponSounds;
     }
 }

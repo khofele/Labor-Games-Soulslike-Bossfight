@@ -11,6 +11,10 @@ namespace stateMachine
         {
             Debug.Log("Death");
             animator.SetBool("diedBefore", true);
+
+            //sound
+            GetAudioPlayer(animator).PlayDeath();
+
             //TODO: UI-Defeat-Aufruf
         }
 

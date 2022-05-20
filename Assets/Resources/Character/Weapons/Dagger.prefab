@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daggerSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ee03b3e5a477f7644b0155af0467dcf8, type: 3}
+  - {fileID: 8300000, guid: 3f4f95c5f4d4e514a90cbad0064f3a71, type: 3}
+  - {fileID: 8300000, guid: 1b7810d092d29eb419fe43017c6a3ec1, type: 3}
 --- !u!65 &5387677683500365134
 BoxCollider:
   m_ObjectHideFlags: 0

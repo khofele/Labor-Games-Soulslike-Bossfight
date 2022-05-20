@@ -14,6 +14,9 @@ namespace stateMachine
         {
             Debug.Log("Roll");
 
+            //sound
+            GetAudioPlayer(animator).PlayRoll();
+
             //use neededStamina for action
             neededStamina = 60f;
             GetCharController(animator).UseStamina(neededStamina);
