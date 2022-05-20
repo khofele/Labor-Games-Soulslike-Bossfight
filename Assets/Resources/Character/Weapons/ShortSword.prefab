@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4b8ac94f2a023498b94178e504dfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &2888395555415457350
 BoxCollider:
   m_ObjectHideFlags: 0

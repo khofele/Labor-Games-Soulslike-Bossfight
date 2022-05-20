@@ -246,7 +246,7 @@ public class CharController : MonoBehaviour
     private void SetAndAttachWeapon()
     {
         //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/Shortsword", typeof(Weapon)) as Weapon; //test
+        weaponPrefab = Resources.Load("Character/Weapons/Longsword", typeof(Weapon)) as Weapon; //test
 
         //equip main weapon
         currentWeapon = Instantiate<Weapon>(weaponPrefab);

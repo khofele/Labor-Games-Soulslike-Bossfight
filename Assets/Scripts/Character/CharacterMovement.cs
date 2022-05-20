@@ -12,9 +12,12 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator = null;
 
     //sounds
-    [SerializeField] private AudioClip[] footstepSounds;    // an array of footstep sounds that will be randomly selected from.
-    [SerializeField] private AudioClip[] weaponSounds;      //an array of weapon slash sounds that will be randomly selected from.
-    [SerializeField] private AudioClip rollSound;           // the sound played when character dodges (rolls).
+    [SerializeField] private AudioClip[] weaponSounds = null;   //an array of weapon slash sounds that will be randomly selected from - from Weapon.GetWeaponSounds()
+    [SerializeField] private AudioClip[] footstepSounds; // an array of footstep sounds that will be randomly selected from.
+    [SerializeField] private AudioClip rollSound; // the sound played when character dodges (rolls).
+    [SerializeField] private AudioClip healSound; //the sound played when character uses potion
+    [SerializeField] private AudioClip hitSound; //the sound played when character is hit
+    [SerializeField] private AudioClip deathSound; //the sound played when character dies
     private AudioSource audioSource; //current audio source
     private float elapsedTime = 0; //time since last step sound
     private float soundDelay = 0.5f; //delay for sound to play
@@ -37,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
         animator.fireEvents = false; //no sounds directly from the animations (read-only)
+        weaponSounds = GetComponent<Weapon>().GetWeaponSounds();
     }
 
     // Update is called once per frame
@@ -100,16 +104,19 @@ public class CharacterMovement : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
             animator.SetBool("Attack01R", false);
+            //Debug.Log("Attack01R false");
             charController.SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
             animator.SetBool("Attack02R", false);
+            //Debug.Log("Attack02R false");
             charController.SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
         {
             animator.SetBool("Attack03R", false);
+            //Debug.Log("Attack03R false");
             noOfClicks = 0;
         }
         if(Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
@@ -128,8 +135,6 @@ public class CharacterMovement : MonoBehaviour
         //heavy attack
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            Debug.Log("Heavy");
-
             animator.SetBool("HeavyAttack", true);
         }
 
@@ -162,13 +167,17 @@ public class CharacterMovement : MonoBehaviour
         if(noOfClicks >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
             animator.SetBool("Attack01R", false);
+            //Debug.Log("Attack01R false");
             animator.SetBool("Attack02R", true);
+            Debug.Log("Attack02R true");
         }
         //start Attack03 if clicked fast enough
         if (noOfClicks >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
             animator.SetBool("Attack02R", false);
+            Debug.Log("Attack02R false");
             animator.SetBool("Attack03R", true);
+            Debug.Log("Attack03R true");
         }
     }
 

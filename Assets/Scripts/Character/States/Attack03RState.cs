@@ -12,7 +12,7 @@ namespace stateMachine
             Debug.Log("Attack03");
 
             //use neededStamina for action
-            neededStamina = 25f;
+            neededStamina = 25f; 
             GetCharController(animator).UseStamina(neededStamina);
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }

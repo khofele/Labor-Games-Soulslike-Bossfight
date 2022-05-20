@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5715d637f78a7314ba1f75de2f663016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hammerSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &6029391367696447217
 BoxCollider:
   m_ObjectHideFlags: 0

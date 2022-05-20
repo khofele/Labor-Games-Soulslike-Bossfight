@@ -12,7 +12,7 @@ namespace stateMachine
             Debug.Log("Attack02");
 
             //use neededStamina for action
-            neededStamina = 25f;
+            neededStamina = 25f; 
             GetCharController(animator).UseStamina(neededStamina);
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
@@ -20,7 +20,7 @@ namespace stateMachine
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         //{
-        //    
+        //
         //}
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
