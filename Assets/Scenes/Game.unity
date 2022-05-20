@@ -3607,35 +3607,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6598f601f94cffd4dbbf221c11f40943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack1: {fileID: 0}
-  attack2: {fileID: 0}
-  attack3: {fileID: 0}
-  bigTumble: {fileID: 0}
-  death: {fileID: 0}
-  epicScream: {fileID: 0}
-  fireNoise: {fileID: 0}
-  fireAttack: {fileID: 0}
-  fireBreath1: {fileID: 0}
-  fireBreath2: {fileID: 0}
-  flying1: {fileID: 0}
-  flying2: {fileID: 0}
-  flying3: {fileID: 0}
-  flyingAttack1: {fileID: 0}
-  flyingAttack2: {fileID: 0}
-  flyingDeathBodyHit: {fileID: 0}
-  flyingDie: {fileID: 0}
-  footStep1: {fileID: 0}
-  footStep2: {fileID: 0}
-  gotHit1: {fileID: 0}
-  gotHit2: {fileID: 0}
-  idleExhale: {fileID: 0}
-  idleBreak: {fileID: 0}
-  walking1: {fileID: 0}
-  walking2: {fileID: 0}
-  walking3: {fileID: 0}
-  wingDown1: {fileID: 0}
-  wingDown2: {fileID: 0}
-  wingDown3: {fileID: 0}
-  wingUp1: {fileID: 0}
-  wingUp2: {fileID: 0}
-  wingUp3: {fileID: 0}
+  attack1: {fileID: 8300000, guid: 81a117bd8b888ef4ea65ba6f3c64c437, type: 3}
+  attack2: {fileID: 8300000, guid: 35427a9762a56e345bd704abd1eb56c5, type: 3}
+  attack3: {fileID: 8300000, guid: 0da1a327fd11b3e4791e0bff3b35b760, type: 3}
+  bigTumble: {fileID: 8300000, guid: 30419349ebb151f4aa9ddb2a783dea2e, type: 3}
+  death: {fileID: 8300000, guid: 5df9dc9713af77544b32a1660f7d15a8, type: 3}
+  epicScream: {fileID: 8300000, guid: 3b277b6d40a8dde44a6767b8c4455e34, type: 3}
+  fireNoise: {fileID: 8300000, guid: 44a2d7c326839fd468bbdfc41d7df2e3, type: 3}
+  fireAttack: {fileID: 8300000, guid: bdc41b97d5f95124b80b4e7f2bb32bf6, type: 3}
+  fireBreath1: {fileID: 8300000, guid: 8dd2255459243a04499793c22e6b1b5b, type: 3}
+  fireBreath2: {fileID: 8300000, guid: e999a94e441490c4690197190bc276ed, type: 3}
+  flying1: {fileID: 8300000, guid: 790a4505ed8e0444c9c6c31c701bcf34, type: 3}
+  flying2: {fileID: 8300000, guid: 33d151df85662374f8dce02623ab12a0, type: 3}
+  flying3: {fileID: 8300000, guid: 23b6865284668bc42ae1895570f77a55, type: 3}
+  flyingAttack1: {fileID: 8300000, guid: 4ae5b8ad19bbe80498254d0dc9288443, type: 3}
+  flyingAttack2: {fileID: 8300000, guid: a7f1e6ad2b6bca343a0b242d541c54f9, type: 3}
+  flyingDeathBodyHit: {fileID: 8300000, guid: d2806fc5755a51142b28cff9c2fe852a, type: 3}
+  flyingDie: {fileID: 8300000, guid: 66cd586bdd2b11a48bb9ba9a378bb990, type: 3}
+  footStep1: {fileID: 8300000, guid: 39e135855b554a94181cb0e0531eed39, type: 3}
+  footStep2: {fileID: 8300000, guid: 9799635efe1a76441bceb4a2bcb53bf2, type: 3}
+  gotHit1: {fileID: 8300000, guid: 91da42f3a8d60c24483025bdf8f90d8d, type: 3}
+  gotHit2: {fileID: 8300000, guid: 01f9ef71e052c7943b92499b23462af5, type: 3}
+  idleExhale: {fileID: 8300000, guid: 2ff1d91fb7fcaee488da61a9f1325e72, type: 3}
+  idleBreak: {fileID: 8300000, guid: fdf8cfc927659624d8d0a91289d29a0e, type: 3}
+  walking1: {fileID: 8300000, guid: ccab68b3e49e1324d8500e1ecaae75b8, type: 3}
+  walking2: {fileID: 8300000, guid: a8366967b02049f4cb6c97d39692d6aa, type: 3}
+  walking3: {fileID: 8300000, guid: be4f39290b39f8f40a552671faa0e413, type: 3}
+  wingDown1: {fileID: 8300000, guid: a58d25864d44b1e47978d2f5080bc435, type: 3}
+  wingDown2: {fileID: 8300000, guid: ad2c26a95cea4904f92eff9df6b58224, type: 3}
+  wingDown3: {fileID: 8300000, guid: 19399dd47d3b4d641a91fac8b53521cb, type: 3}
+  wingUp1: {fileID: 8300000, guid: 6f8f29118da896d46b43db60fd73e791, type: 3}
+  wingUp2: {fileID: 8300000, guid: 1579f69fdf3d6d545b403f39e2cd90d6, type: 3}
+  wingUp3: {fileID: 8300000, guid: 03c288aa6814aad458686833323c7ec5, type: 3}
