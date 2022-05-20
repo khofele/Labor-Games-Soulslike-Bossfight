@@ -203,4 +203,9 @@ public class PlayAudio : MonoBehaviour
     {
         audioSource.PlayOneShot(wingUp3, 0.7f);
     }
+
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
 }
