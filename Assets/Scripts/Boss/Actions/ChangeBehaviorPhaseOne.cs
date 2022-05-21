@@ -30,7 +30,7 @@ public class ChangeBehaviorPhaseOne : GOAction
     [InParam("attackManager")]
     [SerializeField] private AttackManager attackManager = null;
 
-    [InParam("isStunnedTimer")]
+    [InParam("IsStunnedTimer")]
     [SerializeField] private Timer isStunnedTimer = null;
 
     private BehaviorExecutor behaviorExecutor = null;
