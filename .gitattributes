@@ -28,3 +28,7 @@ lfs/objects/8b/56/* filter=lfs diff=lfs merge=lfs -text
 /lfs/objects/fa/af/faafc94c65d6ed860a596d3a023af3e96053cc2c0d1f697280accb5c5fb5e1da filter=lfs diff=lfs merge=lfs -text
 .wav filter=lfs diff=lfs merge=lfs -text
 *.wav filter=lfs diff=lfs merge=lfs -text
+*/lfs/* filter=lfs diff=lfs merge=lfs -text
+*/lfs/ filter=lfs diff=lfs merge=lfs -text
+lfs/objects/57/a2/57a22331529aeb00ec833cd403b2e0a2bd47819122ff7745b40a5d806274a6ab filter=lfs diff=lfs merge=lfs -text
+lfs/objects/6b/4e/6b4e0b662605b9405c897c0bf4160d0005042d6269ee444806c5da8c7e9f7863 filter=lfs diff=lfs merge=lfs -text
