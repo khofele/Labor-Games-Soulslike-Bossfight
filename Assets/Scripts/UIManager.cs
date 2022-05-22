@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,7 +13,59 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject winMessage = null;
     [SerializeField] private GameObject deathMessage = null;
     [SerializeField] private GameObject bossName = null;
-    
+    [SerializeField] private BossController bossController = null;
+    [SerializeField] private CharController charController = null;
+    [SerializeField] private AudioManager audioManager = null;
+
+    private Slider healthBarBossSlider = null;
+    private Slider healthBarCharSlider = null;
+    private Slider staminaBarSlider = null;
+    private string potionCount = "0";
+
+    private void Start()
+    {
+        healthBarBossSlider = healthBarBoss.GetComponentInChildren<Slider>();
+        healthBarCharSlider = healthBarChar.GetComponentInChildren<Slider>();
+        staminaBarSlider = staminaBar.GetComponentInChildren<Slider>();
+        healthBarBossSlider.maxValue = bossController.Health;
+        healthBarCharSlider.maxValue = charController.GetCurrentHealth();
+        staminaBarSlider.maxValue = charController.GetCurrentStamina();
+    }
+
+    private void Update()
+    {
+        if(bossController.Health >= 0)
+        {
+            healthBarBossSlider.value = bossController.Health; 
+        }
+
+        if(charController.GetCurrentHealth() >= 0)
+        {
+            healthBarCharSlider.value = charController.GetCurrentHealth();
+        }
+
+        if(charController.GetCurrentStamina() >= 0)
+        {
+            staminaBarSlider.value = charController.GetCurrentStamina();
+        }
+
+        if(charController.GetCurrentPotions() >= 0)
+        {
+            potionField.GetComponentInChildren<TextMeshProUGUI>().text = charController.GetCurrentPotions().ToString();
+        }
+
+        if(charController.GetCurrentHealth() <= 0)
+        {
+            EnableDeathMessage();
+            audioManager.PlayDeathMessageSound();
+        }
+        else if(bossController.Health <= 0)
+        {
+            EnableWinMessage();
+            audioManager.PlayWinMessageSound();
+        }
+    }
+
     public void EnableHealthBarChar()
     {
         healthBarChar.SetActive(true);
