@@ -1181,7 +1181,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: currentStamina
-    m_EventTreshold: 60
+    m_EventTreshold: 40
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -987351269264109884}
   m_Solo: 0
@@ -1493,6 +1493,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: GotStunned
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: HeavyAttack
+    m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: currentStamina
     m_EventTreshold: 25
@@ -1563,6 +1566,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: GotStunned
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: HeavyAttack
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: currentStamina

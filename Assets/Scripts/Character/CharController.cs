@@ -25,7 +25,7 @@ public class CharController : MonoBehaviour
     private float resistance = 15f;
     private float defense = 50f;
     private float attackPower = 50f; //is added to the weaponMinDmg value of the current weapon
-    private float staminaReg = 0.04f;
+    private float staminaReg = 0.08f;
     //multiplicator for SetAttributes()
     [SerializeField] private float multiplicator = 100f;
     //action speed
@@ -90,7 +90,7 @@ public class CharController : MonoBehaviour
     //method called in Update() to regenerate the current stamina with time (if not using a skill at the moment)
     private void RegenerateStamina()
     {
-        Debug.Log(currentStamina);
+        //Debug.Log(currentStamina);
 
         if (regStamina && currentStamina + staminaReg <= stamina) //reg not more stamina than the max value
         {

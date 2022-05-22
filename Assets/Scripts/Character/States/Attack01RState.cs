@@ -27,7 +27,6 @@ namespace stateMachine
             if (GetCharController(animator).GetCurrentWeapon().Contains("Lance"))
             {
                 animator.SetBool("Attack01R", false);
-                Debug.Log("Attack01R false");
                 GetCharController(animator).SetRegStamina(true); //regenerate stamina again
             }
         }
