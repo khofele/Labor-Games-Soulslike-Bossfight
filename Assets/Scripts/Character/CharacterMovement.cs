@@ -17,6 +17,8 @@ public class CharacterMovement : MonoBehaviour
     private static int noOfClicks = 0; //number of current clicks in combo
     private float lastClickedTime = 0; //last clicked time in combo
     private float maxComboDelay = 1; //max time to click to stay in combo
+    private float neededStamAttack = 25f; //needed stamina for current attack (always 25f)
+    private float neededStamHeavyAttack = 45f; //needed stamina for heavy attack
 
     [SerializeField] private float stunDuration = 3; //duration of stun
 
@@ -27,8 +29,6 @@ public class CharacterMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
-        //TODO auskommentieren wenn Menü da & SerializedField-Werte löschen
-        //weaponSounds = GetComponent<Weapon>().GetWeaponSounds();
     }
 
     // Update is called once per frame
@@ -74,17 +74,23 @@ public class CharacterMovement : MonoBehaviour
 
         //--------------------------FIGHT-----------------------
         //attack (combo)
-        //!is aborted if player is hit/stunned/dies
+        //!is aborted if player is hit/stunned/dies or has not enough stamina
         if (Input.GetKey(KeyCode.Mouse0))
         {
             //if weapon is no lance - attack combo possible
             if (!(charController.GetCurrentWeapon().Contains("Lance")))
             {
-                AttackCombo(); //start combo
+                if(charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                {
+                    AttackCombo(); //start combo
+                }
             }
             else //lance: only stab attack
             {
-                animator.SetBool("Attack01R", true);
+                if(charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                {
+                    animator.SetBool("Attack01R", true);
+                }
             }
             
         }
@@ -92,19 +98,16 @@ public class CharacterMovement : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
             animator.SetBool("Attack01R", false);
-            //Debug.Log("Attack01R false");
             charController.SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
             animator.SetBool("Attack02R", false);
-            //Debug.Log("Attack02R false");
             charController.SetRegStamina(true); //regenerate stamina again
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
         {
             animator.SetBool("Attack03R", false);
-            //Debug.Log("Attack03R false");
             noOfClicks = 0;
         }
         if(Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
@@ -113,7 +116,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if(!(charController.GetCurrentWeapon().Contains("Lance")) && Time.time > nextAttackStartTime) //enough time went by to start new combo
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && charController.GetCurrentStamina() >= neededStamAttack)
             {
                 AttackCombo();
             }
@@ -121,8 +124,8 @@ public class CharacterMovement : MonoBehaviour
 
 
         //heavy attack
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
+        if (Input.GetKey(KeyCode.Mouse1) && charController.GetCurrentStamina() >= neededStamHeavyAttack)
+            {
             animator.SetBool("HeavyAttack", true);
         }
 
@@ -155,18 +158,13 @@ public class CharacterMovement : MonoBehaviour
         if(noOfClicks >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
             animator.SetBool("Attack01R", false);
-            //Debug.Log("Attack01R false");
             animator.SetBool("Attack02R", true);
-
-            Debug.Log("Attack02R true");
         }
         //start Attack03 if clicked fast enough
         if (noOfClicks >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
             animator.SetBool("Attack02R", false);
-            Debug.Log("Attack02R false");
             animator.SetBool("Attack03R", true);
-            Debug.Log("Attack03R true");
         }
     }
 

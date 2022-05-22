@@ -20,6 +20,8 @@ namespace stateMachine
             //set all bool parameters of aborted actions to false
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);
+            animator.SetBool("Attack03R", false);
+            animator.SetBool("HeavyAttack", false);
             animator.SetBool("Walk", false);
             animator.SetBool("Run", false);
         }

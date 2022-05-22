@@ -21,6 +21,7 @@ namespace stateMachine
             //damage combo is aborted
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", false);
+            animator.SetBool("Attack03R", false);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
