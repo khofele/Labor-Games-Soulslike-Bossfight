@@ -18,7 +18,7 @@ public class PlayAudioChar : MonoBehaviour
     private float soundDelayTime = 0.5f; //delay for sound to play
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
