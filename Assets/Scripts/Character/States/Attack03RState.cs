@@ -11,9 +11,6 @@ namespace stateMachine
         {
             Debug.Log("Attack03");
 
-            //sound
-            GetAudioPlayer(animator).PlayWeapon();
-
             //use neededStamina for action
             neededStamina = 25f; 
             GetCharController(animator).UseStamina(neededStamina);

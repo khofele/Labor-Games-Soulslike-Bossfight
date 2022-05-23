@@ -43,12 +43,13 @@ public class PlayAudioChar : MonoBehaviour
         audioSource.PlayOneShot(deathSound);
     }
 
+    //called as animation event
     public void PlayWeapon()
     {
-        //play the weapon sound after a delay
-        StartCoroutine(PlayRandomSoundAfterDelay(weaponSounds));
+        PlayRandomSound(weaponSounds);
     }
 
+    //called as animation event
     public void PlayFootstep()
     {
         PlayRandomSound(footstepSounds);
@@ -71,6 +72,7 @@ public class PlayAudioChar : MonoBehaviour
     }
 
 
+    //TODO Delete if not needed
     //method to play a sound after a delay (soundDelayTime)
     IEnumerator PlayRandomSoundAfterDelay(AudioClip[] array)
     {
