@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuUIManager : MonoBehaviour
@@ -16,11 +17,11 @@ public class MenuUIManager : MonoBehaviour
 
     private void StartRun()
     {
-
+        SceneManager.LoadScene("Start Run");
     }
 
     private void EndGame()
     {
-
+        Application.Quit();
     }
 }
