@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3706018367210949461}
-  m_LocalRotation: {x: -0.2728554, y: 0.00065973355, z: 0.00006559487, w: 0.96205485}
+  m_LocalRotation: {x: -0.15375671, y: -0.79452175, z: -0.2254134, w: 0.54247856}
   m_LocalPosition: {x: 0.07975748, y: -0.42738008, z: 0.16769257}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -31.669, y: 0.083, z: -0.016}
+  m_LocalEulerAnglesHint: {x: -31.669, y: -111.347, z: -0.016}
 --- !u!33 &1144463094273347754
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,10 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9764eb6e58205b42839869dc9ecbf94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!65 &2233784558344648074
 BoxCollider:
   m_ObjectHideFlags: 0

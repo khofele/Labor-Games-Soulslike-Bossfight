@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5815422873139866189}
-  m_LocalRotation: {x: -0.12171168, y: 0.123854674, z: 0.7024145, w: 0.69026095}
+  m_LocalRotation: {x: -0.6489284, y: -0.50055665, z: 0.29511324, w: 0.4911652}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 91}
+  m_LocalEulerAnglesHint: {x: -20, y: -111.43, z: 91}
 --- !u!33 &8057145587733583884
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,10 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cb99f9d0e4cda42b53937430275c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daggerSounds:
-  - {fileID: 8300000, guid: ee03b3e5a477f7644b0155af0467dcf8, type: 3}
-  - {fileID: 8300000, guid: 3f4f95c5f4d4e514a90cbad0064f3a71, type: 3}
-  - {fileID: 8300000, guid: 1b7810d092d29eb419fe43017c6a3ec1, type: 3}
 --- !u!65 &5387677683500365134
 BoxCollider:
   m_ObjectHideFlags: 0

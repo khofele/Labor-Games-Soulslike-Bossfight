@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4878644255488271544}
-  m_LocalRotation: {x: -0.22242568, y: 0.25694063, z: -0.13956967, w: 0.9300692}
+  m_LocalRotation: {x: -0.009975725, y: -0.6237286, z: -0.26239926, w: 0.7362132}
   m_LocalPosition: {x: -0.003, y: -0.074, z: -0.004}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20, y: 35.078, z: -23.448}
+  m_LocalEulerAnglesHint: {x: -20, y: -76.352, z: -23.448}
 --- !u!33 &1307288722656436210
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,10 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6aed472195b1ca47bd4bd18d6dac6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lanceSounds:
-  - {fileID: 8300000, guid: 811d36b4845c63a42a32f3e13ab3a5d9, type: 3}
-  - {fileID: 8300000, guid: ee03b3e5a477f7644b0155af0467dcf8, type: 3}
-  - {fileID: 8300000, guid: 1b7810d092d29eb419fe43017c6a3ec1, type: 3}
 --- !u!65 &6857758163156937857
 BoxCollider:
   m_ObjectHideFlags: 0
