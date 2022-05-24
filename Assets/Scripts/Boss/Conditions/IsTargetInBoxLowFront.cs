@@ -21,7 +21,7 @@ public class IsTargetInBoxLowFront : GOCondition
 
         for (int i = 0; i < objectsInRange.Length; i++)
         {
-            if (objectsInRange[i].gameObject == target)
+            if (objectsInRange[i].gameObject.layer == layerMask)
             {
                 return true;
             }

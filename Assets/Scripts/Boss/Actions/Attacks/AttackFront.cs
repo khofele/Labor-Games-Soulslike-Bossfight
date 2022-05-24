@@ -24,12 +24,13 @@ public class AttackFront : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack Front"))
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             bossController.Animator.SetTrigger("AttackFront");
+            return TaskStatus.COMPLETED;
         }
         attackManager.CurrentAttack = attackManager.AttackFront;
         Debug.Log("Attack Front");
-        return TaskStatus.COMPLETED;
+        return TaskStatus.RUNNING;
     }
 }

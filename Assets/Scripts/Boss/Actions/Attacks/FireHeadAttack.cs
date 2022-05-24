@@ -23,7 +23,7 @@ public class FireHeadAttack : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Breathe Fire"))
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             bossController.Animator.SetTrigger("Fire Head 1");
         }

@@ -23,7 +23,7 @@ public class AttackRight : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1"))
+        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             bossController.Animator.SetTrigger("Attack 1");
         }
