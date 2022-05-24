@@ -13,6 +13,11 @@ public class Damagable : MonoBehaviour
     [SerializeField] private PositionEnum position;
     private BossController bossController = null;
 
+    private void Start()
+    {
+        bossController = GetComponentInParent<BossController>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.gameObject.tag == "Weapon")
@@ -28,7 +33,7 @@ public class Damagable : MonoBehaviour
                 {
                     bossController.HitCounter += Random.Range(2, 5);
                 }
-                else if(bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 12)
+                else if (bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 12)
                 {
                     bossController.HitCounter += 2;
                 }
