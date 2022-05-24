@@ -18,9 +18,9 @@ public class Damagable : MonoBehaviour
         bossController = GetComponentInParent<BossController>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.gameObject.tag == "Weapon")
+        if(other.gameObject.tag == "Weapon")
         {
             if (bossController.IsStunnedTimer.TimerOver == true)
             {
