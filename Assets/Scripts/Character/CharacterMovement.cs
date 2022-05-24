@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     //general
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
+    [SerializeField] private GameObject tpCamera = null; //Cinemachine Third Person Camera
     [SerializeField] private GameManager gameManager = null; //the game manager
     private CharController charController = null; //CharController script
     private CharacterController controller = null; //CharacterControllerComponent
@@ -38,6 +39,14 @@ public class CharacterMovement : MonoBehaviour
         //--------------------------STAMINA-----------------------
         //set value in animator - check whether enough stamina to use a skill
         animator.SetFloat("currentStamina", charController.GetCurrentStamina());
+
+
+        //--------------------------CAMERA-------------------------
+        //enable third person camera after the intro => gameRunning = true
+        if(gameManager.GameRunning == true && tpCamera.activeSelf == false)
+        {
+            tpCamera.SetActive(true);
+        }
 
 
         //--------------------------MOVEMENT-----------------------
@@ -208,6 +217,7 @@ public class CharacterMovement : MonoBehaviour
         {
             //Player dead - Game ends
             gameManager.GameRunning = false;
+            tpCamera.SetActive(false);
             //Death Animation
             animator.SetBool("Death", true);
         }

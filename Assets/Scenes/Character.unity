@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
-  player: {fileID: 6955183230516075616}
+  player: {fileID: 0}
   phaseTwo: 0
 --- !u!4 &740794490 stripped
 Transform:
@@ -723,16 +723,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3621359654301878544, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621359654301878558, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 740794490}
+    - target: {fileID: 3621359654301878558, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 615345582}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
---- !u!114 &6955183230516075616 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3027061770184026473, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
-  m_PrefabInstance: {fileID: 5370418208254850313}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c5e56d47dbd0a46bb6192ed91d0b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
