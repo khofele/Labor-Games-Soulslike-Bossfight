@@ -3999,6 +3999,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 3027061770184026472, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1746946250}
     - target: {fileID: 3027061770184026473, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: attackManager
       value: 

@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     //general
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
+    [SerializeField] private GameManager gameManager = null; //the game manager
     private CharController charController = null; //CharController script
     private CharacterController controller = null; //CharacterControllerComponent
     private Animator animator = null;
@@ -40,100 +41,104 @@ public class CharacterMovement : MonoBehaviour
 
 
         //--------------------------MOVEMENT-----------------------
-        //direction calculation
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-        //check if button is pressed
-        if (direction.magnitude >= 0.01f)
+        //only possible after the intro => gameRunning = true
+        if(gameManager.GameRunning == true)
         {
-            //run
-            if (Input.GetKey(KeyCode.LeftShift) && !animator.GetBool("Run"))
+            //direction calculation
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+            //check if button is pressed
+            if (direction.magnitude >= 0.01f)
             {
-                animator.SetBool("Run", true);
-            }
-            //walk
-            else if (!animator.GetBool("Walk"))
-            {
-                animator.SetBool("Walk", true);
-            }
-        }
-        else
-        {
-            animator.SetBool("Walk", false);
-            animator.SetBool("Run", false);
-        }
-
-        //roll
-        if (Input.GetKey(KeyCode.Space) && !animator.GetBool("Roll"))
-        {
-            animator.SetBool("Roll", true);
-        }
-
-
-        //--------------------------FIGHT-----------------------
-        //attack (combo)
-        //!is aborted if player is hit/stunned/dies or has not enough stamina
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            //if weapon is no lance - attack combo possible
-            if (!(charController.GetCurrentWeapon().Contains("Lance")))
-            {
-                if(charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                //run
+                if (Input.GetKey(KeyCode.LeftShift) && !animator.GetBool("Run"))
                 {
-                    AttackCombo(); //start combo
+                    animator.SetBool("Run", true);
+                }
+                //walk
+                else if (!animator.GetBool("Walk"))
+                {
+                    animator.SetBool("Walk", true);
                 }
             }
-            else //lance: only stab attack
+            else
             {
-                if(charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                animator.SetBool("Walk", false);
+                animator.SetBool("Run", false);
+            }
+
+            //roll
+            if (Input.GetKey(KeyCode.Space) && !animator.GetBool("Roll"))
+            {
+                animator.SetBool("Roll", true);
+            }
+
+
+            //--------------------------FIGHT-----------------------
+            //attack (combo)
+            //!is aborted if player is hit/stunned/dies or has not enough stamina
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                //if weapon is no lance - attack combo possible
+                if (!(charController.GetCurrentWeapon().Contains("Lance")))
                 {
-                    animator.SetBool("Attack01R", true);
+                    if (charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                    {
+                        AttackCombo(); //start combo
+                    }
+                }
+                else //lance: only stab attack
+                {
+                    if (charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                    {
+                        animator.SetBool("Attack01R", true);
+                    }
+                }
+
+            }
+            //reset animation after time
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
+            {
+                animator.SetBool("Attack01R", false);
+                charController.SetRegStamina(true); //regenerate stamina again
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
+            {
+                animator.SetBool("Attack02R", false);
+                charController.SetRegStamina(true); //regenerate stamina again
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
+            {
+                animator.SetBool("Attack03R", false);
+                noOfClicks = 0;
+            }
+            if (Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
+            {
+                noOfClicks = 0;
+            }
+            if (!(charController.GetCurrentWeapon().Contains("Lance")) && Time.time > nextAttackStartTime) //enough time went by to start new combo
+            {
+                if (Input.GetKey(KeyCode.Mouse0) && charController.GetCurrentStamina() >= neededStamAttack)
+                {
+                    AttackCombo();
                 }
             }
-            
-        }
-        //reset animation after time
-        if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
-        {
-            animator.SetBool("Attack01R", false);
-            charController.SetRegStamina(true); //regenerate stamina again
-        }
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
-        {
-            animator.SetBool("Attack02R", false);
-            charController.SetRegStamina(true); //regenerate stamina again
-        }
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
-        {
-            animator.SetBool("Attack03R", false);
-            noOfClicks = 0;
-        }
-        if(Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
-        {
-            noOfClicks = 0;
-        }
-        if(!(charController.GetCurrentWeapon().Contains("Lance")) && Time.time > nextAttackStartTime) //enough time went by to start new combo
-        {
-            if (Input.GetKey(KeyCode.Mouse0) && charController.GetCurrentStamina() >= neededStamAttack)
+
+
+            //heavy attack
+            if (Input.GetKey(KeyCode.Mouse1) && charController.GetCurrentStamina() >= neededStamHeavyAttack)
             {
-                AttackCombo();
+                animator.SetBool("HeavyAttack", true);
             }
-        }
 
 
-        //heavy attack
-        if (Input.GetKey(KeyCode.Mouse1) && charController.GetCurrentStamina() >= neededStamHeavyAttack)
+            //use potion (if enough potions left, pressing E and not currently using a potion)
+            if (Input.GetKey(KeyCode.E) && charController.GetCurrentPotions() >= 1 && !animator.GetBool("UsePotion"))
             {
-            animator.SetBool("HeavyAttack", true);
-        }
-
-
-        //use potion (if enough potions left, pressing E and not currently using a potion)
-        if (Input.GetKey(KeyCode.E) && charController.GetCurrentPotions() >= 1 && !animator.GetBool("UsePotion"))
-        {
-            animator.SetBool("UsePotion", true);
+                animator.SetBool("UsePotion", true);
+            }
         }
     }
 
@@ -201,6 +206,9 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!animator.GetBool("diedBefore"))
         {
+            //Player dead - Game ends
+            gameManager.GameRunning = false;
+            //Death Animation
             animator.SetBool("Death", true);
         }
     }

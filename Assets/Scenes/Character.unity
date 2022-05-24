@@ -173,6 +173,9 @@ MonoBehaviour:
   winMessage: {fileID: 0}
   deathMessage: {fileID: 0}
   bossName: {fileID: 0}
+  bossController: {fileID: 0}
+  charController: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1001 &179658779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -668,6 +671,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 740794490}
+    - target: {fileID: 3027061770184026472, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 615345582}
     - target: {fileID: 3027061770184026473, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: attackManager
       value: 
