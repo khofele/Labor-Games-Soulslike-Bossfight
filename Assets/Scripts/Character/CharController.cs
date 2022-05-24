@@ -15,17 +15,17 @@ public class CharController : MonoBehaviour
 
     //Stats
     [SerializeField] private int vitality = 5;
-    [SerializeField] private int endurance = 2;
+    [SerializeField] private int endurance = 4;
     [SerializeField] private int strength = 4;
     [SerializeField] private int physStrength = 3;
     //Attributes
+    [SerializeField] private float staminaReg = 0.08f;
     private float health = 1000f; //max HP
     private float stamina = 0f; //max Stamina
     private float carryCapacity = 50f;
     private float resistance = 15f;
     private float defense = 50f;
     private float attackPower = 50f; //is added to the weaponMinDmg value of the current weapon
-    private float staminaReg = 0.08f;
     //multiplicator for SetAttributes()
     [SerializeField] private float multiplicator = 100f;
     //action speed
@@ -223,7 +223,7 @@ public class CharController : MonoBehaviour
         //stat affected
         health = health + vitality * multiplicator;
         stamina = stamina + endurance * multiplicator;
-        staminaReg = staminaReg + endurance / multiplicator;
+        staminaReg = staminaReg + endurance * 4 / multiplicator;
         attackPower = attackPower + strength;
         carryCapacity = carryCapacity + physStrength * multiplicator;
         //equipment affected
