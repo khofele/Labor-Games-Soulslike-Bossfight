@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     private Slider staminaBarSlider = null;
     private string potionCount = "0";
 
+    private bool soundPlaying = false;
+
     private void Start()
     {
         healthBarBossSlider = healthBarBoss.GetComponentInChildren<Slider>();
@@ -54,15 +56,19 @@ public class UIManager : MonoBehaviour
             potionField.GetComponentInChildren<TextMeshProUGUI>().text = charController.GetCurrentPotions().ToString();
         }
 
-        if(charController.GetCurrentHealth() <= 0)
+        if(charController.GetCurrentHealth() <= 0 && soundPlaying == false)
         {
+            soundPlaying = true;
             EnableDeathMessage();
             audioManager.PlayDeathMessageSound();
+            audioManager.StopBackgroundMusic();
         }
-        else if(bossController.Health <= 0)
+        else if(bossController.Health <= 0 && soundPlaying == false)
         {
+            soundPlaying = true;
             EnableWinMessage();
             audioManager.PlayWinMessageSound();
+            audioManager.StopBackgroundMusic();
         }
     }
 
