@@ -21,22 +21,25 @@ public class CharDamagable : MonoBehaviour
 
 
     //called when hit
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
+        if (other.gameObject.tag == "Boss") //TODO Abfrage ob Boss grad angreift
         {
-            //deal damage according to attack
-            float damage = attackManager.CurrentAttack.Damage;
-
-            //call method to calculate damage
-            charController.TakeDamage(damage + crit);
-
-            //if special attack with fire, poison or magic - call method to deal damage over time
-            if(attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+            if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
             {
-                float dot = damage * dotPercentage;
-                float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
-                charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime));
+                //deal damage according to attack
+                float damage = attackManager.CurrentAttack.Damage;
+
+                //call method to calculate damage
+                charController.TakeDamage(damage + crit);
+
+                //if special attack with fire, poison or magic - call method to deal damage over time
+                if (attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+                {
+                    float dot = damage * dotPercentage;
+                    float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
+                    charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime));
+                }
             }
         }
     }
