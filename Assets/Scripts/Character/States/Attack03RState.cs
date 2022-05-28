@@ -11,6 +11,9 @@ namespace stateMachine
         {
             Debug.Log("Attack03");
 
+            //set isAttacking in CharController to true
+            GetCharController(animator).IsAttacking = true;
+
             //use neededStamina for action
             neededStamina = 25f; 
             GetCharController(animator).UseStamina(neededStamina);
@@ -29,6 +32,8 @@ namespace stateMachine
             //character finished combo attack
             animator.SetBool("Attack03R", false);
             GetCharController(animator).SetRegStamina(true); //regenerate stamina again
+            //set isAttacking in CharController to false
+            GetCharController(animator).IsAttacking = false;
         }
     }
 

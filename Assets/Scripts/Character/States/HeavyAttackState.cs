@@ -11,6 +11,9 @@ namespace stateMachine
         {
             Debug.Log("Heavy Attack");
 
+            //set isAttacking in CharController to true
+            GetCharController(animator).IsAttacking = true;
+
             //use neededStamina for action
             neededStamina = 40f;
             GetCharController(animator).UseStamina(neededStamina);
@@ -29,6 +32,8 @@ namespace stateMachine
             //player finished attack
             animator.SetBool("HeavyAttack", false);
             GetCharController(animator).SetRegStamina(true); //regenerate stamina again
+            //set isAttacking in CharController to false
+            GetCharController(animator).IsAttacking = false;
         }
     }
 

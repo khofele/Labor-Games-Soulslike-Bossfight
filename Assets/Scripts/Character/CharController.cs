@@ -34,6 +34,8 @@ public class CharController : MonoBehaviour
 
     //fight
     [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon
+    private bool isAttacking = false; //whether character is currently attacking - needed by the enemy
+    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
 
     [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
     private float currentHealth = 0f;

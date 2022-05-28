@@ -11,6 +11,9 @@ namespace stateMachine
         {
             Debug.Log("Attack02");
 
+            //set isAttacking in CharController to true
+            GetCharController(animator).IsAttacking = true;
+
             //use neededStamina for action
             neededStamina = 25f; 
             GetCharController(animator).UseStamina(neededStamina);
@@ -24,10 +27,11 @@ namespace stateMachine
         //}
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    
-        //}
+        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            //set isAttacking in CharController to false
+            GetCharController(animator).IsAttacking = false;
+        }
     }
 
 }
