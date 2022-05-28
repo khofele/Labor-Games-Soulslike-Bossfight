@@ -19,5 +19,10 @@ public class Attack
     {
         this.damageMin = damageMin;
         this.damageMax = damageMax;
-    }    
+    }
+
+    public Attack()
+    {
+
+    }
 }

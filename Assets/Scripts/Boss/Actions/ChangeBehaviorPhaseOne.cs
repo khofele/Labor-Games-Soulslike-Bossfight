@@ -33,6 +33,21 @@ public class ChangeBehaviorPhaseOne : GOAction
     [InParam("IsStunnedTimer")]
     [SerializeField] private Timer isStunnedTimer = null;
 
+    [InParam("collisionCheckFront")]
+    [SerializeField] private CollisionCheck collisionCheckFront = null;
+
+    [InParam("collisionCheckBoxFrontLongRange")]
+    [SerializeField] private CollisionCheck collisionCheckFrontLongRange = null;
+
+    [InParam("collisionCheckBoxLeft")]
+    [SerializeField] private CollisionCheck collisionCheckLeft = null;
+
+    [InParam("collisionCheckBoxRight")]
+    [SerializeField] private CollisionCheck collisionCheckRight = null;
+
+    [InParam("collisionCheckSphere")]
+    [SerializeField] private CollisionCheck collisionCheckSphere = null;
+
     private BehaviorExecutor behaviorExecutor = null;
 
     public override void OnStart()
@@ -50,6 +65,12 @@ public class ChangeBehaviorPhaseOne : GOAction
         behaviorExecutor.SetBehaviorParam("gameManager", gameManager);
         behaviorExecutor.SetBehaviorParam("attackManager", attackManager);
         behaviorExecutor.SetBehaviorParam("IsStunnedTimer", isStunnedTimer);
+        behaviorExecutor.SetBehaviorParam("collisionCheckBoxFront", collisionCheckFront);
+        behaviorExecutor.SetBehaviorParam("collisionCheckBoxFrontLongRange", collisionCheckFrontLongRange);        
+        behaviorExecutor.SetBehaviorParam("collisionCheckBoxLeft", collisionCheckLeft);        
+        behaviorExecutor.SetBehaviorParam("collisionCheckBoxRight", collisionCheckRight);
+        behaviorExecutor.SetBehaviorParam("collisionCheckSphere", collisionCheckSphere);
+
         gameManager.GameRunning = true;
 
         return TaskStatus.COMPLETED;
