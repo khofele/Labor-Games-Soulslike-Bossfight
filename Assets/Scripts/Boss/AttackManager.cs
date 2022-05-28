@@ -12,6 +12,7 @@ public class AttackManager : MonoBehaviour
     private Attack attackFlyBreatheFire = new Attack(300, 400);
     private Attack attackFlyBreatheFirePoison = new Attack(400, 500);
     private Attack attackFlyBreatheFireMagic = new Attack(500, 600);
+    private Attack nullAttack = new Attack();
 
     private Attack currentAttack = null;
 
@@ -24,4 +25,10 @@ public class AttackManager : MonoBehaviour
     public Attack AttackFlyBreatheFirePoison { get => attackFlyBreatheFirePoison; }    
     public Attack AttackFlyBreatheFireMagic { get => attackFlyBreatheFireMagic; }
 
+    public Attack NullAttack { get => nullAttack; }
+
+    private void Start()
+    {
+        currentAttack = nullAttack;
+    }
 }

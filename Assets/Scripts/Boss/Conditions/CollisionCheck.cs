@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class CollisionCheck : MonoBehaviour
 {
-    [SerializeField] private LayerMask layerMaskPlayer;
     private bool collision = false;
 
     public bool Collision { get => collision; }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == layerMaskPlayer)
-        {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {   
             collision = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == layerMaskPlayer)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             collision = false;
         }

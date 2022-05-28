@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Reset : BaseState
 {
+    [SerializeField] AttackManager attackManager = null;
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack 1");
@@ -25,6 +27,6 @@ public class Reset : BaseState
         animator.ResetTrigger("Land");
         animator.applyRootMotion = true;
 
-
+        attackManager.CurrentAttack = attackManager.NullAttack;
     }
 }
