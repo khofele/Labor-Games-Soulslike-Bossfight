@@ -23,10 +23,12 @@ public class CharDamagable : MonoBehaviour
     //called when hit
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boss") //TODO Abfrage ob Boss grad angreift
+        if (other.gameObject.layer == LayerMask.NameToLayer("Boss") && attackManager.CurrentAttack != attackManager.NullAttack) //whether boss attacks and is truly attacking = not nullAttack
         {
             if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
             {
+                Debug.Log("Deal Damage...");
+
                 //deal damage according to attack
                 float damage = attackManager.CurrentAttack.Damage;
 

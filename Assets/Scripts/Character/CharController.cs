@@ -135,6 +135,8 @@ public class CharController : MonoBehaviour
    
     public void TakeDamage(float damage)
     {
+        Debug.Log("TakeDamage: " + damage);
+
         //subtract damage from current health
         currentHealth -= damage;
 

@@ -57,9 +57,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23f108f6f6f89479c779896ebea21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMaskPlayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &684204082493062970
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348535294738206827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,9 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23f108f6f6f89479c779896ebea21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMaskPlayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &4927997402180562611
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6425020237764186802}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBreathEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +188,7 @@ GameObject:
   - component: {fileID: 5015335264980407989}
   - component: {fileID: 5015335264995590425}
   - component: {fileID: 5015335264995976881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dragon Breath Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5013,7 +5007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5015335264980317865}
   - component: {fileID: 5015335264970034341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5107,7 +5101,7 @@ GameObject:
   - component: {fileID: 5015335264980418511}
   - component: {fileID: 5015335264995603881}
   - component: {fileID: 5015335264995971877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magic Fire Breath (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9923,7 +9917,7 @@ GameObject:
   - component: {fileID: 5015335264980345551}
   - component: {fileID: 5015335264995631005}
   - component: {fileID: 5015335264995934329}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Smoke Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14721,7 +14715,7 @@ GameObject:
   - component: {fileID: 5015335264980370153}
   - component: {fileID: 5015335264995623803}
   - component: {fileID: 5015335264995536517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Sparks Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19463,7 +19457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389475223168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19496,7 +19490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389477368784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLWing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19531,7 +19525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389491365414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19567,7 +19561,7 @@ GameObject:
   - component: {fileID: 6281236389523894093}
   - component: {fileID: 6281236389523894092}
   - component: {fileID: 1492606656535162604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dragon
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -19676,6 +19670,10 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     objectParamsNames:
     - area
     - player
@@ -19685,6 +19683,10 @@ MonoBehaviour:
     - IsStunnedTimer
     - stunTimer
     - collisionCheckBoxFront
+    - collisionCheckBoxLeft
+    - collisionCheckBoxRight
+    - collisionCheckBoxFrontLongRange
+    - collisionCheckSphere
     objectParamsLostDefaultValue: 
     layerMaskParams:
     - serializedVersion: 2
@@ -19764,7 +19766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389528345257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dummy001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19794,7 +19796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389554116941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19824,7 +19826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389555757110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19855,7 +19857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389558007349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LArmPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19888,7 +19890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389574133159}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19919,7 +19921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389643400117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonWthumbL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19951,7 +19953,7 @@ GameObject:
   - component: {fileID: 6281236389655370990}
   - component: {fileID: 7833762355241236926}
   - component: {fileID: 8345000993309118261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLLegPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20012,7 +20014,7 @@ GameObject:
   - component: {fileID: 6281236389662059855}
   - component: {fileID: 6202626162249446184}
   - component: {fileID: 6509914158005125776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20071,7 +20073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389695904968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20104,7 +20106,7 @@ GameObject:
   - component: {fileID: 6281236389767487792}
   - component: {fileID: 768809821265167182}
   - component: {fileID: 8594482161875781708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20163,7 +20165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389795292595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20194,7 +20196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389845401166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LArmPoint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20225,7 +20227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389868261237}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20256,7 +20258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389895282428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20287,7 +20289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389897374394}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20317,7 +20319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389899898309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20349,7 +20351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281236389908460809}
   - component: {fileID: 1255022817604607553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20397,7 +20399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389911525722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRWingCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20428,7 +20430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389925823819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonNeck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20459,7 +20461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389925899232}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20489,7 +20491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389947490700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLWing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20520,7 +20522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389952890005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DragonRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20552,7 +20554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389967540136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20582,7 +20584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389976279558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20613,7 +20615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236389976817677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20643,7 +20645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390000055505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20674,7 +20676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390019227151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20704,7 +20706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390019785195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20735,7 +20737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390043007227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20768,7 +20770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390054406834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20801,7 +20803,7 @@ GameObject:
   - component: {fileID: 6281236390067989707}
   - component: {fileID: 3054441018265871958}
   - component: {fileID: 6027341180406165358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20860,7 +20862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390074025665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20890,7 +20892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390104801545}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20921,7 +20923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390107828438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20952,7 +20954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390117801600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonNeck5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20983,7 +20985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390147418127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21014,7 +21016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390155762400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21045,7 +21047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390200130133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21076,7 +21078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390221723798}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21107,7 +21109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390273555086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21138,7 +21140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390358685730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonNeck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21169,7 +21171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390362069660}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21201,7 +21203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281236390370401482}
   - component: {fileID: 6281236390370401485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TailB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21293,7 +21295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281236390376882070}
   - component: {fileID: 6281236390376882089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21431,7 +21433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390384698553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21464,7 +21466,7 @@ GameObject:
   - component: {fileID: 6281236390390799491}
   - component: {fileID: 7637955488122432807}
   - component: {fileID: 3300530972083009134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21523,7 +21525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390420881812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21554,7 +21556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390438122635}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRLeg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21585,7 +21587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390483443725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21616,7 +21618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390487872131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21647,7 +21649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390509684093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21677,7 +21679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390514378960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LArmPoint01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21708,7 +21710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390520964896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21738,7 +21740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390552087630}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RArmPoint01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21769,7 +21771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390560162679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21799,7 +21801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390572552926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21829,7 +21831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390572934745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLLeg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21862,7 +21864,7 @@ GameObject:
   - component: {fileID: 6281236390586314357}
   - component: {fileID: 7562396316752776959}
   - component: {fileID: 4132940020482213730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegPoint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21921,7 +21923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390625591564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21952,7 +21954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390695598809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21982,7 +21984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390740749031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22013,7 +22015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390746115135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22043,7 +22045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390783080992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22074,7 +22076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390788376485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RArmPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22109,7 +22111,7 @@ GameObject:
   - component: {fileID: 6281236390790031807}
   - component: {fileID: 839807046763477251}
   - component: {fileID: 3585561501267138360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegPoint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22168,7 +22170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390796670627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonWthumbR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22198,7 +22200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390805011450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22229,7 +22231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390806767729}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLWingCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22260,7 +22262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390880655557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22291,7 +22293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390887767315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22324,7 +22326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390962194016}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22355,7 +22357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236390968843963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22388,7 +22390,7 @@ GameObject:
   - component: {fileID: 6281236391007299913}
   - component: {fileID: 9178198715648448782}
   - component: {fileID: 6320200854443693236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22446,7 +22448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391012398073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RArmPoint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22477,7 +22479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391027466274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRWing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22512,7 +22514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391030768441}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22545,7 +22547,7 @@ GameObject:
   - component: {fileID: 6281236391032136408}
   - component: {fileID: 550174123036234202}
   - component: {fileID: 7245558870961528510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22603,7 +22605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391035108180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHandToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22636,7 +22638,7 @@ GameObject:
   - component: {fileID: 6281236391120192020}
   - component: {fileID: 4828092090682533281}
   - component: {fileID: 4092302291451774354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonNeck3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22695,7 +22697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391136625274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22726,7 +22728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391148430024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22757,7 +22759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391245413483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22787,7 +22789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391247741294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRibcage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22822,7 +22824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391249082008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22853,7 +22855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391264261412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22884,7 +22886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391294685908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHandToe12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22916,7 +22918,7 @@ GameObject:
   - component: {fileID: 6281236391308044473}
   - component: {fileID: 2504161310295266878}
   - component: {fileID: 6015702375758949845}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLArm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22975,7 +22977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391314308246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23007,7 +23009,7 @@ GameObject:
   - component: {fileID: 6281236391323730392}
   - component: {fileID: 6842350789300245803}
   - component: {fileID: 3377488191353688434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23067,7 +23069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281236391333074202}
   - component: {fileID: 6281236391333074205}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Carapace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23169,7 +23171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391335651410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23200,7 +23202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391352613804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23232,7 +23234,7 @@ GameObject:
   - component: {fileID: 6281236391357449231}
   - component: {fileID: 6465909442741925688}
   - component: {fileID: 2095955007017802743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRLegPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23291,7 +23293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391361259275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonNeck4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23322,7 +23324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391364867564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLW21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23353,7 +23355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391400550621}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23383,7 +23385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391406029932}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonTail4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23414,7 +23416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391412471591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23445,7 +23447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391437814342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23476,7 +23478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391487751293}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegPoint01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23507,7 +23509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391515325350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23538,7 +23540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391530109214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LLegToe21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23568,7 +23570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391551115128}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegPoint01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23599,7 +23601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391558615601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonLLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23630,7 +23632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391569429002}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRW23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23660,7 +23662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391569464112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRWing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23693,7 +23695,7 @@ GameObject:
   - component: {fileID: 6281236391583770417}
   - component: {fileID: 3919847286819677665}
   - component: {fileID: 8627270561859962448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonJaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23752,7 +23754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281236391589685952}
   - component: {fileID: 6281236391589685955}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23919,7 +23921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391589896498}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: English DragonRArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23950,7 +23952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281236391603399448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RLegToe21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24015,9 +24017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23f108f6f6f89479c779896ebea21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMaskPlayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &2551881956893850402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24042,7 +24041,7 @@ GameObject:
   - component: {fileID: 7042125868902468195}
   - component: {fileID: 7042125868888241969}
   - component: {fileID: 7042125868888713429}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Smoke Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28840,7 +28839,7 @@ GameObject:
   - component: {fileID: 7042125868902405987}
   - component: {fileID: 7042125868888268037}
   - component: {fileID: 7042125868888685449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magic Fire Breath (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33655,7 +33654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7042125868902505989}
   - component: {fileID: 7042125868896265225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33749,7 +33748,7 @@ GameObject:
   - component: {fileID: 7042125868902415897}
   - component: {fileID: 7042125868888271285}
   - component: {fileID: 7042125868888673821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dragon Breath Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38569,7 +38568,7 @@ GameObject:
   - component: {fileID: 7042125868902443589}
   - component: {fileID: 7042125868888239063}
   - component: {fileID: 7042125868888327721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Sparks Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43313,7 +43312,7 @@ GameObject:
   - component: {fileID: 7858803220760940365}
   - component: {fileID: 7858803220742541023}
   - component: {fileID: 7858803220742644513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Sparks Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48057,7 +48056,7 @@ GameObject:
   - component: {fileID: 7858803220760981355}
   - component: {fileID: 7858803220742541881}
   - component: {fileID: 7858803220742753757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PComponent Smoke Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52855,7 +52854,7 @@ GameObject:
   - component: {fileID: 7858803220760916587}
   - component: {fileID: 7858803220742584333}
   - component: {fileID: 7858803220742725249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magic Fire Breath (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57670,7 +57669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7858803220761017101}
   - component: {fileID: 7858803220767080705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57764,7 +57763,7 @@ GameObject:
   - component: {fileID: 7858803220760910609}
   - component: {fileID: 7858803220742573245}
   - component: {fileID: 7858803220742728469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dragon Breath Magic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62617,9 +62616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23f108f6f6f89479c779896ebea21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMaskPlayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &4368949997265958890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62690,9 +62686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23f108f6f6f89479c779896ebea21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMaskPlayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &8552613102707371298
 GameObject:
   m_ObjectHideFlags: 0
@@ -62705,7 +62698,7 @@ GameObject:
   - component: {fileID: 8786383784383810555}
   - component: {fileID: 2471876604012983110}
   - component: {fileID: 2529328858614904991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBreathHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

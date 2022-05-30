@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 4540972880523917841}
   m_Layer: 3
   m_Name: Floor
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 4540972881056172799}
   m_Layer: 3
   m_Name: Walls with entrance
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
