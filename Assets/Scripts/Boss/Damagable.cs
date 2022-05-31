@@ -20,7 +20,7 @@ public class Damagable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Weapon")
+        if(other.gameObject.tag == "Weapon" && bossController.Player.IsAttacking == true)
         {
             //if (bossController.IsStunnedTimer.TimerOver == true)
             //{
