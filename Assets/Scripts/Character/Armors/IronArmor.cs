@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class IronArmor : Armor
 {
+    private void Start()
+    {
+        armorType = "ironarmor";
+    }
+
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
     public void Reset()

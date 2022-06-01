@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class LeatherArmor : Armor
 {
+    private void Start()
+    {
+        armorType = "leatherarmor";
+    }
+
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
     public void Reset()

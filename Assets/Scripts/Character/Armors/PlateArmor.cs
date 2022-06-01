@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlateArmor : Armor
 {
+    private void Start()
+    {
+        armorType = "platearmor";
+    }
+
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
     public void Reset()
