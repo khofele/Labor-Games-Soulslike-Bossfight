@@ -6,7 +6,7 @@ public class Hammer : Weapon
 {
     private void Start()
     {
-        weaponType = "hammer";
+        weaponWeight = 15f;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

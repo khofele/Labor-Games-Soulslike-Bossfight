@@ -6,7 +6,8 @@ public class ClothArmor : Armor
 {
     private void Start()
     {
-        armorType = "clotharmor";
+        this.armorWeight = 15f;
+        this.armorDef = 25f;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN

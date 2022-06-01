@@ -6,7 +6,7 @@ public class Longsword : Weapon
 {
     private void Start()
     {
-        weaponType = "longsword";
+        weaponWeight = 15f;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

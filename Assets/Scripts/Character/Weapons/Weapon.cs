@@ -94,9 +94,4 @@ public abstract class Weapon : MonoBehaviour
     {
         return weaponWeight;
     }
-
-    public Weapon GetWeaponPrefab()
-    {
-        return weaponPrefab;
-    }
 }

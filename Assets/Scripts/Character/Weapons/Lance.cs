@@ -6,7 +6,7 @@ public class Lance : Weapon
 {
     private void Start()
     {
-        weaponType = "lance";
+        weaponWeight = 12f;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

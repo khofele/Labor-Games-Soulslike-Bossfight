@@ -6,7 +6,8 @@ public class PlateArmor : Armor
 {
     private void Start()
     {
-        armorType = "platearmor";
+        this.armorWeight = 35f;
+        this.armorDef = 58f;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN

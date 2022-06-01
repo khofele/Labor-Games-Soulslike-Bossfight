@@ -6,7 +6,8 @@ public class IronArmor : Armor
 {
     private void Start()
     {
-        armorType = "ironarmor";
+        armorWeight = 40f;
+        armorDef = 65f;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN

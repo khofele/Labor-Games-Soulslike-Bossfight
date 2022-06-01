@@ -7,7 +7,7 @@ public class Shortsword : Weapon
 
     private void Start()
     {
-        weaponType = "shortsword";
+        weaponWeight = 10f;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

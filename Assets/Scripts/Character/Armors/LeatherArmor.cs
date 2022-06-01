@@ -6,7 +6,8 @@ public class LeatherArmor : Armor
 {
     private void Start()
     {
-        armorType = "leatherarmor";
+        armorWeight = 20f;
+        armorDef = 40f;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN
