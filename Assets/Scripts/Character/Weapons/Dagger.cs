@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Dagger : Weapon 
 {
+    private void Start()
+    {
+        weaponType = "daggers";
+    }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called

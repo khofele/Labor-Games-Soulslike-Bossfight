@@ -5,6 +5,11 @@ using UnityEngine;
 public class Shortsword : Weapon
 {
 
+    private void Start()
+    {
+        weaponType = "shortsword";
+    }
+
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
     public void Reset()

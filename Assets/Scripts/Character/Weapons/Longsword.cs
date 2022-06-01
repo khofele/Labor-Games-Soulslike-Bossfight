@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Longsword : Weapon
 {
+    private void Start()
+    {
+        weaponType = "longsword";
+    }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called

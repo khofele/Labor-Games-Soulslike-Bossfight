@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Hammer : Weapon
 {
+    private void Start()
+    {
+        weaponType = "hammer";
+    }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
     // Overwrites the values in the parent class when called
