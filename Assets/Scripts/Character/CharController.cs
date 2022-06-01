@@ -13,24 +13,20 @@ public class CharController : MonoBehaviour
     //Name
     private string charName = "";
 
-    //Stats
-    [SerializeField] private int vitality = 5;
-    [SerializeField] private int endurance = 4;
-    [SerializeField] private int strength = 4;
-    [SerializeField] private int physStrength = 3;
     //Attributes
+    [SerializeField] private AttributeManager attrManager = null; //Manager used by menu to calculate attribute values
     [SerializeField] private float staminaReg = 0.08f;
-    private float health = 1000f; //max HP
+    private float health = 0f; //max HP
     private float stamina = 0f; //max Stamina
-    private float carryCapacity = 50f;
-    private float resistance = 15f;
-    private float defense = 50f;
-    private float attackPower = 50f; //is added to the weaponMinDmg value of the current weapon
-    //multiplicator for SetAttributes()
-    [SerializeField] private float multiplicator = 100f;
+    private float carryCapacity = 0f;
+    private float resistance = 0f;
+    private float defense = 0f;
+    private float attackPower = 0f; //is added to the weaponMinDmg value of the current weapon
     //action speed
     private float animationSpeed = 1.25f; //speed of animations and animator
     private float movementSpeed = 6f; //speed for movement like walking, running and rolling
+    //multiplicator for speed
+    [SerializeField] private float multiplicator = 100f;
 
     //fight
     [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon
@@ -218,21 +214,16 @@ public class CharController : MonoBehaviour
         Debug.Log("CC weaponWeight: " + weaponWeight);
     }
 
-
     //Method to set the attributes depending on the chosen stats and equipment.
-    //For the respective base value, the determined stat is multiplied by the multiplier and added to the base value.
-    //TODO: Balancing Berechnung + Basewerte
     private void SetAttributes()
     {
-        //stat affected
-        health = health + vitality * multiplicator;
-        stamina = stamina + endurance * multiplicator;
-        staminaReg = staminaReg + endurance * 4 / multiplicator;
-        attackPower = attackPower + strength;
-        carryCapacity = carryCapacity + physStrength * multiplicator;
-        //equipment affected
-        resistance = resistance + armorDef * multiplicator;
-        defense = defense + armorDef * multiplicator;
+        health = attrManager.Health;
+        stamina = attrManager.Stamina;
+        staminaReg = attrManager.StaminaReg;
+        attackPower = attrManager.AttackPower;
+        carryCapacity = attrManager.CarryingCapacity;
+        resistance = attrManager.Resistance;
+        defense = attrManager.Defense;
 
         //set start current health, stamina values and potion count
         currentHealth = health;

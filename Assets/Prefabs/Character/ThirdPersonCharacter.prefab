@@ -2597,10 +2597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handR: {fileID: 6197755546742145748}
   handL: {fileID: 6197755546778258600}
-  vitality: 5
-  endurance: 2
-  strength: 4
-  physStrength: 3
+  statManager: {fileID: 0}
+  attrManager: {fileID: 0}
   staminaReg: 0.08
   multiplicator: 100
   attackManager: {fileID: 0}
