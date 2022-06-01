@@ -25,23 +25,28 @@ public class StartRunMenuUIManager : MonoBehaviour
     [SerializeField] private Button btnRemovePhysicalStrength = null;
 
     [Header("Stats")]
-    [SerializeField] private TextMeshProUGUI skillPoints = null;
-    [SerializeField] private TextMeshProUGUI vitality = null;
-    [SerializeField] private TextMeshProUGUI endurance = null;
-    [SerializeField] private TextMeshProUGUI strength = null;
-    [SerializeField] private TextMeshProUGUI physicalStrength = null;
+    [SerializeField] private TextMeshProUGUI txtSkillPoints = null;
+    [SerializeField] private TextMeshProUGUI txtVitality = null;
+    [SerializeField] private TextMeshProUGUI txtEndurance = null;
+    [SerializeField] private TextMeshProUGUI txtStrength = null;
+    [SerializeField] private TextMeshProUGUI txtPhysicalStrength = null;
 
     [Header("Attributes")]
-    [SerializeField] private TextMeshProUGUI health = null;
-    [SerializeField] private TextMeshProUGUI stamina = null;
-    [SerializeField] private TextMeshProUGUI staminaReg = null;
-    [SerializeField] private TextMeshProUGUI carryingCapacity = null;
-    [SerializeField] private TextMeshProUGUI resistance = null;
-    [SerializeField] private TextMeshProUGUI defense = null;
-    [SerializeField] private TextMeshProUGUI attackPower = null;
+    [SerializeField] private TextMeshProUGUI txtHealth = null;
+    [SerializeField] private TextMeshProUGUI txtStamina = null;
+    [SerializeField] private TextMeshProUGUI txtStaminaReg = null;
+    [SerializeField] private TextMeshProUGUI txtCarryingCapacity = null;
+    [SerializeField] private TextMeshProUGUI txtResistance = null;
+    [SerializeField] private TextMeshProUGUI txtDefense = null;
+    [SerializeField] private TextMeshProUGUI txtAttackPower = null;
 
     [Header("Equipment")]
-    [SerializeField] private TextMeshProUGUI carryingCapacityEquipment = null;
+    [SerializeField] private TextMeshProUGUI txtCarryingCapacityEquipment = null;
+    [SerializeField] private TextMeshProUGUI txtPotionCount = null;
+    [SerializeField] private Image imgEquippedWeapon = null;
+    [SerializeField] private Image imgEquippedArmor = null;
+
+    [Header("Items")]
     [SerializeField] private Button btnShortSword = null;
     [SerializeField] private Button btnLongSword = null;
     [SerializeField] private Button btnLance = null;
@@ -52,7 +57,12 @@ public class StartRunMenuUIManager : MonoBehaviour
     [SerializeField] private Button btnIronArmor = null;
     [SerializeField] private Button btnPlateArmor = null;
 
+    [Header("Player")]
+    [SerializeField] private TextMeshProUGUI txtPlayerName = null;
+
     private float weight = 0f;
+    private float armorWeight = 0f;
+    private float weaponWeight = 0f;
 
     private void Start()
     {
@@ -68,31 +78,63 @@ public class StartRunMenuUIManager : MonoBehaviour
         btnAddPhysicalStrength.onClick.AddListener(skillpointManager.AddPhysicalStrength);
         btnRemovePhysicalStrength.onClick.AddListener(skillpointManager.RemovePhysicalStrength);
 
-        //btnDagger.onClick.AddListener(itemManager.SetDaggerPrefab);
-        btnClothArmor.onClick.AddListener(itemManager.SetClothArmor); // TODO Listener setzen!
+        btnClothArmor.onClick.AddListener(itemManager.SetClothArmor);
+        btnLeatherArmor.onClick.AddListener(itemManager.SetLeatherArmor);
+        btnIronArmor.onClick.AddListener(itemManager.SetIronArmor);
+        btnPlateArmor.onClick.AddListener(itemManager.SetPlateArmor);
+
+        btnShortSword.onClick.AddListener(itemManager.SetShortSword);
+        btnLongSword.onClick.AddListener(itemManager.SetLongSword);
+        btnHammer.onClick.AddListener(itemManager.SetHammer);
+        btnLance.onClick.AddListener(itemManager.SetLance);
+        btnDagger.onClick.AddListener(itemManager.SetDagger);
+
+        txtPlayerName.text = "Godwin the Brave";
+        txtPotionCount.text = itemManager.PotionCount.ToString();
     }
 
     private void Update()
     {
         // Stats
-        skillPoints.text = skillpointManager.Skillpoints.ToString() + "/10"; // TODO
-        vitality.text = skillpointManager.Vitality.ToString();
-        endurance.text = skillpointManager.Endurance.ToString();
-        strength.text = skillpointManager.Strength.ToString();
-        physicalStrength.text = skillpointManager.PhysicalStrength.ToString();
+        txtSkillPoints.text = skillpointManager.Skillpoints.ToString() + "/" + skillpointManager.MaxSkillpoints;
+        txtVitality.text = skillpointManager.Vitality.ToString();
+        txtEndurance.text = skillpointManager.Endurance.ToString();
+        txtStrength.text = skillpointManager.Strength.ToString();
+        txtPhysicalStrength.text = skillpointManager.PhysicalStrength.ToString();
 
         // Attributes
-        health.text = attributeManager.Health.ToString();
-        stamina.text = attributeManager.Stamina.ToString();
-        staminaReg.text = attributeManager.StaminaReg.ToString();
-        carryingCapacity.text = attributeManager.CarryingCapacity.ToString();
-        resistance.text = attributeManager.Resistance.ToString();
-        defense.text = attributeManager.Defense.ToString();
-        attackPower.text = attributeManager.AttackPower.ToString();
+        txtHealth.text = attributeManager.Health.ToString();
+        txtStamina.text = attributeManager.Stamina.ToString();
+        txtStaminaReg.text = attributeManager.StaminaReg.ToString();
+        txtCarryingCapacity.text = attributeManager.CarryingCapacity.ToString();
+        txtResistance.text = attributeManager.Resistance.ToString();
+        txtDefense.text = attributeManager.Defense.ToString();
+        txtAttackPower.text = attributeManager.AttackPower.ToString();
 
         // Equipment
-        weight = itemManager.CurrentArmor.GetArmorWeight(); // + itemManager.CurrentWeapon.GetWeaponWeight();
-        //carryingCapacity.text = weight.ToString() + "/" + carryingCapacity.ToString();
+        if(itemManager.CurrentArmor != null )
+        {
+            armorWeight = itemManager.CurrentArmor.GetArmorWeight();
+        }
+
+        if (itemManager.CurrentWeapon != null)
+        {
+            weaponWeight = itemManager.CurrentWeapon.GetWeaponWeight();
+        }
+
+        weight = armorWeight + weaponWeight;
+        txtCarryingCapacityEquipment.text = weight.ToString() + "/" + attributeManager.CarryingCapacity;
+
+        if (weight <= attributeManager.CarryingCapacity)
+        {
+            btnStartRun.interactable = true;
+            txtCarryingCapacityEquipment.color = Color.white;
+        }
+        else
+        {
+            btnStartRun.interactable = false;
+            txtCarryingCapacityEquipment.color = Color.red;
+        }
     }
 
     private void BackToMainMenu()
@@ -103,5 +145,50 @@ public class StartRunMenuUIManager : MonoBehaviour
     private void StartGame()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void SetShortSwordImage()
+    {
+        imgEquippedWeapon.sprite = btnShortSword.image.sprite;
+    }
+
+    public void SetLongSwordImage()
+    {
+        imgEquippedWeapon.sprite = btnLongSword.image.sprite;
+    }
+
+    public void SetHammerImage()
+    {
+        imgEquippedWeapon.sprite = btnHammer.image.sprite;
+    }
+
+    public void SetDaggerImage()
+    {
+        imgEquippedWeapon.sprite = btnDagger.image.sprite;
+    }
+
+    public void SetLanceImage()
+    {
+        imgEquippedWeapon.sprite = btnLance.image.sprite;
+    }
+
+    public void SetClothArmorImage()
+    {
+        imgEquippedArmor.sprite = btnClothArmor.image.sprite;
+    }
+
+    public void SetLeatherArmorImage()
+    {
+        imgEquippedArmor.sprite = btnLeatherArmor.image.sprite;
+    }
+
+    public void SetIronArmorImage()
+    {
+        imgEquippedArmor.sprite = btnIronArmor.image.sprite;
+    }
+
+    public void SetPlateArmorImage()
+    {
+        imgEquippedArmor.sprite = btnPlateArmor.image.sprite;
     }
 }
