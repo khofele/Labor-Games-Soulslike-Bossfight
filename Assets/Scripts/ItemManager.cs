@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    [Header("Manager")]
+    [SerializeField] private AttributeManager attributeManager = null;
+    [SerializeField] private StartRunMenuUIManager uiManager = null;
+
     [Header("Armor")]
     [SerializeField] private ClothArmor clothArmor = null;
     [SerializeField] private IronArmor ironArmor = null;
     [SerializeField] private LeatherArmor leatherArmor = null;
     [SerializeField] private PlateArmor plateArmor = null;
 
-    //[Header("Weapons")]
-    //[SerializeField] private Shortsword shortSword = null;
-    //[SerializeField] private Longsword longSword = null;
-    //[SerializeField] private Dagger dagger = null;
-    //[SerializeField] private Hammer hammer = null;
-    //[SerializeField] private Lance lance = null;
+    [Header("Weapons")]
+    [SerializeField] private Shortsword shortSword = null;
+    [SerializeField] private Longsword longSword = null;
+    [SerializeField] private Dagger dagger = null;
+    [SerializeField] private Hammer hammer = null;
+    [SerializeField] private Lance lance = null;
 
     private static ItemManager instance = null;
     private Weapon currentWeapon = null;
-    [SerializeField] private Armor currentArmor = null;
+    private Armor currentArmor = null;
+    private int potionCount = 5;
 
-    public Weapon CurrentWeapon { get => currentWeapon; set => currentWeapon = value; }
-    public Armor CurrentArmor { get => currentArmor; set => currentArmor = value; }
+    public Weapon CurrentWeapon { get => currentWeapon; }
+    public Armor CurrentArmor { get => currentArmor; }
+    public int PotionCount { get => potionCount; }
 
     private void Awake()
     {
@@ -38,53 +44,64 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void SetDagger()
     {
-        currentArmor = clothArmor;
-        //currentWeapon = shortSword;
+        currentWeapon = dagger;
+        uiManager.SetDaggerImage();
     }
 
-    //public void SetDaggerPrefab()
-    //{
-    //    currentWeapon = dagger.GetWeaponPrefab();
-    //}
+    public void SetLongSword()
+    {
+        currentWeapon = longSword;
+        uiManager.SetLongSwordImage();
+    }
+    public void SetShortSword()
+    {
+        currentWeapon = shortSword;
+        uiManager.SetShortSwordImage();
+    }
 
-    //public void SetLongSwordPrefab()
-    //{
-    //    currentWeapon = longSword.GetWeaponPrefab();
-    //}
-    //public void SetShortSwordPrefab()
-    //{
-    //    currentWeapon = shortSword.GetWeaponPrefab();
-    //}
+    public void SetHammer()
+    {
+        currentWeapon = hammer;
+        uiManager.SetHammerImage();
+    }
 
-    //public void SetHammerPrefab()
-    //{
-    //    currentWeapon = hammer.GetWeaponPrefab();
-    //}
-
-    //public void SetLancePrefab()
-    //{
-    //    currentWeapon = lance.GetWeaponPrefab();
-    //}
+    public void SetLance()
+    {
+        currentWeapon = lance;
+        uiManager.SetLanceImage();
+    }
 
     public void SetClothArmor()
     {
         currentArmor = clothArmor;
+        attributeManager.CalcResistance();
+        attributeManager.CalcDefense();
+        uiManager.SetClothArmorImage();
     }
 
     public void SetLeatherArmor()
     {
         currentArmor = leatherArmor;
+        attributeManager.CalcResistance();
+        attributeManager.CalcDefense();
+        uiManager.SetLeatherArmorImage();
     }
 
     public void SetIronArmor()
     {
         currentArmor = ironArmor;
+        attributeManager.CalcResistance();
+        attributeManager.CalcDefense();
+        uiManager.SetIronArmorImage();
     }
 
     public void SetPlateArmor()
     {
         currentArmor = plateArmor;
+        attributeManager.CalcResistance();
+        attributeManager.CalcDefense();
+        uiManager.SetPlateArmorImage();
     }
 }
