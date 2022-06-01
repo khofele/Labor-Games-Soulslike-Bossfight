@@ -41,7 +41,6 @@ public class AttributeManager : MonoBehaviour
     public void CalcHealth()
     {
         health = health + skillpointManager.Vitality * multiplicator;
-
     }
 
     public void CalcStamina()
@@ -66,11 +65,11 @@ public class AttributeManager : MonoBehaviour
 
     public void CalcResistance()
     {
-        resistance = resistance + itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+        resistance = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
     }
 
     public void CalcDefense()
     {
-        defense = defense + itemManager.CurrentArmor.GetArmorDef() * multiplicator; ;
+        defense = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
     }
 }
