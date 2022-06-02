@@ -94,4 +94,19 @@ public abstract class Weapon : MonoBehaviour
     {
         return weaponWeight;
     }
+
+    public float GetWeaponMinDmg()
+    {
+        return weaponMinDmg;
+    }
+
+    public float GetWeaponMaxDmg()
+    {
+        return weaponMaxDmg;
+    }
+
+    public Weapon GetWeaponPrefab()
+    {
+        return weaponPrefab;
+    }
 }

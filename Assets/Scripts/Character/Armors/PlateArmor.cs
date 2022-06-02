@@ -6,8 +6,12 @@ public class PlateArmor : Armor
 {
     private void Start()
     {
-        this.armorWeight = 35f;
-        this.armorDef = 58f;
+        armorName = "Plate Armor";
+        armorType = "platearmor";
+        armorWeight = 35f;
+        armorDef = 58f;
+        helmetPrefab = Resources.Load("Character/Armors/PlateArmor/PlateArmorHelmet", typeof(Armor)) as Armor;
+        torsoPrefab = Resources.Load("Character/Armors/PlateArmor/PlateArmorTorso", typeof(Armor)) as Armor;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN

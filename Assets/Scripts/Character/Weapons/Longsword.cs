@@ -6,7 +6,11 @@ public class Longsword : Weapon
 {
     private void Start()
     {
+        weaponType = "longsword";
         weaponWeight = 15f;
+        weaponMinDmg = 75f;
+        weaponMaxDmg = 105f;
+        weaponPrefab = Resources.Load("Character/Weapons/Longword", typeof(Weapon)) as Weapon;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

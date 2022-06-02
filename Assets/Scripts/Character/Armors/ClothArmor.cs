@@ -6,8 +6,12 @@ public class ClothArmor : Armor
 {
     private void Start()
     {
-        this.armorWeight = 15f;
-        this.armorDef = 25f;
+        armorName = "Elven Armor";
+        armorType = "clotharmor";
+        armorWeight = 15f;
+        armorDef = 25f;
+        helmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
+        torsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
     }
 
     //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN

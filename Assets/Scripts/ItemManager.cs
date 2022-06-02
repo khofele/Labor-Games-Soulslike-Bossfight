@@ -22,13 +22,40 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Lance lance = null;
 
     private static ItemManager instance = null;
+
     private Weapon currentWeapon = null;
+    private string currentWeaponType = "";
+    private float currentWeaponWeight = 0f;
+    private float currentWeaponMinDmg = 0f;
+    private float currentWeaponMaxDmg = 0f;
+    private Weapon currentWeaponPrefab = null;
+
     private Armor currentArmor = null;
+    private string currentArmorName = "";
+    private string currentArmorType = "";
+    private float currentArmorWeight = 0f;
+    private float currentArmorDef = 0f;
+    private Armor currentTorsoArmorPrefab = null;
+    private Armor currentHelmetPrefab = null;
+
     private int potionCount = 5;
 
-    public Weapon CurrentWeapon { get => currentWeapon; }
-    public Armor CurrentArmor { get => currentArmor; }
     public int PotionCount { get => potionCount; }
+
+    public Weapon CurrentWeapon { get => currentWeapon; }
+    public string CurrentWeaponType { get => currentWeaponType; }
+    public float CurrentWeaponWeight { get => currentWeaponWeight; }
+    public float CurrentWeaponMinDmg { get => currentWeaponMinDmg; }
+    public float CurrentWeaponMaxDmg { get => currentWeaponMaxDmg; }
+    public Weapon CurrentWeaponPrefab { get => currentWeaponPrefab; }
+
+    public Armor CurrentArmor { get => currentArmor; }
+    public string CurrentArmorName { get => currentArmorName; }
+    public string CurrentArmorType { get => currentArmorType; }
+    public float CurrentArmorWeight { get => currentArmorWeight; }
+    public float CurrentArmorDef { get => currentArmorDef; }
+    public Armor CurrentTorsoArmorPrefab { get => currentTorsoArmorPrefab; }
+    public Armor CurrentHelmetPrefab { get => currentHelmetPrefab; }
 
     private void Awake()
     {
@@ -47,29 +74,34 @@ public class ItemManager : MonoBehaviour
     public void SetDagger()
     {
         currentWeapon = dagger;
+        SetWeaponValues();
         uiManager.SetDaggerImage();
     }
 
     public void SetLongSword()
     {
         currentWeapon = longSword;
+        SetWeaponValues();
         uiManager.SetLongSwordImage();
     }
     public void SetShortSword()
     {
         currentWeapon = shortSword;
+        SetWeaponValues();
         uiManager.SetShortSwordImage();
     }
 
     public void SetHammer()
     {
         currentWeapon = hammer;
+        SetWeaponValues();
         uiManager.SetHammerImage();
     }
 
     public void SetLance()
     {
         currentWeapon = lance;
+        SetWeaponValues();
         uiManager.SetLanceImage();
     }
 
@@ -79,6 +111,7 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcResistance();
         attributeManager.CalcDefense();
         uiManager.SetClothArmorImage();
+        SetArmorValues();
     }
 
     public void SetLeatherArmor()
@@ -87,6 +120,7 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcResistance();
         attributeManager.CalcDefense();
         uiManager.SetLeatherArmorImage();
+        SetArmorValues();
     }
 
     public void SetIronArmor()
@@ -95,6 +129,7 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcResistance();
         attributeManager.CalcDefense();
         uiManager.SetIronArmorImage();
+        SetArmorValues();
     }
 
     public void SetPlateArmor()
@@ -103,5 +138,25 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcResistance();
         attributeManager.CalcDefense();
         uiManager.SetPlateArmorImage();
+        SetArmorValues();
+    }
+
+    private void SetWeaponValues()
+    {
+        currentWeaponType = currentWeapon.GetWeaponType();
+        currentWeaponWeight = currentWeapon.GetWeaponWeight();
+        currentWeaponMinDmg = currentWeapon.GetWeaponMinDmg();
+        currentWeaponMaxDmg = currentWeapon.GetWeaponMaxDmg();
+        currentWeaponPrefab = currentWeapon.GetWeaponPrefab();
+    }
+
+    private void SetArmorValues()
+    {
+        currentArmorName = currentArmor.GetArmorName();
+        currentArmorType = currentArmor.GetArmorType();
+        currentArmorWeight = currentArmor.GetArmorWeight();
+        currentArmorDef = currentArmor.GetArmorDef();
+        currentHelmetPrefab = currentArmor.GetHelmetPrefab();
+        currentTorsoArmorPrefab = currentArmor.GetTorsoArmorPrefab();
     }
 }

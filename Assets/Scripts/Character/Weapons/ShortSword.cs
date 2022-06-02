@@ -7,7 +7,11 @@ public class Shortsword : Weapon
 
     private void Start()
     {
+        weaponType = "shortsword";
         weaponWeight = 10f;
+        weaponMinDmg = 50f;
+        weaponMaxDmg = 80f;
+        weaponPrefab = Resources.Load("Character/Weapons/Shortsword", typeof(Weapon)) as Weapon;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

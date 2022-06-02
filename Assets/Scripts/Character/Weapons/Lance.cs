@@ -6,7 +6,11 @@ public class Lance : Weapon
 {
     private void Start()
     {
+        weaponType = "lance";
         weaponWeight = 12f;
+        weaponMinDmg = 65f;
+        weaponMaxDmg = 95f;
+        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(Weapon)) as Weapon;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

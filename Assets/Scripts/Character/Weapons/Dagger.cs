@@ -6,7 +6,11 @@ public class Dagger : Weapon
 {
     private void Start()
     {
+        weaponType = "daggers";
         weaponWeight = 10f;
+        weaponMinDmg = 40f;
+        weaponMaxDmg = 70f;
+        weaponPrefab = Resources.Load("Character/Weapons/Dagger", typeof(Weapon)) as Weapon;
     }
 
     //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN

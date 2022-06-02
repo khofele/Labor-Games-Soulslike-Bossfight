@@ -51,5 +51,15 @@ public abstract class Armor : MonoBehaviour
     {
         return armorDef;
     }
+
+    public Armor GetTorsoArmorPrefab()
+    {
+        return torsoPrefab;
+    }
+
+    public Armor GetHelmetPrefab()
+    {
+        return helmetPrefab;
+    }
 }
 
