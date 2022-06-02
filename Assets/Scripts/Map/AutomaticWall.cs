@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AutomaticWall : MonoBehaviour
 {
-    public GameObject movingWall; //the wall that shall be moved
+    [SerializeField] private GameObject movingWall; //the wall that shall be moved
+    [SerializeField] private GameObject alphaWall; //alpha wall to prevent player walking into moving wall
+    [SerializeField] private float maximumOpening = 5f; //Z, max opening position wall
+    [SerializeField] private float maximumClosing = 0; //Z, position wall if closed
+    [SerializeField] private float movementSpeed = 8f; //speed of wall movement
     bool playerIsHere = true; //player is in entrance area (is starting there)
-    public float maximumOpening = 5f; //Z, max opening position wall
-    public float maximumClosing = 0; //Z, position wall if closed
-    public float movementSpeed = 8f; //speed of wall movement
 
     // Update is called once per frame
     private void Update()
@@ -19,22 +20,9 @@ public class AutomaticWall : MonoBehaviour
             {
                 movingWall.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
             }
-        }
 
-        //if (playerIsHere) //player goes to wall
-        //{
-        //    if(movingWall.transform.position.z < maximumOpening) //if wall closed
-        //    {
-        //        movingWall.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
-        //    }
-        //}
-        //else //player is away
-        //{
-        //    if (movingWall.transform.position.z > maximumClosing) //if wall open
-        //    {
-        //        movingWall.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
-        //    }
-        //}
+            alphaWall.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
