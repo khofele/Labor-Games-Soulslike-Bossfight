@@ -5997,6 +5997,12 @@ MonoBehaviour:
   dagger: {fileID: 1170679574}
   hammer: {fileID: 1170679573}
   lance: {fileID: 1170679572}
+  currentArmor: {fileID: 0}
+  currentArmorName: 
+  currentArmorType: 
+  currentArmorWeight: 0
+  currentArmorDef: 0
+  currentTorsoArmorPrefab: {fileID: 0}
 --- !u!4 &1130428980
 Transform:
   m_ObjectHideFlags: 0
