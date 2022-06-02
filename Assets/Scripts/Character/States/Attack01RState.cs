@@ -15,6 +15,8 @@ namespace stateMachine
             //set isAttacking in CharController to true
             GetCharController(animator).IsAttacking = true;
 
+            animator.SetFloat("currentStamina", neededStamina);
+
             //use neededStamina for action
             neededStamina = 25f;
             GetCharController(animator).UseStamina(neededStamina);

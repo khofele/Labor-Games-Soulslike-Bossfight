@@ -14,7 +14,7 @@ public class CharController : MonoBehaviour
     private string charName = "";
 
     //Attributes
-    [SerializeField] private AttributeManager attrManager = null; //Manager used by menu to calculate attribute values
+    private AttributeManager attrManager = null; //attribute manager of the menu used to get the current calculated attributes
     [SerializeField] private float staminaReg = 0.08f;
     private float health = 0f; //max HP
     private float stamina = 0f; //max Stamina
@@ -40,7 +40,8 @@ public class CharController : MonoBehaviour
     private bool regStamina = true; //if currently stamina shall be regenerated
 
     //equipment
-    [SerializeField] private int potionCount = 5; //max potions
+    private ItemManager itemManager = null; //item manager of the menu used for equipment setting
+    private int potionCount = 0; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
     private Weapon weaponPrefab = null; //current weapon prefab
     private Weapon currentWeapon = null; //current weapon object (instantiated)
@@ -65,8 +66,14 @@ public class CharController : MonoBehaviour
         charName = "Godwin the Brave";
 
         charMovement = GetComponent<CharacterMovement>();
+        attrManager = FindObjectOfType<AttributeManager>();
+        itemManager = FindObjectOfType<ItemManager>();
 
-        //set current weapon and place it in character's hand
+        //get current weapon and armor from the item manager
+        //itemManager.CurrentWeapon.Reset();
+        //itemManager.CurrentArmor.Reset();
+
+        //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
         //set current armor and place it on character model
         SetAndAttachArmor();
@@ -209,6 +216,8 @@ public class CharController : MonoBehaviour
         armorDef = currentArmorHelmet.GetArmorDef();
         //set weaponWeight
         weaponWeight = currentWeapon.GetWeaponWeight();
+        //set current potions
+        potionCount = itemManager.PotionCount;
 
         Debug.Log("CC armorWeight: " + armorWeight);
         Debug.Log("CC weaponWeight: " + weaponWeight);
