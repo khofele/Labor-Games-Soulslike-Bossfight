@@ -73,7 +73,7 @@ public class CharController : MonoBehaviour
         //itemManager.CurrentWeapon.Reset();
         //itemManager.CurrentArmor.Reset();
 
-        //set current weapon and place it in character's hand
+        //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
         //set current armor and place it on character model
         SetAndAttachArmor();
