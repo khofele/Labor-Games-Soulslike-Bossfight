@@ -150,45 +150,54 @@ public class StartRunMenuUIManager : MonoBehaviour
     public void SetShortSwordImage()
     {
         imgEquippedWeapon.sprite = btnShortSword.image.sprite;
+        imgEquippedWeapon.color = Color.white;
     }
 
     public void SetLongSwordImage()
     {
         imgEquippedWeapon.sprite = btnLongSword.image.sprite;
+        imgEquippedWeapon.color = Color.white;
     }
 
     public void SetHammerImage()
     {
         imgEquippedWeapon.sprite = btnHammer.image.sprite;
+        imgEquippedWeapon.color = Color.white;
     }
 
     public void SetDaggerImage()
     {
         imgEquippedWeapon.sprite = btnDagger.image.sprite;
+        imgEquippedWeapon.color = Color.white;
     }
 
     public void SetLanceImage()
     {
         imgEquippedWeapon.sprite = btnLance.image.sprite;
+        imgEquippedWeapon.color = Color.white;
     }
 
     public void SetClothArmorImage()
     {
         imgEquippedArmor.sprite = btnClothArmor.image.sprite;
+        imgEquippedArmor.color = Color.white;
     }
 
     public void SetLeatherArmorImage()
     {
         imgEquippedArmor.sprite = btnLeatherArmor.image.sprite;
+        imgEquippedArmor.color = Color.white;
     }
 
     public void SetIronArmorImage()
     {
-        imgEquippedArmor.sprite = btnIronArmor.image.sprite;
+        imgEquippedArmor.sprite = btnIronArmor.image.sprite; 
+        imgEquippedArmor.color = Color.white;
     }
 
     public void SetPlateArmorImage()
     {
         imgEquippedArmor.sprite = btnPlateArmor.image.sprite;
+        imgEquippedArmor.color = Color.white;
     }
 }
