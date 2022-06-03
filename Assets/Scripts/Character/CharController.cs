@@ -65,7 +65,7 @@ public class CharController : MonoBehaviour
     {
         charName = "Godwin the Brave";
 
-        charMovement = GetComponent<CharacterMovement>();
+        charMovement = GetComponentInParent<CharacterMovement>();
         attrManager = FindObjectOfType<AttributeManager>();
         itemManager = FindObjectOfType<ItemManager>();
 
