@@ -250,7 +250,7 @@ public class CharController : MonoBehaviour
         currentWeapon.transform.position = handR.position;
 
         //if daggers chosen - equip second weapon
-        if(currentWeapon.GetWeaponType() == "daggers") 
+        if(itemManager.CurrentWeaponType == "daggers") 
         {
             currentSecondWeapon = Instantiate<Weapon>(weaponPrefab);
             currentSecondWeapon.transform.parent = handL.transform;
