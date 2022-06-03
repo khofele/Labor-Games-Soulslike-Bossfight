@@ -29,6 +29,7 @@ public class ItemManager : MonoBehaviour
     private float currentWeaponMinDmg = 0f;
     private float currentWeaponMaxDmg = 0f;
     private Weapon currentWeaponPrefab = null;
+    private RuntimeAnimatorController currentWeaponAC = null;
 
     private Armor currentArmor = null;
     private string currentArmorName = "";

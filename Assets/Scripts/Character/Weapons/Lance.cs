@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Lance : Weapon
 {
+    //used by the menu ItemManager when weapon chosen
     private void Start()
-    {
-        weaponType = "lance";
-        weaponWeight = 12f;
-        weaponMinDmg = 65f;
-        weaponMaxDmg = 95f;
-        weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(Weapon)) as Weapon;
-    }
-
-    //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
-    // Overwrites the values in the parent class when called
-    public void Reset()
     {
         weaponType = "lance";
         weaponWeight = 12f;

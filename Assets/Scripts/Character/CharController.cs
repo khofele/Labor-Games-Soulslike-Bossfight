@@ -69,10 +69,6 @@ public class CharController : MonoBehaviour
         attrManager = FindObjectOfType<AttributeManager>();
         itemManager = FindObjectOfType<ItemManager>();
 
-        //get current weapon and armor from the item manager
-        //itemManager.CurrentWeapon.Reset();
-        //itemManager.CurrentArmor.Reset();
-
         //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
         //set current armor and place it on character model
@@ -207,20 +203,17 @@ public class CharController : MonoBehaviour
 
     //--------------------------SETTER METHODS-----------------------
 
-    //method to set the equipment values depending on the chosen equipment
+    //method to set the equipment values depending on the chosen equipment (info from ItemManager)
     //these values are used to determine the speed of the player's actions
     private void SetEquipmentValues()
     {
         //set armor values
-        armorWeight = currentArmorHelmet.GetArmorWeight();
-        armorDef = currentArmorHelmet.GetArmorDef();
+        armorWeight = itemManager.CurrentArmorWeight;
+        armorDef = itemManager.CurrentArmorDef;
         //set weaponWeight
-        weaponWeight = currentWeapon.GetWeaponWeight();
+        weaponWeight = itemManager.CurrentWeaponWeight; 
         //set current potions
         potionCount = itemManager.PotionCount;
-
-        Debug.Log("CC armorWeight: " + armorWeight);
-        Debug.Log("CC weaponWeight: " + weaponWeight);
     }
 
     //Method to set the attributes depending on the chosen stats and equipment.
@@ -249,8 +242,7 @@ public class CharController : MonoBehaviour
     //method to set the current weapon and attach it on the hand - called in Start()
     private void SetAndAttachWeapon()
     {
-        //TODO WENN MENÜ DA LÖSCHEN!!
-        weaponPrefab = Resources.Load("Character/Weapons/Longsword", typeof(Weapon)) as Weapon; //test
+        weaponPrefab = itemManager.CurrentWeaponPrefab;
 
         //equip main weapon
         currentWeapon = Instantiate<Weapon>(weaponPrefab);
@@ -258,12 +250,15 @@ public class CharController : MonoBehaviour
         currentWeapon.transform.position = handR.position;
 
         //if daggers chosen - equip second weapon
-        if(currentWeapon.GetWeaponType() == "daggers") //Notiz: funzt erst mit Menü, das Werte resettet
+        if(currentWeapon.GetWeaponType() == "daggers") 
         {
             currentSecondWeapon = Instantiate<Weapon>(weaponPrefab);
             currentSecondWeapon.transform.parent = handL.transform;
             currentSecondWeapon.transform.position = handL.position;
         }
+
+        //choose correct Animation Controller for weapon
+        currentWeapon.SetAnimationController(itemManager.CurrentWeaponType);
     }
 
     //method to set the prefabs of the chosen armor - called in Armor script
@@ -275,12 +270,9 @@ public class CharController : MonoBehaviour
 
     //method to set the current armor pieces and attach them on the character model - called in Start()
     private void SetAndAttachArmor()
-    {
-        //TODO WENN MENÜ DA LÖSCHEN!
-        armorHelmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;
-        armorTorsoPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorTorso", typeof(Armor)) as Armor;
-        //armorHelmetPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorHelmet", typeof(Armor)) as Armor;
-        //armorTorsoPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorTorso", typeof(Armor)) as Armor;
+    { 
+        armorHelmetPrefab = itemManager.CurrentHelmetPrefab;
+        armorTorsoPrefab = itemManager.CurrentTorsoArmorPrefab;
 
         //instantiate the chosen prefab
         currentArmorHelmet = Instantiate<Armor>(armorHelmetPrefab);

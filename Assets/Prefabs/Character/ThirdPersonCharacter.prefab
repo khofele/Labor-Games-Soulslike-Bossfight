@@ -2597,13 +2597,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handR: {fileID: 6197755546742145748}
   handL: {fileID: 6197755546778258600}
-  statManager: {fileID: 0}
-  attrManager: {fileID: 0}
   staminaReg: 0.08
   multiplicator: 100
   attackManager: {fileID: 0}
   stunValue: 500
-  potionCount: 5
   healValue: 500
   head: {fileID: 6197755546608848966}
   torso: {fileID: 6197755547610864255}
@@ -2644,7 +2641,7 @@ Animator:
   m_GameObject: {fileID: 6197755546586260976}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 04a905f024e5dc54087fe538dbe25688, type: 3}
-  m_Controller: {fileID: 9100000, guid: c9add97a006348040b695e8381720a73, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

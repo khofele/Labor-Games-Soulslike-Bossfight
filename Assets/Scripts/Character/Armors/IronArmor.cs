@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class IronArmor : Armor
 {
+    //used by the menu ItemManager when armor chosen
     private void Start()
-    {
-        armorName = "Ork Armor";
-        armorType = "ironarmor";
-        armorWeight = 40f;
-        armorDef = 65f;
-        helmetPrefab = Resources.Load("Character/Armors/IronArmor/IronArmorHelmet", typeof(Armor)) as Armor;
-        torsoPrefab = Resources.Load("Character/Armors/IronArmor/IronArmorTorso", typeof(Armor)) as Armor;
-    }
-
-    //TODO: im Menü aufrufen damit Armor-Werte gesetzt - MUSS AUFGERUFEN WERDEN
-    // Overwrites the values in the parent class when called
-    public void Reset()
     {
         armorName = "Ork Armor";
         armorType = "ironarmor";

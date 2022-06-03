@@ -5702,8 +5702,8 @@ MonoBehaviour:
   winMessageSound: {fileID: 8300000, guid: 1eaa9a14aed84b047929ec0d3d409ff1, type: 3}
   deathMessageSound: {fileID: 8300000, guid: ae84d0b5b42c9ef45ae507c579194f56, type: 3}
   audioSource: {fileID: 0}
-  audioSourceBackgroundMusic: {fileID: 0}
-  gameManager: {fileID: 0}
+  audioSourceBackgroundMusic: {fileID: 1704335023}
+  gameManager: {fileID: 1746946250}
 --- !u!82 &1288745014
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8471,6 +8471,14 @@ PrefabInstance:
     - target: {fileID: 6197755546586260976, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: m_Name
       value: ThirdPersonCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197755546586260981, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197755546586260981, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6197755546586260982, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: DopplerLevel

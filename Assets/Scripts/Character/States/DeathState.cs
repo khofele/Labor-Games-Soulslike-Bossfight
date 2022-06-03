@@ -14,8 +14,6 @@ namespace stateMachine
 
             //sound
             GetAudioPlayer(animator).PlayDeath();
-
-            //TODO: UI-Defeat-Aufruf
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
