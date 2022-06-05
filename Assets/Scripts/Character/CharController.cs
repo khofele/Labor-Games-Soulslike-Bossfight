@@ -261,12 +261,6 @@ public class CharController : MonoBehaviour
         currentWeapon.SetAnimationController(itemManager.CurrentWeaponType);
     }
 
-    //method to set the prefabs of the chosen armor - called in Armor script
-    public void SetArmorPrefabs(Armor helmetPrefab, Armor torsoPrefab)
-    {
-        armorHelmetPrefab = helmetPrefab;
-        armorTorsoPrefab = torsoPrefab;
-    }
 
     //method to set the current armor pieces and attach them on the character model - called in Start()
     private void SetAndAttachArmor()

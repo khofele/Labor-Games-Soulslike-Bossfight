@@ -9,7 +9,7 @@ public class AutomaticWall : MonoBehaviour
     [SerializeField] private float maximumOpening = 5f; //Z, max opening position wall
     [SerializeField] private float maximumClosing = 0; //Z, position wall if closed
     [SerializeField] private float movementSpeed = 8f; //speed of wall movement
-    bool playerIsHere = true; //player is in entrance area (is starting there)
+    private bool playerIsHere = true; //player is in entrance area (is starting there)
 
     // Update is called once per frame
     private void Update()

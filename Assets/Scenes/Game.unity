@@ -8438,6 +8438,10 @@ PrefabInstance:
       propertyPath: alphaWall
       value: 
       objectReference: {fileID: 1564884872318529302}
+    - target: {fileID: 6049025253429078786, guid: ebc2dada74a4cf14d9efd485f832338c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6049025253429078788, guid: ebc2dada74a4cf14d9efd485f832338c, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -7,7 +7,7 @@ public abstract class Weapon : MonoBehaviour
     //access to character scripts and animator
     protected CharacterMovement charMovement;
     protected CharController charController;
-    protected Animator animator;
+    protected Animator animator; //animator for Game scene
     //weapon stat fields
     protected string weaponType = ""; //type of weapon
     protected float weaponWeight = 0f; //weight of the weapon
@@ -30,26 +30,28 @@ public abstract class Weapon : MonoBehaviour
     //TODO Aufruf in CharController
     public void SetAnimationController(string weaponType)
     {
+        //animator used for equip setting
+        Animator playerAnimator = FindObjectOfType<CharController>().GetComponent<Animator>();
+
         switch (weaponType)
         {
             case "shortsword":
-                FindObjectOfType<CharController>().GetComponentInParent<Animator>().runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
-                //animator.runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
+                playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
                 break;
             case "lance":
-                FindObjectOfType<CharController>().GetComponentInParent<Animator>().runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
+                playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
                 break;
             case "longsword":
-                FindObjectOfType<CharController>().GetComponentInParent<Animator>().runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
+                playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
                 break;
             case "hammer":
-                FindObjectOfType<CharController>().GetComponentInParent<Animator>().runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
+                playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
                 break;
             case "daggers":
-                FindObjectOfType<CharController>().GetComponentInParent<Animator>().runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
+                playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
                 break;
             default:
-                Debug.Log("SetAnimator fehlgeschlagen.");
+                Debug.Log("SetAnimationController fehlgeschlagen.");
                 break;
         }
     }
