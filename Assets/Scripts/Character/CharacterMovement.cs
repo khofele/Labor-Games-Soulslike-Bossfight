@@ -28,9 +28,9 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();
-        charController = GetComponent<CharController>();
+        animator = GetComponentInParent<Animator>();
+        controller = GetComponentInParent<CharacterController>();
+        charController = GetComponentInParent<CharController>();
     }
 
     // Update is called once per frame

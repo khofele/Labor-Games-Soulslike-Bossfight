@@ -70,15 +70,4 @@ public class PlayAudioChar : MonoBehaviour
         array[n] = array[0];
         array[0] = audioSource.clip;
     }
-
-
-    //TODO Delete if not needed
-    //method to play a sound after a delay (soundDelayTime)
-    IEnumerator PlayRandomSoundAfterDelay(AudioClip[] array)
-    {
-        if (audioSource == null)
-            yield break;
-        yield return new WaitForSeconds(soundDelayTime);
-        PlayRandomSound(array);
-    }
 }

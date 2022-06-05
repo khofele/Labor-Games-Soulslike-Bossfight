@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class Longsword : Weapon
 {
+    //used by the menu ItemManager when weapon chosen
     private void Start()
     {
         weaponType = "longsword";
         weaponWeight = 15f;
         weaponMinDmg = 75f;
         weaponMaxDmg = 105f;
-        weaponPrefab = Resources.Load("Character/Weapons/Longword", typeof(Weapon)) as Weapon;
-    }
-
-    //TODO: im Menü aufrufen damit Weapon-Werte gesetzt - MUSS AUFGERUFEN WERDEN
-    // Overwrites the values in the parent class when called
-    public void Reset()
-    {
-        weaponType = "longsword";
-        weaponWeight = 15f;
-        weaponMinDmg = 75f;
-        weaponMaxDmg = 105f;
-        weaponPrefab = Resources.Load("Character/Weapons/Longword", typeof(Weapon)) as Weapon;
+        weaponPrefab = Resources.Load("Character/Weapons/Longsword", typeof(Weapon)) as Weapon;
     }
 }
