@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,13 @@ public class GameManager : MonoBehaviour
         {
             phaseTwo = true;
             boss.ChangeBehavior();
+        }
+
+        //if player presses Esc - go back to main menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Menu");
         }
     }
 }
