@@ -8,7 +8,7 @@ public class Dagger : Weapon
     private void Start()
     {
         weaponType = WeaponTypeEnum.daggers;
-        weaponTypeHanded = WeaponTypeHandedEnum.onehand;
+        weaponTypeHanded = WeaponTypeHandedEnum.both;
         weaponWeight = 10f;
         weaponMinDmg = 40f;
         weaponMaxDmg = 70f;

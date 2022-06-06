@@ -25,6 +25,7 @@ public class ItemManager : MonoBehaviour
 
     private Weapon currentWeapon = null;
     private WeaponTypeEnum currentWeaponType;
+    private WeaponTypeHandedEnum currentWeaponTypeHanded;
     private float currentWeaponWeight = 0f;
     private float currentWeaponMinDmg = 0f;
     private float currentWeaponMaxDmg = 0f;
@@ -44,6 +45,7 @@ public class ItemManager : MonoBehaviour
 
     public Weapon CurrentWeapon { get => currentWeapon; }
     public WeaponTypeEnum CurrentWeaponType { get => currentWeaponType; }
+    public WeaponTypeHandedEnum CurrentWeaponTypeHanded { get => currentWeaponTypeHanded; }
     public float CurrentWeaponWeight { get => currentWeaponWeight; }
     public float CurrentWeaponMinDmg { get => currentWeaponMinDmg; }
     public float CurrentWeaponMaxDmg { get => currentWeaponMaxDmg; }
@@ -144,6 +146,7 @@ public class ItemManager : MonoBehaviour
     private void SetWeaponValues()
     {
         currentWeaponType = currentWeapon.GetWeaponType();
+        currentWeaponTypeHanded = currentWeapon.GetWeaponTypeHanded();
         currentWeaponWeight = currentWeapon.GetWeaponWeight();
         currentWeaponMinDmg = currentWeapon.GetWeaponMinDmg();
         currentWeaponMaxDmg = currentWeapon.GetWeaponMaxDmg();

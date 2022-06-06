@@ -9,7 +9,7 @@ public enum WeaponTypeEnum
 
 public enum WeaponTypeHandedEnum
 {
-    onehand, twohand
+    onehand, twohand, both
 }
 
 public enum WeaponAttackTypeEnum
