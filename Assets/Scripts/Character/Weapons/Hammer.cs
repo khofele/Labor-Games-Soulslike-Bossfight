@@ -7,7 +7,8 @@ public class Hammer : Weapon
     //used by the menu ItemManager when weapon chosen
     private void Start()
     {
-        weaponType = "hammer";
+        weaponType = WeaponTypeEnum.hammer;
+        weaponTypeHanded = WeaponTypeHandedEnum.twohand;
         weaponWeight = 15f;
         weaponMinDmg = 70f;
         weaponMaxDmg = 100f;

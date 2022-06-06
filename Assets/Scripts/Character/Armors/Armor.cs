@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ArmorTypeEnum
+{
+    clotharmor, leatherarmor, ironarmor, platearmor
+}
+
 public abstract class Armor : MonoBehaviour
 {
     //access to the CharController script
     protected CharController charController;
     //armor stat fields
     protected string armorName = ""; //name of the armor
-    protected string armorType = ""; //type of armor
+    protected ArmorTypeEnum armorType; //type of armor
     protected float armorWeight = 0f; //weight of the armor
     protected float armorDef = 0f; //defense value of the armor
     //armor prefab fields
@@ -29,7 +34,7 @@ public abstract class Armor : MonoBehaviour
         return armorName;
     }
 
-    public string GetArmorType()
+    public ArmorTypeEnum GetArmorType()
     {
         return armorType;
     }

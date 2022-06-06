@@ -24,7 +24,7 @@ public class ItemManager : MonoBehaviour
     private static ItemManager instance = null;
 
     private Weapon currentWeapon = null;
-    private string currentWeaponType = "";
+    private WeaponTypeEnum currentWeaponType;
     private float currentWeaponWeight = 0f;
     private float currentWeaponMinDmg = 0f;
     private float currentWeaponMaxDmg = 0f;
@@ -32,7 +32,7 @@ public class ItemManager : MonoBehaviour
 
     private Armor currentArmor = null;
     private string currentArmorName = "";
-    private string currentArmorType = "";
+    private ArmorTypeEnum currentArmorType;
     private float currentArmorWeight = 0f;
     private float currentArmorDef = 0f;
     private Armor currentTorsoArmorPrefab = null;
@@ -43,7 +43,7 @@ public class ItemManager : MonoBehaviour
     public int PotionCount { get => potionCount; }
 
     public Weapon CurrentWeapon { get => currentWeapon; }
-    public string CurrentWeaponType { get => currentWeaponType; }
+    public WeaponTypeEnum CurrentWeaponType { get => currentWeaponType; }
     public float CurrentWeaponWeight { get => currentWeaponWeight; }
     public float CurrentWeaponMinDmg { get => currentWeaponMinDmg; }
     public float CurrentWeaponMaxDmg { get => currentWeaponMaxDmg; }
@@ -51,7 +51,7 @@ public class ItemManager : MonoBehaviour
 
     public Armor CurrentArmor { get => currentArmor; }
     public string CurrentArmorName { get => currentArmorName; }
-    public string CurrentArmorType { get => currentArmorType; }
+    public ArmorTypeEnum CurrentArmorType { get => currentArmorType; }
     public float CurrentArmorWeight { get => currentArmorWeight; }
     public float CurrentArmorDef { get => currentArmorDef; }
     public Armor CurrentTorsoArmorPrefab { get => currentTorsoArmorPrefab; }

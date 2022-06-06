@@ -18,9 +18,6 @@ public class CharController : MonoBehaviour
     [SerializeField] private float staminaReg = 0.08f;
     private float health = 0f; //max HP
     private float stamina = 0f; //max Stamina
-    private float carryCapacity = 0f;
-    private float resistance = 0f;
-    private float defense = 0f;
     private float attackPower = 0f; //is added to the weaponMinDmg value of the current weapon
     //action speed
     private float animationSpeed = 1.25f; //speed of animations and animator
@@ -48,7 +45,6 @@ public class CharController : MonoBehaviour
     private Weapon currentSecondWeapon = null; //current second weapon (instantiated if equipped)
     private float weaponWeight = 0f; //weight of current weapon
     private float armorWeight = 0f;  //weight of current armor
-    private float armorDef = 0f; //defense of current armor
     //armor attach positions
     [SerializeField] private Transform head = null;
     [SerializeField] private Transform torso = null;
@@ -209,7 +205,6 @@ public class CharController : MonoBehaviour
     {
         //set armor values
         armorWeight = itemManager.CurrentArmorWeight;
-        armorDef = itemManager.CurrentArmorDef;
         //set weaponWeight
         weaponWeight = itemManager.CurrentWeaponWeight; 
         //set current potions
@@ -223,9 +218,6 @@ public class CharController : MonoBehaviour
         stamina = attrManager.Stamina;
         staminaReg = attrManager.StaminaReg;
         attackPower = attrManager.AttackPower;
-        carryCapacity = attrManager.CarryingCapacity;
-        resistance = attrManager.Resistance;
-        defense = attrManager.Defense;
 
         //set start current health, stamina values and potion count
         currentHealth = health;
@@ -250,7 +242,7 @@ public class CharController : MonoBehaviour
         currentWeapon.transform.position = handR.position;
 
         //if daggers chosen - equip second weapon
-        if(itemManager.CurrentWeaponType == "daggers") 
+        if(itemManager.CurrentWeaponType == WeaponTypeEnum.daggers) 
         {
             currentSecondWeapon = Instantiate<Weapon>(weaponPrefab);
             currentSecondWeapon.transform.parent = handL.transform;
