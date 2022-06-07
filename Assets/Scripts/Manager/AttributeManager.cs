@@ -8,7 +8,7 @@ public class AttributeManager : MonoBehaviour
     [SerializeField] private ItemManager itemManager = null;
     private static AttributeManager instance = null;
     private float health = 1000f;
-    private float stamina = 0f;
+    private float stamina = 100f;
     private float staminaReg = 0.08f;
     private float carryingCapacity = 50f;
     private float resistance = 15f;
