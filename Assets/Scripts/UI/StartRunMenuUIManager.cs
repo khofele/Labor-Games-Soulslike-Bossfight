@@ -68,6 +68,7 @@ public class StartRunMenuUIManager : MonoBehaviour
     {
         btnBackToMainMenu.onClick.AddListener(BackToMainMenu);
         btnStartRun.onClick.AddListener(StartGame);
+        btnStartRun.interactable = false;
 
         btnAddVitality.onClick.AddListener(skillpointManager.AddVitality);
         btnRemoveVitality.onClick.AddListener(skillpointManager.RemoveVitality);
@@ -125,12 +126,12 @@ public class StartRunMenuUIManager : MonoBehaviour
         weight = armorWeight + weaponWeight;
         txtCarryingCapacityEquipment.text = weight.ToString() + "/" + attributeManager.CarryingCapacity;
 
-        if (weight <= attributeManager.CarryingCapacity)
+        if (weight <= attributeManager.CarryingCapacity && itemManager.CurrentArmor != null && itemManager.CurrentWeapon != null)
         {
             btnStartRun.interactable = true;
             txtCarryingCapacityEquipment.color = Color.white;
         }
-        else
+        else if (weight > attributeManager.CarryingCapacity)
         {
             btnStartRun.interactable = false;
             txtCarryingCapacityEquipment.color = Color.red;
