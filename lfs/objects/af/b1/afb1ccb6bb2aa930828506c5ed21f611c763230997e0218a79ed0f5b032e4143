@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a7c8ca992f915438a96c2077353778, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  brickName: Assets/Resources/BehaviorBricks/Behaviors/Intro.asset
+  xml: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<BehaviorBricks xmlns:ref=\"urn:padaone\"
+    version=\"1.0\">\r\n  <BehaviorTree id=\"0\" />\r\n  <runtimeInfo>\r\n    <BehaviorTree
+    id=\"0\" guid=\"2e7801fdfa448ca418af9fa3acc4ff37\" nextId=\"5\">\r\n      <root>\r\n       
+    <SequenceNode id=\"1\" />\r\n      </root>\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"phaseOne\" type=\"BBUnity.InternalBrickAsset\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"area\" type=\"UnityEngine.GameObject\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"player\" type=\"CharController\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"layerMask\" type=\"UnityEngine.LayerMask\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"bossController\" type=\"BossController\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"gameManager\" type=\"GameManager\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"attackManager\" type=\"AttackManager\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"IsStunnedTimer\" type=\"Timer\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"uimanager\" type=\"UIManager\"
+    isBlackboard=\"False\" />\r\n          <entry name=\"collisionCheckBoxFront\"
+    type=\"CollisionCheck\" isBlackboard=\"False\" />\r\n          <entry name=\"collisionCheckBoxFrontLongRange\"
+    type=\"CollisionCheck\" isBlackboard=\"False\" />\r\n          <entry name=\"collisionCheckBoxLeft\"
+    type=\"CollisionCheck\" isBlackboard=\"False\" />\r\n          <entry name=\"collisionCheckBoxRight\"
+    type=\"CollisionCheck\" isBlackboard=\"False\" />\r\n          <entry name=\"collisionCheckSphere\"
+    type=\"CollisionCheck\" isBlackboard=\"False\" />\r\n          <entry name=\"target\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"False\" />\r\n        </inputValues>\r\n     
+    </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </BehaviorTree>\r\n   
+    <SequenceNode id=\"1\">\r\n      <children>\r\n        <elem>\r\n          <ActionNode
+    id=\"2\" />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"4\"
+    />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"3\" />\r\n       
+    </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
+    />\r\n      <localParams />\r\n    </SequenceNode>\r\n    <ActionNode id=\"2\"
+    action=\"Intro\">\r\n      <inputParams>\r\n        <inputValues>\r\n         
+    <entry name=\"uimanager\" type=\"UIManager\" isBlackboard=\"True\" blackboard=\"uimanager\"
+    />\r\n        </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n     
+    <localParams />\r\n    </ActionNode>\r\n    <ActionNode id=\"4\" action=\"Basic/WaitForSeconds\">\r\n     
+    <inputParams>\r\n        <inputValues>\r\n          <entry name=\"seconds\" type=\"System.Single\"
+    isBlackboard=\"False\" value=\"2\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n    <ActionNode
+    id=\"3\" action=\"ChangeBehaviorPhaseOne\">\r\n      <inputParams>\r\n       
+    <inputValues>\r\n          <entry name=\"phaseOne\" type=\"BBUnity.InternalBrickAsset\"
+    isBlackboard=\"True\" blackboard=\"phaseOne\" />\r\n          <entry name=\"area\"
+    type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"area\" />\r\n         
+    <entry name=\"player\" type=\"CharController\" isBlackboard=\"True\" blackboard=\"player\"
+    />\r\n          <entry name=\"layerMask\" type=\"UnityEngine.LayerMask\" isBlackboard=\"True\"
+    blackboard=\"layerMask\" />\r\n          <entry name=\"bossController\" type=\"BossController\"
+    isBlackboard=\"True\" blackboard=\"bossController\" />\r\n          <entry name=\"gameManager\"
+    type=\"GameManager\" isBlackboard=\"True\" blackboard=\"gameManager\" />\r\n         
+    <entry name=\"attackManager\" type=\"AttackManager\" isBlackboard=\"True\" blackboard=\"attackManager\"
+    />\r\n          <entry name=\"isStunnedTimer\" type=\"Timer\" isBlackboard=\"True\"
+    blackboard=\"IsStunnedTimer\" />\r\n          <entry name=\"IsStunnedTimer\"
+    type=\"Timer\" isBlackboard=\"True\" blackboard=\"IsStunnedTimer\" />\r\n         
+    <entry name=\"collisionCheckFront\" type=\"CollisionCheck\" isBlackboard=\"True\"
+    blackboard=\"collisionCheckBoxFront\" />\r\n          <entry name=\"collisionCheckBoxFrontLongRange\"
+    type=\"CollisionCheck\" isBlackboard=\"True\" blackboard=\"collisionCheckBoxFrontLongRange\"
+    />\r\n          <entry name=\"collisionCheckBoxLeft\" type=\"CollisionCheck\"
+    isBlackboard=\"True\" blackboard=\"collisionCheckBoxLeft\" />\r\n          <entry
+    name=\"collisionCheckBoxRight\" type=\"CollisionCheck\" isBlackboard=\"True\"
+    blackboard=\"collisionCheckBoxRight\" />\r\n          <entry name=\"collisionCheckSphere\"
+    type=\"CollisionCheck\" isBlackboard=\"True\" blackboard=\"collisionCheckSphere\"
+    />\r\n          <entry name=\"target\" type=\"CharController\" isBlackboard=\"True\"
+    blackboard=\"target\" />\r\n        </inputValues>\r\n      </inputParams>\r\n     
+    <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n  </runtimeInfo>\r\n 
+    <editorInfo>\r\n    <BehaviorTree id=\"0\" _name=\"Intro\" _description=\"\"
+    _removeIfClosed=\"False\">\r\n      <_rootList>\r\n        <elem>\r\n         
+    <SequenceNode id=\"1\" />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode
+    id=\"2\" />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"3\"
+    />\r\n        </elem>\r\n        <elem>\r\n          <ActionNode id=\"4\" />\r\n       
+    </elem>\r\n      </_rootList>\r\n      <_nodes>\r\n        <nodes>\r\n         
+    <SequenceNode id=\"1\" />\r\n          <ActionNode id=\"2\" />\r\n          <ActionNode
+    id=\"3\" />\r\n          <ActionNode id=\"4\" />\r\n        </nodes>\r\n     
+    </_nodes>\r\n    </BehaviorTree>\r\n    <SequenceNode id=\"1\">\r\n      <_data>\r\n       
+    <data breakpoint=\"0\" selected=\"False\" position=\"359 80\" name=\"Sequence\"
+    description=\"Executes all its children in sequence until all of them are successful\"
+    cardinality=\"-1\" hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n         
+    <SequenceNode id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </SequenceNode>\r\n   
+    <ActionNode id=\"2\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    position=\"197 304\" name=\"Intro\" description=\"\" cardinality=\"0\" hasParent=\"True\">\r\n         
+    <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"2\" />\r\n          <SequenceNode
+    id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
+    <ActionNode id=\"4\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
+    position=\"315 302\" name=\"Basic/WaitForSeconds\" description=\"Action that
+    success after a period of time.\" cardinality=\"0\" hasParent=\"True\">\r\n         
+    <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"4\" />\r\n          <SequenceNode
+    id=\"1\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
+    <ActionNode id=\"3\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"True\"
+    position=\"533 298\" name=\"ChangeBehaviorPhaseOne\" description=\"\" cardinality=\"0\"
+    hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
+    id=\"3\" />\r\n          <SequenceNode id=\"1\" />\r\n        </data>\r\n     
+    </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
+  zoom: 0.6
+  subslist: []
+  _guid: 2e7801fdfa448ca418af9fa3acc4ff37
