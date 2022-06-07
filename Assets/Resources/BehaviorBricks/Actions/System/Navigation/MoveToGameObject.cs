@@ -14,7 +14,6 @@ namespace BBUnity.Actions
         ///<value>Input target game object towards this game object will be moved Parameter.</value>
         [InParam("target")]
         [Help("Target game object towards this game object will be moved")]
-
         public GameObject target;
 
         [InParam("controller")]
@@ -28,6 +27,7 @@ namespace BBUnity.Actions
         /// <remarks>Check if GameObject object exists and NavMeshAgent, if there is no NavMeshAgent, the default one is added.</remarks>
         public override void OnStart()
         {
+            target = bossController.Player.gameObject;
             bossController = gameObject.GetComponent<BossController>();
             bossController.GetComponent<Animator>().applyRootMotion = true;
 

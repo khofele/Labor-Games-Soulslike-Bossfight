@@ -16,7 +16,10 @@ public class ChangeBehaviorPhaseOne : GOAction
     [SerializeField] private GameObject area = null;
 
     [InParam("player")]
-    [SerializeField] private CharController player = null;
+    [SerializeField] private CharController player = null;    
+    
+    [InParam("target")]
+    [SerializeField] private GameObject target = null;
 
     [InParam("layerMask")]
     [SerializeField] private LayerMask layerMask;
@@ -53,6 +56,7 @@ public class ChangeBehaviorPhaseOne : GOAction
     public override void OnStart()
     {
         behaviorExecutor = gameObject.GetComponent<BehaviorExecutor>();
+        target = player.gameObject;
     }
 
     public override TaskStatus OnUpdate()
@@ -60,6 +64,7 @@ public class ChangeBehaviorPhaseOne : GOAction
         behaviorExecutor.behavior = behaviorPhaseOne;
         behaviorExecutor.SetBehaviorParam("area", area);
         behaviorExecutor.SetBehaviorParam("player", player);
+        behaviorExecutor.SetBehaviorParam("target", target);
         behaviorExecutor.SetBehaviorParam("layermask", layerMask);
         behaviorExecutor.SetBehaviorParam("bossController", bossController);
         behaviorExecutor.SetBehaviorParam("gameManager", gameManager);
