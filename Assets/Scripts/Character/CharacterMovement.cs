@@ -36,9 +36,10 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //--------------------------STAMINA-----------------------
-        //set value in animator - check whether enough stamina to use a skill
+        //--------------------------STAMINA & POTIONS-----------------------
+        //set value in animator - check whether enough stamina / potions to use a skill
         animator.SetFloat("currentStamina", charController.GetCurrentStamina());
+        animator.SetFloat("potionCount", charController.GetCurrentPotions());
 
 
         //--------------------------CAMERA-------------------------
@@ -144,7 +145,7 @@ public class CharacterMovement : MonoBehaviour
 
 
             //use potion (if enough potions left, pressing E and not currently using a potion)
-            if (Input.GetKey(KeyCode.E) && charController.GetCurrentPotions() >= 1 && !animator.GetBool("UsePotion"))
+            if (Input.GetKey(KeyCode.E) && !animator.GetBool("UsePotion"))
             {
                 animator.SetBool("UsePotion", true);
             }
@@ -224,14 +225,17 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    //method used by UsePotionState to heal the player after using a potion
+    //method used by UsePotionState to heal the player after using a potion - if he still has one
     public void UsePotion()
     {
+        //if enough potions - heal
         if (charController.GetCurrentPotions() >= 1)
         {
             charController.Heal();
-           
         }
+
+        //set potion game object in hand
+        charController.SetPotion();
     }
 
 
