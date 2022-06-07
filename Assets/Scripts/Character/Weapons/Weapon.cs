@@ -4,17 +4,17 @@ using UnityEngine;
 
 public enum WeaponTypeEnum
 {
-    shortsword, longsword, lance, hammer, daggers
+    SHORTSWORD, LONGSWORD, LANCE, HAMMER, DAGGERS
 }
 
 public enum WeaponTypeHandedEnum
 {
-    onehand, twohand, both
+    ONEHAND, TWOHAND, BOTH
 }
 
 public enum WeaponAttackTypeEnum
 {
-    normal, heavy
+    NORMAL, HEAVY
 }
 
 public abstract class Weapon : MonoBehaviour
@@ -51,19 +51,19 @@ public abstract class Weapon : MonoBehaviour
 
         switch (weaponType)
         {
-            case WeaponTypeEnum.shortsword:
+            case WeaponTypeEnum.SHORTSWORD:
                 playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACShortsword") as RuntimeAnimatorController;
                 break;
-            case WeaponTypeEnum.lance:
+            case WeaponTypeEnum.LANCE:
                 playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACLance") as RuntimeAnimatorController;
                 break;
-            case WeaponTypeEnum.longsword:
+            case WeaponTypeEnum.LONGSWORD:
                 playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACLongsword") as RuntimeAnimatorController;
                 break;
-            case WeaponTypeEnum.hammer:
+            case WeaponTypeEnum.HAMMER:
                 playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACHammer") as RuntimeAnimatorController;
                 break;
-            case WeaponTypeEnum.daggers:
+            case WeaponTypeEnum.DAGGERS:
                 playerAnimator.runtimeAnimatorController = Resources.Load("Character/AC/ACDaggers") as RuntimeAnimatorController;
                 break;
             default:
@@ -78,8 +78,8 @@ public abstract class Weapon : MonoBehaviour
     public WeaponAttackTypeEnum GetCurrentAttackType()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
-            return WeaponAttackTypeEnum.heavy;
-        else return WeaponAttackTypeEnum.normal;
+            return WeaponAttackTypeEnum.HEAVY;
+        else return WeaponAttackTypeEnum.NORMAL;
     }
 
     public float GetDamage()
@@ -89,7 +89,7 @@ public abstract class Weapon : MonoBehaviour
         float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + charController.GetAttackPower();
 
         //if heavy attack: additional damage
-        if(GetCurrentAttackType() == WeaponAttackTypeEnum.heavy)
+        if(GetCurrentAttackType() == WeaponAttackTypeEnum.HEAVY)
         {
             damage += heavyAttackAddDamage;
         }

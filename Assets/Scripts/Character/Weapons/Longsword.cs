@@ -7,8 +7,8 @@ public class Longsword : Weapon
     //used by the menu ItemManager when weapon chosen
     private void Start()
     {
-        weaponType = WeaponTypeEnum.longsword;
-        weaponTypeHanded = WeaponTypeHandedEnum.twohand;
+        weaponType = WeaponTypeEnum.LONGSWORD;
+        weaponTypeHanded = WeaponTypeHandedEnum.TWOHAND;
         weaponWeight = 15f;
         weaponMinDmg = 75f;
         weaponMaxDmg = 105f;

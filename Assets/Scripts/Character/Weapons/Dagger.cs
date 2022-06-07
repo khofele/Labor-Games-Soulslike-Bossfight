@@ -7,8 +7,8 @@ public class Dagger : Weapon
     //used by the menu ItemManager when weapon chosen
     private void Start()
     {
-        weaponType = WeaponTypeEnum.daggers;
-        weaponTypeHanded = WeaponTypeHandedEnum.both;
+        weaponType = WeaponTypeEnum.DAGGERS;
+        weaponTypeHanded = WeaponTypeHandedEnum.BOTH;
         weaponWeight = 10f;
         weaponMinDmg = 40f;
         weaponMaxDmg = 70f;

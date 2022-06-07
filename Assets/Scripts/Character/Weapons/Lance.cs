@@ -7,8 +7,8 @@ public class Lance : Weapon
     //used by the menu ItemManager when weapon chosen
     private void Start()
     {
-        weaponType = WeaponTypeEnum.lance;
-        weaponTypeHanded = WeaponTypeHandedEnum.onehand;
+        weaponType = WeaponTypeEnum.LANCE;
+        weaponTypeHanded = WeaponTypeHandedEnum.ONEHAND;
         weaponWeight = 12f;
         weaponMinDmg = 65f;
         weaponMaxDmg = 95f;

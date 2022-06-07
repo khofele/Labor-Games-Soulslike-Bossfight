@@ -129,7 +129,7 @@ public class CharController : MonoBehaviour
     public void SetPotion()
     {
         //disable left hand weapon if there is one
-        if(itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.both)
+        if(itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.BOTH)
         {
             currentSecondWeapon.gameObject.SetActive(false);
         }
@@ -146,7 +146,7 @@ public class CharController : MonoBehaviour
         Destroy(currentPotion);
 
         //enable left hand weapon again if there is one
-        if (itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.both)
+        if (itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.BOTH)
         {
             currentSecondWeapon.gameObject.SetActive(true);
         }
@@ -273,7 +273,7 @@ public class CharController : MonoBehaviour
         currentWeapon.transform.position = handR.position;
 
         //if weapon for both hands chosen (e.g. daggers) - equip second weapon
-        if(itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.both) 
+        if(itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.BOTH) 
         {
             currentSecondWeapon = Instantiate<Weapon>(weaponPrefab);
             currentSecondWeapon.transform.parent = handL.transform;
