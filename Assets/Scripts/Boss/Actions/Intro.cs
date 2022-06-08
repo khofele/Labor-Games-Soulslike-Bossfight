@@ -9,7 +9,7 @@ using UnityEngine;
 public class Intro : GOAction
 {
     [InParam("uimanager")]
-    [SerializeField] private UIManager uiManager = null;
+    [SerializeField] private InGameUIManager uiManager = null;
 
     private BossController bossController = null;
     public override void OnStart()
