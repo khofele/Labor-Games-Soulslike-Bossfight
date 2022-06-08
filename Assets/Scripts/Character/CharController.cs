@@ -23,8 +23,6 @@ public class CharController : MonoBehaviour
     //action speed
     private float animationSpeed = 1.25f; //speed of animations and animator
     private float movementSpeed = 6f; //speed for movement like walking, running and rolling
-    //multiplicator for speed
-    [SerializeField] private float multiplicator = 100f;
 
     //fight
     [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon

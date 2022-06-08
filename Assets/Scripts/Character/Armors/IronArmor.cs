@@ -8,7 +8,7 @@ public class IronArmor : Armor
     private void Start()
     {
         armorName = "Ork Armor";
-        armorType = ArmorTypeEnum.ironarmor;
+        armorType = ArmorTypeEnum.IRONARMOR;
         armorWeight = 40f;
         armorDef = 65f;
         helmetPrefab = Resources.Load("Character/Armors/IronArmor/IronArmorHelmet", typeof(Armor)) as Armor;

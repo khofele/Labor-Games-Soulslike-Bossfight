@@ -8,7 +8,7 @@ public class ClothArmor : Armor
     private void Start()
     {
         armorName = "Elven Armor";
-        armorType = ArmorTypeEnum.clotharmor;
+        armorType = ArmorTypeEnum.CLOTHARMOR;
         armorWeight = 15f;
         armorDef = 25f;
         helmetPrefab = Resources.Load("Character/Armors/ClothArmor/ClothArmorHelmet", typeof(Armor)) as Armor;

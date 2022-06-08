@@ -8,7 +8,7 @@ public class LeatherArmor : Armor
     private void Start()
     {
         armorName = "Ogar Armor";
-        armorType = ArmorTypeEnum.leatherarmor;
+        armorType = ArmorTypeEnum.LEATHERARMOR;
         armorWeight = 20f;
         armorDef = 40f;
         helmetPrefab = Resources.Load("Character/Armors/LeatherArmor/LeatherArmorHelmet", typeof(Armor)) as Armor;
