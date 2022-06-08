@@ -6097,6 +6097,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLength: 5
+--- !u!1 &1321194772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321194773}
+  m_Layer: 6
+  m_Name: PotionHoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321194773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321194772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.061, y: -0.12, z: -0.067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6197755546220562357}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407356092
 GameObject:
   m_ObjectHideFlags: 0
@@ -8742,6 +8772,10 @@ PrefabInstance:
       propertyPath: attackManager
       value: 
       objectReference: {fileID: 528747653}
+    - target: {fileID: 6197755547276642366, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+      propertyPath: potionHoldPoint
+      value: 
+      objectReference: {fileID: 1321194773}
     - target: {fileID: 6197755547412405701, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -8771,6 +8805,11 @@ PrefabInstance:
 --- !u!1 &6197755546220562356 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6197755546586260976, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
+  m_PrefabInstance: {fileID: 6197755546220562355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6197755546220562357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6197755546778258600, guid: 02d12053ab9271149b8d03fe58296f8f, type: 3}
   m_PrefabInstance: {fileID: 6197755546220562355}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6536584888025778250

@@ -8,6 +8,7 @@ public class CharController : MonoBehaviour
     //General
     [SerializeField] private Transform handR = null; //right hand of the character (holds weapon)
     [SerializeField] private Transform handL = null; //left hand of the character (sometimes holds weapon)
+    [SerializeField] private Transform potionHoldPoint = null; //point at left hand to hold potion
     private CharacterMovement charMovement = null; //CharacterMovement script
 
     //Name
@@ -136,8 +137,10 @@ public class CharController : MonoBehaviour
 
         //instantiate potion game object
         currentPotion = Instantiate<GameObject>(potionPrefab);
-        currentPotion.transform.parent = handL.transform;
-        currentPotion.transform.position = handL.position;
+        //currentPotion.transform.parent = handL.transform;
+        //currentPotion.transform.position = handL.position;
+        currentPotion.transform.parent = potionHoldPoint.transform;
+        currentPotion.transform.position = potionHoldPoint.position;
     }
 
     public void DestroyPotion()
