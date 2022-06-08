@@ -8,6 +8,7 @@ public class CharController : MonoBehaviour
     //General
     [SerializeField] private Transform handR = null; //right hand of the character (holds weapon)
     [SerializeField] private Transform handL = null; //left hand of the character (sometimes holds weapon)
+    [SerializeField] private Transform potionHoldPoint = null; //point at left hand to hold potion
     private CharacterMovement charMovement = null; //CharacterMovement script
 
     //Name
@@ -136,8 +137,10 @@ public class CharController : MonoBehaviour
 
         //instantiate potion game object
         currentPotion = Instantiate<GameObject>(potionPrefab);
-        currentPotion.transform.parent = handL.transform;
-        currentPotion.transform.position = handL.position;
+        //currentPotion.transform.parent = handL.transform;
+        //currentPotion.transform.position = handL.position;
+        currentPotion.transform.parent = potionHoldPoint.transform;
+        currentPotion.transform.position = potionHoldPoint.position;
     }
 
     public void DestroyPotion()
@@ -305,15 +308,32 @@ public class CharController : MonoBehaviour
     //method to determine speed with which actions are performed in the animator
     private void SetSpeed()
     {
-        //set speed depending on equipment weight (small weight - faster speed, big weight - lower speed)
-        animationSpeed = animationSpeed + multiplicator * (armorWeight + weaponWeight);
+        //set speed depending on equipment weight (small weight - faster speed, heavy weight - lower speed)
+        float equipWeight = armorWeight + weaponWeight;
+        //light armor = 25 to 30 weight
+        if(equipWeight < 31)
+        {
+            animationSpeed = 1.3f;
+        }
+        //medium armor = 31 to 49 weight
+        else if (equipWeight < 50)
+        {
+            animationSpeed = 1.25f;
+        }
+        //heavy armor = 50 to 55 weight
+        else
+        {
+            animationSpeed = 1.1f;
+        }
+
         //set speed of animator (animations)
         GetComponent<Animator>().speed = animationSpeed;
+
         //set movement speed
         movementSpeed = movementSpeed * animationSpeed;
 
+
         //Debug.Log("movementSpeed: " + movementSpeed + ", animationSpeed: " + animationSpeed);
-        //Debug.Log(GetComponent<Animator>().speed);
     }
 
     //setter for the bool regStamina - whether stamina shall be regenerated or not
