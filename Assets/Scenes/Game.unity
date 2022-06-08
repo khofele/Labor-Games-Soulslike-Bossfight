@@ -995,7 +995,7 @@ PrefabInstance:
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: behavior
       value: 
-      objectReference: {fileID: 11400000, guid: 2e7801fdfa448ca418af9fa3acc4ff37, type: 2}
+      objectReference: {fileID: 11400000, guid: 9c1910124d64a0442acfe9ad68f1ca62, type: 2}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.size
       value: 14
@@ -1007,59 +1007,59 @@ PrefabInstance:
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: fffe54bda3a34154ea9cd3014cfd1f60, type: 2}
+      objectReference: {fileID: 1933720847}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[1]
       value: 
-      objectReference: {fileID: 1505625447}
+      objectReference: {fileID: 11400000, guid: fffe54bda3a34154ea9cd3014cfd1f60, type: 2}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[2]
       value: 
-      objectReference: {fileID: 1091473293}
+      objectReference: {fileID: 762936932}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[3]
       value: 
-      objectReference: {fileID: 1620624124}
+      objectReference: {fileID: 1091473293}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[4]
       value: 
-      objectReference: {fileID: 1746946250}
+      objectReference: {fileID: 6197755546220562356}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[5]
       value: 
-      objectReference: {fileID: 528747653}
+      objectReference: {fileID: 1620624124}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[6]
       value: 
-      objectReference: {fileID: 1318598857}
+      objectReference: {fileID: 1746946250}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[7]
       value: 
-      objectReference: {fileID: 2110775468}
+      objectReference: {fileID: 528747653}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[8]
       value: 
-      objectReference: {fileID: 1851976698}
+      objectReference: {fileID: 1318598857}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[9]
       value: 
-      objectReference: {fileID: 1585687469}
+      objectReference: {fileID: 1851976698}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[10]
       value: 
-      objectReference: {fileID: 740045401}
+      objectReference: {fileID: 1585687469}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[11]
       value: 
-      objectReference: {fileID: 185919568}
+      objectReference: {fileID: 740045401}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[12]
       value: 
-      objectReference: {fileID: 6197755546220562356}
+      objectReference: {fileID: 185919568}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParams.Array.data[13]
       value: 
-      objectReference: {fileID: 1933720847}
+      objectReference: {fileID: 2110775468}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.size
       value: 14
@@ -1070,63 +1070,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[0]
-      value: phaseOne
+      value: ingameuimanager
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[1]
-      value: area
+      value: phaseOne
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[2]
-      value: player
+      value: area
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[3]
-      value: bossController
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[4]
-      value: gameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[5]
-      value: attackManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[6]
-      value: IsStunnedTimer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[7]
-      value: collisionCheckBoxFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[8]
-      value: collisionCheckBoxFrontLongRange
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[9]
-      value: collisionCheckBoxLeft
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[10]
-      value: collisionCheckBoxRight
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[11]
-      value: collisionCheckSphere
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
-      propertyPath: blackboard.objectParamsNames.Array.data[12]
       value: target
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[5]
+      value: bossController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[6]
+      value: gameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[7]
+      value: attackManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[8]
+      value: IsStunnedTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[9]
+      value: collisionCheckBoxFrontLongRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[10]
+      value: collisionCheckBoxLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[11]
+      value: collisionCheckBoxRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.objectParamsNames.Array.data[12]
+      value: collisionCheckSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.objectParamsNames.Array.data[13]
-      value: uimanager
+      value: collisionCheckBoxFront
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: blackboard.layerMaskParamsNames.Array.data[0]
       value: layerMask
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281236389523894093, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
+      propertyPath: blackboard.layerMaskParams.Array.data[0].m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6281236389523894094, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
       propertyPath: m_RootOrder
@@ -4477,6 +4481,7 @@ GameObject:
   - component: {fileID: 762936935}
   - component: {fileID: 762936934}
   - component: {fileID: 762936933}
+  - component: {fileID: 762936936}
   m_Layer: 0
   m_Name: NavPlane Cylinder
   m_TagString: Untagged
@@ -4547,6 +4552,19 @@ Transform:
   m_Father: {fileID: 1479358716}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -2.147, z: 0}
+--- !u!65 &762936936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762936932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 604.1312, y: 1, z: 636.9932}
+  m_Center: {x: -319.09286, y: 0.5, z: -1.5033225}
 --- !u!1 &794726299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6281236389655370991, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}
@@ -6352,11 +6370,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1505625447 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4540972881037140919, guid: 3a2c8bd8e921ffe43bc635044ed036de, type: 3}
-  m_PrefabInstance: {fileID: 1868110996}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1520106403
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,6 +8460,7 @@ GameObject:
   - component: {fileID: 2068588903}
   - component: {fileID: 2068588902}
   - component: {fileID: 2068588901}
+  - component: {fileID: 2068588904}
   m_Layer: 0
   m_Name: NavPlane Cylinder Fly
   m_TagString: Untagged
@@ -8517,6 +8531,19 @@ Transform:
   m_Father: {fileID: 1479358716}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -2.147, z: 0}
+--- !u!65 &2068588904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068588900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 604.1312, y: 1, z: 636.9932}
+  m_Center: {x: -319.09286, y: 0.5, z: -1.5033225}
 --- !u!1 &2070715069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6281236391323730393, guid: 3f06d95594eb6f544b8119bcccfd5ebf, type: 3}

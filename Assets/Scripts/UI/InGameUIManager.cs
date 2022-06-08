@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class InGameUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject healthBarChar = null;
     [SerializeField] private GameObject healthBarBoss = null;

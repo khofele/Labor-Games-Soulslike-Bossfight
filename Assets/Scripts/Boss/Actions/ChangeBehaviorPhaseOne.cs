@@ -36,7 +36,7 @@ public class ChangeBehaviorPhaseOne : GOAction
     [InParam("IsStunnedTimer")]
     [SerializeField] private Timer isStunnedTimer = null;
 
-    [InParam("collisionCheckFront")]
+    [InParam("collisionCheckBoxFront")]
     [SerializeField] private CollisionCheck collisionCheckFront = null;
 
     [InParam("collisionCheckBoxFrontLongRange")]
