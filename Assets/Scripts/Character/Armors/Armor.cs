@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ArmorTypeEnum
 {
-    clotharmor, leatherarmor, ironarmor, platearmor
+   CLOTHARMOR, LEATHERARMOR, IRONARMOR, PLATEARMOR
 }
 
 public abstract class Armor : MonoBehaviour

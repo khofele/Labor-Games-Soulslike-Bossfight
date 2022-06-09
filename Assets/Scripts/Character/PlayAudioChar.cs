@@ -14,8 +14,6 @@ public class PlayAudioChar : MonoBehaviour
     [SerializeField] private AudioClip deathSound; //the sound played when character dies
     private AudioSource audioSource = null; //current audio source
 
-    private float elapsedTime = 0; //time since last step sound
-    private float soundDelayTime = 0.5f; //delay for sound to play
 
     // Start is called before the first frame update
     private void Start()

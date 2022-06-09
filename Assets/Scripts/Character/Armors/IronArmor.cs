@@ -12,7 +12,7 @@ public class IronArmor : Armor
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         armorName = "Ork Armor";
-        armorType = ArmorTypeEnum.ironarmor;
+        armorType = ArmorTypeEnum.IRONARMOR;
         armorWeight = 40f;
         armorDef = 65f;
         helmetPrefab = Resources.Load("Character/Armors/IronArmor/IronArmorHelmet", typeof(Armor)) as Armor;

@@ -10,21 +10,20 @@ public class CharController : MonoBehaviour
     [SerializeField] private Transform handL = null; //left hand of the character (sometimes holds weapon)
     [SerializeField] private Transform potionHoldPoint = null; //point at left hand to hold potion
     private CharacterMovement charMovement = null; //CharacterMovement script
+    private StaminaManager stamManager = null; //StaminaManager script
 
     //Name
     private string charName = "";
 
     //Attributes
     private AttributeManager attrManager = null; //attribute manager of the menu used to get the current calculated attributes
-    [SerializeField] private float staminaReg = 0.08f;
     private float health = 0f; //max HP
     private float stamina = 0f; //max Stamina
+    private float staminaReg = 0.08f; //how much stamina is regenerated at once
     private float attackPower = 0f; //is added to the weaponMinDmg value of the current weapon
     //action speed
     private float animationSpeed = 1.25f; //speed of animations and animator
     private float movementSpeed = 6f; //speed for movement like walking, running and rolling
-    //multiplicator for speed
-    [SerializeField] private float multiplicator = 100f;
 
     //fight
     [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon
@@ -33,15 +32,14 @@ public class CharController : MonoBehaviour
 
     [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
     private float currentHealth = 0f;
-    private float currentStamina = 0f;
     private int currentPotions = 0; //number of currently left potions
-    private bool regStamina = true; //if currently stamina shall be regenerated
+    private bool potionGlow = true; //whether potion glows or not
+    public bool PotionGlow { set => potionGlow = value; } //Setter for Character Movement when last potion has been used
 
     //equipment
     private ItemManager itemManager = null; //item manager of the menu used for equipment setting
     private int potionCount = 0; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
-    private GameObject potionPrefab = null; //prefab for potion
     private GameObject currentPotion = null; //current potion object (instantiated)
     private Weapon weaponPrefab = null; //current weapon prefab
     private Weapon currentWeapon = null; //current weapon object (instantiated)
@@ -64,11 +62,13 @@ public class CharController : MonoBehaviour
     {
         charName = "Godwin the Brave";
 
-        charMovement = GetComponentInParent<CharacterMovement>();
+        charMovement = GetComponent<CharacterMovement>();
+        stamManager = GetComponent<StaminaManager>();
         attrManager = FindObjectOfType<AttributeManager>();
         itemManager = FindObjectOfType<ItemManager>();
-        //set potion prefab
-        potionPrefab = Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject;
+
+        //set potionGlow to true for beginning
+        PotionGlow = true;
 
         //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
@@ -92,27 +92,17 @@ public class CharController : MonoBehaviour
     //method called in Update() to regenerate the current stamina with time (if not using a skill at the moment)
     private void RegenerateStamina()
     {
-        //Debug.Log(currentStamina);
-
-        if (regStamina && currentStamina + staminaReg <= stamina) //reg not more stamina than the max value
+        //no regeneration during whole attack combo
+        if (!(charMovement.GetAnimator().GetBool("Attack01R")) && !(charMovement.GetAnimator().GetBool("Attack02R")) && !(charMovement.GetAnimator().GetBool("Attack03R")))
         {
-            //no reg during whole attack combo
-            if (!(charMovement.GetAnimator().GetBool("Attack01R")) && !(charMovement.GetAnimator().GetBool("Attack02R")) && !(charMovement.GetAnimator().GetBool("Attack03R")))
-            {
-                currentStamina += staminaReg;
-            }
-
-            //Debug.Log(currentStamina);
+            stamManager.RegenerateStamina();
         }
     }
 
     //method to call when skills need stamina
     public void UseStamina(float usedStamina)
     {
-        if (currentStamina - usedStamina >= 0f)
-        {
-            currentStamina = currentStamina - usedStamina;
-        }
+        stamManager.UseStamina(usedStamina);
     }
 
     //method called by CharacterMovement script after using a potion
@@ -136,11 +126,15 @@ public class CharController : MonoBehaviour
         }
 
         //instantiate potion game object
-        currentPotion = Instantiate<GameObject>(potionPrefab);
-        //currentPotion.transform.parent = handL.transform;
-        //currentPotion.transform.position = handL.position;
+        currentPotion = Instantiate<GameObject>(Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject);
         currentPotion.transform.parent = potionHoldPoint.transform;
         currentPotion.transform.position = potionHoldPoint.position;
+
+        //disable glowing particle effect if potion is empty
+        if (!potionGlow)
+        {
+            currentPotion.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
     public void DestroyPotion()
@@ -253,9 +247,13 @@ public class CharController : MonoBehaviour
         staminaReg = attrManager.StaminaReg;
         attackPower = attrManager.AttackPower;
 
+        //set values in StaminaManager
+        stamManager.Stamina = stamina;
+        stamManager.StaminaReg = staminaReg;
+
         //set start current health, stamina values and potion count
         currentHealth = health;
-        currentStamina = stamina;
+        stamManager.CurrentStamina = stamina;
         currentPotions = potionCount;
     }
 
@@ -339,7 +337,7 @@ public class CharController : MonoBehaviour
     //setter for the bool regStamina - whether stamina shall be regenerated or not
     public void SetRegStamina(bool regStaminaValue)
     {
-        regStamina = regStaminaValue;
+        stamManager.RegStamina = regStaminaValue;
     }
 
 
@@ -361,7 +359,7 @@ public class CharController : MonoBehaviour
 
     public float GetCurrentStamina()
     {
-        return currentStamina;
+        return stamManager.CurrentStamina;
     }
 
     //control current potion number

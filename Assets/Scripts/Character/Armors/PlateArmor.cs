@@ -12,7 +12,7 @@ public class PlateArmor : Armor
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         armorName = "Plate Armor";
-        armorType = ArmorTypeEnum.platearmor;
+        armorType = ArmorTypeEnum.PLATEARMOR;
         armorWeight = 35f;
         armorDef = 58f;
         helmetPrefab = Resources.Load("Character/Armors/PlateArmor/PlateArmorHelmet", typeof(Armor)) as Armor;
