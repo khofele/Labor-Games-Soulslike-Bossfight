@@ -233,6 +233,10 @@ public class CharacterMovement : MonoBehaviour
         {
             charController.Heal();
         }
+        else
+        {
+            charController.PotionGlow = false;
+        }
 
         //set potion game object in hand
         charController.SetPotion();

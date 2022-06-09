@@ -33,6 +33,8 @@ public class CharController : MonoBehaviour
     private float currentHealth = 0f;
     private float currentStamina = 0f;
     private int currentPotions = 0; //number of currently left potions
+    private bool potionGlow = true; //whether potion glows or not
+    public bool PotionGlow { set => potionGlow = value; } //Setter for Character Movement when last potion has been used
     private bool regStamina = true; //if currently stamina shall be regenerated
 
     //equipment
@@ -64,6 +66,9 @@ public class CharController : MonoBehaviour
         charMovement = GetComponentInParent<CharacterMovement>();
         attrManager = FindObjectOfType<AttributeManager>();
         itemManager = FindObjectOfType<ItemManager>();
+
+        //set potionGlow to true for beginning
+        PotionGlow = true;
 
         //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
@@ -134,6 +139,12 @@ public class CharController : MonoBehaviour
         currentPotion = Instantiate<GameObject>(Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject);
         currentPotion.transform.parent = potionHoldPoint.transform;
         currentPotion.transform.position = potionHoldPoint.position;
+
+        //disable glowing particle effect if potion is empty
+        if (!potionGlow)
+        {
+            currentPotion.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
     public void DestroyPotion()
