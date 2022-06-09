@@ -39,7 +39,6 @@ public class CharController : MonoBehaviour
     private ItemManager itemManager = null; //item manager of the menu used for equipment setting
     private int potionCount = 0; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
-    private GameObject potionPrefab = null; //prefab for potion
     private GameObject currentPotion = null; //current potion object (instantiated)
     private Weapon weaponPrefab = null; //current weapon prefab
     private Weapon currentWeapon = null; //current weapon object (instantiated)
@@ -65,8 +64,6 @@ public class CharController : MonoBehaviour
         charMovement = GetComponentInParent<CharacterMovement>();
         attrManager = FindObjectOfType<AttributeManager>();
         itemManager = FindObjectOfType<ItemManager>();
-        //set potion prefab
-        potionPrefab = Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject;
 
         //set current weapon and place it in character's hand, also set animation controller
         SetAndAttachWeapon();
@@ -134,9 +131,7 @@ public class CharController : MonoBehaviour
         }
 
         //instantiate potion game object
-        currentPotion = Instantiate<GameObject>(potionPrefab);
-        //currentPotion.transform.parent = handL.transform;
-        //currentPotion.transform.position = handL.position;
+        currentPotion = Instantiate<GameObject>(Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject);
         currentPotion.transform.parent = potionHoldPoint.transform;
         currentPotion.transform.position = potionHoldPoint.position;
     }
