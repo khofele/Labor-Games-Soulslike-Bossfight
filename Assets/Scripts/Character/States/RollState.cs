@@ -18,7 +18,7 @@ namespace stateMachine
             GetAudioPlayer(animator).PlayRoll();
 
             //use neededStamina for action
-            neededStamina = 60f;
+            neededStamina = (float) NeededStaminaSkills.ROLL;
             GetCharController(animator).UseStamina(neededStamina);
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }

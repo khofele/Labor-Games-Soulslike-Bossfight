@@ -10,17 +10,15 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private GameObject tpCamera = null; //Cinemachine Third Person Camera
     [SerializeField] private GameManager gameManager = null; //the game manager
     private CharController charController = null; //CharController script
+    private StaminaManager stamManager = null; //Stamina Manager
     private CharacterController controller = null; //CharacterControllerComponent
     private Animator animator = null;
 
     //attack combo values
-    [SerializeField] private float cooldownTime = 0.8f; //attack cooldown
     private float nextAttackStartTime = 0f; //time the next attack can start
     private static int noOfClicks = 0; //number of current clicks in combo
     private float lastClickedTime = 0; //last clicked time in combo
     private float maxComboDelay = 1; //max time to click to stay in combo
-    private float neededStamAttack = 25f; //needed stamina for current attack (always 25f)
-    private float neededStamHeavyAttack = 45f; //needed stamina for heavy attack
 
     [SerializeField] private float stunDuration = 3; //duration of stun
 
@@ -28,16 +26,18 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        animator = GetComponentInParent<Animator>();
-        controller = GetComponentInParent<CharacterController>();
-        charController = GetComponentInParent<CharController>();
+        animator = GetComponent<Animator>();
+        controller = GetComponent<CharacterController>();
+        charController = GetComponent<CharController>();
+        stamManager = GetComponent<StaminaManager>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         //--------------------------STAMINA & POTIONS-----------------------
-        //set value in animator - check whether enough stamina / potions to use a skill
+        //set value in animator - check enough stamina / enough potions to use a skill
+        //note: currentStamina is currently only used for the run state
         animator.SetFloat("currentStamina", charController.GetCurrentStamina());
         animator.SetFloat("potionCount", charController.GetCurrentPotions());
 
@@ -80,7 +80,9 @@ public class CharacterMovement : MonoBehaviour
             }
 
             //roll
-            if (Input.GetKey(KeyCode.Space) && !animator.GetBool("Roll"))
+            if (Input.GetKey(KeyCode.Space) 
+                && stamManager.CheckEnoughStamina(NeededStaminaSkills.ROLL) //stam check
+                && !animator.GetBool("Roll"))
             {
                 animator.SetBool("Roll", true);
             }
@@ -94,14 +96,11 @@ public class CharacterMovement : MonoBehaviour
                 //if weapon is no lance - attack combo possible
                 if (!(charController.GetCurrentWeapon().Contains("Lance")))
                 {
-                    if (charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
-                    {
-                        AttackCombo(); //start combo
-                    }
+                     AttackCombo(); //start combo
                 }
                 else //lance: only stab attack
                 {
-                    if (charController.GetCurrentStamina() >= neededStamAttack) //enough stamina
+                    if (stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK01R)) //stam check
                     {
                         animator.SetBool("Attack01R", true);
                     }
@@ -130,7 +129,7 @@ public class CharacterMovement : MonoBehaviour
             }
             if (!(charController.GetCurrentWeapon().Contains("Lance")) && Time.time > nextAttackStartTime) //enough time went by to start new combo
             {
-                if (Input.GetKey(KeyCode.Mouse0) && charController.GetCurrentStamina() >= neededStamAttack)
+                if (Input.GetKey(KeyCode.Mouse0))
                 {
                     AttackCombo();
                 }
@@ -138,7 +137,8 @@ public class CharacterMovement : MonoBehaviour
 
 
             //heavy attack
-            if (Input.GetKey(KeyCode.Mouse1) && charController.GetCurrentStamina() >= neededStamHeavyAttack)
+            if (Input.GetKey(KeyCode.Mouse1)
+                && stamManager.CheckEnoughStamina(NeededStaminaSkills.HEAVYATTACK))
             {
                 animator.SetBool("HeavyAttack", true);
             }
@@ -163,20 +163,27 @@ public class CharacterMovement : MonoBehaviour
 
         charController.SetRegStamina(false); //no stamina reg during the combo
         //start Attack01
-        if(noOfClicks == 1)
+        if(noOfClicks == 1 
+           && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK01R))
         {
             animator.SetBool("Attack01R", true);
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
         //start Attack02 if clicked fast enough
-        if(noOfClicks >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
+        if(noOfClicks >= 2 
+            && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f 
+            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R")
+            && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK02R))
         {
             animator.SetBool("Attack01R", false);
             animator.SetBool("Attack02R", true);
         }
         //start Attack03 if clicked fast enough
-        if (noOfClicks >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
+        if (noOfClicks >= 3 
+            && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f 
+            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R")
+            && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK03R))
         {
             animator.SetBool("Attack02R", false);
             animator.SetBool("Attack03R", true);
