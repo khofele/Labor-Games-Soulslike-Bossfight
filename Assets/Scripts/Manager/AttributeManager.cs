@@ -7,13 +7,13 @@ public class AttributeManager : MonoBehaviour
     [SerializeField] private SkillpointManager skillpointManager = null;
     [SerializeField] private ItemManager itemManager = null;
     private static AttributeManager instance = null;
-    private float health = 1000f;
-    private float stamina = 100f;
-    private float staminaReg = 0.08f;
-    private float carryingCapacity = 50f;
-    private float resistance = 15f;
-    private float defense = 50f;
-    private float attackPower = 50f;
+    private float health = 0f;
+    private float stamina = 0f;
+    private float staminaReg = 0f;
+    private float carryingCapacity = 0f;
+    private float resistance = 0f;
+    private float defense = 0f;
+    private float attackPower = 0f;
     private float multiplicator = 100f;
 
     public float Health { get => health; }
@@ -36,6 +36,14 @@ public class AttributeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        ResetHealth();
+        ResetStamina();
+        ResetStaminaReg();
+        ResetCarryingCapacity();
+        ResetResistance();
+        ResetDefense();
+        ResetAttackPower();
     }
 
     public void CalcHealth()
@@ -43,14 +51,31 @@ public class AttributeManager : MonoBehaviour
         health = health + skillpointManager.Vitality * multiplicator;
     }
 
+    public void CalcRemovedHealth()
+    {
+        health = health - (skillpointManager.Vitality+1) * multiplicator;
+    }
+
     public void CalcStamina()
     {
         stamina = stamina + skillpointManager.Endurance * multiplicator;
     }
 
+    public void CalcRemovedStamina()
+    {
+        stamina = stamina - (skillpointManager.Endurance+1) * multiplicator;
+    }
+
     public void CalcStaminaReg()
     {
         staminaReg = staminaReg + skillpointManager.Endurance * 4 / multiplicator;
+        staminaReg = Mathf.Round(staminaReg * 100) / 100;
+    }
+
+    public void CalcRemovedStaminaReg()
+    {
+        staminaReg = staminaReg - (skillpointManager.Endurance+1) * 4 / multiplicator;
+        staminaReg = Mathf.Round(staminaReg * 100) / 100;
     }
 
     public void CalcAttackPower()
@@ -58,9 +83,19 @@ public class AttributeManager : MonoBehaviour
         attackPower = attackPower + skillpointManager.Strength;
     }
 
+    public void CalcRemovedAttackPower()
+    {
+        attackPower = attackPower - (skillpointManager.Strength+1);
+    }
+
     public void CalcCarryingCapacity()
     {
-        carryingCapacity = carryingCapacity + skillpointManager.PhysicalStrength * multiplicator;
+        carryingCapacity = carryingCapacity + skillpointManager.PhysicalStrength;
+    }    
+
+    public void CalcRemovedCarryingCapacity()
+    {
+        carryingCapacity = carryingCapacity - (skillpointManager.PhysicalStrength+1);
     }
 
     public void CalcResistance()
@@ -71,5 +106,51 @@ public class AttributeManager : MonoBehaviour
     public void CalcDefense()
     {
         defense = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+    }
+
+    public void ResetAllAttributes()
+    {
+        ResetHealth();
+        ResetStamina();
+        ResetStaminaReg();
+        ResetCarryingCapacity();
+        ResetResistance();
+        ResetDefense();
+        ResetAttackPower();
+    }
+
+    private void ResetHealth()
+    {
+        health = 1000f;
+    }
+
+    private void ResetStamina()
+    {
+        stamina = 100f;
+    }
+
+    private void ResetStaminaReg()
+    {
+        staminaReg = 0.08f;
+    }
+
+    private void ResetCarryingCapacity()
+    {
+        carryingCapacity = 27f;
+    }
+
+    private void ResetResistance()
+    {
+        resistance = 15f;
+    }
+
+    private void ResetDefense()
+    {
+        defense = 50f;
+    }
+
+    private void ResetAttackPower()
+    {
+        attackPower = 50f;
     }
 }

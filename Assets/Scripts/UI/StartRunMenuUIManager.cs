@@ -66,6 +66,13 @@ public class StartRunMenuUIManager : MonoBehaviour
 
     private void Start()
     {
+        attributeManager = FindObjectOfType<AttributeManager>();
+        attributeManager.ResetAllAttributes();
+        itemManager = FindObjectOfType<ItemManager>();
+        itemManager.ResetWeaponAndArmor();
+        skillpointManager = FindObjectOfType<SkillpointManager>();
+        skillpointManager.ResetAllSkillpoints();
+
         btnBackToMainMenu.onClick.AddListener(BackToMainMenu);
         btnStartRun.onClick.AddListener(StartGame);
         btnStartRun.interactable = false;

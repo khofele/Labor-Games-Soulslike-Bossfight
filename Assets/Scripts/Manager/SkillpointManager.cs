@@ -33,6 +33,8 @@ public class SkillpointManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        ResetAllSkillpoints();
     }
 
     private void Start()
@@ -56,7 +58,7 @@ public class SkillpointManager : MonoBehaviour
         {
             vitality--;
             skillpoints++;
-            attributeManager.CalcHealth();
+            attributeManager.CalcRemovedHealth();
         }
     }
 
@@ -77,8 +79,8 @@ public class SkillpointManager : MonoBehaviour
         {
             endurance--;
             skillpoints++;
-            attributeManager.CalcStamina();
-            attributeManager.CalcStaminaReg();
+            attributeManager.CalcRemovedStamina();
+            attributeManager.CalcRemovedStaminaReg();
         }
     }
 
@@ -98,7 +100,7 @@ public class SkillpointManager : MonoBehaviour
         {
             strength--;
             skillpoints++;
-            attributeManager.CalcAttackPower();
+            attributeManager.CalcRemovedAttackPower();
         }
     }
     public void AddPhysicalStrength()
@@ -117,7 +119,16 @@ public class SkillpointManager : MonoBehaviour
         {
             physicalStrength--;
             skillpoints++;
-            attributeManager.CalcCarryingCapacity();
+            attributeManager.CalcRemovedCarryingCapacity();
         }
+    }
+
+    public void ResetAllSkillpoints()
+    {
+        skillpoints = maxSkillpoints;
+        vitality = 0;
+        endurance = 0;
+        strength = 0;
+        physicalStrength = 0;
     }
 }

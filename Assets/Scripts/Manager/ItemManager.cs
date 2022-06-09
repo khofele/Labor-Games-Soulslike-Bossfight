@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemManager : MonoBehaviour
 {
     [Header("Manager")]
     [SerializeField] private AttributeManager attributeManager = null;
     [SerializeField] private StartRunMenuUIManager uiManager = null;
+    [SerializeField] private MenuPlayerUIManager menuPlayerUIManager = null;
 
     [Header("Armor")]
     [SerializeField] private ClothArmor clothArmor = null;
@@ -73,11 +75,34 @@ public class ItemManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Start Run")
+        {
+            GameObject startRunUIGameObject = GameObject.Find("UI");
+            uiManager = startRunUIGameObject.GetComponent<StartRunMenuUIManager>();
+            GameObject playerUIGameObject = GameObject.Find("PlayerUI");
+            menuPlayerUIManager = playerUIGameObject.GetComponent<MenuPlayerUIManager>();
+        }
+    }
+
     public void SetDagger()
     {
         currentWeapon = dagger;
         SetWeaponValues();
         uiManager.SetDaggerImage();
+        menuPlayerUIManager.AttachWeapon();
     }
 
     public void SetLongSword()
@@ -85,12 +110,14 @@ public class ItemManager : MonoBehaviour
         currentWeapon = longSword;
         SetWeaponValues();
         uiManager.SetLongSwordImage();
+        menuPlayerUIManager.AttachWeapon();
     }
     public void SetShortSword()
     {
         currentWeapon = shortSword;
         SetWeaponValues();
         uiManager.SetShortSwordImage();
+        menuPlayerUIManager.AttachWeapon();
     }
 
     public void SetHammer()
@@ -98,6 +125,7 @@ public class ItemManager : MonoBehaviour
         currentWeapon = hammer;
         SetWeaponValues();
         uiManager.SetHammerImage();
+        menuPlayerUIManager.AttachWeapon();
     }
 
     public void SetLance()
@@ -105,6 +133,7 @@ public class ItemManager : MonoBehaviour
         currentWeapon = lance;
         SetWeaponValues();
         uiManager.SetLanceImage();
+        menuPlayerUIManager.AttachWeapon();
     }
 
     public void SetClothArmor()
@@ -114,6 +143,8 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcDefense();
         uiManager.SetClothArmorImage();
         SetArmorValues();
+        menuPlayerUIManager.AttachTorsoArmor();
+        menuPlayerUIManager.AttachBasicHelmet();
     }
 
     public void SetLeatherArmor()
@@ -123,6 +154,8 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcDefense();
         uiManager.SetLeatherArmorImage();
         SetArmorValues();
+        menuPlayerUIManager.AttachTorsoArmor();
+        menuPlayerUIManager.AttachSpecialHelmet();
     }
 
     public void SetIronArmor()
@@ -132,6 +165,8 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcDefense();
         uiManager.SetIronArmorImage();
         SetArmorValues();
+        menuPlayerUIManager.AttachTorsoArmor();
+        menuPlayerUIManager.AttachBasicHelmet();
     }
 
     public void SetPlateArmor()
@@ -141,6 +176,8 @@ public class ItemManager : MonoBehaviour
         attributeManager.CalcDefense();
         uiManager.SetPlateArmorImage();
         SetArmorValues();
+        menuPlayerUIManager.AttachTorsoArmor();
+        menuPlayerUIManager.AttachSpecialHelmet();
     }
 
     private void SetWeaponValues()
@@ -161,5 +198,21 @@ public class ItemManager : MonoBehaviour
         currentArmorDef = currentArmor.GetArmorDef();
         currentHelmetPrefab = currentArmor.GetHelmetPrefab();
         currentTorsoArmorPrefab = currentArmor.GetTorsoArmorPrefab();
+    }
+
+    public void ResetWeaponAndArmor()
+    {
+        currentArmor = null;
+        currentWeapon = null;
+        currentWeaponWeight = 0f;
+        currentWeaponMinDmg = 0f;
+        currentWeaponMaxDmg = 0f;
+        currentWeaponPrefab = null;
+
+        currentArmorName = "";
+        currentArmorWeight = 0f;
+        currentArmorDef = 0f;
+        currentTorsoArmorPrefab = null;
+        currentHelmetPrefab = null;
     }
 }
