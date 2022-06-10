@@ -338,6 +338,8 @@ public class CharController : MonoBehaviour
     public void SetRegStamina(bool regStaminaValue)
     {
         stamManager.RegStamina = regStaminaValue;
+
+        Debug.Log("SetRegStamina: " + regStaminaValue);
     }
 
 

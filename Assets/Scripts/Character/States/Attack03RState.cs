@@ -30,6 +30,7 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //character finished combo attack
+            Debug.Log("03 false");
             animator.SetBool("Attack03R", false);
             GetCharController(animator).SetRegStamina(true); //regenerate stamina again
             GetCharController(animator).IsAttacking = false; //set isAttacking in CharController to false

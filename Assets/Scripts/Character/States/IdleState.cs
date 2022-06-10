@@ -23,6 +23,8 @@ namespace stateMachine
             animator.SetBool("UsePotion", false);
             animator.SetBool("Roll", false);
             GetCharController(animator).SetRegStamina(true);
+
+            //Debug.Log("01, 02, 03 false");
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

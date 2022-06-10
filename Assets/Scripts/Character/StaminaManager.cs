@@ -5,8 +5,8 @@ using UnityEngine;
 //Enum for all skills (except running) that need stamina and their needed stamina values
 public enum NeededStaminaSkills: int
 {
-    ATTACK01R = 25,
-    ATTACK02R = 25,
+    ATTACK01R = 23,
+    ATTACK02R = 24,
     ATTACK03R = 25,
     HEAVYATTACK = 40,
     ROLL = 60,
