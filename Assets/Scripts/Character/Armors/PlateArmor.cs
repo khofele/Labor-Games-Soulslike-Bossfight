@@ -13,7 +13,7 @@ public class PlateArmor : Armor
 
         armorName = "Plate Armor";
         armorType = ArmorTypeEnum.PLATEARMOR;
-        armorWeight = 35f;
+        armorWeight = 33f;
         armorDef = 58f;
         helmetPrefab = Resources.Load("Character/Armors/PlateArmor/PlateArmorHelmet", typeof(Armor)) as Armor;
         torsoPrefab = Resources.Load("Character/Armors/PlateArmor/PlateArmorTorso", typeof(Armor)) as Armor;
