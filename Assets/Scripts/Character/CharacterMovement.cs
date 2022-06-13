@@ -80,11 +80,13 @@ public class CharacterMovement : MonoBehaviour
             }
 
             //roll
-            if (Input.GetKey(KeyCode.Space) 
-                && stamManager.CheckEnoughStamina(NeededStaminaSkills.ROLL) //stam check
-                && !animator.GetBool("Roll"))
+            if (Input.GetKey(KeyCode.Space) && !animator.GetBool("Roll"))
             {
-                animator.SetBool("Roll", true);
+                float neededStamina = stamManager.NeededStaminaRoll;
+                if (stamManager.CheckEnoughStamina(neededStamina)) //stam check
+                {
+                    animator.SetBool("Roll", true);
+                }
             }
 
 
@@ -100,10 +102,11 @@ public class CharacterMovement : MonoBehaviour
                 }
                 else //lance: only stab attack
                 {
-                    if (stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK01R)) //stam check
+                    float neededStamina = stamManager.NeededStaminaAttack01;
+                    if (stamManager.CheckEnoughStamina(neededStamina)) //stam check
                     {
                         animator.SetBool("Attack01R", true);
-                        Debug.Log("01 true");
+                        //Debug.Log("01 true");
                     }
                 }
 
@@ -112,19 +115,19 @@ public class CharacterMovement : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
             {
                 animator.SetBool("Attack01R", false);
-                Debug.Log("01 false");
+                //Debug.Log("01 false");
                 charController.SetRegStamina(true); //regenerate stamina again
             }
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
             {
                 animator.SetBool("Attack02R", false);
-                Debug.Log("02 false");
+                //Debug.Log("02 false");
                 charController.SetRegStamina(true); //regenerate stamina again
             }
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
             {
                 animator.SetBool("Attack03R", false);
-                Debug.Log("03 false");
+                //Debug.Log("03 false");
                 noOfClicks = 0;
             }
             if (Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
@@ -141,10 +144,13 @@ public class CharacterMovement : MonoBehaviour
 
 
             //heavy attack
-            if (Input.GetKey(KeyCode.Mouse1)
-                && stamManager.CheckEnoughStamina(NeededStaminaSkills.HEAVYATTACK))
+            if (Input.GetKey(KeyCode.Mouse1))
             {
-                animator.SetBool("HeavyAttack", true);
+                float neededStamina = stamManager.NeededStaminaHeavyAttack;
+                if(stamManager.CheckEnoughStamina(neededStamina))
+                {
+                    animator.SetBool("HeavyAttack", true);
+                }
             }
 
 
@@ -167,36 +173,44 @@ public class CharacterMovement : MonoBehaviour
 
         charController.SetRegStamina(false); //no stamina reg during the combo
         //start Attack01
-        if(noOfClicks == 1 
-           && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK01R))
+        if(noOfClicks == 1)
         {
-            animator.SetBool("Attack01R", true);
-            Debug.Log("01 true");
+            float neededStamina = stamManager.NeededStaminaHeavyAttack;
+            if (stamManager.CheckEnoughStamina(neededStamina))
+            {
+                animator.SetBool("Attack01R", true);
+                //Debug.Log("01 true");
+            }
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
         //start Attack02 if clicked fast enough
         if(noOfClicks >= 2 
             && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f 
-            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R")
-            && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK02R))
+            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
         {
-
-            animator.SetBool("Attack01R", false);
-            animator.SetBool("Attack02R", true);
-            Debug.Log("01 false");
-            Debug.Log("02 true");
+            float neededStamina = stamManager.NeededStaminaHeavyAttack;
+            if (stamManager.CheckEnoughStamina(neededStamina))
+            {
+                animator.SetBool("Attack01R", false);
+                animator.SetBool("Attack02R", true);
+                //Debug.Log("01 false");
+                //Debug.Log("02 true");
+            }
         }
         //start Attack03 if clicked fast enough
         if (noOfClicks >= 3 
             && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f 
-            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R")
-            && stamManager.CheckEnoughStamina(NeededStaminaSkills.ATTACK03R))
+            && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
         {
-            animator.SetBool("Attack02R", false);
-            animator.SetBool("Attack03R", true);
-            Debug.Log("02 false");
-            Debug.Log("03 true");
+            float neededStamina = stamManager.NeededStaminaHeavyAttack;
+            if (stamManager.CheckEnoughStamina(neededStamina))
+            {
+                animator.SetBool("Attack02R", false);
+                animator.SetBool("Attack03R", true);
+                //Debug.Log("02 false");
+                //Debug.Log("03 true");
+            }
         }
     }
 

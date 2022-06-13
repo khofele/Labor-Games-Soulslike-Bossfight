@@ -228,7 +228,7 @@ public class CharController : MonoBehaviour
     //--------------------------SETTER METHODS-----------------------
 
     //method to set the equipment values depending on the chosen equipment (info from ItemManager)
-    //these values are used to determine the speed of the player's actions
+    //these values are used to determine the speed of the player's actions as well as the stamina costs
     private void SetEquipmentValues()
     {
         //set armor values
@@ -237,6 +237,13 @@ public class CharController : MonoBehaviour
         weaponWeight = itemManager.CurrentWeaponWeight; 
         //set current potions
         potionCount = itemManager.PotionCount;
+
+        //set needed stamina for skills
+        stamManager.NeededStaminaAttack01 = itemManager.NeededStaminaAttack01;
+        stamManager.NeededStaminaAttack02 = itemManager.NeededStaminaAttack02;
+        stamManager.NeededStaminaAttack03 = itemManager.NeededStaminaAttack03;
+        stamManager.NeededStaminaHeavyAttack = itemManager.NeededStaminaHeavyAttack;
+        stamManager.NeededStaminaRoll = itemManager.NeededStaminaRoll;
     }
 
     //Method to set the attributes depending on the chosen stats and equipment.

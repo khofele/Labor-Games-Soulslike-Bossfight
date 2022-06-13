@@ -17,6 +17,10 @@ public class Lance : Weapon
         weaponMinDmg = 65f;
         weaponMaxDmg = 95f;
         weaponPrefab = Resources.Load("Character/Weapons/Lance", typeof(Weapon)) as Weapon;
+
+        neededStaminaAttack01 = 30f;
+        neededStaminaHeavyAttack = 45f;
+        neededStaminaRoll = 60f;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

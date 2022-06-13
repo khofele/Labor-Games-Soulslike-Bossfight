@@ -41,6 +41,13 @@ public class ItemManager : MonoBehaviour
     private Armor currentTorsoArmorPrefab = null;
     private Armor currentHelmetPrefab = null;
 
+    //needed stamina needed for skills with current weapon
+    private float neededStaminaAttack01 = 0f;
+    private float neededStaminaAttack02 = 0f;
+    private float neededStaminaAttack03 = 0f;
+    private float neededStaminaHeavyAttack = 0f;
+    private float neededStaminaRoll = 0f;
+
     private int potionCount = 5;
 
     public int PotionCount { get => potionCount; }
@@ -60,6 +67,14 @@ public class ItemManager : MonoBehaviour
     public float CurrentArmorDef { get => currentArmorDef; }
     public Armor CurrentTorsoArmorPrefab { get => currentTorsoArmorPrefab; }
     public Armor CurrentHelmetPrefab { get => currentHelmetPrefab; }
+
+    //stamina value getter
+    public float NeededStaminaAttack01 { get => neededStaminaAttack01; }
+    public float NeededStaminaAttack02 { get => neededStaminaAttack02; }
+    public float NeededStaminaAttack03 { get => neededStaminaAttack03; }
+    public float NeededStaminaHeavyAttack { get => neededStaminaHeavyAttack; }
+    public float NeededStaminaRoll { get => neededStaminaRoll; }
+
 
     private void Awake()
     {
@@ -101,6 +116,7 @@ public class ItemManager : MonoBehaviour
     {
         currentWeapon = dagger;
         SetWeaponValues();
+        SetWeaponStaminaValues();
         uiManager.SetDaggerImage();
         menuPlayerUIManager.AttachWeapon();
     }
@@ -109,6 +125,7 @@ public class ItemManager : MonoBehaviour
     {
         currentWeapon = longSword;
         SetWeaponValues();
+        SetWeaponStaminaValues();
         uiManager.SetLongSwordImage();
         menuPlayerUIManager.AttachWeapon();
     }
@@ -116,6 +133,7 @@ public class ItemManager : MonoBehaviour
     {
         currentWeapon = shortSword;
         SetWeaponValues();
+        SetWeaponStaminaValues();
         uiManager.SetShortSwordImage();
         menuPlayerUIManager.AttachWeapon();
     }
@@ -124,6 +142,7 @@ public class ItemManager : MonoBehaviour
     {
         currentWeapon = hammer;
         SetWeaponValues();
+        SetWeaponStaminaValues();
         uiManager.SetHammerImage();
         menuPlayerUIManager.AttachWeapon();
     }
@@ -132,6 +151,7 @@ public class ItemManager : MonoBehaviour
     {
         currentWeapon = lance;
         SetWeaponValues();
+        SetWeaponStaminaValues();
         uiManager.SetLanceImage();
         menuPlayerUIManager.AttachWeapon();
     }
@@ -200,6 +220,16 @@ public class ItemManager : MonoBehaviour
         currentTorsoArmorPrefab = currentArmor.GetTorsoArmorPrefab();
     }
 
+    //method to set the needed stamina for the chosen weapon
+    private void SetWeaponStaminaValues()
+    {
+        neededStaminaAttack01 = currentWeapon.GetNeededStaminaAttack01();
+        neededStaminaAttack02 = currentWeapon.GetNeededStaminaAttack02();
+        neededStaminaAttack03 = currentWeapon.GetNeededStaminaAttack03();
+        neededStaminaHeavyAttack = currentWeapon.GetNeededStaminaHeavyAttack();
+        neededStaminaRoll = currentWeapon.GetNeededStaminaRoll();
+    }
+
     public void ResetWeaponAndArmor()
     {
         currentArmor = null;
@@ -214,5 +244,11 @@ public class ItemManager : MonoBehaviour
         currentArmorDef = 0f;
         currentTorsoArmorPrefab = null;
         currentHelmetPrefab = null;
+
+        neededStaminaAttack01 = 0f;
+        neededStaminaAttack02 = 0f;
+        neededStaminaAttack03 = 0f;
+        neededStaminaHeavyAttack = 0f;
+        neededStaminaRoll = 0f;
     }
 }

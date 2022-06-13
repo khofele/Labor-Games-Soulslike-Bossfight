@@ -32,6 +32,12 @@ public abstract class Weapon : MonoBehaviour
     protected float heavyAttackAddDamage = 50f; //additional damage for heavy attacks
     //weapon prefab field
     protected Weapon weaponPrefab = null;
+    //needed stamina values for current weapon
+    protected float neededStaminaAttack01 = 0f;
+    protected float neededStaminaAttack02 = 0f;
+    protected float neededStaminaAttack03 = 0f;
+    protected float neededStaminaHeavyAttack = 0f;
+    protected float neededStaminaRoll = 0f;
 
 
     // Start is called before the first frame update
@@ -120,6 +126,31 @@ public abstract class Weapon : MonoBehaviour
     public float GetWeaponMaxDmg()
     {
         return weaponMaxDmg;
+    }
+
+    public float GetNeededStaminaAttack01()
+    {
+        return neededStaminaAttack01;
+    }
+
+    public float GetNeededStaminaAttack02()
+    {
+        return neededStaminaAttack02;
+    }
+
+    public float GetNeededStaminaAttack03()
+    {
+        return neededStaminaAttack03;
+    }
+
+    public float GetNeededStaminaHeavyAttack()
+    {
+        return neededStaminaHeavyAttack;
+    }
+
+    public float GetNeededStaminaRoll()
+    {
+        return neededStaminaRoll;
     }
 
     public Weapon GetWeaponPrefab()

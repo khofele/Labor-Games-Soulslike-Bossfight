@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Enum for all skills (except running) that need stamina and their needed stamina values
-public enum NeededStaminaSkills: int
-{
-    ATTACK01R = 23,
-    ATTACK02R = 24,
-    ATTACK03R = 25,
-    HEAVYATTACK = 40,
-    ROLL = 60,
-}
-
 //class to manage the stamina of the character, used by the CharController and CharMovement script
 public class StaminaManager : MonoBehaviour
 {
+    //current skill stamina needed - set after weapon chosen
+    private float neededStaminaAttack01 = 0f;
+    private float neededStaminaAttack02 = 0f;
+    private float neededStaminaAttack03 = 0f;
+    private float neededStaminaHeavyAttack = 0f;
+    private float neededStaminaRoll = 0f;
+    //values set in CharController via ItemManager, Getter for CharMovement -> CheckEnoughStamina and states
+    public float NeededStaminaAttack01 { get => neededStaminaAttack01; set => neededStaminaAttack01 = value; }
+    public float NeededStaminaAttack02 { get => neededStaminaAttack02; set => neededStaminaAttack02 = value; }
+    public float NeededStaminaAttack03 { get => neededStaminaAttack03; set => neededStaminaAttack03 = value; }
+    public float NeededStaminaHeavyAttack { get => neededStaminaHeavyAttack; set => neededStaminaHeavyAttack = value; }
+    public float NeededStaminaRoll { get => neededStaminaRoll; set => neededStaminaRoll = value; }
+
+
     //stamina reg value (how much stamina is regenerated at once)
     private float staminaReg = 0f; 
     public float StaminaReg { set => staminaReg = value; } //set by CharController
@@ -30,10 +34,8 @@ public class StaminaManager : MonoBehaviour
 
 
     //method to check whether there is enough stamina available for a skill or not
-    public bool CheckEnoughStamina(NeededStaminaSkills currentSkill)
+    public bool CheckEnoughStamina(float neededStamina)
     {
-        float neededStamina = (float)currentSkill; //set float value of current skill enum as neededStamina value
-
         if (currentStamina >= neededStamina)
         {
             return true;

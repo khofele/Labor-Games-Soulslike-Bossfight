@@ -17,6 +17,12 @@ public class Hammer : Weapon
         weaponMinDmg = 70f;
         weaponMaxDmg = 100f;
         weaponPrefab = Resources.Load("Character/Weapons/Hammer", typeof(Weapon)) as Weapon;
+
+        neededStaminaAttack01 = 30f;
+        neededStaminaAttack02 = 30f;
+        neededStaminaAttack03 = 30f;
+        neededStaminaHeavyAttack = 45f;
+        neededStaminaRoll = 65f;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

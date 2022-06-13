@@ -15,7 +15,7 @@ namespace stateMachine
             GetCharController(animator).IsAttacking = true;
 
             //use neededStamina for action
-            neededStamina = (float)NeededStaminaSkills.ATTACK02R;
+            neededStamina = GetStaminaManager(animator).NeededStaminaAttack02;
             GetCharController(animator).UseStamina(neededStamina);
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }

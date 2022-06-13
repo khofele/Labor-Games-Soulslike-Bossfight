@@ -17,6 +17,12 @@ public class Shortsword : Weapon
         weaponMinDmg = 50f;
         weaponMaxDmg = 80f;
         weaponPrefab = Resources.Load("Character/Weapons/Shortsword", typeof(Weapon)) as Weapon;
+
+        neededStaminaAttack01 = 25f;
+        neededStaminaAttack02 = 25f;
+        neededStaminaAttack03 = 25f;
+        neededStaminaHeavyAttack = 40f;
+        neededStaminaRoll = 60f;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

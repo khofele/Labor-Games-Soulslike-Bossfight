@@ -17,6 +17,12 @@ public class Dagger : Weapon
         weaponMinDmg = 40f;
         weaponMaxDmg = 70f;
         weaponPrefab = Resources.Load("Character/Weapons/Dagger", typeof(Weapon)) as Weapon;
+
+        neededStaminaAttack01 = 20f;
+        neededStaminaAttack02 = 20f;
+        neededStaminaAttack03 = 20f;
+        neededStaminaHeavyAttack = 35f;
+        neededStaminaRoll = 60f;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

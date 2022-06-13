@@ -10,6 +10,7 @@ namespace stateMachine
         //access to the character scripts
         protected CharacterMovement charMovement;
         protected CharController charController;
+        protected StaminaManager stamManager;
         protected PlayAudioChar audioPlayer;
 
         protected float neededStamina = 0f; //stamina needed to perform action
@@ -38,6 +39,15 @@ namespace stateMachine
                 charController = animator.GetComponentInParent<CharController>();
             }
             return charController;
+        }
+
+        protected StaminaManager GetStaminaManager(Animator animator)
+        {
+            if(stamManager == null)
+            {
+                stamManager = animator.GetComponentInParent<StaminaManager>();
+            }
+            return stamManager;
         }
 
         protected PlayAudioChar GetAudioPlayer(Animator animator)
