@@ -6242,8 +6242,8 @@ GameObject:
   - component: {fileID: 1170679573}
   - component: {fileID: 1170679572}
   - component: {fileID: 1170679571}
-  - component: {fileID: 1170679570}
   - component: {fileID: 1170679575}
+  - component: {fileID: 1170679570}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
