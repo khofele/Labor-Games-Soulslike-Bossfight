@@ -19,17 +19,14 @@ public class StaminaManager : MonoBehaviour
     public float NeededStaminaRoll { get => neededStaminaRoll; set => neededStaminaRoll = value; }
 
 
-    //stamina reg value (how much stamina is regenerated at once)
-    private float staminaReg = 0f; 
+    private float staminaReg = 0f; //stamina reg value (how much stamina is regenerated at once)
+    private float stamina = 0f; //max stamina of the player
+    private float currentStamina = 0f; //current stamina
+    private bool regStamina = true; //whether stamina regeneration is currently true or false (false if skill used)
+
     public float StaminaReg { set => staminaReg = value; } //set by CharController
-    //max stamina of the player
-    private float stamina = 0f;
     public float Stamina { set => stamina = value; } //set by CharController
-    //current stamina 
-    private float currentStamina = 0f;
     public float CurrentStamina { get => currentStamina; set => currentStamina = value; } //set by CharController and used for UI
-    //whether stamina regeneration is currently true or false (false if skill used)
-    private bool regStamina = true;
     public bool RegStamina { get => regStamina; set => regStamina = value; }
 
 
