@@ -7465,12 +7465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Short Sword
-
-    @A sword that was once found in a dragon''s lair.
-
-    It
-    seems sharp and shiny.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1377274325
 GameObject:
@@ -9954,7 +9949,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
