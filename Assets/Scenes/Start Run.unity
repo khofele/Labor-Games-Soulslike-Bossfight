@@ -212,8 +212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Trank Text
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &25572190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,8 +1842,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Hammer
+  infoLeft: '~Hammer
+
+    @A heavy warhammer. It seems very old and powerful.'
+  infoRight: 
 --- !u!1 &176292464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,8 +2286,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Longsword
+  infoLeft: '~Longsword
+
+    @A big sword that was once wielded by a famous hero.'
+  infoRight: 
 --- !u!1 &331562102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,8 +3288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Vitality
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &570517398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,8 +3440,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Endurance
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &571622354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,8 +3863,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Clotharmor
+  infoLeft: '~Elven Armor
+
+    @The armor seems light but still protecting.'
+  infoRight: 
 --- !u!1 &659809370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,8 +5273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Ironarmor
+  infoLeft: '~Ork Armor
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &842725315
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,8 +5979,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Platearmor
+  infoLeft: '~Plate Armor
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &1073360215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,8 +6387,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Daggers
+  infoLeft: "~Daggers\n@One for every hand. They seem perfect together. \nSharp and
+    fast."
+  infoRight: 
 --- !u!1 &1170679568
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,8 +7287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Strength
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &1333796662
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,8 +7465,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Shortsword
+  infoLeft: '~Short Sword
+
+    @A sword that was once found in a dragon''s lair.
+
+    It
+    seems sharp and shiny.'
+  infoRight: 
 --- !u!1 &1377274325
 GameObject:
   m_ObjectHideFlags: 0
@@ -7717,8 +7741,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Leatherarmor
+  infoLeft: '~Ogre Armor
+
+    @This armor once belonged to Tesirok, the leader of
+    the ogres from the northern fields. It seems to be made out of human skin and
+    parts from animals.'
+  infoRight: 
 --- !u!1 &1415585704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8984,8 +9012,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Lance
+  infoLeft: '~Lance
+
+    @Legends say this lance once belonged to Poseidon, god of
+    the ocean. Nobody knows where it comes from and how it came into your possession.'
+  infoRight: 
 --- !u!1 &1673898659
 GameObject:
   m_ObjectHideFlags: 0
@@ -10196,8 +10227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: 
-  infoRight: Text Phys. Strength
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &1980517869
 GameObject:
   m_ObjectHideFlags: 0
