@@ -207,27 +207,27 @@ public class StartRunMenuUIManager : MonoBehaviour
     {
         imgEquippedArmor.sprite = btnClothArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
-        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ClothArmorDescription;
+        imgEquippedArmor.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ClothArmorDescription;
     }
 
     public void SetLeatherArmorImage()
     {
         imgEquippedArmor.sprite = btnLeatherArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
-        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LeatherArmorDescription;
+        imgEquippedArmor.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LeatherArmorDescription;
     }
 
     public void SetIronArmorImage()
     {
         imgEquippedArmor.sprite = btnIronArmor.image.sprite; 
         imgEquippedArmor.color = Color.white;
-        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.IronArmorDescription;
+        imgEquippedArmor.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.IronArmorDescription;
     }
 
     public void SetPlateArmorImage()
     {
         imgEquippedArmor.sprite = btnPlateArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
-        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.PlateArmorDescription;
+        imgEquippedArmor.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.PlateArmorDescription;
     }
 }
