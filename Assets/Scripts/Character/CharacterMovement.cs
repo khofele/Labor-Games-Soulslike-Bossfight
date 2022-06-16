@@ -242,7 +242,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    //method called by GotHit() if player got more damage than or same damage as he has currentHealth
+    //method called by GotHit() and TakeDamage() if player got more damage than or same damage as he has currentHealth
     public void Death()
     {
         if (!animator.GetBool("diedBefore"))
