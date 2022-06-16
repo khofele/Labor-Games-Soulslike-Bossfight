@@ -19,10 +19,6 @@ public enum WeaponAttackTypeEnum
 
 public abstract class Weapon : MonoBehaviour
 {
-    //access to character scripts and animator
-    protected CharacterMovement charMovement;
-    protected CharController charController;
-    protected Animator animator; //animator for Game scene
     //weapon stat fields
     protected WeaponTypeEnum weaponType; //what weapon it is
     protected WeaponTypeHandedEnum weaponTypeHanded; //type of weapon (onehand, twohand)
@@ -39,14 +35,6 @@ public abstract class Weapon : MonoBehaviour
     protected float neededStaminaHeavyAttack = 0f;
     protected float neededStaminaRoll = 0f;
 
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        charMovement = gameObject.GetComponentInParent<CharacterMovement>();
-        charController = gameObject.GetComponentInParent<CharController>();
-        animator = charMovement.GetComponentInParent<Animator>();  
-    }
 
     //method called by menu to set the animation controller for the chosen weapon (ItemManager data)
     //TODO Aufruf in CharController
@@ -83,7 +71,7 @@ public abstract class Weapon : MonoBehaviour
     //Getter of the current animator state type to determine damage with
     public WeaponAttackTypeEnum GetCurrentAttackType()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
+        if (gameObject.GetComponentInParent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack"))
             return WeaponAttackTypeEnum.HEAVY;
         else return WeaponAttackTypeEnum.NORMAL;
     }
@@ -92,7 +80,7 @@ public abstract class Weapon : MonoBehaviour
     {
         //determine weapon damage regarding the characters attack power and a random value in the attack damage range
         //(between min dmg and max dmg) as well as the attack type done (normal / heavy)
-        float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + charController.GetAttackPower();
+        float damage = Random.Range(weaponMinDmg, weaponMaxDmg) + gameObject.GetComponentInParent<CharController>().GetAttackPower();
 
         //if heavy attack: additional damage
         if(GetCurrentAttackType() == WeaponAttackTypeEnum.HEAVY)
