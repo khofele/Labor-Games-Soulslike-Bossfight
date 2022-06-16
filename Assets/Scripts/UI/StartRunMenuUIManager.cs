@@ -25,6 +25,10 @@ public class StartRunMenuUIManager : MonoBehaviour
     [SerializeField] private Button btnRemovePhysicalStrength = null;
 
     [Header("Stats")]
+    [SerializeField] private GameObject textfieldVitality = null;
+    [SerializeField] private GameObject textfieldEndurance = null;
+    [SerializeField] private GameObject textfieldStrength = null;
+    [SerializeField] private GameObject textfieldPhysicalStrength = null;
     [SerializeField] private TextMeshProUGUI txtSkillPoints = null;
     [SerializeField] private TextMeshProUGUI txtVitality = null;
     [SerializeField] private TextMeshProUGUI txtEndurance = null;
@@ -107,6 +111,10 @@ public class StartRunMenuUIManager : MonoBehaviour
         btnLeatherArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LeatherArmorDescription;
         btnIronArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.IronArmorDescription;
         btnPlateArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.PlateArmorDescription;
+        textfieldVitality.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.VitalityDescription;
+        textfieldEndurance.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.EnduranceDescription;
+        textfieldStrength.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.StrengthDescription;
+        textfieldPhysicalStrength.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.PhysicalStrengthDescription;
 
 
         txtPlayerName.text = "Godwin the Brave";

@@ -8013,6 +8013,10 @@ MonoBehaviour:
   btnRemoveStrength: {fileID: 536050790}
   btnAddPhysicalStrength: {fileID: 89641175}
   btnRemovePhysicalStrength: {fileID: 2029158912}
+  textfieldVitality: {fileID: 540001090}
+  textfieldEndurance: {fileID: 570517398}
+  textfieldStrength: {fileID: 1302796166}
+  textfieldPhysicalStrength: {fileID: 1952244440}
   txtSkillPoints: {fileID: 1178180774}
   txtVitality: {fileID: 123227377}
   txtEndurance: {fileID: 963839194}

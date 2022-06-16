@@ -21,6 +21,13 @@ public class SkillpointManager : MonoBehaviour
     public int Strength { get => strength; }
     public int PhysicalStrength { get => physicalStrength; }
 
+    //skillpoint descriptions
+    public string VitalityDescription { get => "~Vitality \n@The vitality of the character determines how many hits he can take."; }
+    public string EnduranceDescription { get => "~Endurance \n@The endurance of the character determines his physical fitness."; }
+    public string StrengthDescription { get => "~Strength \n@The strength of the character determines the force of his weapon swings."; }
+    public string PhysicalStrengthDescription { get => "~Physical Strength \n@The pyhsical strength of the character determines what he is strong enough to carry."; }
+
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
