@@ -27,20 +27,29 @@ public class CharDamagable : MonoBehaviour
         {
             if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
             {
-                Debug.Log("Deal Damage...");
+                Debug.Log("Char got hit...");
 
-                //deal damage according to attack
-                float damage = attackManager.CurrentAttack.Damage;
-
-                //call method to calculate damage
-                charController.TakeDamage(damage + crit);
-
-                //if special attack with fire, poison or magic - call method to deal damage over time
-                if (attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+                //if player has not been hit by a collider of the current enemy attack
+                if (!charController.IsCollided)
                 {
-                    float dot = damage * dotPercentage;
-                    float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
-                    charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime));
+                    //set IsCollided true until current attack is over
+                    charController.IsCollided = true;
+
+                    Debug.Log("Char gets Damage...");
+
+                    //deal damage according to attack
+                    float damage = attackManager.CurrentAttack.Damage;
+
+                    //call method to calculate damage
+                    charController.TakeDamage(damage + crit);
+
+                    //if special attack with fire, poison or magic - call method to deal damage over time
+                    if (attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+                    {
+                        float dot = damage * dotPercentage;
+                        float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
+                        charController.StartCoroutine(charController.DamageOverTime(dot, dotDelay, valueEveryTime));
+                    }
                 }
             }
         }

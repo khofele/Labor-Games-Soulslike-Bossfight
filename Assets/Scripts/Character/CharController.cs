@@ -28,7 +28,10 @@ public class CharController : MonoBehaviour
     //fight
     [SerializeField] private AttackManager attackManager; //the attack manager of the enemy - the dragon
     private bool isAttacking = false; //whether character is currently attacking - needed by the enemy
+    private bool isCollided = false; //true when player got hit by enemy collider until attack is over
     public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
+    public bool IsCollided { get => isCollided; set => isCollided = value; }
+
 
     [SerializeField] private int stunValue = 500; //value at which the character gets stunned from an attack
     private float currentHealth = 0f;
