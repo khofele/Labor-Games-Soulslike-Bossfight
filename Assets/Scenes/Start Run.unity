@@ -3284,9 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Healing Potion
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &570517398
 GameObject:
@@ -3436,9 +3434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Healing Potion
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &571622354
 GameObject:
@@ -7308,9 +7304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Healing Potion
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1333796662
 GameObject:
@@ -10240,9 +10234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Healing Potion
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1980517869
 GameObject:
