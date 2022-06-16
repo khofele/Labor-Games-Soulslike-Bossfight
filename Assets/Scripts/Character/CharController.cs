@@ -225,6 +225,26 @@ public class CharController : MonoBehaviour
         Debug.Log(currentHealth);
     }
 
+    //method called as animation event to enable the collider(s) of the weapon(s) when attacking
+    public void EnableCollider()
+    {
+        currentWeapon.GetComponent<BoxCollider>().enabled = true;
+        if(currentSecondWeapon != null)
+        {
+            currentSecondWeapon.GetComponent<BoxCollider>().enabled = true;
+        }
+    }
+
+    //method called as animation event to disable the collider(s) of the weapon(s) after attacking
+    public void DisableCollider()
+    {
+        currentWeapon.GetComponent<BoxCollider>().enabled = false;
+        if (currentSecondWeapon != null)
+        {
+            currentSecondWeapon.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
 
     //--------------------------SETTER METHODS-----------------------
 

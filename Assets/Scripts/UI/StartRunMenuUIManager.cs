@@ -179,7 +179,6 @@ public class StartRunMenuUIManager : MonoBehaviour
     {
         imgEquippedWeapon.sprite = btnShortSword.image.sprite;
         imgEquippedWeapon.color = Color.white;
-        Debug.Log(imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>());
         imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ShortSwordDescription;
     }
 
