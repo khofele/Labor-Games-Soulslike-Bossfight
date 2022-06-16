@@ -64,14 +64,18 @@ namespace BBUnity.Actions
         {
             if (target == null)
                 return TaskStatus.FAILED;
-            if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            if (navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
-                bossController.Animator.SetTrigger("Walk");
+                Debug.Log("stop");
+                navAgent.isStopped = true;
+                bossController.Animator.ResetTrigger("Walk");
+                bossController.Animator.SetTrigger("Idle");
                 return TaskStatus.COMPLETED;
             }
 
-            else if (navAgent.destination != targetTransform.position)
+            else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
+                Debug.Log("running");
                 navAgent.SetDestination(targetTransform.position);
                 bossController.Animator.SetTrigger("Walk");
             }

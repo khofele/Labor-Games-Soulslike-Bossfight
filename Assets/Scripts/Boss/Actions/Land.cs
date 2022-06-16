@@ -14,6 +14,7 @@ public class Land : GOAction
     public override void OnStart()
     {
         bossController = gameObject.GetComponent<BossController>();
+        bossController.Animator.ResetTrigger("Walk");
         bossController.GetComponent<Animator>().applyRootMotion = true;
     }
 
