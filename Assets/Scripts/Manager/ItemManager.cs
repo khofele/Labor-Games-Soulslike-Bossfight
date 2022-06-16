@@ -75,6 +75,17 @@ public class ItemManager : MonoBehaviour
     public float NeededStaminaHeavyAttack { get => neededStaminaHeavyAttack; }
     public float NeededStaminaRoll { get => neededStaminaRoll; }
 
+    //item descriptions
+    public string ShortSwordDescription { get => "~Short Sword \n@A sword that was once found in a dragon's lair. It seems sharp and shiny.";  }
+    public string LongSwordDescription { get => "~Longsword \n@A big sword that was once wielded by a famous hero."; }
+    public string DaggerDescription { get => "~Daggers \n@One for every hand. They seem perfect together. \nSharp and fast."; }
+    public string LanceDescription { get => "~Lance \n@Legends say this lance once belonged to Poseidon, god of the ocean. Nobody knows where it comes from and how it came into your possession."; }
+    public string HammerDescription { get => "~Hammer \n@A heavy warhammer. It seems very old and powerful."; }
+    public string ClothArmorDescription { get => "~Elven Armor \n@The armor seems light but still protecting."; }
+    public string LeatherArmorDescription { get => "~Ogre Armor \n@This armor once belonged to Tesirok, the leader of the ogres from the northern fields. It seems to be made out of human skin and parts from animals."; }
+    public string IronArmorDescription { get => "~Ork Armor \n@This armor once belonged to the famous knight of the orks, Grimfang the Mighty. \nIt looks very heavy."; }
+    public string PlateArmorDescription { get => "~Plate Armor \n@A heavy looking armor out of metal plates."; }
+
 
     private void Awake()
     {

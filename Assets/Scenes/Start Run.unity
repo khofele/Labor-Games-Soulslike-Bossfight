@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 11623170}
   - component: {fileID: 11623172}
   - component: {fileID: 11623171}
+  - component: {fileID: 11623173}
   m_Layer: 5
   m_Name: Image_Potion
   m_TagString: Untagged
@@ -198,6 +199,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11623169}
   m_CullTransparentMesh: 1
+--- !u!114 &11623173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11623169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &25572190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1719,7 @@ GameObject:
   - component: {fileID: 165960154}
   - component: {fileID: 165960153}
   - component: {fileID: 165960152}
+  - component: {fileID: 165960155}
   m_Layer: 5
   m_Name: BtnHammer
   m_TagString: Untagged
@@ -1810,6 +1829,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165960150}
   m_CullTransparentMesh: 1
+--- !u!114 &165960155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165960150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &176292464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,6 +2161,7 @@ GameObject:
   - component: {fileID: 324687335}
   - component: {fileID: 324687334}
   - component: {fileID: 324687333}
+  - component: {fileID: 324687336}
   m_Layer: 5
   m_Name: BtnLongSword
   m_TagString: Untagged
@@ -2236,6 +2271,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324687331}
   m_CullTransparentMesh: 1
+--- !u!114 &324687336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324687331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &331562102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,6 +3145,7 @@ GameObject:
   - component: {fileID: 540001091}
   - component: {fileID: 540001093}
   - component: {fileID: 540001092}
+  - component: {fileID: 540001094}
   m_Layer: 5
   m_Name: Vitality
   m_TagString: Untagged
@@ -3220,6 +3271,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540001090}
   m_CullTransparentMesh: 1
+--- !u!114 &540001094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540001090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &570517398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,6 +3299,7 @@ GameObject:
   - component: {fileID: 570517399}
   - component: {fileID: 570517401}
   - component: {fileID: 570517400}
+  - component: {fileID: 570517402}
   m_Layer: 5
   m_Name: Endurance
   m_TagString: Untagged
@@ -3354,6 +3423,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570517398}
   m_CullTransparentMesh: 1
+--- !u!114 &570517402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570517398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &571622354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,6 +3736,7 @@ GameObject:
   - component: {fileID: 652178411}
   - component: {fileID: 652178410}
   - component: {fileID: 652178409}
+  - component: {fileID: 652178412}
   m_Layer: 5
   m_Name: BtnClothArmor
   m_TagString: Untagged
@@ -3759,6 +3846,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652178407}
   m_CullTransparentMesh: 1
+--- !u!114 &652178412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652178407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &659809370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5042,6 +5144,7 @@ GameObject:
   - component: {fileID: 805995076}
   - component: {fileID: 805995075}
   - component: {fileID: 805995074}
+  - component: {fileID: 805995077}
   m_Layer: 5
   m_Name: BtnIronArmor
   m_TagString: Untagged
@@ -5151,6 +5254,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805995072}
   m_CullTransparentMesh: 1
+--- !u!114 &805995077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805995072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &842725315
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5848,7 @@ GameObject:
   - component: {fileID: 1006650766}
   - component: {fileID: 1006650765}
   - component: {fileID: 1006650764}
+  - component: {fileID: 1006650767}
   m_Layer: 5
   m_Name: BtnPlateArmor
   m_TagString: Untagged
@@ -5839,6 +5958,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006650762}
   m_CullTransparentMesh: 1
+--- !u!114 &1006650767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006650762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1073360215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6120,6 +6254,7 @@ GameObject:
   - component: {fileID: 1164867754}
   - component: {fileID: 1164867753}
   - component: {fileID: 1164867752}
+  - component: {fileID: 1164867755}
   m_Layer: 5
   m_Name: BtnDagger
   m_TagString: Untagged
@@ -6229,6 +6364,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164867750}
   m_CullTransparentMesh: 1
+--- !u!114 &1164867755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164867750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1170679568
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,6 +6810,7 @@ GameObject:
   - component: {fileID: 1219216007}
   - component: {fileID: 1219216009}
   - component: {fileID: 1219216008}
+  - component: {fileID: 1219216010}
   m_Layer: 5
   m_Name: Image_Armor
   m_TagString: Untagged
@@ -6724,6 +6875,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219216006}
   m_CullTransparentMesh: 1
+--- !u!114 &1219216010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219216006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1220778913
 GameObject:
   m_ObjectHideFlags: 0
@@ -6780,6 +6946,7 @@ GameObject:
   - component: {fileID: 1269638217}
   - component: {fileID: 1269638219}
   - component: {fileID: 1269638218}
+  - component: {fileID: 1269638220}
   m_Layer: 5
   m_Name: Image_Weapon
   m_TagString: Untagged
@@ -6844,6 +7011,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269638216}
   m_CullTransparentMesh: 1
+--- !u!114 &1269638220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269638216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1281134720
 GameObject:
   m_ObjectHideFlags: 0
@@ -6989,6 +7171,7 @@ GameObject:
   - component: {fileID: 1302796167}
   - component: {fileID: 1302796169}
   - component: {fileID: 1302796168}
+  - component: {fileID: 1302796170}
   m_Layer: 5
   m_Name: Strength
   m_TagString: Untagged
@@ -7112,6 +7295,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302796166}
   m_CullTransparentMesh: 1
+--- !u!114 &1302796170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302796166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &1333796662
 GameObject:
   m_ObjectHideFlags: 0
@@ -7163,6 +7363,7 @@ GameObject:
   - component: {fileID: 1366730309}
   - component: {fileID: 1366730308}
   - component: {fileID: 1366730307}
+  - component: {fileID: 1366730310}
   m_Layer: 5
   m_Name: BtnShortSword
   m_TagString: Untagged
@@ -7272,6 +7473,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366730305}
   m_CullTransparentMesh: 1
+--- !u!114 &1366730310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366730305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1377274325
 GameObject:
   m_ObjectHideFlags: 0
@@ -7418,6 +7634,7 @@ GameObject:
   - component: {fileID: 1381291749}
   - component: {fileID: 1381291748}
   - component: {fileID: 1381291747}
+  - component: {fileID: 1381291750}
   m_Layer: 5
   m_Name: BtnLeatherArmor
   m_TagString: Untagged
@@ -7527,6 +7744,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381291745}
   m_CullTransparentMesh: 1
+--- !u!114 &1381291750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381291745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1415585704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,6 +8901,7 @@ GameObject:
   - component: {fileID: 1626565928}
   - component: {fileID: 1626565927}
   - component: {fileID: 1626565926}
+  - component: {fileID: 1626565929}
   m_Layer: 5
   m_Name: BtnLance
   m_TagString: Untagged
@@ -8778,6 +9011,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626565924}
   m_CullTransparentMesh: 1
+--- !u!114 &1626565929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626565924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1673898659
 GameObject:
   m_ObjectHideFlags: 0
@@ -9715,7 +9963,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9851,6 +10099,7 @@ GameObject:
   - component: {fileID: 1952244441}
   - component: {fileID: 1952244443}
   - component: {fileID: 1952244442}
+  - component: {fileID: 1952244444}
   m_Layer: 5
   m_Name: PhysicalStrength
   m_TagString: Untagged
@@ -9974,6 +10223,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952244440}
   m_CullTransparentMesh: 1
+--- !u!114 &1952244444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952244440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: '~Healing Potion
+
+    @A potion that heals 400 HP.'
+  infoRight: 
 --- !u!1 &1980517869
 GameObject:
   m_ObjectHideFlags: 0

@@ -218,6 +218,7 @@ public class CharController : MonoBehaviour
         //health is <= 0 --> player dies
         if (currentHealth <= 0f)
         {
+            currentHealth = 0f;
             charMovement.Death();
         }
 
