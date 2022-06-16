@@ -18,7 +18,8 @@ public class AttackFront : GOAction
 
     public override void OnStart()
     {
-        bossController = gameObject.GetComponent<BossController>();
+        bossController = gameObject.GetComponent<BossController>(); 
+        bossController.Animator.ResetTrigger("Walk");
     }
 
 

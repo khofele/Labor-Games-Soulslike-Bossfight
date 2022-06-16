@@ -14,6 +14,8 @@ public class BossController : MonoBehaviour
     [SerializeField] private Timer isFlyingTimer = null;
     [SerializeField] private int hitCounter = 0;
     [SerializeField] private CharController player = null;
+    [SerializeField] private List<CapsuleCollider> capsuleCollider = new List<CapsuleCollider>();
+    [SerializeField] private List<BoxCollider> boxCollider = new List<BoxCollider>();
 
     // TODO DEBUG
     [SerializeField] private int stunCount = 15;
@@ -32,6 +34,11 @@ public class BossController : MonoBehaviour
     public bool IsStunned { get => isStunned; set => isStunned = value; }
     public CharController Player { get => player; }
 
+    private void Awake()
+    {
+        DisableAttackCollider();
+    }
+
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -46,6 +53,32 @@ public class BossController : MonoBehaviour
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("isFlyingTimer", isFlyingTimer);
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", flyTimer);
             flyTimer.StartTimer();
+        }
+    }
+
+    public void EnableAttackCollider()
+    {
+        foreach(CapsuleCollider capsuleCollider in capsuleCollider)
+        {
+            capsuleCollider.enabled = true;
+        }
+
+        foreach(BoxCollider boxCollider in boxCollider)
+        {
+            boxCollider.enabled = true;
+        }
+    }    
+    
+    public void DisableAttackCollider()
+    {
+        foreach(CapsuleCollider capsuleCollider in capsuleCollider)
+        {
+            capsuleCollider.enabled = false;
+        }
+
+        foreach(BoxCollider boxCollider in boxCollider)
+        {
+            boxCollider.enabled = false;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reset : BaseState
+public class Reset : StateMachineBehaviour
 {
     [SerializeField] AttackManager attackManager = null;
 

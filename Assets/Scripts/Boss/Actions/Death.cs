@@ -19,6 +19,7 @@ public class Death : GOAction
     public override void OnStart()
     {
         bossController = gameObject.GetComponent<BossController>();
+        bossController.Animator.ResetTrigger("Walk");
     }
 
     public override TaskStatus OnUpdate()

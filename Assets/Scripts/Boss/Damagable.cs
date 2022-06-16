@@ -22,34 +22,36 @@ public class Damagable : MonoBehaviour
     {
         if(other.gameObject.tag == "Weapon" && bossController.Player.IsAttacking == true)
         {
-            //if (bossController.IsStunnedTimer.TimerOver == true)
-            //{
-            //    bossController.HitCounter = 0;
-            //    bossController.IsStunnedTimer.StartTimer(10);    // TODO: Balancing
-            //}
-            //else
-            //{
-            //    if (bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == "heavy" || bossController.Player.ComboSuccess() == true || bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 15)
-            //    {
-            //        bossController.HitCounter += Random.Range(2, 5);
-            //    }
-            //    else if (bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 12)
-            //    {
-            //        bossController.HitCounter += 2;
-            //    }
-            //    else
-            //    {
-            //        bossController.HitCounter += 1; // TODO
-            //    }
-            //}
+            if (bossController.IsStunnedTimer.TimerOver == true)
+            {
+                bossController.HitCounter = 0;
+                bossController.IsStunnedTimer.StartTimer(10);    // TODO: Balancing
+            }
+            else
+            {
+                if (bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == WeaponAttackTypeEnum.HEAVY || bossController.Player.ComboSuccess() == true || bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 15)
+                {
+                    bossController.HitCounter += Random.Range(2, 5);
+                }
+                else if (bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 12)
+                {
+                    bossController.HitCounter += 2;
+                }
+                else
+                {
+                    bossController.HitCounter += 1;
+                }
+            }
 
-            //if (bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
-            //{
-            //    bossController.IsStunned = true;
-            //    bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
-            //}
+            if (bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
+            {
+                bossController.IsStunned = true;
+                bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
+            }
 
             float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();
+
+            bossController.Animator.ResetTrigger("Walk");
 
             if (bossController.IsStunned == false)
             {
