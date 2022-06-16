@@ -15,6 +15,8 @@ public class SimpleTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private bool isUIObject = false;
     private bool showing = false;
 
+    public string InfoLeft { get => infoLeft; set => infoLeft = value; }
+
     private void Awake()
     {
         eventSystem = FindObjectOfType<EventSystem>();

@@ -1842,9 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Hammer
-
-    @A heavy warhammer. It seems very old and powerful.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &176292464
 GameObject:
@@ -2286,9 +2284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Longsword
-
-    @A big sword that was once wielded by a famous hero.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &331562102
 GameObject:
@@ -3863,9 +3859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Elven Armor
-
-    @The armor seems light but still protecting.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &659809370
 GameObject:
@@ -5273,9 +5267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Ork Armor
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &842725315
 GameObject:
@@ -5979,9 +5971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Plate Armor
-
-    @A potion that heals 400 HP.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1073360215
 GameObject:
@@ -6387,8 +6377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: "~Daggers\n@One for every hand. They seem perfect together. \nSharp and
-    fast."
+  infoLeft: 
   infoRight: 
 --- !u!1 &1170679568
 GameObject:
@@ -6821,6 +6810,7 @@ GameObject:
   - component: {fileID: 1219216007}
   - component: {fileID: 1219216009}
   - component: {fileID: 1219216008}
+  - component: {fileID: 1219216010}
   m_Layer: 5
   m_Name: Image_Armor
   m_TagString: Untagged
@@ -6885,6 +6875,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219216006}
   m_CullTransparentMesh: 1
+--- !u!114 &1219216010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219216006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1220778913
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,6 +6946,7 @@ GameObject:
   - component: {fileID: 1269638217}
   - component: {fileID: 1269638219}
   - component: {fileID: 1269638218}
+  - component: {fileID: 1269638220}
   m_Layer: 5
   m_Name: Image_Weapon
   m_TagString: Untagged
@@ -7005,6 +7011,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269638216}
   m_CullTransparentMesh: 1
+--- !u!114 &1269638220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269638216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
+  infoLeft: 
+  infoRight: 
 --- !u!1 &1281134720
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,11 +7757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Ogre Armor
-
-    @This armor once belonged to Tesirok, the leader of
-    the ogres from the northern fields. It seems to be made out of human skin and
-    parts from animals.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1415585704
 GameObject:
@@ -9007,10 +9024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleTooltipStyle: {fileID: 11400000, guid: b60656fad1664684d8fb0085c2c6ccbb, type: 2}
-  infoLeft: '~Lance
-
-    @Legends say this lance once belonged to Poseidon, god of
-    the ocean. Nobody knows where it comes from and how it came into your possession.'
+  infoLeft: 
   infoRight: 
 --- !u!1 &1673898659
 GameObject:

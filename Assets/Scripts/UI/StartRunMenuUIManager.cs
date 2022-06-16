@@ -97,6 +97,18 @@ public class StartRunMenuUIManager : MonoBehaviour
         btnLance.onClick.AddListener(itemManager.SetLance);
         btnDagger.onClick.AddListener(itemManager.SetDagger);
 
+        //menu descriptions
+        btnShortSword.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ShortSwordDescription;
+        btnLongSword.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LongSwordDescription;
+        btnHammer.GetComponent<SimpleTooltip>().InfoLeft = itemManager.HammerDescription;
+        btnLance.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LanceDescription;
+        btnDagger.GetComponent<SimpleTooltip>().InfoLeft = itemManager.DaggerDescription;
+        btnClothArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ClothArmorDescription;
+        btnLeatherArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LeatherArmorDescription;
+        btnIronArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.IronArmorDescription;
+        btnPlateArmor.GetComponent<SimpleTooltip>().InfoLeft = itemManager.PlateArmorDescription;
+
+
         txtPlayerName.text = "Godwin the Brave";
         txtPotionCount.text = itemManager.PotionCount.ToString();
     }
@@ -159,53 +171,64 @@ public class StartRunMenuUIManager : MonoBehaviour
     {
         imgEquippedWeapon.sprite = btnShortSword.image.sprite;
         imgEquippedWeapon.color = Color.white;
+        //TODO Fix Component ist null
+        Debug.Log(imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>());
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ShortSwordDescription;
     }
 
     public void SetLongSwordImage()
     {
         imgEquippedWeapon.sprite = btnLongSword.image.sprite;
         imgEquippedWeapon.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LongSwordDescription;
     }
 
     public void SetHammerImage()
     {
         imgEquippedWeapon.sprite = btnHammer.image.sprite;
         imgEquippedWeapon.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.HammerDescription;
     }
 
     public void SetDaggerImage()
     {
         imgEquippedWeapon.sprite = btnDagger.image.sprite;
         imgEquippedWeapon.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.DaggerDescription;
     }
 
     public void SetLanceImage()
     {
         imgEquippedWeapon.sprite = btnLance.image.sprite;
         imgEquippedWeapon.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LanceDescription;
     }
 
     public void SetClothArmorImage()
     {
         imgEquippedArmor.sprite = btnClothArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.ClothArmorDescription;
     }
 
     public void SetLeatherArmorImage()
     {
         imgEquippedArmor.sprite = btnLeatherArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.LeatherArmorDescription;
     }
 
     public void SetIronArmorImage()
     {
         imgEquippedArmor.sprite = btnIronArmor.image.sprite; 
         imgEquippedArmor.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.IronArmorDescription;
     }
 
     public void SetPlateArmorImage()
     {
         imgEquippedArmor.sprite = btnPlateArmor.image.sprite;
         imgEquippedArmor.color = Color.white;
+        imgEquippedWeapon.gameObject.GetComponent<SimpleTooltip>().InfoLeft = itemManager.PlateArmorDescription;
     }
 }
