@@ -12,7 +12,7 @@ public class IsDead : GOCondition
 
     public override bool Check()
     {
-        if(bossController != null && bossController.Health <= 0)
+        if(bossController != null && bossController.Health <= 0 && bossController.IsDead == false)
         {
             return true;
         }

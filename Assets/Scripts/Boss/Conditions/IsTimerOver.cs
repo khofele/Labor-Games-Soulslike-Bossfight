@@ -7,11 +7,11 @@ using UnityEngine;
 [Condition("IsTimerOver")]
 public class IsTimerOver : GOCondition
 {
-    [InParam("timer")]
-    private Timer timer = null;
+    [InParam("bossController")]
+    private BossController bossController = null;
 
     public override bool Check()
     {
-        return timer.TimerOver;
+        return bossController.FlyTimer.TimerOver;
     }
 }
