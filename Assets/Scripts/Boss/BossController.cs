@@ -22,6 +22,7 @@ public class BossController : MonoBehaviour
 
     private bool isFlying = false;
     private bool isStunned = false;
+    private bool isDead = false;
 
     public float Health { get => health; set => health = value; }
     public Animator Animator { get => animator; }
@@ -32,6 +33,7 @@ public class BossController : MonoBehaviour
     public int HitCounter { get => hitCounter; set => hitCounter = value; }
     public int StunCount { get => stunCount; }
     public bool IsStunned { get => isStunned; set => isStunned = value; }
+    public bool IsDead { get => isDead; set => isDead = value; }
     public CharController Player { get => player; }
 
     private void Awake()
@@ -48,7 +50,11 @@ public class BossController : MonoBehaviour
     {
         if(behaviorPhaseTwo != null)
         {
+            gameObject.GetComponent<BehaviorExecutor>().restartWhenFinished = false;
+            gameObject.GetComponent<BehaviorExecutor>().paused = true;
             gameObject.GetComponent<BehaviorExecutor>().behavior = behaviorPhaseTwo;
+            gameObject.GetComponent<BehaviorExecutor>().restartWhenFinished = true;
+            gameObject.GetComponent<BehaviorExecutor>().paused = false;
 
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("isFlyingTimer", isFlyingTimer);
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", flyTimer);
