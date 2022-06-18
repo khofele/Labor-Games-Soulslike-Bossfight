@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //invoke boss phase two
-        if (boss.Health <= 2500)    // TODO
+        if (boss.Health <= 2500 && phaseTwo == false)    // TODO
         {
             phaseTwo = true;
             boss.ChangeBehavior();
