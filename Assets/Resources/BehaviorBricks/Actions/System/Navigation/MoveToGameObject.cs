@@ -30,6 +30,8 @@ namespace BBUnity.Actions
             target = bossController.Player.gameObject;
             bossController = gameObject.GetComponent<BossController>();
             bossController.GetComponent<Animator>().applyRootMotion = true;
+            bossController.Animator.ResetTrigger("Walk");
+            bossController.Animator.ResetTrigger("Idle");
 
             if (target == null)
             {
@@ -66,16 +68,14 @@ namespace BBUnity.Actions
                 return TaskStatus.FAILED;
             if (navAgent.remainingDistance <= navAgent.stoppingDistance)
             {
-                Debug.Log("stop");
                 navAgent.isStopped = true;
                 bossController.Animator.ResetTrigger("Walk");
                 bossController.Animator.SetTrigger("Idle");
                 return TaskStatus.COMPLETED;
             }
 
-            else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance >= navAgent.stoppingDistance)
             {
-                Debug.Log("running");
                 navAgent.SetDestination(targetTransform.position);
                 bossController.Animator.SetTrigger("Walk");
             }

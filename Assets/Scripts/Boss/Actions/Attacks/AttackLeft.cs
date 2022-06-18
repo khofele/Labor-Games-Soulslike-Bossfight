@@ -20,16 +20,15 @@ public class AttackLeft : GOAction
     {
         bossController = gameObject.GetComponent<BossController>();
         bossController.Animator.ResetTrigger("Walk");
+        bossController.Animator.ResetTrigger("Idle");
     }
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            bossController.Animator.SetTrigger("Attack 2");
-        }
+        bossController.Animator.SetTrigger("Attack 2");
         attackManager.CurrentAttack = attackManager.AttackLeft;
         Debug.Log("Attack Left");
+        bossController.Player.IsCollided = false;
         return TaskStatus.COMPLETED;
     }
 }

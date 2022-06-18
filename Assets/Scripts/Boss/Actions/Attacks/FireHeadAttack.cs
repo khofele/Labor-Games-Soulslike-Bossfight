@@ -20,16 +20,15 @@ public class FireHeadAttack : GOAction
     {
         bossController = gameObject.GetComponent<BossController>();
         bossController.Animator.ResetTrigger("Walk");
+        bossController.Animator.ResetTrigger("Idle");
     }
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            bossController.Animator.SetTrigger("Fire Head 1");
-        }
+        bossController.Animator.SetTrigger("Fire Head 1");
         attackManager.CurrentAttack = attackManager.AttackFireHead;
         Debug.Log("Attack Fire Head");
+        bossController.Player.IsCollided = false;
         return TaskStatus.COMPLETED;
     }
 }

@@ -17,6 +17,8 @@ public class Stunned : GOAction
     {
         //bossController.Animator.ResetTrigger("Walk");
         bossController = gameObject.GetComponent<BossController>();
+        bossController.Animator.ResetTrigger("Walk");
+        bossController.Animator.ResetTrigger("Idle");
     }
 
     public override TaskStatus OnUpdate()

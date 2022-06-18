@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     private bool timerOver = true;
 
     public bool TimerOver { get => timerOver; }
+    public float TimerLength { get => timerLength; }
 
     private void Update()
     {

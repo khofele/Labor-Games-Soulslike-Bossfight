@@ -18,20 +18,18 @@ public class AttackFront : GOAction
 
     public override void OnStart()
     {
-        bossController = gameObject.GetComponent<BossController>(); 
+        bossController = gameObject.GetComponent<BossController>();
         bossController.Animator.ResetTrigger("Walk");
+        bossController.Animator.ResetTrigger("Idle");
     }
 
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            bossController.Animator.SetTrigger("AttackFront");
-            return TaskStatus.COMPLETED;
-        }
+        bossController.Animator.SetTrigger("AttackFront");
         attackManager.CurrentAttack = attackManager.AttackFront;
+        bossController.Player.IsCollided = false;
         Debug.Log("Attack Front");
-        return TaskStatus.RUNNING;
+        return TaskStatus.COMPLETED;
     }
 }

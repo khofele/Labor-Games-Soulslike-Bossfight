@@ -102,11 +102,13 @@ public class FlyBreatheFire : GOAction
 
                 if (target == null)
                 {
+                    bossController.Player.IsCollided = false;
                     return TaskStatus.FAILED;
                 }
                 else if(bossController.IsStunned == true)
                 {
                     navAgent.SetDestination(new Vector3(0, 12, 0));
+                    bossController.Player.IsCollided = false;
                     return TaskStatus.COMPLETED;
                 }
                 else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
@@ -125,7 +127,7 @@ public class FlyBreatheFire : GOAction
                     bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Magic Fire"))
                 {
                     navAgent.SetDestination(new Vector3(0, 12, 0));
-
+                    bossController.Player.IsCollided = false;
                     return TaskStatus.COMPLETED;
                 }
 
@@ -134,9 +136,10 @@ public class FlyBreatheFire : GOAction
             {
                 return TaskStatus.RUNNING;
             }
-
+            bossController.Player.IsCollided = false;
             return TaskStatus.FAILED;
         }
+        bossController.Player.IsCollided = false;
         return TaskStatus.COMPLETED;
         
     }
