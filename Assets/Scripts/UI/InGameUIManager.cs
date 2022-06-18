@@ -60,6 +60,7 @@ public class InGameUIManager : MonoBehaviour
         {
             soundPlaying = true;
             EnableDeathMessage();
+            healthBarCharSlider.value = 0;
             audioManager.PlayDeathMessageSound();
             audioManager.StopBackgroundMusic();
         }
@@ -67,6 +68,7 @@ public class InGameUIManager : MonoBehaviour
         {
             soundPlaying = true;
             EnableWinMessage();
+            healthBarBossSlider.value = 0;
             audioManager.PlayWinMessageSound();
             audioManager.StopBackgroundMusic();
         }
