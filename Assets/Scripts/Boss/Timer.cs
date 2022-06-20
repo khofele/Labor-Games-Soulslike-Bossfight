@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float timerLength = 60.0f;
+    private float timerLength = 60.0f;
     private bool timerOver = true;
 
     public bool TimerOver { get => timerOver; }
