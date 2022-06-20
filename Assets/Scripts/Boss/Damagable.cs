@@ -22,10 +22,10 @@ public class Damagable : MonoBehaviour
     {
         if(other.gameObject.tag == "Weapon" && bossController.Player.IsAttacking == true)
         {
-            if (bossController.IsStunnedTimer.TimerOver == true)
+            if (bossController.StunTimer.TimerOver == true)
             {
                 bossController.HitCounter = 0;
-                bossController.IsStunnedTimer.StartTimer(10);    // TODO: Balancing
+                bossController.StunTimer.StartTimer(5);
             }
             else
             {
@@ -43,10 +43,10 @@ public class Damagable : MonoBehaviour
                 }
             }
 
-            if (bossController.HitCounter >= bossController.StunCount && bossController.IsStunnedTimer.TimerOver == false)
+            if (bossController.HitCounter >= bossController.StunCount && bossController.StunTimer.TimerOver == false)
             {
                 bossController.IsStunned = true;
-                bossController.IsStunnedTimer.StartTimer(5);    // TODO: Balancing
+                bossController.IsStunnedTimer.StartTimer(4);    // TODO: Balancing
             }
 
             float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();

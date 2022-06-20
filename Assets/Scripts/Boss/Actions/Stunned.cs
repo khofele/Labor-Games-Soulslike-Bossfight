@@ -30,12 +30,9 @@ public class Stunned : GOAction
             bossController.Animator.SetTrigger("StunnedFlying");
             if(bossController.IsStunnedTimer.TimerOver == true)
             {
-                if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("StunnedFlying"))
-                {
-                    //bossController.GetComponent<Animator>().applyRootMotion = false;
-                    bossController.IsStunned = false;
-                    return TaskStatus.COMPLETED;
-                }
+                //bossController.GetComponent<Animator>().applyRootMotion = false;
+                bossController.IsStunned = false;
+                return TaskStatus.COMPLETED;
             }
             else
             {
@@ -49,11 +46,8 @@ public class Stunned : GOAction
             bossController.Animator.SetTrigger("StunnedStanding");
             if (bossController.IsStunnedTimer.TimerOver == true)
             {
-                if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("StunnedStanding"))
-                {
-                    bossController.IsStunned = false;
-                    return TaskStatus.COMPLETED;
-                }
+                bossController.IsStunned = false;
+                return TaskStatus.COMPLETED;
             }
             else
             {
