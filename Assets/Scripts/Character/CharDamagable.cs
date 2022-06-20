@@ -27,15 +27,11 @@ public class CharDamagable : MonoBehaviour
         {
             if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
             {
-                Debug.Log("Char got hit...");
-
                 //if player has not been hit by a collider of the current enemy attack
                 if (!charController.IsCollided)
                 {
                     //set IsCollided true until current attack is over
                     charController.IsCollided = true;
-
-                    Debug.Log("Char gets Damage...");
 
                     //deal damage according to attack
                     float damage = attackManager.CurrentAttack.Damage;

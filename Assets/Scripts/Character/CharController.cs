@@ -161,8 +161,6 @@ public class CharController : MonoBehaviour
    
     public void TakeDamage(float damage)
     {
-        Debug.Log("TakeDamage: " + damage);
-
         //subtract damage from current health
         currentHealth -= damage;
 
@@ -180,8 +178,6 @@ public class CharController : MonoBehaviour
         {
             charMovement.Death();
         }
-
-        Debug.Log(currentHealth);
     }
 
     //If the boss attacks with fire, poison or magic, the player gets damage over time on top of the normal
@@ -191,6 +187,8 @@ public class CharController : MonoBehaviour
     //valueEveryTime - the percentage of the dot that is dealt each time (at once)
     public IEnumerator DamageOverTime(float dot, float dotDelay, float valueEveryTime)
     {
+        Debug.Log("DamageOverTime");
+
         float dealtDamage = 0f; //already dealt damage
         float damage = valueEveryTime; //the damage value that shall be dealt at once
 
@@ -202,8 +200,6 @@ public class CharController : MonoBehaviour
             {
                 damage -= dot - dealtDamage;
             }
-
-            Debug.Log("DamageOverTime");
 
             //call coroutine which deals damage after time
             yield return StartCoroutine(TakeDot(damage, dotDelay));
@@ -370,7 +366,7 @@ public class CharController : MonoBehaviour
     {
         stamManager.RegStamina = regStaminaValue;
 
-        Debug.Log("SetRegStamina: " + regStaminaValue);
+        //Debug.Log("SetRegStamina: " + regStaminaValue);
     }
 
 

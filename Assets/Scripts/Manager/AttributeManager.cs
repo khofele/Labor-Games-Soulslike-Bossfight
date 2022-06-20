@@ -131,7 +131,7 @@ public class AttributeManager : MonoBehaviour
 
     private void ResetStaminaReg()
     {
-        staminaReg = 0.08f;
+        staminaReg = 0.085f;
     }
 
     private void ResetCarryingCapacity()

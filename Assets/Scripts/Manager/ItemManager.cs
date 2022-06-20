@@ -48,7 +48,7 @@ public class ItemManager : MonoBehaviour
     private float neededStaminaHeavyAttack = 0f;
     private float neededStaminaRoll = 0f;
 
-    private int potionCount = 5;
+    private int potionCount = 3;
 
     public int PotionCount { get => potionCount; }
 
