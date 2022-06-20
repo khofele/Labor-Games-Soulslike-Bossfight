@@ -21,6 +21,8 @@ public class CharController : MonoBehaviour
     private float stamina = 0f; //max Stamina
     private float staminaReg = 0.08f; //how much stamina is regenerated at once
     private float attackPower = 0f; //is added to the weaponMinDmg value of the current weapon
+    private float defense = 0f; //defense value regarding damage
+    private float resistance = 0f; //resistance against types of fire
     //action speed
     private float animationSpeed = 1.25f; //speed of animations and animator
     private float movementSpeed = 6f; //speed for movement like walking, running and rolling
@@ -161,8 +163,8 @@ public class CharController : MonoBehaviour
    
     public void TakeDamage(float damage)
     {
-        Debug.Log("TakeDamage: " + damage);
-
+        //calculate final damage with defense value
+        damage = damage - defense;
         //subtract damage from current health
         currentHealth -= damage;
 
@@ -180,8 +182,6 @@ public class CharController : MonoBehaviour
         {
             charMovement.Death();
         }
-
-        Debug.Log(currentHealth);
     }
 
     //If the boss attacks with fire, poison or magic, the player gets damage over time on top of the normal
@@ -191,6 +191,11 @@ public class CharController : MonoBehaviour
     //valueEveryTime - the percentage of the dot that is dealt each time (at once)
     public IEnumerator DamageOverTime(float dot, float dotDelay, float valueEveryTime)
     {
+        Debug.Log("DamageOverTime");
+
+        //calculate final damage over time with resistance value
+        dot = dot - resistance;
+
         float dealtDamage = 0f; //already dealt damage
         float damage = valueEveryTime; //the damage value that shall be dealt at once
 
@@ -203,8 +208,6 @@ public class CharController : MonoBehaviour
                 damage -= dot - dealtDamage;
             }
 
-            Debug.Log("DamageOverTime");
-
             //call coroutine which deals damage after time
             yield return StartCoroutine(TakeDot(damage, dotDelay));
         }
@@ -213,6 +216,8 @@ public class CharController : MonoBehaviour
     //coroutine called by DamageOverTime() to deal the dot
     private IEnumerator TakeDot(float damage, float dotDelay)
     {
+        Debug.Log("TakeDot");
+
         yield return new WaitForSeconds(dotDelay);
 
         //subtract damage from current health
@@ -277,6 +282,8 @@ public class CharController : MonoBehaviour
         stamina = attrManager.Stamina;
         staminaReg = attrManager.StaminaReg;
         attackPower = attrManager.AttackPower;
+        defense = attrManager.Defense;
+        resistance = attrManager.Resistance;
 
         //set values in StaminaManager
         stamManager.Stamina = stamina;
@@ -370,7 +377,7 @@ public class CharController : MonoBehaviour
     {
         stamManager.RegStamina = regStaminaValue;
 
-        Debug.Log("SetRegStamina: " + regStaminaValue);
+        //Debug.Log("SetRegStamina: " + regStaminaValue);
     }
 
 

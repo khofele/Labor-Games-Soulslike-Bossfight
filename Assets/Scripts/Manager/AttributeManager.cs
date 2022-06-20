@@ -15,6 +15,8 @@ public class AttributeManager : MonoBehaviour
     private float defense = 0f;
     private float attackPower = 0f;
     private float multiplicator = 100f;
+    private float smallerMultiplicator = 2.5f;
+    private float stamRegMultiplicator = 0.001f;
 
     public float Health { get => health; }
     public float Stamina { get => stamina; }
@@ -58,24 +60,24 @@ public class AttributeManager : MonoBehaviour
 
     public void CalcStamina()
     {
-        stamina = stamina + skillpointManager.Endurance * multiplicator;
+        stamina = stamina + skillpointManager.Endurance * smallerMultiplicator;
     }
 
     public void CalcRemovedStamina()
     {
-        stamina = stamina - (skillpointManager.Endurance+1) * multiplicator;
+        stamina = stamina - (skillpointManager.Endurance+1) * smallerMultiplicator;
     }
 
     public void CalcStaminaReg()
     {
-        staminaReg = staminaReg + skillpointManager.Endurance * 4 / multiplicator;
-        staminaReg = Mathf.Round(staminaReg * 100) / 100;
+        staminaReg = staminaReg + skillpointManager.Endurance * stamRegMultiplicator;
+        staminaReg = Mathf.Round(staminaReg * 1000) / 1000;
     }
 
     public void CalcRemovedStaminaReg()
     {
-        staminaReg = staminaReg - (skillpointManager.Endurance+1) * 4 / multiplicator;
-        staminaReg = Mathf.Round(staminaReg * 100) / 100;
+        staminaReg = staminaReg - (skillpointManager.Endurance+1) * stamRegMultiplicator;
+        staminaReg = Mathf.Round(staminaReg * 1000) / 1000;
     }
 
     public void CalcAttackPower()
@@ -100,12 +102,12 @@ public class AttributeManager : MonoBehaviour
 
     public void CalcResistance()
     {
-        resistance = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+        resistance = itemManager.CurrentArmor.GetArmorDef() * 1.25f;
     }
 
     public void CalcDefense()
     {
-        defense = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+        defense = itemManager.CurrentArmor.GetArmorDef() * 1.5f;
     }
 
     public void ResetAllAttributes()
@@ -121,17 +123,17 @@ public class AttributeManager : MonoBehaviour
 
     private void ResetHealth()
     {
-        health = 1000f;
+        health = 1500f;
     }
 
     private void ResetStamina()
     {
-        stamina = 100f;
+        stamina = 85f;
     }
 
     private void ResetStaminaReg()
     {
-        staminaReg = 0.08f;
+        staminaReg = 0.085f;
     }
 
     private void ResetCarryingCapacity()
@@ -141,12 +143,12 @@ public class AttributeManager : MonoBehaviour
 
     private void ResetResistance()
     {
-        resistance = 15f;
+        resistance = 25f;
     }
 
     private void ResetDefense()
     {
-        defense = 50f;
+        defense = 25f;
     }
 
     private void ResetAttackPower()

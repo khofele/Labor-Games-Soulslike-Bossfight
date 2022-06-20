@@ -18,11 +18,11 @@ public class Longsword : Weapon
         weaponMaxDmg = 105f;
         weaponPrefab = Resources.Load("Character/Weapons/Longsword", typeof(Weapon)) as Weapon;
 
-        neededStaminaAttack01 = 30f;
-        neededStaminaAttack02 = 30f;
-        neededStaminaAttack03 = 30f;
-        neededStaminaHeavyAttack = 45f;
-        neededStaminaRoll = 65f;
+        neededStaminaAttack01 = 28f;
+        neededStaminaAttack02 = 28f;
+        neededStaminaAttack03 = 28f;
+        neededStaminaHeavyAttack = 43f;
+        neededStaminaRoll = 62f;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

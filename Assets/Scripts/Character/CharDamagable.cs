@@ -8,7 +8,7 @@ public class CharDamagable : MonoBehaviour
     private CharController charController = null;
     private AttackManager attackManager = null;
 
-    private float dotPercentage = 0.4f; //percentage of damage value that gives damage over time
+    private float dotPercentage = 0.8f; //percentage of damage value that gives damage over time
     private float dotDelay = 30f; //delay for damage dealing over time
     private float dotValuePercentage = 0.1f; //percentage of dot that is dealt at once
 
@@ -27,15 +27,11 @@ public class CharDamagable : MonoBehaviour
         {
             if (!charController.GetComponentInParent<Animator>().GetBool("Roll"))
             {
-                Debug.Log("Char got hit...");
-
                 //if player has not been hit by a collider of the current enemy attack
                 if (!charController.IsCollided)
                 {
                     //set IsCollided true until current attack is over
                     charController.IsCollided = true;
-
-                    Debug.Log("Char gets Damage...");
 
                     //deal damage according to attack
                     float damage = attackManager.CurrentAttack.Damage;
@@ -44,7 +40,7 @@ public class CharDamagable : MonoBehaviour
                     charController.TakeDamage(damage + crit);
 
                     //if special attack with fire, poison or magic - call method to deal damage over time
-                    if (attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+                    if (attackManager.CurrentAttack == attackManager.AttackFireHead || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
                     {
                         float dot = damage * dotPercentage;
                         float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time
