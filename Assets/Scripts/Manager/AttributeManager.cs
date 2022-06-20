@@ -102,12 +102,12 @@ public class AttributeManager : MonoBehaviour
 
     public void CalcResistance()
     {
-        resistance = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+        resistance = itemManager.CurrentArmor.GetArmorDef() * 1.25f;
     }
 
     public void CalcDefense()
     {
-        defense = itemManager.CurrentArmor.GetArmorDef() * multiplicator;
+        defense = itemManager.CurrentArmor.GetArmorDef() * 1.5f;
     }
 
     public void ResetAllAttributes()
@@ -143,12 +143,12 @@ public class AttributeManager : MonoBehaviour
 
     private void ResetResistance()
     {
-        resistance = 15f;
+        resistance = 25f;
     }
 
     private void ResetDefense()
     {
-        defense = 50f;
+        defense = 25f;
     }
 
     private void ResetAttackPower()

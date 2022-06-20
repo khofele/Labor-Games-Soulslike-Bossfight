@@ -8,7 +8,7 @@ public class CharDamagable : MonoBehaviour
     private CharController charController = null;
     private AttackManager attackManager = null;
 
-    private float dotPercentage = 0.4f; //percentage of damage value that gives damage over time
+    private float dotPercentage = 0.8f; //percentage of damage value that gives damage over time
     private float dotDelay = 30f; //delay for damage dealing over time
     private float dotValuePercentage = 0.1f; //percentage of dot that is dealt at once
 
