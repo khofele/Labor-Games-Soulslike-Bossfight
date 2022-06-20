@@ -40,7 +40,7 @@ public class CharDamagable : MonoBehaviour
                     charController.TakeDamage(damage + crit);
 
                     //if special attack with fire, poison or magic - call method to deal damage over time
-                    if (attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
+                    if (attackManager.CurrentAttack == attackManager.AttackFireHead || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFire || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFirePoison || attackManager.CurrentAttack == attackManager.AttackFlyBreatheFireMagic)
                     {
                         float dot = damage * dotPercentage;
                         float valueEveryTime = dot * dotValuePercentage;    //damage value that is dealt every time of damage over time

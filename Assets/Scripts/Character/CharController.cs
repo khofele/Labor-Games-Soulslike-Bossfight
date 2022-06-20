@@ -209,6 +209,8 @@ public class CharController : MonoBehaviour
     //coroutine called by DamageOverTime() to deal the dot
     private IEnumerator TakeDot(float damage, float dotDelay)
     {
+        Debug.Log("TakeDot");
+
         yield return new WaitForSeconds(dotDelay);
 
         //subtract damage from current health
