@@ -114,6 +114,7 @@ public class FlyBreatheFire : GOAction
                 navAgent.isStopped = true;
                 bossController.Animator.ResetTrigger(GetCurrentAttackTrigger());
                 Debug.Log("vorbei");
+                bossController.Animator.ResetTrigger("Idle");
                 bossController.Animator.SetTrigger("Land");
                 bossController.FlyTimer.StartTimer();
                 bossController.IsFlying = false;
