@@ -21,11 +21,16 @@ public class TakeOff : GOAction
     {
         if(bossController.IsFlying == false)
         {
-            bossController.IsFlying = true;
+            bossController.Animator.ResetTrigger("Idle");
             bossController.Animator.SetTrigger("TakeOff");
+
+            bossController.FlyTimer.TimerEnd();
             bossController.IsFlyingTimer.StartTimer();
+            bossController.Animator.SetTrigger("FlyIdle");
             if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Takeoff"))
             {
+                bossController.IsFlying = true;
+                Debug.Log("complete");
                 return TaskStatus.COMPLETED;
             }
             else
@@ -37,7 +42,5 @@ public class TakeOff : GOAction
         {
             return TaskStatus.ABORTED;
         }
-
-
     }
 }

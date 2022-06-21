@@ -24,8 +24,9 @@ public class Land : GOAction
         bossController.Animator.ResetTrigger("BreatheBasicFire");
         bossController.Animator.ResetTrigger("BreathePoisonFire");
         bossController.Animator.ResetTrigger("BreatheMagicFire");
+        bossController.Animator.ResetTrigger("FlyIdle");
 
-        if(bossController.transform.position == new Vector3(0, 20, 0))
+        if(bossController.IsFlying == true)
         {
             bossController.Animator.SetTrigger("Land");
             bossController.FlyTimer.StartTimer();
@@ -40,6 +41,9 @@ public class Land : GOAction
                 return TaskStatus.RUNNING;
             }
         }
-        return TaskStatus.RUNNING;
+        else
+        {
+            return TaskStatus.ABORTED;
+        }
     }
 }

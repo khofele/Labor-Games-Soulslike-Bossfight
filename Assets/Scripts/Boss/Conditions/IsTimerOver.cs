@@ -12,6 +12,10 @@ public class IsTimerOver : GOCondition
 
     public override bool Check()
     {
-        return bossController.FlyTimer.TimerOver;
+        if(bossController.IsFlying == false)
+        {
+            return bossController.FlyTimer.TimerOver;
+        }
+        return false;
     }
 }

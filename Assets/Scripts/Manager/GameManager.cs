@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private BossController boss = null;
     [SerializeField] private CharController player = null;
-    [SerializeField] private bool phaseTwo = false;
+    private bool phaseTwo = false;
     private bool gameRunning = false;
 
     public bool GameRunning { get => gameRunning; set => gameRunning = value; }
+    public bool PhaseTwo { get => phaseTwo; }
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //invoke boss phase two
-        if (boss.Health <= 6000 && phaseTwo == false)    // TODO
+        if (boss.Health <= 7000 && phaseTwo == false)
         {
             phaseTwo = true;
             boss.ChangeBehavior();

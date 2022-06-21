@@ -30,7 +30,15 @@ public class FlyBreatheFire : GOAction
     public override void OnStart()
     {
         bossController = gameObject.GetComponent<BossController>();
+        target = bossController.Player.gameObject;
         bossController.GetComponent<Animator>().applyRootMotion = true;
+
+        bossController.Animator.ResetTrigger("Idle");
+        bossController.Animator.SetTrigger("TakeOff");
+
+        bossController.FlyTimer.TimerEnd();
+        bossController.IsFlyingTimer.StartTimer();
+        bossController.Animator.SetTrigger("FlyIdle");
 
         int random = Random.Range(1, 100);
         if (random >= 1 && random <= 33)
@@ -60,13 +68,14 @@ public class FlyBreatheFire : GOAction
             Debug.LogWarning("The " + gameObject.name + " game object does not have a Nav Mesh Agent component to navigate. One with default values has been added", gameObject);
             navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
         }
-        Vector3 destination = new Vector3(targetTransform.position.x, 12, targetTransform.position.z);
 
-        navAgent.SetDestination(destination);
+        navAgent.SetDestination(targetTransform.position);
+        Debug.Log(targetTransform.position);
+        bossController.Animator.SetTrigger(currentFire);
 
 
 #if UNITY_5_6_OR_NEWER
-            navAgent.isStopped = false;
+        navAgent.isStopped = false;
 #else
                 navAgent.Resume();
 #endif
@@ -77,71 +86,53 @@ public class FlyBreatheFire : GOAction
 
     public override TaskStatus OnUpdate()
     {
-        if(bossController.IsStunned == false)
+        if (bossController.IsStunned == false)
         {
-            // if Timer running
-            if (bossController.IsFlyingTimer.TimerOver == false)
+
+            bossController.Animator.ResetTrigger("FlyIdle");
+            switch (currentFire)
             {
-                bossController.Animator.SetTrigger(currentFire);
-                switch(currentFire)
-                {
-                    case "BreatheBasicFire":
-                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFire;
-                        break;
+                case "BreatheBasicFire":
+                    attackManager.CurrentAttack = attackManager.AttackFlyBreatheFire;
+                    break;
 
-                    case "BreathePoisonFire":
-                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFirePoison;
-                        break;
+                case "BreathePoisonFire":
+                    attackManager.CurrentAttack = attackManager.AttackFlyBreatheFirePoison;
+                    break;
 
-                    case "BreatheMagicFire":
-                        attackManager.CurrentAttack = attackManager.AttackFlyBreatheFireMagic;
-                        break;
-                }
-
-                Debug.Log("Fly Breathe Fire Attack");
-
-                if (target == null)
-                {
-                    bossController.Player.IsCollided = false;
-                    return TaskStatus.FAILED;
-                }
-                else if(bossController.IsStunned == true)
-                {
-                    navAgent.SetDestination(new Vector3(0, 12, 0));
-                    bossController.Player.IsCollided = false;
-                    return TaskStatus.COMPLETED;
-                }
-                else if (navAgent.destination != targetTransform.position && navAgent.remainingDistance <= navAgent.stoppingDistance)
-                {
-                    Vector3 destination = new Vector3(targetTransform.position.x, 12, targetTransform.position.z);
-                    navAgent.SetDestination(destination);
-                    return TaskStatus.RUNNING;
-                }
+                case "BreatheMagicFire":
+                    attackManager.CurrentAttack = attackManager.AttackFlyBreatheFireMagic;
+                    break;
             }
 
-            //if Timer over
+            Debug.Log("Fly Breathe Fire Attack");
+
+
             if (bossController.IsFlyingTimer.TimerOver == true)
             {
-                if (bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Fire") ||
-                    bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Poison Fire") ||
-                    bossController.Animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Magic Fire"))
-                {
-                    navAgent.SetDestination(new Vector3(0, 12, 0));
-                    bossController.Player.IsCollided = false;
-                    return TaskStatus.COMPLETED;
-                }
+                Debug.Log("JAWOLL");
+                navAgent.isStopped = true;
+                bossController.Animator.ResetTrigger(GetCurrentAttackTrigger());
+                Debug.Log("vorbei");
+                bossController.Animator.SetTrigger("Land");
+                bossController.FlyTimer.StartTimer();
+                bossController.IsFlying = false;
+                bossController.Player.IsCollided = false;
+                bossController.Animator.SetBool("isFlying", false);
+                return TaskStatus.COMPLETED;
+            }
 
-            }
-            else
+            else if (navAgent.destination != targetTransform.position)
             {
-                return TaskStatus.RUNNING;
+                navAgent.SetDestination(targetTransform.position);
+                bossController.Animator.SetTrigger(currentFire);
             }
-            bossController.Player.IsCollided = false;
-            return TaskStatus.FAILED;
+            return TaskStatus.RUNNING;
         }
-        bossController.Player.IsCollided = false;
-        return TaskStatus.COMPLETED;
-        
+        else
+        {
+            return TaskStatus.ABORTED;
+        }
     }
 
     public override void OnAbort()
@@ -150,10 +141,30 @@ public class FlyBreatheFire : GOAction
 #if UNITY_5_6_OR_NEWER
         if (navAgent != null)
             navAgent.isStopped = true;
+        bossController.FlyTimer.StartTimer();
+        bossController.IsFlyingTimer.TimerEnd();
 #else
             if (navAgent!=null)
                 navAgent.Stop();
 #endif
 
+    }
+
+    private string GetCurrentAttackTrigger()
+    {
+        if(currentFire == basicFire)
+        {
+            return "BreatheBasicFire";
+        }
+        else if(currentFire == poisonFire)
+        {
+            return "BreathePoisonFire";
+        }
+        else if(currentFire == magicFire)
+        {
+            return "BreatheMagicFire";
+        }
+
+        return null;
     }
 }

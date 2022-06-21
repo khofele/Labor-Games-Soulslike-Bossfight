@@ -12,7 +12,7 @@ public class IsTargetInBoxLeft : GOCondition
 
     public override bool Check()
     {
-        if (collisionCheck.Collision == true)
+        if (collisionCheck.Collision == true && collisionCheck.GetComponentInParent<BossController>().IsFlying == false)
         {
             return true;
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager = null;
     [SerializeField] private InternalBrickAsset behaviorPhaseTwo = null;
     [SerializeField] private Animator animator = null;
     [SerializeField] private Timer flyTimer = null;
@@ -16,12 +17,15 @@ public class BossController : MonoBehaviour
     [SerializeField] private CharController player = null;
     [SerializeField] private List<CapsuleCollider> capsuleCollider = new List<CapsuleCollider>();
     [SerializeField] private List<BoxCollider> boxCollider = new List<BoxCollider>();
+    [SerializeField] private GameObject hitbox = null;
 
     private int stunCount = 8;
     private float health = 12000;
     private bool isFlying = false;
     private bool isStunned = false;
     private bool isDead = false;
+
+    public GameObject Hitbox { get => hitbox; }
 
     public float Health { get => health; set => health = value; }
     public Animator Animator { get => animator; }
@@ -51,6 +55,12 @@ public class BossController : MonoBehaviour
 
         Debug.Log("fly " + flyTimer.TimerLength);
         Debug.Log("isflying " + isFlyingTimer.TimerLength);
+
+        if(flyTimer.TimerOver == true && gameManager.PhaseTwo == true)
+        {
+            isFlying = true;
+            animator.SetBool("isFlying", true);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -70,7 +80,7 @@ public class BossController : MonoBehaviour
 
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("isFlyingTimer", isFlyingTimer);
             gameObject.GetComponent<BehaviorExecutor>().SetBehaviorParam("flyTimer", flyTimer);
-            flyTimer.StartTimer();
+            flyTimer.StartTimer(10);
         }
     }
 
