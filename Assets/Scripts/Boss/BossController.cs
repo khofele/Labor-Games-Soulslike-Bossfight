@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject hitbox = null;
 
     private int stunCount = 8;
-    private float health = 12000;
+    private float health = 28000;
     private bool isFlying = false;
     private bool isStunned = false;
     private bool isDead = false;
