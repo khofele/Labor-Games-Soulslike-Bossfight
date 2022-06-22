@@ -47,15 +47,6 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-        // TODO DEBUG
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            health = 1000;
-        }
-
-        Debug.Log("fly " + flyTimer.TimerLength);
-        Debug.Log("isflying " + isFlyingTimer.TimerLength);
-
         if(flyTimer.TimerOver == true && gameManager.PhaseTwo == true)
         {
             isFlying = true;
