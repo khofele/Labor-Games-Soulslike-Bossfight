@@ -6411,6 +6411,10 @@ PrefabInstance:
       propertyPath: blackboard.objectParams.Array.data[8]
       value: 
       objectReference: {fileID: 1318598857}
+    - target: {fileID: 7891177204366098913, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
+      propertyPath: m_Radius
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6034948956207173530, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
     - {fileID: 6034948955436771340, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
