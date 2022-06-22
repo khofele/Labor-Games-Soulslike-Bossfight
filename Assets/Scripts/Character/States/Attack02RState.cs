@@ -13,6 +13,8 @@ namespace stateMachine
 
             //set isAttacking in CharController to true
             GetCharController(animator).IsAttacking = true;
+            //enable weapon collider
+            GetCharController(animator).EnableCollider();
 
             //use neededStamina for action
             neededStamina = GetStaminaManager(animator).NeededStaminaAttack02;
@@ -30,6 +32,7 @@ namespace stateMachine
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             GetCharController(animator).IsAttacking = false; //set isAttacking in CharController to false
+            GetCharController(animator).DisableCollider(); //disable weapon collider
         }
     }
 

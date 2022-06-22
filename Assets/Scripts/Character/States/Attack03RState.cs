@@ -13,6 +13,8 @@ namespace stateMachine
 
             //set isAttacking in CharController to true
             GetCharController(animator).IsAttacking = true;
+            //enable weapon collider
+            GetCharController(animator).EnableCollider();
 
             //use neededStamina for action
             neededStamina = GetStaminaManager(animator).NeededStaminaAttack03;
@@ -34,6 +36,7 @@ namespace stateMachine
             animator.SetBool("Attack03R", false);
             GetCharController(animator).SetRegStamina(true); //regenerate stamina again
             GetCharController(animator).IsAttacking = false; //set isAttacking in CharController to false
+            GetCharController(animator).DisableCollider(); //disable weapon collider
         }
     }
 
