@@ -110,16 +110,16 @@ public class FlyBreatheFire : GOAction
 
             if (bossController.IsFlyingTimer.TimerOver == true)
             {
-                Debug.Log("JAWOLL");
                 navAgent.isStopped = true;
                 bossController.Animator.ResetTrigger(GetCurrentAttackTrigger());
-                Debug.Log("vorbei");
                 bossController.Animator.ResetTrigger("Idle");
+                bossController.Animator.SetBool("isLanding", true);
                 bossController.Animator.SetTrigger("Land");
                 bossController.FlyTimer.StartTimer();
                 bossController.IsFlying = false;
                 bossController.Player.IsCollided = false;
                 bossController.Animator.SetBool("isFlying", false);
+                bossController.Animator.SetTrigger("Idle");
                 return TaskStatus.COMPLETED;
             }
 

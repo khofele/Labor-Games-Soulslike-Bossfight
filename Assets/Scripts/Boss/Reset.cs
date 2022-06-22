@@ -27,6 +27,7 @@ public class Reset : StateMachineBehaviour
             animator.ResetTrigger("AttackFront");
             animator.ResetTrigger("Attack 2");
             animator.ResetTrigger("Land");
+            animator.SetBool("isLanding", false);
             animator.applyRootMotion = true;
             attackManager.CurrentAttack = attackManager.NullAttack;
         }
