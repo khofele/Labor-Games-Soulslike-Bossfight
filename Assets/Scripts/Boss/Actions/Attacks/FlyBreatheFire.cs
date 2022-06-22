@@ -37,7 +37,7 @@ public class FlyBreatheFire : GOAction
         bossController.Animator.SetTrigger("TakeOff");
 
         bossController.FlyTimer.TimerEnd();
-        bossController.IsFlyingTimer.StartTimer();
+        bossController.IsFlyingTimer.StartTimer(45);
         bossController.Animator.SetTrigger("FlyIdle");
 
         int random = Random.Range(1, 100);
