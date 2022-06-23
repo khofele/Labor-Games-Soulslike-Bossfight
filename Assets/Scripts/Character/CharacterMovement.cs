@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform cam = null; //Main camera controlled by Cinemachine camera
     [SerializeField] private GameObject tpCamera = null; //Cinemachine Third Person Camera
     [SerializeField] private GameManager gameManager = null; //the game manager
+    [SerializeField] private MeshCollider hitbox = null;
     private CharController charController = null; //CharController script
     private StaminaManager stamManager = null; //Stamina Manager
     private CharacterController controller = null; //CharacterControllerComponent
@@ -30,6 +31,7 @@ public class CharacterMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         charController = GetComponent<CharController>();
         stamManager = GetComponent<StaminaManager>();
+        Physics.IgnoreCollision(GetComponent<Collider>(), hitbox);
     }
 
     // Update is called once per frame
