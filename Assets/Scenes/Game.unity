@@ -1466,6 +1466,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdPersonCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 1964651550909454918, guid: 6d70228eb8b6c7a43aa76f2e37ba34c3, type: 3}
+      propertyPath: DopplerLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964651550909454919, guid: 6d70228eb8b6c7a43aa76f2e37ba34c3, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1964651550909454919, guid: 6d70228eb8b6c7a43aa76f2e37ba34c3, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -1523,6 +1531,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194228}
     - target: {fileID: 1964651550909454923, guid: 6d70228eb8b6c7a43aa76f2e37ba34c3, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 6034948955815604942}
+    - target: {fileID: 1964651550909454923, guid: 6d70228eb8b6c7a43aa76f2e37ba34c3, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1746946250}
@@ -1559,7 +1571,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6497526, y: 3.7319975, z: 5}
+  m_Size: {x: 1.6497526, y: 3.7319975, z: 1.5}
   m_Center: {x: 0.10551494, y: -0.024492025, z: 0.32202768}
 --- !u!43 &386263778
 Mesh:
@@ -3590,9 +3602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc9929f60bac994d86d4aba2c39f9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winMessageSound: {fileID: 8300000, guid: 1eaa9a14aed84b047929ec0d3d409ff1, type: 3}
-  deathMessageSound: {fileID: 8300000, guid: ae84d0b5b42c9ef45ae507c579194f56, type: 3}
-  audioSource: {fileID: 0}
+  winMessageSound: {fileID: 8300000, guid: 333d778e46b4ea6489cf8218ac609889, type: 3}
+  deathMessageSound: {fileID: 8300000, guid: acfe7fdfd881d7542ba10513af67ae98, type: 3}
+  audioSource: {fileID: 1288745014}
   audioSourceBackgroundMusic: {fileID: 1704335023}
   gameManager: {fileID: 1746946250}
 --- !u!82 &1288745014
@@ -7336,6 +7348,11 @@ PrefabInstance:
     - {fileID: 6034948955840240114, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
     - {fileID: 6034948954766312231, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
+--- !u!64 &6034948955815604942 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 8131681423996658205, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
+  m_PrefabInstance: {fileID: 6034948955815604941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6281236389606508291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 354409080254641614, guid: c8141beaafc99204bbf411eb29e721d0, type: 3}
