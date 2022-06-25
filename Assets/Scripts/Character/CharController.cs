@@ -295,11 +295,6 @@ public class CharController : MonoBehaviour
         currentPotions = potionCount;
     }
 
-    //method to set the prefab of the chosen weapon - called in Weapon script
-    public void SetWeaponPrefab(Weapon weaponPref)
-    {
-        weaponPrefab = weaponPref;
-    }
 
     //method to set the current weapon and attach it on the hand - called in Start()
     private void SetAndAttachWeapon()
