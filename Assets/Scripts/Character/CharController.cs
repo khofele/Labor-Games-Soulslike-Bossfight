@@ -8,7 +8,6 @@ public class CharController : MonoBehaviour
     //General
     [SerializeField] private Transform handR = null; //right hand of the character (holds weapon)
     [SerializeField] private Transform handL = null; //left hand of the character (sometimes holds weapon)
-    [SerializeField] private Transform potionHoldPoint = null; //point at left hand to hold potion
     private CharacterMovement charMovement = null; //CharacterMovement script
     private StaminaManager stamManager = null; //StaminaManager script
 
@@ -45,7 +44,7 @@ public class CharController : MonoBehaviour
     private ItemManager itemManager = null; //item manager of the menu used for equipment setting
     private int potionCount = 0; //max potions
     [SerializeField] private float healValue = 400f; //value of health one potion heals
-    private GameObject currentPotion = null; //current potion object (instantiated)
+    [SerializeField] private GameObject currentPotion = null; //current potion prefab
     private Weapon weaponPrefab = null; //current weapon prefab
     private Weapon currentWeapon = null; //current weapon object (instantiated)
     private Weapon currentSecondWeapon = null; //current second weapon (instantiated if equipped)
@@ -130,10 +129,8 @@ public class CharController : MonoBehaviour
             currentSecondWeapon.gameObject.SetActive(false);
         }
 
-        //instantiate potion game object
-        currentPotion = Instantiate<GameObject>(Resources.Load("Potions/Prefabs/HealthPotion", typeof(GameObject)) as GameObject);
-        currentPotion.transform.parent = potionHoldPoint.transform;
-        currentPotion.transform.position = potionHoldPoint.position;
+        //set potion visible in hand
+        currentPotion.SetActive(true);
 
         //disable glowing particle effect if potion is empty
         if (!potionGlow)
@@ -144,8 +141,8 @@ public class CharController : MonoBehaviour
 
     public void DestroyPotion()
     {
-        //destroy potion game object
-        Destroy(currentPotion);
+        //make potion invisible again
+        currentPotion.SetActive(false);
 
         //enable left hand weapon again if there is one
         if (itemManager.CurrentWeaponTypeHanded == WeaponTypeHandedEnum.BOTH)
