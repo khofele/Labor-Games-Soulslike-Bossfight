@@ -360,8 +360,6 @@ public class CharController : MonoBehaviour
         //set movement speed
         movementSpeed = movementSpeed * animationSpeed;
 
-
-        //Debug.Log("movementSpeed: " + movementSpeed + ", animationSpeed: " + animationSpeed);
     }
 
     //setter for the bool regStamina - whether stamina shall be regenerated or not
