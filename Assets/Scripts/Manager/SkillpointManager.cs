@@ -8,7 +8,7 @@ public class SkillpointManager : MonoBehaviour
     [SerializeField] private AttributeManager attributeManager = null;
     private static SkillpointManager instance = null;
     private int skillpoints = 0;
-    private int maxSkillpoints = 10; // TODO Balancing
+    private int maxSkillpoints = 10; 
     private int vitality = 0;
     private int endurance = 0;
     private int strength = 0;

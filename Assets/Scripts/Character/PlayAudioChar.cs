@@ -15,7 +15,6 @@ public class PlayAudioChar : MonoBehaviour
     private AudioSource audioSource = null; //current audio source
 
 
-    // Start is called before the first frame update
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();

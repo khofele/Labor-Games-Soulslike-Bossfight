@@ -24,7 +24,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float stunDuration = 3; //duration of stun
 
 
-    // Start is called before the first frame update
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +33,6 @@ public class CharacterMovement : MonoBehaviour
         Physics.IgnoreCollision(GetComponent<Collider>(), hitbox);
     }
 
-    // Update is called once per frame
     private void Update()
     {
         //--------------------------STAMINA & POTIONS-----------------------
@@ -108,7 +106,6 @@ public class CharacterMovement : MonoBehaviour
                     if (stamManager.CheckEnoughStamina(neededStamina)) //stam check
                     {
                         animator.SetBool("Attack01R", true);
-                        //Debug.Log("01 true");
                     }
                 }
 
@@ -117,19 +114,16 @@ public class CharacterMovement : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01R"))
             {
                 animator.SetBool("Attack01R", false);
-                //Debug.Log("01 false");
                 charController.SetRegStamina(true); //regenerate stamina again
             }
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02R"))
             {
                 animator.SetBool("Attack02R", false);
-                //Debug.Log("02 false");
                 charController.SetRegStamina(true); //regenerate stamina again
             }
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03R"))
             {
                 animator.SetBool("Attack03R", false);
-                //Debug.Log("03 false");
                 noOfClicks = 0;
             }
             if (Time.time - lastClickedTime > maxComboDelay) //clicked not fast enough to continue combo
@@ -181,7 +175,6 @@ public class CharacterMovement : MonoBehaviour
             if (stamManager.CheckEnoughStamina(neededStamina))
             {
                 animator.SetBool("Attack01R", true);
-                //Debug.Log("01 true");
             }
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
@@ -196,8 +189,6 @@ public class CharacterMovement : MonoBehaviour
             {
                 animator.SetBool("Attack01R", false);
                 animator.SetBool("Attack02R", true);
-                //Debug.Log("01 false");
-                //Debug.Log("02 true");
             }
         }
         //start Attack03 if clicked fast enough
@@ -210,8 +201,6 @@ public class CharacterMovement : MonoBehaviour
             {
                 animator.SetBool("Attack02R", false);
                 animator.SetBool("Attack03R", true);
-                //Debug.Log("02 false");
-                //Debug.Log("03 true");
             }
         }
     }
@@ -223,8 +212,6 @@ public class CharacterMovement : MonoBehaviour
         if (!animator.GetBool("GotStunned")) //if not already stunned atm
         {
             animator.SetBool("GotStunned", true);
-
-            //TODO show stunned UI bar?
 
             Invoke("EndStun", stunDuration);
         }

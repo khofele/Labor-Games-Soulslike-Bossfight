@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private BossController boss = null;
-    [SerializeField] private CharController player = null;
     private bool phaseTwo = false;
     private bool gameRunning = false;
 

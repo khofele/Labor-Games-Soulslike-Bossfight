@@ -6,12 +6,6 @@ namespace stateMachine
 {
     public class WalkState : BaseState
     {
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            Debug.Log("Walk");
-        }
-
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -27,12 +21,6 @@ namespace stateMachine
             //move character in chosen direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             GetCharacterMovement(animator).GetController().Move(moveDir.normalized * GetCharController(animator).GetMovementSpeed() * Time.deltaTime);
-        }
-
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-        override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-           
         }
     }
 

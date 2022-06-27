@@ -20,7 +20,6 @@ public abstract class Armor : MonoBehaviour
     protected Armor helmetPrefab = null;
     protected Armor torsoPrefab = null;
 
-    // Start is called before the first frame update
     private void Start()
     {
         charController = gameObject.GetComponentInParent<CharController>();

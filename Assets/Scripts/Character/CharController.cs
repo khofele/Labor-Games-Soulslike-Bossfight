@@ -60,8 +60,6 @@ public class CharController : MonoBehaviour
     private Armor currentArmorTorso = null; 
 
 
-
-    // Start is called before the first frame update
     private void Start()
     {
         charName = "Godwin the Brave";
@@ -86,7 +84,6 @@ public class CharController : MonoBehaviour
         SetSpeed();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         //regeneration
@@ -188,8 +185,6 @@ public class CharController : MonoBehaviour
     //valueEveryTime - the percentage of the dot that is dealt each time (at once)
     public IEnumerator DamageOverTime(float dot, float dotDelay, float valueEveryTime)
     {
-        Debug.Log("DamageOverTime");
-
         //calculate final damage over time with resistance value
         dot = dot - resistance;
 
@@ -213,8 +208,6 @@ public class CharController : MonoBehaviour
     //coroutine called by DamageOverTime() to deal the dot
     private IEnumerator TakeDot(float damage, float dotDelay)
     {
-        Debug.Log("TakeDot");
-
         yield return new WaitForSeconds(dotDelay);
 
         //subtract damage from current health
@@ -226,8 +219,6 @@ public class CharController : MonoBehaviour
             currentHealth = 0f;
             charMovement.Death();
         }
-
-        Debug.Log(currentHealth);
     }
 
     //method called as animation event to enable the collider(s) of the weapon(s) when attacking
@@ -366,8 +357,6 @@ public class CharController : MonoBehaviour
     public void SetRegStamina(bool regStaminaValue)
     {
         stamManager.RegStamina = regStaminaValue;
-
-        //Debug.Log("SetRegStamina: " + regStaminaValue);
     }
 
 
