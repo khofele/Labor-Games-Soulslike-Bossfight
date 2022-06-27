@@ -54,6 +54,5 @@ public class Stunned : GOAction
                 return TaskStatus.RUNNING;
             }
         }
-        return TaskStatus.FAILED;
     }
 }
