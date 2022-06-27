@@ -36,8 +36,7 @@ public abstract class Weapon : MonoBehaviour
     protected float neededStaminaRoll = 0f;
 
 
-    //method called by menu to set the animation controller for the chosen weapon (ItemManager data)
-    //TODO Aufruf in CharController
+    //method called by CharController to set the animation controller for the chosen weapon (ItemManager data)
     public void SetAnimationController(WeaponTypeEnum weaponType)
     {
         //animator used for equip setting

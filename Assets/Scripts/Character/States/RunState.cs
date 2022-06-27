@@ -12,8 +12,6 @@ namespace stateMachine
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            Debug.Log("Run");
-
             //needed stamina for action per frame
             neededStamina = 0.1f;
             GetCharController(animator).SetRegStamina(false); //no stamina reg during running

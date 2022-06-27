@@ -12,7 +12,6 @@ public class CharDamagable : MonoBehaviour
     private float dotDelay = 30f; //delay for damage dealing over time
     private float dotValuePercentage = 0.1f; //percentage of dot that is dealt at once
 
-    // Start is called before the first frame update
     private void Start()
     {
         charController = GetComponentInParent<CharController>();
