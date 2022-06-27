@@ -22,6 +22,7 @@ public class Damagable : MonoBehaviour
     {
         if(other.gameObject.tag == "Weapon" && bossController.Player.IsAttacking == true)
         {
+            // stun timer check
             if (bossController.StunTimer.TimerOver == true)
             {
                 bossController.HitCounter = 0;
@@ -29,6 +30,7 @@ public class Damagable : MonoBehaviour
             }
             else
             {
+                // add hitpoints for stun
                 if (bossController.Player.GetCurrentWeaponObject().GetCurrentAttackType() == WeaponAttackTypeEnum.HEAVY || bossController.Player.ComboSuccess() == true || bossController.Player.GetCurrentWeaponObject().GetWeaponWeight() == 15)
                 {
                     bossController.HitCounter += Random.Range(2, 5);
@@ -43,16 +45,19 @@ public class Damagable : MonoBehaviour
                 }
             }
 
+            // check stun
             if (bossController.HitCounter >= bossController.StunCount && bossController.StunTimer.TimerOver == false)
             {
                 bossController.IsStunned = true;
-                bossController.IsStunnedTimer.StartTimer(4);    // TODO: Balancing
+                bossController.IsStunnedTimer.StartTimer(4);
             }
 
+            // get damage
             float damage = bossController.Player.GetCurrentWeaponObject().GetDamage();
 
             bossController.Animator.ResetTrigger("Walk");
 
+            // hit animations
             if (bossController.IsStunned == false)
             {
                 if (bossController.IsFlying == true)
@@ -90,8 +95,8 @@ public class Damagable : MonoBehaviour
                 }
             }
 
+            // take damage
             bossController.TakeDamage(damage + crit);
-
         }
     }
         

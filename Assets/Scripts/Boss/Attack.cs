@@ -21,6 +21,7 @@ public class Attack
         this.damageMax = damageMax;
     }
 
+    // constructor for nullattack
     public Attack()
     {
 

@@ -75,6 +75,8 @@ public class BossController : MonoBehaviour
         }
     }
 
+    //--------------------------COLLIDER METHODS FOR ATTACKS-----------------------
+
     public void EnableAttackCollider()
     {
         foreach(CapsuleCollider capsuleCollider in capsuleCollider)

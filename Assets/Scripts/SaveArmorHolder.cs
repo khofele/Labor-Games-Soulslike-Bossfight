@@ -6,6 +6,7 @@ public class SaveArmorHolder : MonoBehaviour
 {
     private static SaveArmorHolder instance = null;
 
+    // keep gameobject with armor references
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

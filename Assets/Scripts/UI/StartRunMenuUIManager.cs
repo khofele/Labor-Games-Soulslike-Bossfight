@@ -70,6 +70,7 @@ public class StartRunMenuUIManager : MonoBehaviour
 
     private void Start()
     {
+        // manager
         attributeManager = FindObjectOfType<AttributeManager>();
         attributeManager.ResetAllAttributes();
         itemManager = FindObjectOfType<ItemManager>();
@@ -77,10 +78,12 @@ public class StartRunMenuUIManager : MonoBehaviour
         skillpointManager = FindObjectOfType<SkillpointManager>();
         skillpointManager.ResetAllSkillpoints();
 
+        // buttons
         btnBackToMainMenu.onClick.AddListener(BackToMainMenu);
         btnStartRun.onClick.AddListener(StartGame);
         btnStartRun.interactable = false;
 
+        // stat buttons
         btnAddVitality.onClick.AddListener(skillpointManager.AddVitality);
         btnRemoveVitality.onClick.AddListener(skillpointManager.RemoveVitality);
         btnAddEndurance.onClick.AddListener(skillpointManager.AddEndurance);
@@ -90,11 +93,13 @@ public class StartRunMenuUIManager : MonoBehaviour
         btnAddPhysicalStrength.onClick.AddListener(skillpointManager.AddPhysicalStrength);
         btnRemovePhysicalStrength.onClick.AddListener(skillpointManager.RemovePhysicalStrength);
 
+        // armor buttons
         btnClothArmor.onClick.AddListener(itemManager.SetClothArmor);
         btnLeatherArmor.onClick.AddListener(itemManager.SetLeatherArmor);
         btnIronArmor.onClick.AddListener(itemManager.SetIronArmor);
         btnPlateArmor.onClick.AddListener(itemManager.SetPlateArmor);
 
+        // weapon buttons
         btnShortSword.onClick.AddListener(itemManager.SetShortSword);
         btnLongSword.onClick.AddListener(itemManager.SetLongSword);
         btnHammer.onClick.AddListener(itemManager.SetHammer);
@@ -115,7 +120,6 @@ public class StartRunMenuUIManager : MonoBehaviour
         textfieldEndurance.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.EnduranceDescription;
         textfieldStrength.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.StrengthDescription;
         textfieldPhysicalStrength.gameObject.GetComponent<SimpleTooltip>().InfoLeft = skillpointManager.PhysicalStrengthDescription;
-
 
         txtPlayerName.text = "Godwin the Brave";
         txtPotionCount.text = itemManager.PotionCount.ToString();
@@ -165,6 +169,8 @@ public class StartRunMenuUIManager : MonoBehaviour
         }
     }
 
+    //--------------------------BUTTON METHODS-----------------------
+
     private void BackToMainMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -174,6 +180,8 @@ public class StartRunMenuUIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    //--------------------------SET EQUIPMENT METHODS-----------------------
 
     public void SetShortSwordImage()
     {

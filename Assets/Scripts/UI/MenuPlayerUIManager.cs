@@ -30,6 +30,8 @@ public class MenuPlayerUIManager : MonoBehaviour
         lowerTorsoArmor.SetActive(false);
     }
 
+    //--------------------------ATTACH GEAR METHODS-----------------------
+
     public void AttachWeapon()
     {
         RemovePreviousWeapon();
@@ -115,6 +117,7 @@ public class MenuPlayerUIManager : MonoBehaviour
         AddLayerToChildren(currentArmorHelmet.transform, LayerMask.NameToLayer("PlayerRender"));
     }
 
+    // Method to add the player render layer to all children so they get displayed in the menu
     private void AddLayerToChildren(Transform root, int layer)
     {
         root.gameObject.layer = layer;
@@ -124,6 +127,7 @@ public class MenuPlayerUIManager : MonoBehaviour
         }
     }
 
+    // Set the menu player's animation
     private void SetAnimation()
     {
         animator.ResetTrigger("ONEHAND");
@@ -138,6 +142,8 @@ public class MenuPlayerUIManager : MonoBehaviour
             animator.SetTrigger("TWOHAND");
         }
     }
+
+    //--------------------------REMOVE GEAR METHODS-----------------------
 
     private void RemovePreviousHelmet()
     {
@@ -172,14 +178,7 @@ public class MenuPlayerUIManager : MonoBehaviour
         }
     }
 
-    private void SetWeaponRotation()
-    {
-        SetRightHandWeaponTransform();
-
-
-                //currentWeapon.transform.localRotation = Quaternion.Euler(-90, 180, -180);
-
-    }
+    //--------------------------SET TRANSFORM METHODS-----------------------
 
     private void SetLeftDaggerTransform()
     {

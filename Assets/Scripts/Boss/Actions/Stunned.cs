@@ -15,7 +15,6 @@ public class Stunned : GOAction
 
     public override void OnStart()
     {
-        //bossController.Animator.ResetTrigger("Walk");
         bossController = gameObject.GetComponent<BossController>();
         bossController.Animator.ResetTrigger("Walk");
         bossController.Animator.ResetTrigger("Idle");
@@ -26,11 +25,9 @@ public class Stunned : GOAction
         Debug.Log("boss stunned");
         if(bossController.IsFlying == true)
         {
-            //bossController.GetComponent<Animator>().applyRootMotion = false;
             bossController.Animator.SetTrigger("StunnedFlying");
             if(bossController.IsStunnedTimer.TimerOver == true)
             {
-                //bossController.GetComponent<Animator>().applyRootMotion = false;
                 bossController.IsStunned = false;
                 return TaskStatus.COMPLETED;
             }
@@ -42,7 +39,6 @@ public class Stunned : GOAction
         }
         else
         {                
-            //bossController.GetComponent<Animator>().applyRootMotion = false;
             bossController.Animator.SetTrigger("StunnedStanding");
             if (bossController.IsStunnedTimer.TimerOver == true)
             {

@@ -6,6 +6,7 @@ public class SaveWeaponHolder : MonoBehaviour
 {
     private static SaveWeaponHolder instance = null;
 
+    // keep gameobject with weapon references
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

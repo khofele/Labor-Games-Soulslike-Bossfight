@@ -38,7 +38,6 @@ public class Death : GOAction
             bossController.IsDead = true;
         }
         gameManager.GameRunning = false;
-        Debug.Log("Boss died!");
         return TaskStatus.COMPLETED;
     }
 

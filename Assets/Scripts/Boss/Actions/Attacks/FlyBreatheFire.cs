@@ -33,13 +33,16 @@ public class FlyBreatheFire : GOAction
         target = bossController.Player.gameObject;
         bossController.GetComponent<Animator>().applyRootMotion = true;
 
+        // take off
         bossController.Animator.ResetTrigger("Idle");
         bossController.Animator.SetTrigger("TakeOff");
 
+        // fly idle
         bossController.FlyTimer.TimerEnd();
         bossController.IsFlyingTimer.StartTimer(45);
         bossController.Animator.SetTrigger("FlyIdle");
 
+        // choose fire
         int random = Random.Range(1, 100);
         if (random >= 1 && random <= 33)
         {
@@ -69,8 +72,8 @@ public class FlyBreatheFire : GOAction
             navAgent = gameObject.AddComponent<UnityEngine.AI.NavMeshAgent>();
         }
 
+        // set fire animation and destination
         navAgent.SetDestination(targetTransform.position);
-        Debug.Log(targetTransform.position);
         bossController.Animator.SetTrigger(currentFire);
 
 
@@ -90,6 +93,8 @@ public class FlyBreatheFire : GOAction
         {
 
             bossController.Animator.ResetTrigger("FlyIdle");
+
+            // current attack
             switch (currentFire)
             {
                 case "BreatheBasicFire":
@@ -105,9 +110,7 @@ public class FlyBreatheFire : GOAction
                     break;
             }
 
-            Debug.Log("Fly Breathe Fire Attack");
-
-
+            // fly timer over/invoke landing
             if (bossController.IsFlyingTimer.TimerOver == true)
             {
                 navAgent.isStopped = true;
@@ -122,7 +125,7 @@ public class FlyBreatheFire : GOAction
                 bossController.Animator.SetTrigger("Idle");
                 return TaskStatus.COMPLETED;
             }
-
+            // set new destination
             else if (navAgent.destination != targetTransform.position)
             {
                 navAgent.SetDestination(targetTransform.position);

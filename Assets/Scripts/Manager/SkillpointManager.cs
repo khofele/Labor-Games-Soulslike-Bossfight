@@ -21,7 +21,7 @@ public class SkillpointManager : MonoBehaviour
     public int Strength { get => strength; }
     public int PhysicalStrength { get => physicalStrength; }
 
-    //skillpoint descriptions
+    // stat descriptions
     public string VitalityDescription { get => "~Vitality \n@The vitality of the character determines how many hits he can take."; }
     public string EnduranceDescription { get => "~Endurance \n@The endurance of the character determines his physical fitness."; }
     public string StrengthDescription { get => "~Strength \n@The strength of the character determines the force of his weapon swings."; }
@@ -48,6 +48,8 @@ public class SkillpointManager : MonoBehaviour
     {
         skillpoints = maxSkillpoints;
     }
+
+    //--------------------------ADD AND REMOVE SKILLPOINTS-----------------------
 
     public void AddVitality()
     {
@@ -130,6 +132,7 @@ public class SkillpointManager : MonoBehaviour
         }
     }
 
+    // reset skillponts/stats
     public void ResetAllSkillpoints()
     {
         skillpoints = maxSkillpoints;

@@ -6,7 +6,6 @@ namespace stateMachine
 {
     public class GotHitState : BaseState
     {
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //player has currently been hit - animation shall not play twice at a time
@@ -22,7 +21,6 @@ namespace stateMachine
             animator.SetBool("Attack03R", false);
         }
 
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetBool("GotHit", false);

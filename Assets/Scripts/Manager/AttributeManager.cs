@@ -48,6 +48,8 @@ public class AttributeManager : MonoBehaviour
         ResetAttackPower();
     }
 
+    //--------------------------CALC ATTRIBUTES-----------------------
+
     public void CalcHealth()
     {
         health = health + skillpointManager.Vitality * multiplicator;
@@ -109,6 +111,8 @@ public class AttributeManager : MonoBehaviour
     {
         defense = itemManager.CurrentArmor.GetArmorDef() * 1.5f;
     }
+
+    //--------------------------RESET ATTRIBUTES-----------------------
 
     public void ResetAllAttributes()
     {

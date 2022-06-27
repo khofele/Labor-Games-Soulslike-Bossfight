@@ -17,6 +17,8 @@ public class MenuUIManager : MonoBehaviour
         btnEndGame.onClick.AddListener(EndGame);
     }
 
+    //--------------------------BUTTON METHODS-----------------------
+
     private void StartRun()
     {
         SceneManager.LoadScene("Start Run");

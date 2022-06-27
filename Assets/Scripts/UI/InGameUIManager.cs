@@ -36,6 +36,7 @@ public class InGameUIManager : MonoBehaviour
 
     private void Update()
     {
+        // bars and potion count
         if(bossController.Health >= 0)
         {
             healthBarBossSlider.value = bossController.Health; 
@@ -56,6 +57,8 @@ public class InGameUIManager : MonoBehaviour
             potionField.GetComponentInChildren<TextMeshProUGUI>().text = charController.GetCurrentPotions().ToString();
         }
 
+
+        // win/death
         if(charController.GetCurrentHealth() <= 0 && soundPlaying == false)
         {
             soundPlaying = true;
@@ -73,6 +76,8 @@ public class InGameUIManager : MonoBehaviour
             audioManager.StopBackgroundMusic();
         }
     }
+
+    //--------------------------METHODS TO ENABLE AND DISABLE UI GAMEOBJECTS-----------------------
 
     public void EnableHealthBarChar()
     {

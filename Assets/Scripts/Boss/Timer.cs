@@ -23,11 +23,13 @@ public class Timer : MonoBehaviour
         }
     }
 
+    // end timer
     public void TimerEnd()
     {
         timerOver = true;
     }
 
+    // start timer with set duration
     public void StartTimer()
     {
         timerLength = 0;
@@ -35,6 +37,7 @@ public class Timer : MonoBehaviour
         timerOver = false;
     }
 
+    // start timer without set duration
     public void StartTimer(float duration)
     {
         timerLength = 0;

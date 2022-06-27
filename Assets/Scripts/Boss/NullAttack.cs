@@ -9,6 +9,7 @@ public class NullAttack : BaseState
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // set null attack for non-attack states
         attackManager.CurrentAttack = attackManager.NullAttack;
     }
 }

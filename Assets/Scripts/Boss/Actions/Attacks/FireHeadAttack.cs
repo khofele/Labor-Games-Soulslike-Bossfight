@@ -27,7 +27,6 @@ public class FireHeadAttack : GOAction
     {
         bossController.Animator.SetTrigger("Fire Head 1");
         attackManager.CurrentAttack = attackManager.AttackFireHead;
-        Debug.Log("Attack Fire Head");
         bossController.Player.IsCollided = false;
         return TaskStatus.COMPLETED;
     }

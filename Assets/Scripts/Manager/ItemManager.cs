@@ -25,6 +25,7 @@ public class ItemManager : MonoBehaviour
 
     private static ItemManager instance = null;
 
+    // current weapon values
     private Weapon currentWeapon = null;
     private WeaponTypeEnum currentWeaponType;
     private WeaponTypeHandedEnum currentWeaponTypeHanded;
@@ -33,6 +34,7 @@ public class ItemManager : MonoBehaviour
     private float currentWeaponMaxDmg = 0f;
     private Weapon currentWeaponPrefab = null;
 
+    // current armor values
     private Armor currentArmor = null;
     private string currentArmorName = "";
     private ArmorTypeEnum currentArmorType;
@@ -68,7 +70,6 @@ public class ItemManager : MonoBehaviour
     public Armor CurrentTorsoArmorPrefab { get => currentTorsoArmorPrefab; }
     public Armor CurrentHelmetPrefab { get => currentHelmetPrefab; }
 
-    //stamina value getter
     public float NeededStaminaAttack01 { get => neededStaminaAttack01; }
     public float NeededStaminaAttack02 { get => neededStaminaAttack02; }
     public float NeededStaminaAttack03 { get => neededStaminaAttack03; }
@@ -122,6 +123,8 @@ public class ItemManager : MonoBehaviour
             menuPlayerUIManager = playerUIGameObject.GetComponent<MenuPlayerUIManager>();
         }
     }
+
+    //--------------------------ITEM SETTERS-----------------------
 
     public void SetDagger()
     {
@@ -211,6 +214,8 @@ public class ItemManager : MonoBehaviour
         menuPlayerUIManager.AttachSpecialHelmet();
     }
 
+    //--------------------------VALUE SETTERS-----------------------
+
     private void SetWeaponValues()
     {
         currentWeaponType = currentWeapon.GetWeaponType();
@@ -231,7 +236,6 @@ public class ItemManager : MonoBehaviour
         currentTorsoArmorPrefab = currentArmor.GetTorsoArmorPrefab();
     }
 
-    //method to set the needed stamina for the chosen weapon
     private void SetWeaponStaminaValues()
     {
         neededStaminaAttack01 = currentWeapon.GetNeededStaminaAttack01();
@@ -241,6 +245,7 @@ public class ItemManager : MonoBehaviour
         neededStaminaRoll = currentWeapon.GetNeededStaminaRoll();
     }
 
+    // method to reset values
     public void ResetWeaponAndArmor()
     {
         currentArmor = null;

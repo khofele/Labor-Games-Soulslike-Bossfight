@@ -6,8 +6,6 @@ namespace stateMachine
 {
     public class Attack01RState : BaseState
     {
-
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //set isAttacking in CharController to true
@@ -21,7 +19,6 @@ namespace stateMachine
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
-        // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (GetCharController(animator).GetCurrentWeapon().Contains("Lance"))
@@ -31,7 +28,6 @@ namespace stateMachine
             }
         }
 
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             GetCharController(animator).IsAttacking = false; //set isAttacking in CharController to false

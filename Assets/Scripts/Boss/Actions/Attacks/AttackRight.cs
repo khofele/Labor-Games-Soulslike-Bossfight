@@ -27,7 +27,6 @@ public class AttackRight : GOAction
     {
         bossController.Animator.SetTrigger("Attack 1");
         attackManager.CurrentAttack = attackManager.AttackRight;
-        Debug.Log("Attack Right");
         bossController.Player.IsCollided = false;
         return TaskStatus.COMPLETED;
     }

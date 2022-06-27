@@ -9,7 +9,6 @@ namespace stateMachine
         //value to run faster than walking speed
         private float valueFaster = 1.5f;
 
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //needed stamina for action per frame
@@ -17,7 +16,6 @@ namespace stateMachine
             GetCharController(animator).SetRegStamina(false); //no stamina reg during running
         }
 
-        // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -45,7 +43,6 @@ namespace stateMachine
 
         }
 
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (animator.GetBool("Run"))

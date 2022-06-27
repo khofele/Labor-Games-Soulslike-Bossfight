@@ -6,7 +6,6 @@ namespace stateMachine
 {
     public class HeavyAttackState : BaseState
     {
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //set isAttacking in CharController to true
@@ -20,7 +19,6 @@ namespace stateMachine
             GetCharController(animator).SetRegStamina(false); //no stamina reg during skill
         }
 
-        // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //player finished attack

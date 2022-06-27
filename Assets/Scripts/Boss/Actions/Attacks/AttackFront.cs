@@ -29,7 +29,6 @@ public class AttackFront : GOAction
         bossController.Animator.SetTrigger("AttackFront");
         attackManager.CurrentAttack = attackManager.AttackFront;
         bossController.Player.IsCollided = false;
-        Debug.Log("Attack Front");
         return TaskStatus.COMPLETED;
     }
 }

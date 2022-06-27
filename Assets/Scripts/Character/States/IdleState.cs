@@ -6,9 +6,6 @@ namespace stateMachine
 {
     public class IdleState : BaseState
     {
-        
-
-        // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //set every bool to false and stamina reg to true because the character is idle
@@ -23,5 +20,4 @@ namespace stateMachine
             GetCharController(animator).SetRegStamina(true);
         }
     }
-
 }

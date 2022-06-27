@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    // all attacks
+    // boss attacks
     private Attack attackFront = new Attack(150, 250);
     private Attack attackLeft = new Attack(100, 200);
     private Attack attackRight = new Attack(100, 200);
