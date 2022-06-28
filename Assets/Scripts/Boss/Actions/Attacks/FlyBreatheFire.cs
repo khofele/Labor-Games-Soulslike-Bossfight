@@ -32,6 +32,7 @@ public class FlyBreatheFire : GOAction
         bossController = gameObject.GetComponent<BossController>();
         target = bossController.Player.gameObject;
         bossController.GetComponent<Animator>().applyRootMotion = true;
+        bossController.IsStunned = false;
 
         // take off
         bossController.Animator.ResetTrigger("Idle");
@@ -125,9 +126,9 @@ public class FlyBreatheFire : GOAction
                 bossController.Animator.SetTrigger("Idle");
                 return TaskStatus.COMPLETED;
             }
-            // set new destination
             else if (navAgent.destination != targetTransform.position)
             {
+                // set new destination  
                 navAgent.SetDestination(targetTransform.position);
                 bossController.Animator.SetTrigger(currentFire);
             }
