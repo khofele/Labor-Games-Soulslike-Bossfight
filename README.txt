@@ -8,7 +8,7 @@ PROJEKTLINK - GITHUB
 https://github.com/khofele/Labor-Games-Bossfight
 
 PROJEKTLINK - BUILD + CODE
-https://studhsheilbronnde-my.sharepoint.com/:f:/g/personal/khofele_stud_hs-heilbronn_de/EvZwWWL8N2RAlgb_lkZ4BWUBqOqxd-4QSDtfAYqyBIlVFg?e=v6SuBX
+https://studhsheilbronnde-my.sharepoint.com/:f:/g/personal/khofele_stud_hs-heilbronn_de/EvZwWWL8N2RAlgb_lkZ4BWUBqOqxd-4QSDtfAYqyBIlVFg?e=iLkeql
 
 DEMOVIDEO
 https://youtu.be/34A7yvJze9M
