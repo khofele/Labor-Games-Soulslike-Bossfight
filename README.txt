@@ -11,6 +11,7 @@ PROJEKTLINK - BUILD + CODE
 https://studhsheilbronnde-my.sharepoint.com/:f:/g/personal/khofele_stud_hs-heilbronn_de/EvZwWWL8N2RAlgb_lkZ4BWUBqOqxd-4QSDtfAYqyBIlVFg?e=v6SuBX
 
 DEMOVIDEO
+https://youtu.be/34A7yvJze9M
 
 DOKUMENTATION (Links zu den Präsentationen, Trelloboard sowie Github können auch in der Dokumentation gefunden werden)
 https://docs.google.com/document/d/1H2--uqEWYi4q0RO8O1paSUFVL46qGFqQ/edit?usp=sharing&ouid=117961953867140478498&rtpof=true&sd=true
@@ -22,6 +23,8 @@ Die Steuerung kann im Menü eingesehen werden, sobald das Spiel gestartet wurde.
 MÖGLICHE ISSUES
 - Man kann sich mit Mühe mit dem Spieler in den Drachen sowie in die Steine am Rand der Arena reinglitchen.
     --> Falls man von alleine nicht mehr herauskommt, muss das Spiel neu gestartet werden.
+- Der Drache hängt manchmal fest.
+	--> Falls er von alleine nicht in eine andere Action übergeht, muss das Spiel neu gestartet werden.
 - Der Character könnte bei Spielstart über dem Boden schweben. 
     --> Hier hilft es, Unity neu zu starten.
 Der Character könnte sich am Drachen in die Luft glitchen.
