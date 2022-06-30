@@ -167,9 +167,8 @@ public class StartRunMenuUIManager : MonoBehaviour
             btnStartRun.interactable = false;
             txtCarryingCapacityEquipment.color = Color.red;
         }
-        else if(weight <= attributeManager.CarryingCapacity)
+        else
         {
-            btnStartRun.interactable = false;
             txtCarryingCapacityEquipment.color = Color.white;
         }
     }
