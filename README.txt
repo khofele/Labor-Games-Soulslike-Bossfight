@@ -21,6 +21,8 @@ Für das Starten des Spiels sind keine besonderen Voraussetzungen nötig. Die ex
 Die Steuerung kann im Menü eingesehen werden, sobald das Spiel gestartet wurde.
 
 MÖGLICHE ISSUES
+- Im Build glitcht die Haut des Characters durch die Kleidung, in der Unity-Version ist dies nicht der
+  Fall.
 - Man kann sich mit Mühe mit dem Spieler in den Drachen sowie in die Steine am Rand der Arena reinglitchen.
     --> Falls man von alleine nicht mehr herauskommt, muss das Spiel neu gestartet werden.
 - Der Drache hängt manchmal fest.
