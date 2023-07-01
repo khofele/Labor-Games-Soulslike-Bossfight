@@ -1,4 +1,9 @@
-PROJEKTNAME: Soulslike Bossfight
+Soulslike Bossfight
+Version: 2022
+
+Boss-Kampf gegen einen Drachen, welcher vom Genre “Soulslike” inspiriert wurde. Der spielbare Charakter kann vom Spieler in einem Menü konfiguriert werden. Der Kampf ist in zwei Phasen unterteilt, in denen der Drache auf dem Boden und in der Luft verschiedene Angriffe und Handlungen basierend auf dem Spielerverhalten ausführt.
+
+---------------------------------------------------------------------------------------------------------------
 
 TEAMMITGLIEDER
 - Tabea Leibl [204105]
